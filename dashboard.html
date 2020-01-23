@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX | Dash Board</title>
+
+    <link rel="stylesheet" href="layui/css/layui.css">
+    <link rel="stylesheet" href="layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="">
+                <img src="image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li class="layui-nav-item layui-layout-right layui-this" style="position: relative; margin-right: 8em;"><a href="">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+
+    <div class="layui-tab-content" style="height: auto;">
+        <h1 style="font-family: Quicksand; font-weight: bold; font-size: 2.5em;">Dash Board 课程面板</h1>
+        <hr>
+
+        <div class="layui-row">
+            <div class="layui-col-sm9" id="course-cards">
+            </div>
+            <div class="layui-col-sm3">
+            </div>
+        </div>
+
+        <div class="layui-footer" style="margin-top: 2em;">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+</div>
+
+<script src="layui/layui.js"></script>
+<script>
+
+    layui.use(['layer', 'element'], function(){
+        var layer = layui.layer
+            ,element = layui.element;
+
+        var info = [
+            {
+                "code": "CS100",
+                "name": "Introduction to Programming",
+                "url": "webpage/index.html",
+                "cover": "image/CS100_cover.jpg",
+                "semester": "Fall 2019, Fall 2018"
+            }
+        ]
+
+        info.forEach(elem => {
+            document.getElementById('course-cards').innerHTML += '<div class="layui-card" style="border-radius: 10px;"><div class="layui-card-body"><div class="layui-row"><div class="layui-col-md3"><a href="'+ elem.url +'"><img class="shadow" src="'+ elem.cover +'"style="width:100%;"></a></div><div class="layui-col-md9"><div style="margin: 5px 1em;"><div style="font-family: Quicksand; font-weight: bold; text-align: left; font-size: 2em;"><a href="'+ elem.url +'">'+ elem.name +'</a></div><div class="layui-row"><div class="layui-col-md9"><p style="padding-top: 65px; text-align: left; font-size: 1.2em; margin-bottom: 0.2em;">'+ elem.code +'</p><p style="text-align: left; font-size: 1.2em;">'+ elem.semester +'</p></div><div class="layui-col-md3" style="padding-top: 65px; text-align: center;"><a href="'+ elem.url +'" class="layui-btn layui-btn-lg layui-btn-violet" style="font-weight: normal;">查看课程</a></div></div></div></div></div></div></div>';
+        });
+        
+    });
+</script>
+</body>
+</html>

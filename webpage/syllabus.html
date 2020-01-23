@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../dashboard.html">
+                <img src="../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="index.html"><li>课程</li></a>
+            <a href="#"><li class="layui-this">教学大纲</li class="layui-this"></a>
+            <a href="progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+    </div>
+
+    <div class="layui-tab-content" style="height: auto;">
+        <div class="layui-tab-item layui-show">
+            <div class="main-content" style="margin: 1em 5%;">
+                <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Course Syllabus 课程大纲</h1>
+                <hr>
+
+                <fieldset class="layui-elem-field">
+                    <legend>Fall 2019</legend>
+                    <div class="layui-field-box">
+                        <!-- START -->
+                        <table width="90%" align="center">
+                            <tbody><tr>
+                                <td>
+                                    <h1>计算机编程教学大纲</h1>
+                                    <h2>一、课程基本信息</h2>
+                                    <table  class="layui-table" width="100%">
+                                        <tbody><tr>
+                                             <td class="title">开课单位:</td>
+                                             <td class="content"></td>
+                                             <td class="title">课程代码:</td>
+                                             <td class="content">CS100</td>
+                                        </tr>
+                                        <tr>
+                                             <td class="title">课程名称:</td>
+                                             <td class="content">计算机编程</td>
+                                             <td class="title">英文名称:</td>
+                                             <td class="content" style="font-family:Times New Roman">Introduction to Programming</td>
+                                        </tr>
+                                        <tr>
+                                             <td class="title">学    分:</td>
+                                             <td class="content">4</td>
+                                             <td class="title">学    时:</td>
+                                             <td class="content">64</td>
+                                        </tr>
+                                        <tr>
+                                             <td class="title">授课对象:</td>
+                                             <td class="content">&nbsp;</td>
+                                             <td class="title">授课语言:</td>
+                                             <td class="content">中英文</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">先修课程:</td>
+                                            <td class="content" colspan="3">
+                        </td>
+                                        </tr>
+                                    </tbody></table>
+                                    <h2>二、课程简介和教学目的</h2>
+                                    <table>
+                                        <tbody><tr>
+                                            <td class="content">The course provides an introduction to programming for starting undergraduate students. The course will be based on C and the object-oriented C++ programming languages, thus equipping attendees with powerful low-level languages for the efficient implementation of resource-hungry programs. 
+                        
+                        The following is a tentative list of covered topics:
+                        
+                        <br>On C:
+                        <br>•	C syntax, development environment
+                        <br>•	Flow Control, types, arrays, operations
+                        <br>•	Procedural abstraction, functions
+                        <br>•	Pointers
+                        <br>•	Basic algorithms (sorting etc.)
+                        <br>•	Input-output, debugging
+                        <br>•	Recursive programming
+                        <br>On C++:
+                        <br>•	Object-oriented programming
+                        <br>•	Basic data structures, the standard library
+                        <br>•	Polymorphism, templating, modularization
+                        <br>•	Multi-threading
+                        <br>•	Coding standards, coding patterns
+                        <br>•	CMake, Project management &amp; documentation, profiling, debugging
+                        <br>•	R-value references, C++11, C++14, C++17
+                        <br>•	Exceptions
+                        <br>•	Introduction to Eigen, Ceres
+                        <br>•	Interfacing with Matlab and Python
+                        
+                        <br>Besides the lectures, the course will also involve a weekly recitation and coding homework assignments. The recitations will be a mix of class material revision, introduction of some new related material, and in-class coding exercises. The homework assignments will involve implementations of certain functions and classes. Templates, interface definitions, and example test cases will be provided, and we will make use of an online compilation and testing system, thus streamlining the process towards a fair grading of the assignments. Development environment suggestions will be introduced at the beginning of the course, and the assignments will be introduced during the lectures as well as posted on the course webpage (along with test cases and deadlines).</td>
+                                        </tr>
+                                    
+                                    </tbody></table>
+                                    
+                                    <h2>三、教学内容、教学方式和学时安排</h2>
+                                    <table>
+                                        <tbody><tr>
+                                            <td class="content"><p><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="color:#00000a">The course will contain around 32 lectures, 10 on C, 20 on C++, 1 summary lecture and 1 lecture for an exam. There will be only one exam, a late mid-term exam that will test the mastery of the two first thirds of the material. There will furthermore be 8 homeworks, 6 shorter ones which we aim to complete before the midterm exam, and 2 more elaborate ones after the midterm exam, testing the more advanced material of the course.</span></span></span></p></td>
+                                        </tr>
+                                    </tbody></table>
+                                    <h2>四、考核方式和成绩评定</h2>
+                                    <table>
+                                        <tbody><tr>
+                                            <td class="content">The evaluation will be as follows:
+                                        <br>-6 * 8 points for the shorter homeworks in the beginning of the course
+                                        <br>-2 * 15 points for the longer homeworks towards the end of the course
+                                        <br>-22 points for the midterm exam
+                                        
+                                        <br>The grading scheme is tentative and may be subjected to small variations to for example promote class/recitation participation.
+                    
+                                        <br><br>*Actually,
+                                        <br>4%: Summer homeworks,
+                                        <br>4*7% + 4*11% = 72%: Regular homeworks,
+                                        <br>18%: Mid-term Exam,
+                                        <br>2*2% = 4%: In-class quizes,
+                                        <br>2%: Recitation attendance checks.
+                                        </td>
+                                        </tr>
+                                    </tbody></table>
+                                    
+                                    <h2>五、推荐教材和参考书目</h2>
+                                    <table class="layui-table" width="100%">
+                                        <tbody><tr align="center">
+                                            <td width="12%">书名</td>
+                                            <td width="10%">作者</td>
+                                            <td width="10%">译者</td>
+                                            <td width="20%">出版社</td>
+                                            <td width="20%">出版时间</td>
+                                            <td width="25%">ISBN</td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td></td>
+                                            <td>	
+                                                
+                                            </td>
+                                            <td>	
+                                                
+                                            </td>
+                                            <td>	
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>	
+                                                
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                    
+                                    <h2>六、其他说明</h2>
+                                    <table>
+                                        <tbody><tr>
+                                            <td class="content"></td>
+                                        </tr>
+                                    </tbody></table>
+                                    
+                                    <h2>七、教师信息</h2>
+                                    <table class="layui-table">
+                                        <tbody><tr>
+                                            <td class="content">授课教师：
+                                                刘晓培
+                                                Laurent Kneip
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="content">课程负责人：
+                                                Laurent Kneip
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <!-- END -->
+                    </div>
+                </fieldset>
+                
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+</div>
+
+<script src="../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "CS100",
+        "name": "Introduction to Programming"
+    };
+
+    document.title = 'iTechX | ' + courseInfo.code + ' ' + courseInfo.name;
+
+    layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], function(){
+        var layer = layui.layer
+            ,form = layui.form
+            ,element = layui.element
+            ,laytpl = layui.laytpl
+            ,laydate = layui.laydate
+            ,$ = layui.$
+            ,laypage = layui.laypage;
+
+        var courseHeaderTpl = lay('#courseHeader')[0].innerHTML;
+        lay('#courseHeader').html(layui.laytpl(courseHeaderTpl).render({}))
+        .removeClass('layui-hide');
+
+        var courseBenchTpl = lay('#courseBench')[0].innerHTML;
+        lay('#courseBench').html(layui.laytpl(courseBenchTpl).render({
+            "url": "https://www.coursebench.net/course/"+courseInfo.code+"/"
+        }))
+        .removeClass('layui-hide');
+        
+    });
+</script>
+</body>
+</html>
