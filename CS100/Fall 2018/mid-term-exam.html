@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Mid-term Exam</h1>
+
+                    <div class="layui-hide" id="page-1" page-type="book">
+                        <hr>
+                        <div class="reading-content" style="margin: 0 10em;">
+                            <h1>CS100 Midterm Exam Cover Sheet</h1>
+                            <h3 style="text-align: center;">Instructors: Laurent Kneip, Jie Zheng, Fu Song</h3>
+                            <h3 style="text-align: center; margin-bottom: 2em;">November 16, 2018</h3 style="text-align: center;">
+                            <p style="text-align: left;"><b>INSTRUCTIONS:</b></p>
+                            <ul>
+                                <li style="list-style-type: disc; margin: 0.5em;"> You have 90 minutes (~10:25-11:55) to complete the exam.</li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> Your exam will not be graded unless you complete the above section and the cover sheet, and turn in both this exam book and the cover sheet.</li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> This exam is <b><u>closed-book and closed-notes</u></b>, and <b>no electronic devices are permitted.</b></li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> Mark your answers on the exam itself. We will not grade answers written on scratch paper.</li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> Your performance is supposed to reflect your own level of understanding of the material. You are not allowed to talk with your neighbor or look at his exam sheet. Failure to obey this rule will result in a <b><u>point deduction.</u></b> </li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> If you finish early, you can hand in the exam and leave early. However, this is only possible until at latest 15 minutes before the ending time of the exam. If less than 15 minutes are left, please keep sitting and wait until the end.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="layui-hide" id="page-2" page-type="question">
+                        <hr>
+                        <div class="reading-content" style="margin: 1em;">
+                            <h3 style="margin-bottom: 2em;"><b><u>Problem 1: Multiple-choice questions (4 points)</u></b></h3>
+                            
+                            <p style="text-align: left;">Please answer the following questions by ticking the choices that apply. Note that multiple choices are possible for each question. Mark all choices that apply as follows: [x].</p>
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 1 (C)</div>
+                            <div class="problem-grade" id="Question1">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Consider the following C program:
+<pre><code>
+void f(int, short);
+int main()
+{
+    int i = 100;
+    short s = 12;
+    short *p = &s;
+    ___________; // call to f() 
+    return 0;
+}
+void f(int i, short s)
+{
+    i++;
+}
+</code></pre>
+                                Which of the following expression(s), when inserted in the blank line above, will result in a compile-time error?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="<code>f(s, *s);</code>">
+                                        <input type="checkbox" name="q1-B" title="<code>i = f(i, s);</code>">
+                                        <input type="checkbox" name="q1-C" title="<code>f(i, *s);</code>">
+                                        <input type="checkbox" name="q1-D" title="<code>f(i, *p);</code>">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 2 (C)</div>
+                            <div class="problem-grade" id="Question2">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                In the following C program:
+<pre><code>
+#include &lt;stdio.h> 
+int main(void)
+{
+    int arr[10][10][10];
+    arr[5][5][5] = 2018;
+    ___________ // printf statement here 
+    return 0;
+}        
+</code></pre>
+                                Which of the following printf statement(s), when inserted in the blank line, would print 2018?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question2">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="<code>printf(“%d”, arr[5][5][5]);</code>">
+                                        <input type="checkbox" name="q1-B" title="<code>printf(“%d”, *(*(*(arr + 5) + 5) + 5) );</code>">
+                                        <input type="checkbox" name="q1-C" title="<code>printf(“%d”, (*(*(arr + 5) + 5))[5] );</code>">
+                                        <input type="checkbox" name="q1-D" title="<code>printf(“%d”, *( (*(arr + 5))[5] +5) );</code>">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 3 (C++)</div>
+                            <div class="problem-grade" id="Question3">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                What procedures of a parent class will be accessible in a child class?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question3">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="<code>public</code> procedures">
+                                        <input type="checkbox" name="q1-B" title="<code>protected</code> procedures">
+                                        <input type="checkbox" name="q1-C" title="<code>private</code> procedures">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 4 (C++)</div>
+                            <div class="problem-grade" id="Question4">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Choose all of the following declarations that correctly overload a procedure with the declaration <code>float add( float input );</code>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question4">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="<code>float add( float newElement );</code>">
+                                        <input type="checkbox" name="q1-B" title="<code>double add( float newElement );</code>">
+                                        <input type="checkbox" name="q1-C" title="<code>float add( float newElement1, float newElement2 );</code>">
+                                        <input type="checkbox" name="q1-D" title="<code>float add( int newElement );</code>">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-3" page-type="question">
+                        <hr>
+                        <div class="reading-content" style="margin: 1em;">
+                            <h3 style="margin-bottom: 2em;"><b><u>Problem 2: Knowledge questions (4 points)</u></b></h3>
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 1 (C)</div>
+                            <div class="problem-grade" id="Question2-1">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                How many bytes are required to store the string literal “<code>I am good.</code>”? Briefly explain your answer.
+                                <br>
+                                <p>(You only need to type a simple number below.)</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question2-1">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-text">
+                                        <input type="text" name="q1" placeholder="" class="layui-input">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+                                        <p><b>Answer</b></p>
+                                        <p>11 bytes. The string consists of 10 visible characters (including blank spaces and the period) plus the null character ‘\0’ at the end.</p>
+                                    </blockquote>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 2 (C)</div>
+                            <div class="problem-grade" id="Question2-2">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Name the two typical ways for parameter passing between functions in programming.
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question2-2">
+                                <div class="layui-form-item">
+                                    <p>Please type in ONE word with all <b>lower-case</b> letters in each box.</p>
+                                    <div class="question q1 q-text-no-repetition">
+                                        1. Call-by-<input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2 q-text-no-repetition">
+                                        2. Call-by-<input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 3 (C++)</div>
+                            <div class="problem-grade" id="Question2-3">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Mention the two types of “Has-a” Relationships viewed in class.
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question2-3">
+                                <div class="layui-form-item">
+                                    <p>Please type in ONE word with all <b>lower-case</b> letters in each box.</p>
+                                    <div class="question q1 q-text-no-repetition">
+                                        1. <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2 q-text-no-repetition">
+                                        2. <input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="reading-content">
+                            <hr>
+                            <div class="problem-title">Question 4 (C++)</div>
+                            <p>Put down a one-sentence statement explaining the purpose of <i>include-guards</i>.</p>
+                            <br><br>
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-4" page-type="question">
+                        <hr>
+                        <div class="reading-content" style="margin: 1em;">
+                            <h3 style="margin-bottom: 2em;"><b><u>Problem 3:</u></b></h3>
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 1 (C)</div>
+                            <div class="problem-grade" id="Question3-1">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                What is the output of the following C code?
+<pre><code>
+#include &lt;stdio.h>
+int f(int n);
+int main()
+{
+    printf(“Result = %d\n”, f(5));
+    return 0;
+}
+
+int f(int n)
+{
+    int a, b;
+    if (n > 2) {
+        a = f(n-1);
+        b = f(n-2);
+        printf(“a = %d, b = %d\n”, a, b);
+        return a + b;
+    } else {
+        return 2;
+    }
+}                
+</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question3-1">
+                                <div class="layui-form-item">
+                                    <p>Warning: Additional space or enter will lead to failure of judgement.</p>
+                                    <div class="question q1 q-text-no-eval">
+                                        <textarea placeholder="Please type in the output of the C code." name="q1" class="layui-textarea" style="height: 10em;"></textarea>
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-5" page-type="question">
+                        <hr>
+                        <div class="reading-content" style="margin: 1em;">
+                            <h3 style="margin-bottom: 2em;"><b><u>Problem 4:</u></b></h3>
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 1 (C)</div>
+                            <div class="problem-grade" id="Question4-1">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Circle the errors in the following function written in C, and rewrite the correct function in your answer book. Briefly explain the changes that you made to the original function.
+<pre><code>
+1.  // This function reverses the characters in a string 
+2.  void reverse(char *s)
+3.  {
+4.      int n;
+5.      char *tmp, *p, *q; 
+6.      n = strlen(s);
+7.      q = (n > 0) ? (s+n) : s;
+8.      for (p=s; p < q; ++p, --q) {
+9.          *tmp = *p;
+10.         *p = *q;
+11.         *q = *tmp;
+12.     }
+13. }            
+</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question4-1">
+                                <div class="layui-form-item">
+                                    <div class="problem-content">
+                                        Please type in the line numbers of the potential bugs. Just the number is okay. (Each box one number)<br>
+                                        If there is a variable has errors in multiple places, type in the line number the error occurs for the first time.<br>
+                                        The line number should NOT contain zero(s) ahead. e.g. You should put "1" instead of "01" if line 1 has a bug.
+                                    </div>
+                                    <div class="question q1 q-text-no-repetition">
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2 q-text-no-repetition">
+                                        <input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+                                        <p><b>Answer</b></p>
+                                        <p>Error 1: The pointer variable tmp is used without initialization. It should be changed to a char variable. (Note: Some compilers may produce working code. But it is still an error.)
+                                            <br>Error 2: When n is > 0, assigning pointer variable q to (s+n) will make it point to the null character, rather than the last visible character in the string. Thus, (s+n) should be replaced by (s+n-1).
+                                            <br>An example of a correct function is:
+<pre><code>
+// This function reverses the characters in a string
+void reverse(char *s)
+{
+    int n;
+    char tmp;
+    char *p, *q;
+    n = strlen(s);
+    q = (n > 0) ? (s+n-1) : s;
+    for (p=s; p < q; ++p, --q) { 
+        tmp = *p;
+        *p = *q;
+        *q = tmp;
+    }
+}
+</code></pre>
+                                        </p>
+                                    </blockquote>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-6" page-type="book">
+                        <hr>
+                        <div class="reading-content" style="margin: 1em;">
+                            <h3 style="margin-bottom: 2em;"><b><u>Problem 5: Inheritance and polymorphism (C++) </u></b></h3>
+                        </div>
+
+                        <div class="reading-content">
+                            <p>Imagine the following base class:</p>
+<pre><code>
+class Shape {
+public:
+    Shape();
+    virtual ~Shape();
+    
+    virtual float Area() = 0;
+};
+
+Shape::Shape(){}
+Shape::~Shape(){}            
+</code></pre>
+                            <p>a)	Write down the declaration of a child class Square that inherits from the above abstract parent class Shape. The child class takes exactly one float parameter in the constructor, which denotes the edge length of the square. You may assume that everything is in one file, so you do not have to worry about header inclusion etc.</p>
+                            <p>b)	Write down the implementation of all procedures in the child class (including constructors and destructors).</p>
+                        </div>
+                    </div>
+
+                    <div class="layui-hide" id="page-7" page-type="book">
+                        <hr>
+                        <div class="reading-content">
+                            <h2 style="font-family: Quicksand;">Additional Resources</h2><br>
+                            <p>The answer of the whole exam can be fond <a href="https://docs.zoho.com.cn/file/r1fx8b706129a400140688f9184a46a43b2a3">here</a>.</p>
+                            <p>The question sheet can be fond <a href="https://docs.zoho.com.cn/file/r1fx8a10358af263d4b9bac88b18f33de3b36">here</a>.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "CS100",
+        "name": "Introduction to Programming",
+        "semester": "Fall 2018",
+        "category": "Exam 考试",
+        "title": "Mid-term Exam"
+    };
+
+    var answers = {
+        'Question1': [1,{
+            'q1': [1,{
+                'ABC': 1,
+                'AB' : 0.5,
+                'AC' : 0.5,
+                'BC' : 0.5,
+                'A'  : 0.5,
+                'B'  : 0.5,
+                'C'  : 0.5
+            }]
+        }],
+        'Question2': [1,{
+            'q1': [1,{
+                'ABCD': 1,
+                'ABC' : 0.5,
+                'ABD' : 0.5,
+                'ACD' : 0.5,
+                'BCD' : 0.5,
+                'AB' : 0.5,
+                'AC' : 0.5,
+                'AD' : 0.5,
+                'BC' : 0.5,
+                'BD' : 0.5,
+                'CD' : 0.5,
+                'A'  : 0.5,
+                'B'  : 0.5,
+                'C'  : 0.5,
+                'D'  : 0.5
+            }]
+        }],
+        'Question3': [1,{
+            'q1': [1,{
+                'AB': 1,
+                'A' : 0.5,
+                'B' : 0.5
+            }]
+        }],
+        'Question4': [1,{
+            'q1': [1,{
+                'CD': 0.5,
+                'C' : 0.5,
+                'D' : 0.5
+            }]
+        }],
+        'Question2-1': [1,{
+            'q1': [1,{
+                '11' : 1
+            }]
+        }],
+        'Question2-2': [1,{
+            'q1': [0.5,{
+                'value' : 0.5,
+                'reference' : 0.5
+            }],
+            'q2': [0.5,{
+                'value' : 0.5,
+                'reference' : 0.5
+            }]
+        }],
+        'Question2-3': [1,{
+            'q1': [0.5,{
+                'composition' : 0.5,
+                'aggregation' : 0.5
+            }],
+            'q2': [0.5,{
+                'composition' : 0.5,
+                'aggregation' : 0.5
+            }]
+        }],
+        'Question3-1': [4,{
+            'q1': [4,{
+                'a = 2, b = 2\na = 4, b = 2\na = 2, b = 2\na = 6, b = 4\nResult = 10\n' : 4
+            }]
+        }],
+        'Question4-1': [4,{
+            'q1': [2,{
+                '5': 2,
+                '7': 2
+            }],
+            'q2': [2,{
+                '5': 2,
+                '7': 2
+            }]
+        }]
+    };
+
+    document.title = 'iTechX | ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

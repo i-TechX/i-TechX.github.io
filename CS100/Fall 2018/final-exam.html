@@ -1,0 +1,1187 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Final Exam</h1>
+
+                    <div class="layui-hide" id="page-1" page-type="book">
+                        <hr>
+                        <div class="reading-content" style="margin: 0 10em;">
+                            <h1>CS100 Final Exam Cover Sheet</h1>
+                            <h3 style="text-align: center;">Instructors: Laurent Kneip, Jie Zheng, Fu Song</h3>
+                            <h3 style="text-align: center; margin-bottom: 2em;">January 16, 2019</h3 style="text-align: center;">
+                            <p style="text-align: left;"><b>INSTRUCTIONS:</b></p>
+                            <ul>
+                                <li style="list-style-type: disc; margin: 0.5em;"> You have 110 minutes (09:10-11:00) to complete the exam.</li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> Your exam will not be graded unless you complete the above section and the cover sheet, and turn in both this exam book and the cover sheet.</li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> This exam is <b><u>closed-book and closed-notes</u></b>, and <b>no electronic devices are permitted.</b></li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> Mark your answers on the exam itself. We will not grade answers written on scratch paper.</li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> Your performance is supposed to reflect your own level of understanding of the material. You are not allowed to talk with your neighbor or look at his exam sheet. Failure to obey this rule will simply result in a zero score. </li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> If you finish early, you can hand in the exam and leave early. However, this is only possible until at latest 15 minutes before the ending time of the exam. If less than 15 minutes are left, please stay seated and wait for the end.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="layui-hide" id="page-2" page-type="question">
+                        <hr>
+                        <div class="reading-content" style="margin: 1em;">
+                            <h3 style="margin-bottom: 2em;"><b><u>Problem 1: Multiple-choice questions (12 points)</u></b></h3>
+                            
+                            <p style="text-align: left;">Please answer the following questions by ticking the choices that apply. Each question has 1 point, and is clearly marked as a C, C++, or Python question. Note that multiple choices are possible for each question. Mark all possible choices that apply by ticking the corresponding box.</p>
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 1 (C)</div>
+                            <div class="problem-grade" id="Question1-1">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Assuming a 3-dimensional array is declared as <code>int ar[5][4][3]</code>, what is the correct syntax to send the 3-dimensional array as a parameter to a function <code>F( )</code>?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1-1">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="<code>F(ar);</code>">
+                                        <input type="checkbox" name="q1-B" title="<code>F(&ar);</code>">
+                                        <input type="checkbox" name="q1-C" title="<code>F(*ar);</code>">
+                                        <input type="checkbox" name="q1-D" title="<code>F(**ar);</code>">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 2 (C)</div>
+                            <div class="problem-grade" id="Question1-2">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                What will be the output of the following C code, supposing that the corresponding executable file is run without any command line argument.
+<pre><code>
+#include &lt;stdio.h>
+int main(int argc, char *argv[])
+{
+    while (argc--) { 
+        printf(“%s\n”, argv[argc]);
+    }
+    return 0;
+}           
+</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1-2">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="A compile time error.">
+                                        <input type="checkbox" name="q1-B" title="The name of the executable file.">
+                                        <input type="checkbox" name="q1-C" title="A segmentation fault.">
+                                        <input type="checkbox" name="q1-D" title="None of the above.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 3 (C)</div>
+                            <div class="problem-grade" id="Question1-3">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Consider the following declaration statement in C:
+                                <pre><code>int *ptr, p;</code></pre>
+                                Choose all of the following statements that are <b>not</b> correct!
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1-3">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="<code>ptr</code> is a pointer to integer, but <code>p</code> is not. ">
+                                        <input type="checkbox" name="q1-B" title="Both <code>ptr</code> and <code>p</code> are pointers to integer.">
+                                        <input type="checkbox" name="q1-C" title="<code>ptr</code> is a pointer to integer, but <code>p</code> may or may not be.">
+                                        <input type="checkbox" name="q1-D" title="Neither <code>ptr</code> nor <code>p</code> is a pointer to integer.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 4 (C)</div>
+                            <div class="problem-grade" id="Question1-4">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                What will be the output of the following C code?
+<pre><code>
+#include &lt;stdio.h>
+int main(void)
+{
+    int a = 5;
+    int *p = &a;
+    int **q = &p;
+    (**q)++;
+    printf("%d\n", a);
+    return 0;
+}
+</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1-4">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="5">
+                                        <input type="checkbox" name="q1-B" title="The address of <code>p</code>.">
+                                        <input type="checkbox" name="q1-C" title="6">
+                                        <input type="checkbox" name="q1-D" title="Compile time error.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 5 (C++)</div>
+                            <div class="problem-grade" id="Question1-5">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Polymorphism is a programming concept that may …
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1-5">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="… permit the same name to be used in different ways.">
+                                        <input type="checkbox" name="q1-B" title="… be realized by overloading functions.">
+                                        <input type="checkbox" name="q1-C" title="… be realized by virtual functions that are overridden in a child class.">
+                                        <input type="checkbox" name="q1-D" title="… be realized through the application of templates.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 6 (C++)</div>
+                            <div class="problem-grade" id="Question1-6">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                The default constructor …
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1-6">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="… will not be provided by the compiler if no other constructor is defined.">
+                                        <input type="checkbox" name="q1-B" title="… takes no arguments.">
+                                        <input type="checkbox" name="q1-C" title="… is necessary if the class is to be used as a template parameter to a <code>std::vector</code> class.">
+                                        <input type="checkbox" name="q1-D" title="… can’t perform custom initializations of member variables inside its implementation body.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 7 (C++)</div>
+                            <div class="problem-grade" id="Question1-7">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                The data inside a <code>std::map</code> is …
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1-7">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="… stored by key-value pairs.">
+                                        <input type="checkbox" name="q1-B" title="… stored using <code>std::pair</code>.">
+                                        <input type="checkbox" name="q1-C" title="… having constant access time.">
+                                        <input type="checkbox" name="q1-D" title="… having O(log(n)) access time.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 8 (C++)</div>
+                            <div class="problem-grade" id="Question1-8">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Concurrency: Mark all statements that apply
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1-8">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="Memory can be shared between different processes. ">
+                                        <input type="checkbox" name="q1-B" title="Memory can be shared between different threads.">
+                                        <input type="checkbox" name="q1-C" title="Non-atomic access to memory shared between different threads must be concurrent.">
+                                        <input type="checkbox" name="q1-D" title="Access to memory shared between different threads can be made mutually exclusive by applying std::mutex.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 9 (Python)</div>
+                            <div class="problem-grade" id="Question1-9">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                What will be the output of the following Python code?
+<pre><code>
+x = 2
+def foo():
+    x = 3
+    def bar():
+        x = 4
+        return lambda z: x+z 
+    return lambda z:bar()(x*z)
+print(foo()(x))    
+</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1-9">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="10">
+                                        <input type="checkbox" name="q1-B" title="11">
+                                        <input type="checkbox" name="q1-C" title="14">
+                                        <input type="checkbox" name="q1-D" title="24">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 10 (Python)</div>
+                            <div class="problem-grade" id="Question1-10">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                What will be the Method Resolution Order (MRO) of the class C4 in the following Python code?
+<pre><code>
+class C1:
+    def foo(self):
+        print(1)
+
+class C2(C1):
+    None
+class C3():
+    def foo(self):
+        print(3)
+
+class C4(C2,C3):
+    None
+</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1-10">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="C4 C3 C2 C1">
+                                        <input type="checkbox" name="q1-B" title="C4 C2 C3 C1">
+                                        <input type="checkbox" name="q1-C" title="C4 C2 C1 C3">
+                                        <input type="checkbox" name="q1-D" title="C4 C3 C1 C2">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 11 (Python)</div>
+                            <div class="problem-grade" id="Question1-11">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                What will be the Method Resolution Order (MRO) of the class C4 in the following Python code?
+<pre><code>
+def foo(a,b):
+    s = 0
+    try:
+        s = s + bar(a,b)
+        s = s + 10
+    except ZeroDivisionError: 
+        s = s + 20
+    else: 
+        s = s + 30 
+    finally: 
+        s = s + 40
+    return s
+
+def bar(a,b): 
+    s = 0 
+    try:
+        a//b
+        s = s + 1
+    except ZeroDivisionError: 
+        s = s + 2
+    else: 
+        s = s + 3 
+    finally: 
+        s = s + 4 
+    return s
+
+print(foo(1,0)+foo(1,1))
+</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1-11">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="154">
+                                        <input type="checkbox" name="q1-B" title="156">
+                                        <input type="checkbox" name="q1-C" title="158">
+                                        <input type="checkbox" name="q1-D" title="174">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 12 (Python)</div>
+                            <div class="problem-grade" id="Question1-12">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Choose all the function definitions that are correct in Python?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1-12">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="<code>def foo(x, y, z): None</code>">
+                                        <input type="checkbox" name="q1-B" title="<code>def foo(x:int, y, z:float): None</code>">
+                                        <input type="checkbox" name="q1-C" title="<code>def foo(x, y=0, *z): None</code>">
+                                        <input type="checkbox" name="q1-D" title="<code>def foo(x, **y, *z): None</code>">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-3" page-type="question">
+                        <hr>
+                        <div class="reading-content" style="margin: 1em;">
+                            <h3 style="margin-bottom: 2em;"><b><u>Problem 2: Find and correct problems and bugs (14 points)</u></b></h3>
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 1 (C, 4 points)</div>
+                            <div class="problem-grade" id="Question2-1">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Find 4 lines with errors in the following C code. State the line numbers to indicate errors. In addition, for each line number, briefly explain what the error is, and propose a correct replacement statement. Note: There could be more than 4 lines with errors, but you only need to find and correct 4 of them.
+                                <br> (Due to the limitation of the website, you just need to submit line number of the potential bug.)
+<pre><code>
+/* The following C program processes an array of student records. For each record, it stores the student’s id and name. In the program, it reads each student’s information, and then prints the student information. The functions input() and output() are used for the reading and printing of student information. */
+
+1	#include &lt;stdio.h>
+2	#define SIZE 10
+3	struct Student {
+4	    int id;
+5	    char name[10];
+6	};
+7	void input(struct Student s);
+8	void output(struct Student s);
+9	int main() {
+10	    struct Student s[SIZE];
+11	    int i;
+12	    for (i=0; i < SIZE; i++)
+13	    input(s[i]);
+14	    for (i=0; i < SIZE; i++)
+15	        output(s[i]);
+16	    printf(“\n”);
+17	    return 0;
+18  }
+19	void input(struct Student s) {
+20	    printf(“Student ID: ”);
+21	    scanf(“%d”, &s.id);
+22	    printf(“Student Name: ”);
+23	    scanf(“%s”, s.name);
+24  }
+25	void output(struct Student s) {
+26	    printf(“%s(%d) ”, s.name, s.id); 
+27  }    
+</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question2-1">
+                                <div class="layui-form-item">
+                                    <div class="problem-content">
+                                        Please type in the line numbers of the potential bugs. Just the number is okay. (Each box one number)
+                                    </div>
+                                    <div class="question q1 q-text-no-repetition">
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2 q-text-no-repetition">
+                                        <input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q3 q-text-no-repetition">
+                                        <input type="text" name="q3" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q4 q-text-no-repetition">
+                                        <input type="text" name="q4" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+                                        <p><b>Answer</b></p>
+                                        <p>Error 1:</p>
+                                            <p>Line 7. The argument s should be a pointer to a structure of “Student”, in order to retrieve the data input by user through call by reference. So the corrected statement is:
+                                            </p><p><code>void input(struct Student *s);</code>
+                                            
+                                            </p><p>Error 2:
+                                            </p><p>Line 19. Similar to Error 1, the argument should be a pointer to a structure variable. Thus, the corrected statement should be:
+                                            </p><p><code>void input(struct Student *s) {</code>
+                                            
+                                            </p><p>Error 3:
+                                            </p><p>Line  21.  Since  s  is  a  pointer  to  structure,  s.id  should  be  changed  to  s->id  to  access  the  member  of  the structure. Hence, the corrected statement is:
+                                            </p><p><code>scanf(“%d”, &(s->id));</code>
+                                            
+                                            </p><p>Error 4:
+                                            </p><p>Line 23. Similar to Error 3, since s is a pointer to structure, “s.name” should be replaced by “s->name”. Thus, the corrected statement should be:
+                                            </p><p><code>scanf(“%s”, s->name);</code>
+                                            
+                                            </p><p>Error 5:
+                                            </p><p>Line 13. The input() function accepts a pointer to structure as its argument, hence the parameter should be the address to the ith element of the array s. Hence, the corrected statement should be:
+                                            </p><p><code>input(&s[i]);</code>
+                                            </p>
+                                    </blockquote>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 2 (C++, 4 points)</div>
+                            <div class="problem-grade" id="Question2-2">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Find two problems in the following C++ code. Mention the relevant line, provide an explanation to the problem, and propose a solution.
+                                <br> (Due to the limitation of the website, you just need to submit line number of the potential bug.)
+<pre><code>
+1	class IntegerArray {
+2	public:
+3	    int *m_data;
+4	    int m_size;
+5
+6	    IntegerArray(int size) {
+7	        m_data = new int[size];
+8	        m_size = size;
+9	    }
+10
+11	    ~IntegerArray() {} 
+12  };
+13
+14	int main() {
+15	    IntegerArray a(2);
+16	    a.m_data[0] = 4; a.m_data[1] = 2;
+17	    if (true) {
+18	        IntegerArray b = a;
+19	        b.m_data[0] = 6;
+20	    }
+21	    printf("%d\n", a.m_data[0]);
+22 }        
+</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question2-2">
+                                <div class="layui-form-item">
+                                    <div class="problem-content">
+                                        Please type in the line numbers of the potential bugs. Just the number is okay. (Each box one number)
+                                    </div>
+                                    <div class="question q1 q-text-no-repetition">
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2 q-text-no-repetition">
+                                        <input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+                                        <p><b>Answer</b></p>
+                                        <p>Error 1:
+                                        </p><p>Line 18: The copy constructor is invoked, which is however not implemented. The default copy constructor does not make a deep copy, which is why Line 19 will unintentionally change the original. 
+                                        </p><p>Solution: add the copy constructor:
+                                        </p>    
+                                            <pre><code>
+IntegerArray( IntegerArray & op) { 
+    m_data = new int[op.m_size]; 
+    m_size = op.m_size;
+    for( int i = 0; i < m_size; i++ ) 
+        m_data[i] = op.m_data[i];
+}
+                                            </code></pre>
+                                            
+                                            <p>Error 2:
+                                            </p><p>Line 11: The destructor is empty and fails to delete the allocated array. The addition of the copy constructor is also motivated by this error, as deleting the array in the destructor would otherwise delete the original upon destruction of b, and thus produce a segmentation fault in Line 21.
+                                            
+                                            </p><p>Solution: free the allocated space in the destructor</p>
+                                            <pre><code>
+~IntegerArray() { 
+    delete[] m_data;
+}
+                                            </code></pre>
+                                    </blockquote>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 3 (Python, 6 points)</div>
+                            <div class="problem-grade" id="Question2-3">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Find 6 errors in the following Python code. For each error, indicate the line number, briefly explain what the error is, and correct the statements. Note: There might be more than 6 errors, but you only need to find and correct 6 of them. The program is a grade evaluation program. It first reads and stores each student’s name and score of an exam, then computes the average score of all scores, and finally stores the average score in each student’s information.
+                                <br> (Due to the limitation of the website, you just need to submit line number of the potential bug.)
+<pre><code>
+1  def GetStudentsInfor(L = []):
+2      '''Get all students' names and scores'''
+3      for i in range(1,100):
+4      L.append(GetOneStudentInfor())
+
+5  def GetOneStudentInfor():
+6      '''Get one student name and score'''
+7      name = input("Please input name:")
+8      score = input("Please input score:")
+9      return (name,score)
+
+10 def ComputeAverageScore(L):
+11     '''Compute the arithmetic average of all students' scores'''
+12     totalScore = sum( s[-1] for s in L)
+13     averageScore = totalScore/100
+14     return averageScore
+
+15 def AddAverageScore(L,averageScore):
+16     '''Add the average Score into each student's information'''
+17     for i in L:
+18         i.append(averageScore)
+
+19 def GetInfor(L,studentName):
+20     '''Get information of a student whose name is studentName'''
+21     for i in L:
+22         if i[0] is studentName:
+23             return i
+24 L = List()
+25 GetStudentsInfor(L)
+26 aver = ComputeAverageScore(L)
+27 AddAverageScore(L,aver)
+28 print(GetInfor(L,"foo"))
+</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question2-3">
+                                <div class="layui-form-item">
+                                    <div class="problem-content">
+                                        Please type in the line numbers of the potential bugs. Just the number is okay. (Each box one number)
+                                    </div>
+                                    <div class="question q1 q-text-no-repetition">
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2 q-text-no-repetition">
+                                        <input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q3 q-text-no-repetition">
+                                        <input type="text" name="q3" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q4 q-text-no-repetition">
+                                        <input type="text" name="q4" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q5 q-text-no-repetition">
+                                        <input type="text" name="q5" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q6 q-text-no-repetition">
+                                        <input type="text" name="q6" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+                                        <p><b>Answer</b></p>
+                                        <p>Error 1:	The number of students is inconsistent at Line 3 and Line 13. Replace either “range(1,100)” at Line 3 by one of “range(100)”, “range(0,100)”, “range(1,101)”, etc, or replace “100” at Line 13 by “99”.
+
+                                        </p><p>Error 2: unexpected indent at Line 7. Remove some space at the begin of Line 7 such that Lines 6-7 are have same white space and the number of white spaces is greater than zero.
+                                            
+                                        </p><p>Error 3: Line 8 or Line 9 or Line 12. The type of score is str which should be int. Rewrite “score = input("Please input score:")” at Line 8 by “score = int(input("Please input score:") )”, or “score” at Line 9 by “int(score)” , or “s[-1]” at Line 12 by “int(s[-1])”.
+                                            
+                                        </p><p>Error 4. At Line 9 “(name,score)” cannot be a tuple, it should be a list “[name,score]”.
+                                            
+                                        </p><p>Error 5. “is” at Line 22 should be “==”. “is” compares whether two objects are same, rather than whether two strings are same.
+                                            
+                                        </p><p>Error 6. Line 24, “L = List()” should be “L = list()” or “L=[]”. Python is case sensitive.
+                                        </p>                                            
+                                    </blockquote>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-4" page-type="book">
+                        <hr>
+                        <div class="reading-content" style="margin: 1em;">
+                            <h3 style="margin-bottom: 2em;"><b><u>Problem 3: C problem (C, 4 points) </u></b></h3>
+                        </div>
+
+                        <div class="reading-content">
+                            <p>Write a <b>recursive</b> C function <code>countZeros()</code> that counts the number of zeros in a specified positive integer <code>num</code>. Assume that the left-most (also known as the most significant) digit is non-zero. The function passes the result to the caller through the parameter <code>count</code>, which is a pointer to an integer that is initialized to
+                                <code>0</code>.	For example, <code>countZeros(150060, count)</code> returns 3 and <ocde>countZeros(15867, count)</ocde>
+                                returns 0. The function prototype is given as follows:
+                                </p>
+<pre><code>
+void countZeros(int num, int *count);            
+</code></pre>
+                            <p>Note: You do not need to write the function <code>main()</code> which would test the function <code>countZeros().</code></p>
+                        </div>
+                    </div>
+
+                    <div class="layui-hide" id="page-5" page-type="question">
+                        <hr>
+                        <div class="reading-content" style="margin: 1em;">
+                            <h3 style="margin-bottom: 2em;"><b><u>Problem 4: C++ problem set (C++, 10 points)</u></b></h3>
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 1 (C++, 4 points)</div>
+                            <div class="problem-grade" id="Question4-1">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Predict the output of the following code. What code changes are needed if we additionally want to print full-time employees first. Note: You do not need to copy the entire code, you only need to write the new ordering function!
+<pre><code>
+#include &lt;iostream>
+#include &lt;algorithm>
+
+struct Employee {
+public:
+    std::string name, id; 
+    bool isFulltime;
+};
+
+bool comparator( Employee * op1, Employee * op2 ) { 
+    if( op1->id.size() != op2->id.size() ) {
+        if( op1->id.size() < op2->id.size() ) 
+            return true;
+        return false;
+    }
+    return op1->id < op2->id;
+}
+
+
+int main() {
+
+    Employee e1, e2, e3, e4;	
+    e1.name = "Cindy";      e1.id = "20180915";     e1.isFulltime = false;
+    e2.name = "Simon";      e2.id = "20180309";     e2.isFulltime = false;
+    e3.name = "Jennifer";   e3.id = "370";          e3.isFulltime = true;
+    e4.name = "Paul";       e4.id = "20181002";     e4.isFulltime = true;
+
+
+    std::map&lt;std::string,Employee*> staff;
+    staff["Cindy"]      = &e1;  staff["Simon"]  = &e2;
+    staff["Jennifer"]   = &e3;  staff["Paul"]   = &e4;
+
+    std::vector&lt;Employee*> reorderedStaff( staff.size() ); int i = 0; 
+    for(	std::map&lt;std::string,Employee*>::iterator it = staff.begin();
+            it != staff.end(); it++ ) 
+        reorderedStaff[i++] = it->second;
+
+    std::sort( reorderedStaff.begin(), reorderedStaff.end(), comparator ); 
+    for(	std::vector&lt;Employee*>::iterator it = reorderedStaff.begin();
+            it != reorderedStaff.end(); it++ )
+        std::cout << (*it)->id << ": " << (*it)->name << std::endl;
+    
+    return 0;
+}        
+</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question4-1">
+                                <div class="layui-form-item">
+                                    <p>You only need to type in the output of the code. (which worth 2 points)</p>
+                                    <p>Warning: Additional space or enter will lead to failure of judgement.</p>
+                                    <div class="question q1 q-text-no-eval">
+                                        <textarea placeholder="Please type in the output of the code." name="q1" class="layui-textarea" style="height: 10em;"></textarea>
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="reading-content">
+                            <hr>
+                            <div class="problem-title">Question 2: (C++, 6 points)</div>
+                            <p>Propose a template class that generalizes the below two classes. Add a function that allows us to write the sum of two vectors using the expression</p>
+                            <pre><code>DoubleVector d3 = d1 + d2;</code></pre>
+                            <p>and not</p>
+                            <pre><code>DoubleVector d3 = d1.sum(d2);</code></pre>
+                            <table class="layui-table">
+                                <tbody>
+                                    <tr>
+                                        <td>
+<pre><code>
+class DoubleVector {
+public:
+    DoubleVector( int size ) {
+        m_size = size;
+        m_data = new double[size];
+    }
+
+    virtual ~DoubleVector() {
+        delete[] m_data;
+    }
+
+    double & operator[] ( int index ) {
+        return m_data[index];
+    }
+
+    DoubleVector sum( DoubleVector & op ) {
+        DoubleVector result( this->m_size );
+        for( int i = 0; i < this->m_size; i++ )
+            result[i] = (*this)[i] + op[i];
+
+        return result;
+    }
+
+private:
+    double * m_data;
+    int m_size;
+};
+</code></pre>
+                                        </td>
+                                        <td>
+<pre><code>
+class IntVector {
+public:
+    IntVector( int size ) {
+        m_size = size;
+        m_data = new int[size];
+    }
+
+    virtual ~IntVector() {
+        delete[] m_data;
+    }
+
+    int & operator[] ( int index ) {
+        return m_data[index];
+    }
+
+    IntVector sum( IntVector & op ) {
+        IntVector result( this->m_size );
+        for( int i = 0; i < this->m_size; i++ )
+            result[i] = (*this)[i] + op[i];
+
+        return result;
+    }
+    
+private:
+    int * m_data;
+    int m_size;
+};
+</code></pre>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br><br>
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-6" page-type="book">
+                        <hr>
+                        <div class="reading-content" style="margin: 1em;">
+                            <h3 style="margin-bottom: 2em;"><b><u>Problem 5: Python problem (Python, 10 points)</u></b></h3>
+                        </div>
+
+                        <div class="reading-content">
+                            <p>Read the following Rational Class and gcd function.</p>
+<pre><code>
+def gcd(m, n):
+    if n == 0: 
+        m, n = n, m 
+    while m != 0:
+        m, n = n%m, m 
+    return n
+
+class Rational:
+    def __init__(self, num, den = 1) : 
+        if den == 0 : 
+            raise ValueError 
+        sign = 1
+        if (num < 0) :
+            num, sign = -num, -sign 
+        if (den < 0) :
+            den, sign = -den, -sign 
+        g = gcd(num, den)
+        self.num = sign * (num//g) 
+        self.den = den//g
+    def __str__(self) :
+        return str(self.num) + "/" + str(self.den)
+
+r = Rational(2,4) 
+print(r)	# outputs 1/2    
+</code></pre>
+                            <p>1)	Write a function for the class Rational such that the following code outputs 18/65 (4 points)</p>
+<pre><code>
+x = Rational(2,26)
+y = Rational(5,25)
+print(x+y)
+</code></pre>
+                            <p>2)	Write a function for the class Rational such that the following code outputs 1/5 (6 points)</p style="margin-top: 0.5em; margin-bottom: 0.5em;">
+<pre><code>
+x = Rational(2,26)
+y = Rational(5,25)
+print(x*y*13)
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="layui-hide" id="page-7" page-type="book">
+                        <hr>
+                        <div class="reading-content">
+                            <h2 style="font-family: Quicksand;">Additional Resources</h2><br>
+                            <p>The answer of the whole exam can be fond <a href="https://docs.zoho.com.cn/file/r1fx88540e60f566f4fd99e464542b6899986">here</a>.</p>
+                            <p>The question sheet can be fond <a href="https://docs.zoho.com.cn/file/r1fx89b1720f09f504fdd9e6915d52e2fd0c0">here</a>.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "CS100",
+        "name": "Introduction to Programming",
+        "semester": "Fall 2018",
+        "category": "Exam 考试",
+        "title": "Final Exam"
+    };
+
+    var answers = {
+        'Question1-1': [1,{
+            'q1': [1,{
+                'A':1
+            }]
+        }],
+        'Question1-2': [1,{
+            'q1': [1,{
+                'B':1
+            }]
+        }],
+        'Question1-3': [1,{
+            'q1': [1,{
+                'BCD': 1,
+                'BC' : 0.5,
+                'BD' : 0.5,
+                'CD' : 0.5,
+                'B' : 0.5,
+                'C' : 0.5,
+                'D' : 0.5
+            }]
+        }],
+        'Question1-4': [1,{
+            'q1': [1,{
+                'C':1
+            }]
+        }],
+        'Question1-5': [1,{
+            'q1': [1,{
+                'ABCD': 1,
+                'ABC' : 0.5,
+                'ABD' : 0.5,
+                'ACD' : 0.5,
+                'BCD' : 0.5,
+                'AB' : 0.5,
+                'AC' : 0.5,
+                'AD' : 0.5,
+                'BC' : 0.5,
+                'BD' : 0.5,
+                'CD' : 0.5,
+                'A'  : 0.5,
+                'B'  : 0.5,
+                'C'  : 0.5,
+                'D'  : 0.5
+            }]
+        }],
+        'Question1-6': [1,{
+            'q1': [1,{
+                'BC':1,
+                'B':0.5,
+                'C':0.5
+            }]
+        }],
+        'Question1-7': [1,{
+            'q1': [1,{
+                'ABD':1,
+                'AB':0.5,
+                'AD':0.5,
+                'BD':0.5,
+                'A':0.5,
+                'B':0.5,
+                'D':0.5
+            }]
+        }],
+        'Question1-8': [1,{
+            'q1': [1,{
+                'BD':1,
+                'B':0.5,
+                'D':0.5
+            }]
+        }],
+        'Question1-9': [1,{
+            'q1': [1,{
+                'A':1
+            }]
+        }],
+        'Question1-10': [1,{
+            'q1': [1,{
+                'C':1
+            }]
+        }],
+        'Question1-11': [1,{
+            'q1': [1,{
+                'D':1
+            }]
+        }],
+        'Question1-12': [1,{
+            'q1': [1,{
+                'ABC':1,
+                'AB':0.5,
+                'AC':0.5,
+                'BC':0.5,
+                'A':0.5,
+                'B':0.5,
+                'C':0.5
+            }]
+        }],
+        'Question2-1': [4,{
+            'q1': [1,{
+                '7' : 1,
+                '19': 1,
+                '21': 1,
+                '23': 1,
+                '13': 1
+            }],
+            'q2': [1,{
+                '7' : 1,
+                '19': 1,
+                '21': 1,
+                '23': 1,
+                '13': 1
+            }],
+            'q3': [1,{
+                '7' : 1,
+                '19': 1,
+                '21': 1,
+                '23': 1,
+                '13': 1
+            }],
+            'q4': [1,{
+                '7' : 1,
+                '19': 1,
+                '21': 1,
+                '23': 1,
+                '13': 1
+            }]
+        }],
+        'Question2-2': [4,{
+            'q1': [2,{
+                '18' : 2,
+                '11' : 2
+            }],
+            'q2': [2,{
+                '18' : 2,
+                '11' : 2
+            }]
+        }],
+        'Question2-3': [6,{
+            'q1': [1,{
+                '3' : 1,
+                '13' : 1,
+                '7' : 1,
+                '8' : 1,
+                '9' : 1,
+                '12' : 1,
+                '22' : 1,
+                '24' : 1
+            }],
+            'q2': [1,{
+                '3' : 1,
+                '13' : 1,
+                '7' : 1,
+                '8' : 1,
+                '9' : 1,
+                '12' : 1,
+                '22' : 1,
+                '24' : 1
+            }],
+            'q3': [1,{
+                '3' : 1,
+                '13' : 1,
+                '7' : 1,
+                '8' : 1,
+                '9' : 1,
+                '12' : 1,
+                '22' : 1,
+                '24' : 1
+            }],
+            'q4': [1,{
+                '3' : 1,
+                '13' : 1,
+                '7' : 1,
+                '8' : 1,
+                '9' : 1,
+                '12' : 1,
+                '22' : 1,
+                '24' : 1
+            }],
+            'q5': [1,{
+                '3' : 1,
+                '13' : 1,
+                '7' : 1,
+                '8' : 1,
+                '9' : 1,
+                '12' : 1,
+                '22' : 1,
+                '24' : 1
+            }],
+            'q6': [1,{
+                '3' : 1,
+                '13' : 1,
+                '7' : 1,
+                '8' : 1,
+                '9' : 1,
+                '12' : 1,
+                '22' : 1,
+                '24' : 1
+            }]
+        }],
+        'Question4-1': [2,{
+            'q1': [2,{
+                '370: Jennifer\n20180309: Simon\n20180915: Cindy\n20181002: Paul\n' : 2
+            }]
+        }]
+    };
+
+    document.title = 'iTechX | ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

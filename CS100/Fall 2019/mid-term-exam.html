@@ -1,0 +1,999 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Mid-term Exam</h1>
+
+                    <div class="layui-hide" id="page-1" page-type="book">
+                        <hr>
+                        <div class="reading-content" style="margin: 0 10em;">
+                            <h1>CS100 Mid-Term Exam Cover Sheet</h1>
+                            <h3 style="text-align: center;">Instructors: Laurent Kneip, Xiaopei Liu</h3>
+                            <h3 style="text-align: center; margin-bottom: 2em;">November 8, 2019</h3 style="text-align: center;">
+                            <p style="text-align: left;"><b>INSTRUCTIONS:</b></p>
+                            <ul>
+                                <li style="list-style-type: disc; margin: 0.5em;"> You have 95 minutes (~10:20am-11:55am) to complete the exam.</li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> Your exam will not be graded unless you complete the above section and the cover sheet, and turn
+                                in both this exam book and the cover sheet.</li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> This exam is closed-book and closed-notes, and no electronic devices are permitted.</li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> Mark your answers on the exam itself. We will not grade answers written on scratch paper.</li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> Your performance is supposed to reflect your own level of understanding of the material. You are
+                                not allowed to talk with your neighbor or look at his exam sheet. Failure to obey this rule will simply result in a zero score. </li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> If you finish early, you can hand in the exam and leave early. However, this is only possible until 
+                                at least 15 minutes before the ending time of the exam. If less than 15 minutes are left, please stay seated and wait for the end.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="layui-hide" id="page-2" page-type="question">
+                        <hr>
+                        <div class="reading-content" style="margin: 1em;">
+                            <h3 style="margin-bottom: 2em;"><b><u>Problem 1: Multiple-­choice questions (24 points)</u></b></h3>
+                            
+                            <p style="text-align: left;">Please answer the following questions by ticking the choices that apply.
+                                 Each question has 2 points, and is clearly marked as a C or C++ question. Note that multiple
+                                  choices are possible for each question. Mark all possible choices that apply by ticking the
+                                   corresponding box.</p>
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 1 (C)</div>
+                            <div class="problem-grade" id="Question1">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Given two integers <code>a</code> and <code>b</code>, and the expression
+                                <code>(((a++) * ++b) + 5)-(a&&b)</code>, which of the following statements is true?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="if <code>a</code>=1 and <code>b</code>=2, the expression evaluates to 6">
+                                        <input type="checkbox" name="q1-B" title="if <code>a</code>=1 and <code>b</code>=2, the expression evaluates to 7">
+                                        <input type="checkbox" name="q1-C" title="if <code>a</code>=2 and <code>b</code>=3, the expression evaluates to 12">
+                                        <input type="checkbox" name="q1-D" title="if <code>a</code>=2 and <code>b</code>=3, the expression evaluates to 13">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 2 (C)</div>
+                            <div class="problem-grade" id="Question2">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                You are given a floating point variable <code>x</code> which is used in the statement “<code>printf("%+10.5f", x);</code>”.
+                                Mark all answers that apply! (we use “<code>_</code>” to indicate a spacing)
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question2">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="if <code>x</code>=4.67, then the printed result is: <code>___4.67</code>">
+                                        <input type="checkbox" name="q1-B" title="if <code>x</code>=4.67, then the printed result is: <code>__+4.67000</code>">
+                                        <input type="checkbox" name="q1-C" title="if <code>x</code>=-4.67, then the printed result is: <code>_+-4.67000</code>">
+                                        <input type="checkbox" name="q1-D" title="if <code>x</code>=-4.67, then the printed result is: <code>__-4.67000</code>">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 3 (C)</div>
+                            <div class="problem-grade" id="Question3">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Consider the below recursive function call. Mark all correct answers!
+<pre><code>
+int output(char c){
+    if (c == 'a'){
+        printf("%c", c);
+        return -1;
+    }
+    printf("%c", c);
+    if (output(c-1)) printf("%c", c);
+    return 1;
+}
+int main(){
+    char c;
+    scanf("%c", &c);
+    output(c);
+    return 0;
+}</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question3">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="if <code>c='e'</code>, then the output is: <code>abcdedcba</code>">
+                                        <input type="checkbox" name="q1-B" title="if <code>c='e'</code>, then the output is: <code>edcbabcde</code>">
+                                        <input type="checkbox" name="q1-C" title="if <code>c='h'</code>, then the output is: <code>hgfedcbabcdefgh</code>">
+                                        <input type="checkbox" name="q1-D" title="if <code>c='h'</code>, then the output is: <code>hgfedcbbcdefgh</code>">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 4 (C)</div>
+                            <div class="problem-grade" id="Question4">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Suppose we define a structure for a 2D point:
+<pre><code>
+typedef struct {
+    float x;
+    float y;
+} point;
+</code></pre>
+                                It is used in the following program. Mark all answers that apply!
+<pre><code>
+int main(){
+    int i=0, n=0;
+    scanf("%d", &n);
+    point* p = (point*)malloc(sizeof(point)*n);
+    point* p_temp = p;
+    for (i = 0; i < n; i++){
+        p->x = (float)i;
+        (p++)->y = (float)(i+1);
+    }
+    printf("x=%f, y=%f", (p-2)[0].x, (p-2)[1].y);
+    free(p_temp);
+    return 0;
+}
+</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question4">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="if <code>n</code>=9, the output will be: <code>x=8, y=9</code>">
+                                        <input type="checkbox" name="q1-B" title="if <code>n</code>=9, the output will be: <code>x=7, y=9</code>">
+                                        <input type="checkbox" name="q1-C" title="if <code>n</code>=10, the output will be: <code>x=8, y=10</code>">
+                                        <input type="checkbox" name="q1-D" title="if <code>n</code>=10, the output will be: <code>x=7, y=10</code>">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 5 (C)</div>
+                            <div class="problem-grade" id="Question5">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Consider the following program:
+<pre><code>
+int main() {
+    int i = 0;
+    char str1[] = "This is good!";
+    char str2[] = "Yes!";
+    char str[32];
+    memset(str, 0, sizeof(str));
+    for (i = 0; i < strlen(str1); i++)
+        str[i] = str1[i];
+    i++; //optional statement
+    for (; i < strlen(str1)+strlen(str2); ++i)
+        str[i] = str2[i-strlen(str1)];
+    printf("%s", str);
+    return 0;
+}
+</code></pre>
+                                Note that “<code>i++;</code>” is an optional statement. Which of the following statements is true?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question5">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="if “<code>i++;</code>” is not commented out, the program will output “<code>This is good!Yes!</code>”.">
+                                        <input type="checkbox" name="q1-B" title="if “<code>i++;</code>” is not commented out, the program will output “<code>This is good!</code>”.">
+                                        <input type="checkbox" name="q1-C" title="if “<code>i++;</code>” is commented out, the program will output “<code>This is good!</code>”.">
+                                        <input type="checkbox" name="q1-D" title="if “<code>i++;</code>” is commented out, the program will output “<code>This is good!Yes!</code>”.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 6 (C)</div>
+                            <div class="problem-grade" id="Question6">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Consider the following program:
+<pre><code>
+int main() {
+    char* str = (char*)malloc(sizeof(char) * 32);
+
+    *str = 'y'; str = str+1;
+    *str = 'e'; str += 1;
+    *str = 's'; str += 1;
+    *str = '\0';
+
+    printf("%s", str-3);
+    free(str);
+
+    return 0;
+}
+</code></pre>
+                                Which of the following answers is true?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question6">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="The program will output “<code>yes</code>” and terminate correctly.">
+                                        <input type="checkbox" name="q1-B" title="The program will output “<code>yes</code>” correctly but crash when before exiting.">
+                                        <input type="checkbox" name="q1-C" title="If “<code>*str = '\0';</code>” is not written, the program will produce an unpredictable output.">
+                                        <input type="checkbox" name="q1-D" title='The program will not print any alphanumeric characters if “<code>printf("%s", str-3);</code>” is changed into “<code>printf("%s", str);</code>”'>
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 7 (C)</div>
+                            <div class="problem-grade" id="Question7">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Consider the following program:
+<pre><code>
+union data{
+    int x;
+    struct
+    {
+        char x1, x2, x3, x4;
+    };
+};
+
+int main() {
+
+    data d;
+    d.x3 = 0;
+    d.x4 = 0;
+
+    int x1, x2;
+    scanf("%d", &x1);
+    scanf("%d", &x2);
+    d.x1 = x1; d.x2 = x2;
+    printf("%d", d.x);
+
+    return 0;
+}
+</code></pre>
+                                Which of the following statements is true?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question7">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="If <code>x1</code>=4, <code>x2</code>=3, the printed output is: <code>34</code>">
+                                        <input type="checkbox" name="q1-B" title="If <code>x1</code>=4, <code>x2</code>=3, the printed output is: <code>772</code>">
+                                        <input type="checkbox" name="q1-C" title="If <code>x1</code>=1, <code>x2</code>=4, the printed output is: <code>14</code>">
+                                        <input type="checkbox" name="q1-D" title="If <code>x1</code>=1, <code>x2</code>=4, the printed output is: <code>1025</code>">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 8 (C)</div>
+                            <div class="problem-grade" id="Question8">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Consider the following program:
+<pre><code>
+void process(int* data, int num, int delta){
+    if (num <= 0)
+        return;
+    
+    for (int i = 0; i < num; i++)
+        *(data++) = i + 1;
+    process(data - (num - delta), num - delta, delta);
+}
+
+int main() {
+    int i, delta, num=9;
+    scanf("%d", &delta);
+    int* data = (int*)malloc(sizeof(int) * num);
+
+    process(data, num, delta);
+    for (i = 0; i < num; i++)
+        printf("%d", data[i]);
+    free(data);
+    return 0;
+}
+</code></pre>
+                                Which one of the following statements is true?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question8">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="If <code>delta</code>=1, the program will output: <code>111111111</code>">
+                                        <input type="checkbox" name="q1-B" title="If <code>delta</code>=1, the program will output: <code>123456789</code>">
+                                        <input type="checkbox" name="q1-C" title="If <code>delta</code>=2, the program will output: <code>121212121</code>">
+                                        <input type="checkbox" name="q1-D" title="If <code>delta</code>=2, the program will output: <code>212121212</code>">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 9 (C++)</div>
+                            <div class="problem-grade" id="Question9">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                This question is about include‐guards. Mark all statements that are true!
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question9">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="An include-guard prevents double definition if a header is included more than once.">
+                                        <input type="checkbox" name="q1-B" title="An include-guard goes into a .cpp-file and not a header file.">
+                                        <input type="checkbox" name="q1-C" title="Include-guards are processed by the pre-processor, and not the compiler.">
+                                        <input type="checkbox" name="q1-D" title="Include-guards are regular instructions that are executed at run-time.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 10 (C++)</div>
+                            <div class="problem-grade" id="Question10">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                This question is about the “aggregation” object relationship. Mark all statements that are true!
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question10">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="An aggregation of an object is typically done via a pointer.">
+                                        <input type="checkbox" name="q1-B" title="An aggregated object may be aggregated by multiple different objects of different classes.">
+                                        <input type="checkbox" name="q1-C" title="An aggregated object’s life-time is limited by the life-time of the object that owns it.">
+                                        <input type="checkbox" name="q1-D" title="An object of a derived class may not be aggregated.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 11 (C++)</div>
+                            <div class="problem-grade" id="Question11">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Abstract base classes. Mark all statements that are true!
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question11">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="An abstract base class has no virtual methods.">
+                                        <input type="checkbox" name="q1-B" title="An abstract base class is one that has purely virtual functions.">
+                                        <input type="checkbox" name="q1-C" title="An abstract base class has at least one method for which the declaration ends with <code>… = 0;</code>">
+                                        <input type="checkbox" name="q1-D" title="An abstract base class may be instantiated.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 12 (C++)</div>
+                            <div class="problem-grade" id="Question12">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                STL containers/algorithms. Mark all statements that are true.
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question12">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="For <code>std::vector</code>, element access has constant computational complexity.">
+                                        <input type="checkbox" name="q1-B" title="For <code>std::list</code>, insertion with an iterator has a (worst-case) complexity linear in its size.">
+                                        <input type="checkbox" name="q1-C" title="STL-containers are templated by the type of the contained elements.">
+                                        <input type="checkbox" name="q1-D" title="<code>std::sort</code> needs random access iterators.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-3" page-type="question">
+                        <hr>
+                        <div class="reading-content" style="margin: 1em;">
+                            <h3 style="margin-bottom: 2em;"><b><u>Problem 2: Find and correct problems and bugs (24 points)</u></b></h3>
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 1 (C, 12 points)</div>
+                            <div class="problem-grade" id="Question13">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                There are several errors in the following C code. Find at least 4 of them. Briefly explain what the error is by mentioning the line, the problem, and a correct replacement for that entire line.
+                                <br> (Due to the limitation of the website, you just need to submit line number of the potential bug.)
+<pre><code>
+    /* The following C program creates an array of records. For each record,
+    it stores the name, age, grade and score of a student. In the program, it
+    asks the user to input all the information from the students, and then
+    prints the student information. The functions input_record() and
+    print_record() are used for reading and printing the related information.
+    */
+    1. typedef struct{
+    2.     char name[32];
+    3.     unsigned int age;
+    4.     unsigned int grade;
+    5.     float score;
+    6. } record;
+    7.
+    8. record* create_record(int num){
+    9.     record* r_ret = (record*)malloc(sizeof(record) * num);
+    10.    memset(r_ret, 0, sizeof(record)* num);
+    11.    return r_ret;
+    12.}
+    13.
+    14.void destroy_record(record* r){
+    15.    free(r);
+    16.}
+    17.
+    18.void input_record(record** r, int num){
+    19.    for (int i = 0; i < num; i++){
+    20.        printf("record %d:\n", i + 1);
+    21.        printf("name:");
+    22.        scanf("%s", (*r++)->name);
+    23.        printf("age:");
+    24.        scanf("%d", (*r++)->age);
+    25.        printf("grade:");
+    26.        scanf("%d", (*r++)->grade);
+    27.        printf("score:");
+    28.        scanf("%f", (*r++)->score);
+    29.        printf("\n\n");
+    30.    }
+    31.}
+    32.
+    33.void print_record(record* r, int num){
+    34.    for (int i = 0; i < num; i++){
+    35.        printf("record %d:\n", i + 1);
+    36.        printf("name: %s, ", r[i].name);
+    37.        printf("age: %d, ", r[i].age);
+    38.        printf("grade: %d, ", r[i].grade);
+    39.        printf("score: %f\n", r[i].score);
+    40.        printf("\n");
+    41.    }
+    42.    free(r);
+    43.}
+    44.
+    45.int main() {
+    46.    int record_num = 0;
+    47.    printf("input number of record:");
+    48.    scanf("%d", &record_num);
+    49.    record* r = create_record(record_num);
+    50.
+    51.    input_record(&r, record_num);
+    52.
+    53.    printf("the input records are:\n");
+    54.    print_record(r, record_num);
+    55.
+    56.    destroy_record(r);
+    57.    return 0;
+    58.}
+</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question13">
+                                <div class="layui-form-item">
+                                    <div class="problem-content">
+                                        Please type in the line numbers of the potential bugs. Just the number is okay. (Each box one number)
+                                    </div>
+                                    <div class="question q1 q-text-no-repetition">
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2 q-text-no-repetition">
+                                        <input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q3 q-text-no-repetition">
+                                        <input type="text" name="q3" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q4 q-text-no-repetition">
+                                        <input type="text" name="q4" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+                                        <p><b>Answer</b></p>
+                                        <p>Answer (only 4 need to be mentioned):<br>Line 1: Include missing. Correction <code>include &lt;stdio.h &gt;</code><br>Line 22: Pointer should not be incremented. Correction: <code>scanf("%s", (*r)->name); </code> <br>Line 24: Pointer should not be incremented, and we should pass a pointer to the age variable. Correction: <code>scanf("%d", &(*r)->age); </code> <br>Line 26: Pointer should not be incremented, and we should pass a pointer to the grade variable. Correction: <code>scanf("%d", &(*r)->grade); </code> <br>Line 28: We should pass a pointer to the score variable. Correction: <code>scanf("%f", &((*r)++)->score); </code><br>Lines 42 / 56: Double free of the array r. Correction: remove line 42. <br>Line 54: Pointer was incremented through function call, so the delete operates on wrong memory location. Correction: 1) decrement pointer, or 2) some may change the entire function signature to not pass <code>record** ptr</code>, but <code>record *ptr</code> <br></p>
+                                    </blockquote>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 2 (C++, 12 points)</div>
+                            <div class="problem-grade" id="Question14">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                There are 4 errors in the following C++ code. Find all of them. Briefly explain what the error is by mentioning the line, the problem, and a correct replacement for that entire line.
+                                <br> (Due to the limitation of the website, you just need to submit line number of the potential bug.)
+<pre><code>
+    1.  #include &lt;list&gt;
+    2.  #include &lt;iostream&gt;
+    3.  #include &lt;algorithm&gt;
+    4.
+    5.  namespace std;
+    6.
+    7.  int main() {
+    8.      int input;
+    9.      list&lt;int&gt; ilist;
+    10.
+    11.     // input
+    12.     int index = 0;
+    13.     while (cin &gt;&gt; input ) {
+    14.         ilist[index++] = input;
+    15.     }
+    16.
+    17.     // sorting
+    18.     sort(ilist.begin(),ilist.end());
+    19.
+    20.     // output
+    21.     list&lt;int&gt;::iterator it;
+    22.     for ( it = ilist.begin();
+    23.         it != ilist.end(); ++it ) {
+    24.         cout << it << " ";
+    25.     }
+    26.     cout << endl;
+    27.     return 0;
+    28. }
+</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question14">
+                                <div class="layui-form-item">
+                                    <div class="problem-content">
+                                        Please type in the line numbers of the potential bugs. Just the number is okay. (Each box one number)
+                                    </div>
+                                    <div class="question q1 q-text-no-repetition">
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2 q-text-no-repetition">
+                                        <input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q3 q-text-no-repetition">
+                                        <input type="text" name="q3" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q4 q-text-no-repetition">
+                                        <input type="text" name="q4" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+                                        <p><b>Answer</b></p>
+                                        <p>Line 5: There should not be a namespace definition here. Correction: <code>using namespace std; </code> <br>Line 14 (and 12): It is not possible to index a list as in the example, especially as the list is actually empty. Correction: <code>ilist.push_back(input); </code> <br>Line 18: The <code>std::sort</code> function can’t be used with <code>std::list</code>. Correction: <code>ilist.sort();</code> <br>Line 24: The iterator is not dereferenced. Correction: <code>cout << *it << “ “; </code> <br></p>
+                                    </blockquote>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-4" page-type="book">
+                        <hr>
+                        <div class="reading-content" style="margin: 1em;">
+                            <h3 style="margin-bottom: 2em;"><b><u>Problem 3: Coding (C,36 points)</u></b></h3>
+                            
+                            <p style="text-align: left;">Note: Problem 3 consists of 3 parts. Please first 
+                                read all the instructions until the end to also see an example use of the functions
+                                for which you have to provide the implementation, plus some useful tips.</p>
+                        </div>
+
+                        <div class="reading-content">
+                            <hr>
+                            a) Write two functions “<code>create_array(…)</code>” and “<code>destroy_array(…)</code>” to construct/destroy a dynamic array whose capacity is dynamically increased when needed. The array is represented by the following structure:
+<pre><code>
+typedef struct{
+    float* data;   //data pointer to store the array
+    int size;      //effective number of elements in the array
+    int capacity;  //maximum array size (i.e. allocated space)
+} array;
+</code></pre>
+                            The array construction and destruction functions that you need to write have the signature:
+<pre><code>
+bool create_array(array* a);
+void destroy_array(array* a);
+</code></pre>
+                            Note that <code>a</code> is created before the “<code>create_array</code>” function call. “<code>create_array</code>” only allocates the initial space. To specify the capacity of the array, the user sets “<code>a->capacity</code>” before passing <code>a</code> to the function “<code>create_array</code>”. “<code>create_array</code>” needs to check if <code>a</code> is a valid pointer, if <code>a->capacity</code> has a proper value, and whether or not the memory allocation succeeded. It also needs to initialize <code>a->size</code>, and it should return <code>true</code> if the creation succeeded, and <code>false</code> otherwise. Similarly, “<code>destroy_array</code>” needs to check if <code>a</code> is a valid pointer, and it should reset all member variables of <code>a</code> after the memory is properly deallocated.
+                        
+                            <hr>
+                            b) Once the dynamic array is created, it will be used in a function called “<code>input_data(…)</code>” that reads numbers inputted by the user one-by-one and stores them in the array. The function has the simple signature: 
+                            <pre><code>void input_data(array* a);</code></pre>
+                            The function should return if the user inputs the character ‘q’ instead of a number. Note that when the array capacity is insufficient, the function should dynamically increase the array’s capacity by 10 elements. The function should properly manage all member variables of <code>a</code>, and print an error message and return if an eventual increase of capacity does not succeed. 
+
+                            <hr>
+                            c) Given an <code>array</code> struct, convert all the floating point numbers into an array of strings, and print them. The array of strings is represented by another structure as: 
+<pre><code>
+typedef struct{
+    char** str;     //the array pointer of strings
+    int size;       //the number of strings
+} string_array;
+</code></pre>
+                            <code>string_array</code> is dynamically created in the string conversion function, which has the signature 
+                            <pre><code>void convert_to_string(array* a, string_array* str_out);</code></pre>
+                            The function needs to check if <code>a</code> is a valid pointer, if the size of <code>a</code> is a valid number, and if memory allocation succeeded. The string printing function has the signature: 
+                            <pre><code>void print_string(string_array* str);</code></pre>
+                            Finally, write the following function that destroys a <code>string_array</code>: 
+                            <pre><code>void destroy_string(string_array* str);</code></pre>
+
+                            <hr>
+                            Note: You only need to write the above six function bodies; The “<code>main()</code>” function is as follows: 
+<pre><code>
+int main(){
+    array data;
+    data.capacity = 20;
+    if (!create_array(&data)){
+        printf("Unable to create the array!\n");
+        return -1;
+    }
+
+    input_data(&data);
+
+    string_array data_str;
+    convert_to_string(&data, &data_str);
+    print_string(&data_str);
+
+    destroy_array(&data);
+    destroy_string(&data_str);
+
+    return 0;
+}
+</code></pre>
+                            Tips: The following functions may be useful: 
+<pre><code>
+void* malloc (size_t size);
+void* realloc (void* ptr, size_t size);
+int strcmp (const char* str1, const char* str2 );
+double atof (const char* str);
+int sprintf (char* str, const char* format, ... );
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="layui-hide" id="page-5" page-type="book">
+                        <hr>
+                        <div class="reading-content" style="margin: 1em;">
+                            <h3 style="margin-bottom: 2em;"><b><u>Problem 4: Coding (C++,16 points) </u></b></h3>
+                            
+                            <p style="text-align: left;">Suppose you are given the below definition of a matrix class. Provide a new definition of this class which is templetized by the type of the contained values. Provide the implementation of all the member functions and the constructor/destructor. </p>
+                            <p style="text-align: left;">Notes: Make sure the matrix is initialized to 0. The functions <b><u>do not</u></b> need to perform any size checks, you may assume that the user always passes correct/compatible function parameters. </p>
+                        </div>
+
+                        <div class="reading-content">
+<pre><code>
+class Matrix {
+public:
+    Matrix( int r, int c );
+    virtual ~Matrix();
+
+    int rows();
+    int cols();
+
+    double & operator()(int r, int c);
+    void operator=( Matrix & rhs );
+    Matrix operator+( Matrix & rhs );
+    Matrix operator-( Matrix & rhs );
+    Matrix operator*( Matrix & rhs );
+
+private:
+    std::vector&lt; std::vector&lt;double> > m_data;
+};
+</code></pre>
+                        </div>
+                    </div>
+
+                    <div class="layui-hide" id="page-6" page-type="book">
+                        <hr>
+                        <div class="reading-content">
+                            <h2 style="font-family: Quicksand;">Additional Resources</h2>
+                            The answer of the whole exam can be fond <a href="https://docs.zoho.com.cn/file/r1fx8c7cca886f30d402894db6819948cb037">here</a>.
+                        </div>
+                    </div>
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "CS100",
+        "name": "Introduction to Programming",
+        "semester": "Fall 2019",
+        "category": "Exam 考试",
+        "title": "Mid-term Exam"
+    };
+
+    var answers = {
+        'Question1': [2,{
+            'q1': [2,{
+                'BC': 2,
+                'B' : 1,
+                'C' : 1
+            }]
+        }],
+        'Question2': [2,{
+            'q1': [2,{
+                'BD': 2,
+                'B' : 1,
+                'D' : 1
+            }]
+        }],
+        'Question3': [2,{
+            'q1': [2,{
+                'BC': 2,
+                'B' : 1,
+                'C' : 1
+            }]
+        }],
+        'Question4': [2,{
+            'q1': [2,{
+                'BC': 2,
+                'B' : 1,
+                'C' : 1
+            }]
+        }],
+        'Question5': [2,{
+            'q1': [2,{
+                'BD': 2,
+                'B' : 1,
+                'D' : 1
+            }]
+        }],
+        'Question6': [2,{
+            'q1': [2,{
+                'BCD': 2,
+                'BC' : 1,
+                'BD' : 1,
+                'CD' : 1,
+                'B'  : 1,
+                'C'  : 1,
+                'D'  : 1
+            }]
+        }],
+        'Question7': [2,{
+            'q1': [2,{
+                'BD': 2,
+                'B' : 1,
+                'D' : 1
+            }]
+        }],
+        'Question8': [2,{
+            'q1': [2,{
+                'AC': 2,
+                'A' : 1,
+                'C' : 1
+            }]
+        }],
+        'Question9': [2,{
+            'q1': [2,{
+                'AC': 2,
+                'A' : 1,
+                'C' : 1
+            }]
+        }],
+        'Question10': [2,{
+            'q1': [2,{
+                'AB': 2,
+                'A' : 1,
+                'B' : 1
+            }]
+        }],
+        'Question11': [2,{
+            'q1': [2,{
+                'BC': 2,
+                'B' : 1,
+                'C' : 1
+            }]
+        }],
+        'Question12': [2,{
+            'q1': [2,{
+                'ACD': 2,
+                'AC' : 1,
+                'AD' : 1,
+                'CD' : 1,
+                'A'  : 1,
+                'C'  : 1,
+                'D'  : 1
+            }]
+        }],
+        'Question13': [12,{
+            'q1': [3,{
+                '1': 3,
+                '22' : 3,
+                '24' : 3,
+                '26' : 3,
+                '28' : 3,
+                '42' : 3,
+                '56' : 3,
+                '54' : 3
+            }],
+            'q2': [3,{
+                '1': 3,
+                '22' : 3,
+                '24' : 3,
+                '26' : 3,
+                '28' : 3,
+                '42' : 3,
+                '56' : 3,
+                '54' : 3
+            }],
+            'q3': [3,{
+                '1': 3,
+                '22' : 3,
+                '24' : 3,
+                '26' : 3,
+                '28' : 3,
+                '42' : 3,
+                '56' : 3,
+                '54' : 3
+            }],
+            'q4': [3,{
+                '1': 3,
+                '22' : 3,
+                '24' : 3,
+                '26' : 3,
+                '28' : 3,
+                '42' : 3,
+                '56' : 3,
+                '54' : 3
+            }],
+        }],
+        'Question14': [12,{
+            'q1': [3,{
+                '5': 3,
+                '14' : 3,
+                '18' : 3,
+                '24' : 3,
+            }],
+            'q2': [3,{
+                '5': 3,
+                '14' : 3,
+                '18' : 3,
+                '24' : 3,
+            }],
+            'q3': [3,{
+                '5': 3,
+                '14' : 3,
+                '18' : 3,
+                '24' : 3,
+            }],
+            'q4': [3,{
+                '5': 3,
+                '14' : 3,
+                '18' : 3,
+                '24' : 3,
+            }],
+        }]
+    };
+
+    document.title = 'iTechX | ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

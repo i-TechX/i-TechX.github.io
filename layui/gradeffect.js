@@ -11,10 +11,14 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
                 }
             }
             return answer.join('');
-        } else if (type === 'radio') {
+        } else if (type === 'radio' || type === 'text-no-eval') {
             return json[questionName];
-        } else if (type === 'text') {
-            return eval(json[questionName]);
+        } else if (type === 'text' || type === 'text-no-repetition') {
+            try{
+                return eval(json[questionName]);
+            } catch (err) {
+                return json[questionName];
+            }
         }
     }
 
@@ -55,6 +59,7 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
     }))
     .removeClass('layui-hide');
 
+    if (typeof answers != "undefined")
     for (const id in answers) {
         if (answers.hasOwnProperty(id)) {
             const totalScore = answers[id][0];
@@ -69,7 +74,7 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
     };
     var i = 1;
     laypage.types = [];
-    laypage.lastPage = 1;
+    laypage.lastPage = 0;
     while ($('#page-'+i)[0]) {
         key = [courseInfo.code, courseInfo.semester, courseInfo.category, courseInfo.title, i-1].join('.').replace(/ /g,'');
         if (localStorage.getItem(key) === 'visited') {
@@ -81,6 +86,7 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
     }
     
     var pageRender1 = function(curr){
+        if (laypage.lastPage != 0)
         if (laypage.types[laypage.lastPage-1].indexOf('book')!=-1 &&
             laypage.types[laypage.lastPage-1].indexOf('passed')==-1) {
             key = [courseInfo.code, courseInfo.semester, courseInfo.category, courseInfo.title, laypage.lastPage-1].join('.').replace(/ /g,'');
@@ -95,6 +101,7 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
             ,limit: 1
             ,theme: '#9364f0'
             ,curr: curr
+            ,hash: 'page' //自定义hash值
             ,count: laypage.types.length
             ,layout: ['prev', 'page', 'next', 'refresh']
             ,types: function(){
@@ -130,6 +137,7 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
     }
 
     var pageRender2 = function(curr){
+        if (laypage.lastPage != 0)
         if (laypage.types[laypage.lastPage-1].indexOf('book')!=-1 &&
             laypage.types[laypage.lastPage-1].indexOf('passed')==-1) {
             key = [courseInfo.code, courseInfo.semester, courseInfo.category, courseInfo.title, laypage.lastPage-1].join('.').replace(/ /g,'');
@@ -144,6 +152,7 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
             ,limit: 1
             ,theme: '#9364f0'
             ,curr: curr
+            ,hash: 'page' //自定义hash值
             ,count: laypage.types.length
             ,layout: ['prev', 'next']
             ,types: function(){
@@ -168,8 +177,8 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
         });
     }
 
-    pageRender1(1);
-    pageRender2(1);
+    pageRender1(location.hash.replace('#!page=', ''));
+    pageRender2(location.hash.replace('#!page=', ''));
             
     form.scores = {};
     form.on('checkbox', function(data){
@@ -216,12 +225,24 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
                     var score = !answers[problem][1][questionName][1][myAnswer] ? 0 : answers[problem][1][questionName][1][myAnswer];
                     var totalScore = answers[problem][1][questionName][0];
                     var correct = 0;
-                    myScore += score;
                     if (score === totalScore) {
                         correct = 1;
                     } else if (score > 0) {
                         correct = -1;
                     }
+
+                    if (type === 'text-no-repetition'){
+                        for (const q in data.field) {
+                            if (data.field.hasOwnProperty(q) && q != questionName) {
+                                const a = answerParse(q, 'text', data.field);
+                                if (a == myAnswer) {
+                                    score = 0;
+                                    correct = -2;
+                                }
+                            }
+                        }
+                    }
+                    myScore += score;
 
                     if (type === 'checkbox') {
                         for (const key in data.field) {
@@ -247,7 +268,7 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
                                 }
                             }
                         }
-                    } else if (type === 'text') {
+                    } else if (type === 'text' || type === 'text-no-repetition' || type === 'text-no-eval') {
                         for (const elem in questionElement.children) {
                             if (questionElement.children.hasOwnProperty(elem)) {
                                 const element = questionElement.children[elem];
@@ -267,8 +288,10 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
                         msg = '<i class="fa fa-check" aria-hidden="true" style="color: green;" label="这个回答是正确的。" onmouseover="show_tips(this)" onmouseout="close_tips()"></i>';
                     } else if (correct == 0) {
                         msg = '<i class="fa fa-times" aria-hidden="true" style="color: rgb(190, 0, 0);" label="这个回答是错误的。" onmouseover="show_tips(this)" onmouseout="close_tips()"></i>';
-                    } else {
+                    } else if (correct == -1){
                         msg = '<i class="fa fa-circle-o" aria-hidden="true" style="color: green;" label="这个回答不完全正确。" onmouseover="show_tips(this)" onmouseout="close_tips()"></i>';
+                    } else if (correct == -2){
+                        msg = '<i class="fa fa-times" aria-hidden="true" style="color: rgb(190, 0, 0);" label="这个回答是错误的。" onmouseover="show_tips(this)" onmouseout="close_tips()"><div class="layui-form-mid layui-word-aux" style="font-size: small;">该问题被设置为答案不可重复。请修改答案后重试。</div></i>';
                     }
                     for (const elem in questionElement.children) {
                         if (questionElement.children.hasOwnProperty(elem)) {
@@ -285,12 +308,13 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
         }
 
         var totalScore = answers[problem][0];
+        myScore = myScore > totalScore ? totalScore : myScore;
         $('#'+problem)[0].innerText = myScore + '/' + totalScore + ' point (graded)';
 
         if (myScore == totalScore) {
-            for (const elem in $(data.form.children[0]).children) {
-                if ($(data.form.children[0]).children.hasOwnProperty(elem)) {
-                    const element = $(data.form.children[0]).children[elem];
+            for (const elem in data.form.children[0].children) {
+                if (data.form.children[0].children.hasOwnProperty(elem)) {
+                    const element = data.form.children[0].children[elem];
                     if ($(element).hasClass('q-explanation')) {
                         $(element).removeClass('layui-hide');
                     }
@@ -333,6 +357,7 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
         return false;
     });
 
+    if (typeof answers != "undefined")
     for (const problem in answers) {
         if (answers.hasOwnProperty(problem)) {
             var key = [courseInfo.code, courseInfo.semester, courseInfo.category, courseInfo.title, problem].join('.').replace(/ /g,'');

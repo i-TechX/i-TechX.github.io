@@ -292,7 +292,8 @@ summary:focus {
   margin: 0.5em;
   font-family: sans-serif;
 }
-.problem .problem-title {
+.problem .problem-title, .reading-content .problem-title {
+  font-family: sans-serif;
   font-size: 16pt;
   margin: 0.5em 0;
 }
@@ -314,6 +315,6 @@ summary:focus {
 
 pre{
   display: block;
-  margin: 0 auto;
-  max-width: 60ch;
+  margin: 1em auto;
+  max-width: fit-content;
 }

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Lecture Slides 教学课件</h1>
+                    <hr>
+
+                    <div class="layui-hide" id="page-1" page-type="book">
+                        <div class="reading-content">
+                            <div class="layui-form" style="margin: 0 10%;">
+                                <table class="layui-table">
+                                  <colgroup>
+                                    <col>
+                                    <col>
+                                  </colgroup>
+                                  <thead>
+                                    <tr>
+                                      <th>Lecture Notes</th>
+                                      <th>Lecture Date</th>
+                                    </tr> 
+                                  </thead>
+                                  <tbody>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx8693c9107518f4175b368848236261304">CS100_Lecture_0_course_introduction.pdf</a></td>
+                                            <td>Sep 11, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx81644a17c3b874d5ca8f9884ef7673695">CS100_Lecture_1_C_program_structure.pdf</a></td>
+                                            <td>Sep 11, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx8d67b9e6c2dea473e97ddb82216fa0cb0">CS100_Lecture_2_data_types_memory_simple_IO_and_control_flow.pdf</a></td>
+                                            <td>Sep 18, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx824ebe86ebf36469781a7dc53fee5b937">CS100_Lecture_3_functions_and_pointers.pdf</a></td>
+                                            <td>Sep 20, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx84f0e4221ab1a4482919fbc1c017618ad">CS100_Lecture_4_arrays.pdf</a></td>
+                                            <td>Sep 25, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx8faba34a0a79b483389d4f504af475ba6">CS100_Lecture_5_character_strings_and_text_files.pdf</a></td>
+                                            <td>Sep 27, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx814f1c59090d942528eea11540da8db96">CS100_Lecture_6_structures.pdf</a></td>
+                                            <td>Sep 29, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx81a3293c251d945d2b0e5342b0eb61747">CS100_Lecture_7_recursion.pdf</a></td>
+                                            <td>Oct 9, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx8b2e6bdcc18e34feaa782b718b3a34daa">CS100_Lecture_8_more_advanced_C_and_objectoriented_programming.pdf</a></td>
+                                            <td>Oct 11, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx8cceeac7cd0784937aee86e4a417cf8dc">CS100_Lecture_9_classes_function_overloading_and_inheritance.pdf</a></td>
+                                            <td>Oct 16, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx81c82ffd7e8d54db2a7861d8665168e65">CS100_Lecture_10_multipleinheritance_and_polymorphism.pdf</a></td>
+                                            <td>Oct 18, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx866dc480d4ad446d697b2aed471edaffb">CS100_Lecture_11_OOP_Encapsulation.pdf</a></td>
+                                            <td>Oct 23, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx8ce2d6ac99e404e51b92a969b8c8277bf">CS100_Lecture_12_Inheritance.pdf</a></td>
+                                            <td>Oct 25, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx8b4569df0c63d498c8abce41fdf0c9676">CS100_Lecture_13_Polymorphism.pdf</a></td>
+                                            <td>Oct 30, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx8e36043782aec44138a811ce7f9c7fc8c">CS100_Lecture_13b_STL_Templates.pdf</a></td>
+                                            <td>Oct 30, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx88cec8fa1127e4859804aee4fc5f32f7a">CS100_Lecture_14_STL_Containers.pdf</a></td>
+                                            <td>Nov 1, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx8710f552060f5421f9aec6f096dc03556">CS100_Lecture_15_Memory_management.pdf</a></td>
+                                            <td>Nov 6, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Mid-term Exam</td>
+                                            <td>Nov 8, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx8226d96b0463745f49cc9d3e60c621a6a">CS100_Lecture_17_Code_Structuring.pdf</a></td>
+                                            <td>Nov 13, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx880c9fec0a5314baaba97a0e614625754">CS100_Lecture_18_cmake.pdf</a></td>
+                                            <td>Nov 20, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx8e8d334820bd4407c9822071e741375f2">CS100_Lecture_19_Eigen.pdf</a></td>
+                                            <td>Nov 22, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx8b88cc3b579124b08ba4cd238b3fb6964">CS100_Lecture_20_Concurrency.pdf</a></td>
+                                            <td>Nov 27, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx85fb7d6a3e8e84e8b9e5e303adba64158">CS100_Lecture_21_profiling_debugging.pdf</a></td>
+                                            <td>Dec 4, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx805c2429968c44b38bede0979e246a940">CS100_Lecture_22_Rvalue_references.pdf</a></td>
+                                            <td>Dec 6, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx8368f076109d8495c96758967163a1733">CS100_Lecture_23_24_functional_programming_Cpp11_14.pdf</a></td>
+                                            <td>Dec 11, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx8289d24019ae34f31bc349d6f8477a437">CS100_Lecture_25_Cpp17_moreOnTemplates.pdf</a></td>
+                                            <td>Dec 18, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx8f19ed86ebe254964998369450d87d0a9">CS100_Lecture_26_Exceptions.pdf</a></td>
+                                            <td>Dec 25, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx8b3076ca9100b4410b1cd22abeace6d41">CS100_Lecture_27_coding_standards.pdf</a></td>
+                                            <td>Dec 25, 2019</td>
+                                        </tr>
+                                        <tr>
+                                            <td><a href="https://docs.zoho.com.cn/file/r1fx8b1a5222c27894946b63dfc9df712f87e">CS100_Lecture_28_doxygen.pdf</a></td>
+                                            <td>Dec 25, 2019</td>
+                                        </tr>
+                                  </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>                    
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "CS100",
+        "name": "Introduction to Programming",
+        "semester": "Fall 2019",
+        "category": "Lecture Slides 教学课件",
+        "title": "Lecture Slides 教学课件"
+    };
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

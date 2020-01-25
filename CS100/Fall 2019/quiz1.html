@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Quiz 1</h1>
+
+                    <div class="layui-hide" id="page-1" page-type="book">
+                        <hr>
+                        <div class="reading-content" style="margin: 0 10em;">
+                            <h1>CS100 Introduction to Programming Quiz 1 (A)</h1>
+                            <h3 style="text-align: center; margin-bottom: 2em;">October 18, 2019</h3 style="text-align: center;">
+                            <p style="text-align: left;">This <b>close-book quiz</b> comprises 4 questions, each of which has 0.5 mark. For each question, choose <b><u>one option</u></b> that answers the question and write your choice in the following table.</p>
+                        </div>
+                    </div>
+
+                    <div class="layui-hide" id="page-2" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 1</div>
+                            <div class="problem-grade" id="Problem1">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Given the code snippet below, what is the output result?
+<pre><code>
+union A{
+    struct{
+        float x1;
+        float x2;
+    };
+    float y;
+};
+
+int main(){
+    union A a;
+    a.x1 = 10.0f;
+    a.x2 = 15.3f;
+    a.y = 9.5f;
+
+    printf("the component x1 of A "
+            "is: %f\n", a.x1);
+    return 0;
+}
+</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem1">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="the component x1 of A is: 15.300000">
+                                        <input type="radio" name="q1" value="B" title="the component x1 of A is: 9.500000">
+                                        <input type="radio" name="q1" value="C" title="the component x1 of A is: 10.500000">
+                                        <input type="radio" name="q1" value="D" title="the component x1 of A is: 10.000000">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-3" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 2</div>
+                            <div class="problem-grade" id="Problem2">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Given the following implementation with recursive function call, choose the final output result.
+<pre><code>
+int data[10];
+
+void change_data(int base_value, int* data,
+int start, end){
+    if (end <= start)
+        return;
+    else
+        base_value++;
+
+    change_data(base_value, data, start,
+                end - 1);
+
+    int i = 0;
+    for (i = start; <= end; i++)
+        data[i] = base_value + (i - start);
+}
+
+int main(){
+    int i;
+    memset(data, 0, sizeof(int) * 10);
+
+    change_data(0, data, 9);
+
+    printf("the array is:\n");
+    for (i = 0; < 10; i++)
+        printf("%d ", data[i]);
+
+    return 0;
+}
+</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem2">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="1 2 3 4 5 6 7 8 9 10">
+                                        <input type="radio" name="q1" value="B" title="0 1 2 3 4 5 6 7 8 9">
+                                        <input type="radio" name="q1" value="C" title="0 0 0 0 0 0 0 0 0 0">
+                                        <input type="radio" name="q1" value="D" title="2 4 6 8 10 12 14 16 18 20">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-4" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 3</div>
+                            <div class="problem-grade" id="Problem3">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Given two implementations below, what are their outputs respectively?
+<p><u>Implementation 1:</u></p>
+<pre><code>
+struct A{
+    int data[9];
+    int index;
+};
+
+void change_data(struct A a){
+    a.data[index] = -3;
+}
+
+int main(){
+    int i;
+    A a;
+    a.index = 5;
+    for (i = 0; < 9; i++)
+        a.data[i] = i+1;
+    change_data(a);
+
+    printf("the array is:\n")
+    for (i = 0; < 9; i++)
+        printf("%d ", a.data[i]);
+        
+    return 0;
+}
+</code></pre>
+<p><u>Implementation 2:</u></p>
+<pre><code>
+int data[9];
+
+struct A{
+    int* p_data;
+    int index;
+};
+
+void change_data(struct A a){
+    a.p_data[index] = -3;
+}
+
+int main(){
+    int i;
+    A a;
+    for (i = 0; < 9; i++)
+        data[i] = i+1;
+    a.p_data = data;
+    a.index = 5;
+    change_data(a);
+
+    printf("the array is:\n");
+    for (i = 0; < 9; i++)
+        printf("%d ", a.p_data[i]);
+
+    return 0;
+}
+</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem3">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="1 2 3 4 5 -3 7 8 9; 1 2 3 4 5 -3 7 8 9">
+                                        <input type="radio" name="q1" value="B" title="1 2 3 4 5 -3 7 8 9; 1 2 3 4 5 6 7 8 9">
+                                        <input type="radio" name="q1" value="C" title="1 2 3 4 5 6 7 8 9; 1 2 3 4 5 6 7 8 9">
+                                        <input type="radio" name="q1" value="D" title="1 2 3 4 5 6 7 8 9; 1 2 3 4 5 -3 7 8 9">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-5" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 4</div>
+                            <div class="problem-grade" id="Problem4">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                The following code snippets has several problems, which will lead to compile or run-time errors. Select <b><u>all</u></b> snippets that has such errors.
+<pre><code>
+// ----------PART 1----------
+class Base{
+public:
+    Base(int num = 0);
+    ~Base();
+protected:
+    int *data;
+    int num;
+};
+
+// ----------PART 2----------
+class Child : public Base{
+public:
+    Child(int num);
+    ~Child();
+};
+
+// ----------PART 3----------
+// implementation of Base class
+Base::Base(int num){
+    if (num <= 0) return;
+    data = new int[num];
+    this->num = num;
+}
+
+Base::~Base(){
+    delete[]data;
+}
+
+// ----------PART 4----------
+// implementation of Child class
+Child::Child(int num){
+    Base::Base(num);
+    if (num <= 0) return;
+    data = new int[num];
+    this->num = num;
+}
+
+// ----------PART 5----------
+Child::~Child(){
+    delete[]data;
+}
+
+// ----------MAIN FUNCTION----------
+int main(){
+    Child a(10);
+    return 0;
+}
+</code></pre>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem4">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="③">
+                                        <input type="radio" name="q1" value="B" title="③⑤">
+                                        <input type="radio" name="q1" value="C" title="④⑤">
+                                        <input type="radio" name="q1" value="D" title="④">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "CS100",
+        "name": "Introduction to Programming",
+        "semester": "Fall 2019",
+        "category": "Quiz 随堂测验",
+        "title": "Quiz 1"
+    };
+
+    var answers = {
+        'Problem1': [0.5,{
+            'q1': [0.5,{
+                'B': 0.5
+            }]
+        }],
+        'Problem2': [0.5,{
+            'q1': [0.5,{
+                'A': 0.5
+            }]
+        }],
+        'Problem3': [0.5,{
+            'q1': [0.5,{
+                'D': 0.5
+            }]
+        }],
+        'Problem4': [0.5,{
+            'q1': [0.5,{
+                'C': 0.5
+            }]
+        }],
+    };
+
+    document.title = 'iTechX | ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>
