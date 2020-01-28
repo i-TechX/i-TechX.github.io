@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Homework 2-graph (Deadline: 2019/05/10)</h1>
+
+                    <div class="layui-hide" id="page-1" page-type="book">
+
+                        <div class="reading-content" style="font-size: large;">
+                            <hr>
+                            <div class="problem-title">Question Sheet</div>
+                            <br>
+                            <p style="padding-left: 1em; font-size: large;">
+                                You can get the homework file <a href="https://docs.zoho.com.cn/file/r1fx8a1476a21d59847578bd8412b81939639" target="_blank">here <span class="icon fa fa-external-link" aria-hidden="true"></span></a>.
+                            </p>
+                            <p style="padding-left: 1em; font-size: large;">The answer sheet is in the next page.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-2" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 1</div>
+                            <div class="problem-grade" id="Problem1">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem1">
+                                <div class="layui-form-item">
+                                    <p style="font-size: medium;">Are the graphs <img src='http://latex.codecogs.com/svg.latex?H_1'/> and <img src='http://latex.codecogs.com/svg.latex?H_2'/> isomorphic?</p>
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="Yes">
+                                        <input type="radio" name="q1" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">Are the graphs <img src='http://latex.codecogs.com/svg.latex?H_1'/> and <img src='http://latex.codecogs.com/svg.latex?H_3'/> isomorphic?</p>
+                                    <div class="question q2 q-radio">
+                                        <input type="radio" name="q2" value="A" title="Yes">
+                                        <input type="radio" name="q2" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">Are the graphs <img src='http://latex.codecogs.com/svg.latex?H_4'/> and <img src='http://latex.codecogs.com/svg.latex?H_5'/> isomorphic?</p>
+                                    <div class="question q3 q-radio">
+                                        <input type="radio" name="q3" value="A" title="Yes">
+                                        <input type="radio" name="q3" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-3" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 3</div>
+                            <div class="problem-grade" id="Problem3">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem3">
+                                <div class="layui-form-item">
+                                    <p>(a)</p>
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="The graph of <img src='http://latex.codecogs.com/svg.latex?M_1'/> should be drawn.">
+                                        <input type="checkbox" name="q1-B" title="The graph of <img src='http://latex.codecogs.com/svg.latex?M_2'/> should be drawn.">
+                                        <input type="checkbox" name="q1-C" title="The graph of <img src='http://latex.codecogs.com/svg.latex?M_3'/> should be drawn.">
+                                        <input type="checkbox" name="q1-D" title="The graph of <img src='http://latex.codecogs.com/svg.latex?M_4'/> should be drawn.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p>(b)</p>
+                                    <div class="question q2 q-checkbox">
+                                        <input type="checkbox" name="q2-A" title="The graph of <img src='http://latex.codecogs.com/svg.latex?M_1'/> should be drawn.">
+                                        <input type="checkbox" name="q2-B" title="The graph of <img src='http://latex.codecogs.com/svg.latex?M_2'/> should be drawn.">
+                                        <input type="checkbox" name="q2-C" title="The graph of <img src='http://latex.codecogs.com/svg.latex?M_3'/> should be drawn.">
+                                        <input type="checkbox" name="q2-D" title="The graph of <img src='http://latex.codecogs.com/svg.latex?M_4'/> should be drawn.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-4" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 4</div>
+                            <div class="problem-grade" id="Problem4">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Let G be a directed graph with n vertices, and let M be its adjacency matrix.</p>
+                                <p>(a) Assume Mn is not the zero matrix (i.e. at least one coefficient is not zero). Show that G contains at
+                                    least one circuit.</p>
+                                <p>(b) What about the converse?</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem4">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="The converse is true.">
+                                        <input type="radio" name="q1" value="B" title="The converse is false.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-5" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 5</div>
+                            <div class="problem-grade" id="Problem5">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>To cross a mountain scenic area, we need to walk through some passes linked by one-way roads.
+                                    We give below the associated directed graph, where E is the entrance of the scenic area, and S is the exit.
+                                    The tourist centre wants to find all the possibilities to go from E to S in 4, 5 or 8 stages (one stage is going
+                                    from the entrance to a pass, or from a pass to another one, or from a pass to the exit).
+                                    The passes being ordered in the following way E, A, B, C, G, D, F, S, we denote M the corresponding
+                                    adjacency matrix of the graph.</p>
+                                <p>(a) Compute M2, M3 and M4 (see at the end of the homework sheet for a reminder of how multiplying
+                                    n*n matrices).</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem5">
+                                <div class="layui-form-item">
+                                    <p style="font-size: medium;">(b) How many paths of length at most 3 start from E?</p>
+                                    <div class="question q1 q-text">
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(c) How many possibilities are there to cross the mountain (going from E to S) in 4 stages? in 5? in 8?</p>
+                                    <div class="question q2 q-text">
+                                        4 stages:<input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q3 q-text">
+                                        5 stages:<input type="text" name="q3" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q4 q-text">
+                                        8 stages:<input type="text" name="q4" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-6" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 6</div>
+                            <div class="problem-grade" id="Problem6">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>We consider 4 letters f, a, c and e. We want to write words using this alphabet.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem6">
+                                <div class="layui-form-item">
+                                    <p style="font-size: medium;">(a) How many words of length 5 are there?</p>
+                                    <div class="question q1 q-text">
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p style="font-size: medium;">We impose now the following two rules: the same letter can not appear consecutively (eg: the word "faaec"
+                                        is not allowed because a appears twice consecutively), and two consonants can not appear consecutively
+                                        (eg: "efcae" is not allowed)</p>
+                                    <p style="font-size: medium;">(b) How many words of length 5 starting with f and ending with e are there?</p>
+                                    <div class="question q2 q-text">
+                                        <input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(c) How many words of length 5 starting with f are there?</p>
+                                    <div class="question q3 q-text">
+                                        <input type="text" name="q3" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(d) How many words of length 5 are there?</p>
+                                    <div class="question q4 q-text">
+                                        <input type="text" name="q4" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(e) How many of those words of length 5 have no e?</p>
+                                    <div class="question q5 q-text">
+                                        <input type="text" name="q5" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-7" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 7</div>
+                            <div class="problem-grade" id="Problem7">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Is the graph G below connected? Give the connected components of G.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem7">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="G is connected">
+                                        <input type="radio" name="q1" value="B" title="G is not connected">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "SI120",
+        "name": "Discrete Mathematics",
+        "semester": "Spring 2019",
+        "category": "Homework 作业",
+        "title": "Homework 2-graph"
+    };
+
+    var answers = {
+        'Problem1': [10,{
+            'q1': [3,{
+                'A': 3
+            }],
+            'q2': [3,{
+                'B': 3
+            }],
+            'q3': [4,{
+                'B': 4
+            }]
+        }],
+        'Problem3': [10,{
+            'q1': [6,{
+                'AB': 6,
+                'A': 3,
+                'B': 3
+            }],
+            'q2': [4,{
+                'D': 4
+            }]
+        }],
+        'Problem4': [10,{
+            'q1': [10,{
+                'A': 10
+            }]
+        }],
+        'Problem5': [10,{
+            'q1': [4,{
+                '18': 4
+            }],
+            'q2': [2,{
+                '4': 2
+            }],
+            'q3': [2,{
+                '5': 2
+            }],
+            'q4': [2,{
+                '5': 2
+            }]
+        }],
+        'Problem6': [10,{
+            'q1': [2,{
+                '1024': 2
+            }],
+            'q2': [2,{
+                '9': 2
+            }],
+            'q3': [2,{
+                '38': 2
+            }],
+            'q4': [2,{
+                '170': 2
+            }],
+            'q5': [2,{
+                '12': 2
+            }]
+        }],
+        'Problem7': [10,{
+            'q1': [10,{
+                'B': 10
+            }]
+        }]
+    };
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

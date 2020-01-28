@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Homework 3 (Deadline: March 14, 2019)</h1>
+
+                    <div class="layui-hide" id="page-1" page-type="book">
+
+                        <div class="reading-content" style="font-size: large;">
+                            <hr>
+                            <div class="problem-title">Question Sheet</div>
+                            <br>
+                            <p style="padding-left: 1em; font-size: large;">
+                                You can get the homework file <a href="https://docs.zoho.com.cn/file/r1fx8b144781be6b347a9991466618d6803d6" target="_blank">here <span class="icon fa fa-external-link" aria-hidden="true"></span></a>.
+                            </p>
+                            <p style="padding-left: 1em; font-size: large;">The answer sheet is in the next page.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-2" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 2</div>
+                            <div class="problem-grade" id="Problem2">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Prove or disprove the following statements:
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem2">
+                                <div class="layui-form-item">
+                                    <div class="problem-content">
+                                        <hr>
+                                        (1) Let <img src='http://latex.codecogs.com/svg.latex?A'/> be any set of sets. Then <img src='http://latex.codecogs.com/svg.latex?\cup\mathcal{P}(A) = A'/>;
+                                    </div>
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="This statement is true.">
+                                        <input type="radio" name="q1" value="B" title="This statement is false.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="problem-content">
+                                        <hr>
+                                        (2) Let <img src='http://latex.codecogs.com/svg.latex?A'/> be any set of sets. Then <img src='http://latex.codecogs.com/svg.latex?\mathcal{P}(\cup A) = A'/>.
+                                    </div>
+                                    <div class="question q2 q-radio">
+                                        <input type="radio" name="q2" value="A" title="This statement is true.">
+                                        <input type="radio" name="q2" value="B" title="This statement is false.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-3" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 5</div>
+                            <div class="problem-grade" id="Problem5">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Let <img src='http://latex.codecogs.com/svg.latex?S = \{A: A \subseteq \mathbb{Z}^+ , |A|<\infty\}'/>. Prove or disprove <img src='http://latex.codecogs.com/svg.latex?|S| = |\mathbb{Z}^+|'/>.
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem5">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="This statement is true.">
+                                        <input type="radio" name="q1" value="B" title="This statement is false.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "SI120",
+        "name": "Discrete Mathematics",
+        "semester": "Spring 2019",
+        "category": "Homework 作业",
+        "title": "Homework 3"
+    };
+
+    var answers = {
+        'Problem2': [10,{
+            'q1': [5,{
+                'A': 5
+            }],
+            'q2': [5,{
+                'B': 5
+            }]
+        }],
+        'Problem5': [10,{
+            'q1': [10,{
+                'A': 10
+            }]
+        }]
+    };
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

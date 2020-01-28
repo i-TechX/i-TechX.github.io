@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Homework 3-graph (Deadline: 2019/05/23)</h1>
+
+                    <div class="layui-hide" id="page-1" page-type="book">
+
+                        <div class="reading-content" style="font-size: large;">
+                            <hr>
+                            <div class="problem-title">Question Sheet</div>
+                            <br>
+                            <p style="padding-left: 1em; font-size: large;">
+                                You can get the homework file <a href="https://docs.zoho.com.cn/file/r1fx8d7c48d80c67c45b8aff21b9c8ca9775a" target="_blank">here <span class="icon fa fa-external-link" aria-hidden="true"></span></a>.
+                            </p>
+                            <p style="padding-left: 1em; font-size: large;">The answer sheet is in the next page.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-2" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 1</div>
+                            <div class="problem-grade" id="Problem1">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Are the two following graphs isomorphic?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem1">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="Yes">
+                                        <input type="radio" name="q1" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-3" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 2</div>
+                            <div class="problem-grade" id="Problem2">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                We have three buckets A, B, C of 5, 3 and 2 litres respectively. At the beginning the bucket A is
+                                full and the others are empty. We allow the operation of pouring the bucket X in the bucket Y until X is
+                                empty or Y full. Can we do this until the bucket A contains 2 litres, the bucket B contains 2 litres too, and
+                                the bucket C contains 1 litre?
+                                Hint: Draw the oriented graph such that vertices are triples (a, b, c) satisfying a + b + c = 5 and an edge
+                                from one vertex to another one when we can perform the pouring operation from the first vertex to the other
+                                one. Eg: there is an edge from (5, 0, 0) to (3, 0, 2).
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem2">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="Yes">
+                                        <input type="radio" name="q1" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-4" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 4</div>
+                            <div class="problem-grade" id="Problem4">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem4">
+                                <div class="layui-form-item">
+                                    <p style="font-size: medium;">(a) Can you draw the following pictures without lifting the pen? Explain.</p>
+                                    <p style="font-size: medium;">(1)</p>
+                                    <div class="question q1-1 q-radio">
+                                        <input type="radio" name="q1-1" value="A" title="Yes">
+                                        <input type="radio" name="q1-1" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(2)</p>
+                                    <div class="question q1-2 q-radio">
+                                        <input type="radio" name="q1-2" value="A" title="Yes">
+                                        <input type="radio" name="q1-2" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(3)</p>
+                                    <div class="question q1-3 q-radio">
+                                        <input type="radio" name="q1-3" value="A" title="Yes">
+                                        <input type="radio" name="q1-3" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(b) Do the following graphs admit any Hamilton circuit? If yes, draw one, otherwise, explain why there
+                                        is no Hamilton circuit.</p>
+                                    <p style="font-size: medium;">(1)</p>
+                                    <div class="question q2-1 q-radio">
+                                        <input type="radio" name="q2-1" value="A" title="Yes">
+                                        <input type="radio" name="q2-1" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(2)</p>
+                                    <div class="question q2-2 q-radio">
+                                        <input type="radio" name="q2-2" value="A" title="Yes">
+                                        <input type="radio" name="q2-2" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(3)</p>
+                                    <div class="question q2-3 q-radio">
+                                        <input type="radio" name="q2-3" value="A" title="Yes">
+                                        <input type="radio" name="q2-3" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(c) Do the graphs G1, G2, G3 and G4 below admit any Euler path or Euler circuit? If yes, draw one,
+                                        otherwise, explain why there is no Euler path nor Euler circuit.</p>
+                                    <p style="font-size: medium;">(1)</p>
+                                    <div class="question q3-1 q-checkbox">
+                                        <input type="checkbox" name="q3-1-A" title="The graph admits an Euler path.">
+                                        <input type="checkbox" name="q3-1-B" title="The graph admits an Euler circuit.">
+                                        <input type="checkbox" name="q3-1-C" title="There is no Euler path nor Euler circuit.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(2)</p>
+                                    <div class="question q3-2 q-checkbox">
+                                        <input type="checkbox" name="q3-2-A" title="The graph admits an Euler path.">
+                                        <input type="checkbox" name="q3-2-B" title="The graph admits an Euler circuit.">
+                                        <input type="checkbox" name="q3-2-C" title="There is no Euler path nor Euler circuit.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(3)</p>
+                                    <div class="question q3-3 q-checkbox">
+                                        <input type="checkbox" name="q3-3-A" title="The graph admits an Euler path.">
+                                        <input type="checkbox" name="q3-3-B" title="The graph admits an Euler circuit.">
+                                        <input type="checkbox" name="q3-3-C" title="There is no Euler path nor Euler circuit.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(4)</p>
+                                    <div class="question q3-4 q-checkbox">
+                                        <input type="checkbox" name="q3-4-A" title="The graph admits an Euler path.">
+                                        <input type="checkbox" name="q3-4-B" title="The graph admits an Euler circuit.">
+                                        <input type="checkbox" name="q3-4-C" title="There is no Euler path nor Euler circuit.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-5" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 5</div>
+                            <div class="problem-grade" id="Problem5">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Assume the rectangle below represents the map of a zoo, with several areas delimited by fences
+                                (represented by segments in the rectangle). To organize the visit of the zoo, we want to find a route going
+                                through all the areas.
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem5">
+                                <div class="layui-form-item">
+                                    <p style="font-size: medium;">(a) Can we find a route crossing each fence exactly once, considering that we cannot cross the external
+                                        fences (boundary of the big rectangle)? If yes, draw it.</p>
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="Yes">
+                                        <input type="radio" name="q1" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(b) Can we find a route crossing each fence exactly once, considering that we also have to cross all the
+                                        external fences exactly once too? If yes, draw it.</p>
+                                    <div class="question q2 q-radio">
+                                        <input type="radio" name="q2" value="A" title="Yes">
+                                        <input type="radio" name="q2" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(c) Assume that the entrance/exit of the zoo is in the top leftmost area. Can we organize a route starting
+                                        here, going through all the areas exactly once and coming back to the entrance/exit? If yes, draw it.</p>
+                                    <div class="question q3 q-radio">
+                                        <input type="radio" name="q3" value="A" title="Yes">
+                                        <input type="radio" name="q3" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-6" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 6</div>
+                            <div class="problem-grade" id="Problem6">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                A simple graph with 2p vertices is such that each of its vertices is of degree at least p. Show that
+                                this graph is connected. Do we have the same result for a simple graph with n vertices such that each vertex
+                                v has <img src='http://latex.codecogs.com/svg.latex?deg(v) \geq (n-1)/2'/>?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem6">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="Yes">
+                                        <input type="radio" name="q1" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-7" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 7</div>
+                            <div class="problem-grade" id="Problem7">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                A robber wants to steal art objects in each of the 10 biggest cities of the country. He doesn't want
+                                to be recognize so he cannot go over a city where he has already stolen something. Assuming that there are
+                                trains from each city to at least 5 other cities, can the robber get all the objects he wants? Start by explaining
+                                a graph model for this problem.
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem7">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="Yes">
+                                        <input type="radio" name="q1" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "SI120",
+        "name": "Discrete Mathematics",
+        "semester": "Spring 2019",
+        "category": "Homework 作业",
+        "title": "Homework 3-graph"
+    };
+
+    var answers = {
+        'Problem1': [10,{
+            'q1': [10,{
+                'B': 10
+            }]
+        }],
+        'Problem2': [10,{
+            'q1': [10,{
+                'B': 10
+            }]
+        }],
+        'Problem4': [15,{
+            'q1-1': [1,{
+                'A':1
+            }],
+            'q1-2': [1,{
+                'B':1
+            }],
+            'q1-3': [1,{
+                'B':1
+            }],
+            'q2-1': [1,{
+                'A':1
+            }],
+            'q2-2': [1,{
+                'A':1
+            }],
+            'q2-3': [1,{
+                'B':1
+            }],
+            'q3-1': [2,{
+                'AB':2,
+                'A' :1,
+                'B' :1
+            }],
+            'q3-2': [2,{
+                'C':2
+            }],
+            'q3-3': [2,{
+                'A':2
+            }],
+            'q3-4': [3,{
+                'AB':3,
+                'A':1,
+                'B':1
+            }]
+        }],
+        'Problem5': [10,{
+            'q1': [3,{
+                'B': 3
+            }],
+            'q2': [3,{
+                'A': 3
+            }],
+            'q3': [4,{
+                'A': 4
+            }]
+        }],
+        'Problem6': [10,{
+            'q1': [10,{
+                'A': 10
+            }]
+        }],
+        'Problem7': [10,{
+            'q1': [10,{
+                'A': 10
+            }]
+        }],
+    };
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

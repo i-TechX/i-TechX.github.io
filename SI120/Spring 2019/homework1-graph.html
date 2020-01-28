@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Homework 1-graph (Deadline: 2019/05/05)</h1>
+
+                    <div class="layui-hide" id="page-1" page-type="book">
+
+                        <div class="reading-content" style="font-size: large;">
+                            <hr>
+                            <div class="problem-title">Question Sheet</div>
+                            <br>
+                            <p style="padding-left: 1em; font-size: large;">
+                                You can get the homework file <a href="https://docs.zoho.com.cn/file/r1fx8cb230e1d80b542aa8d457849f115ccd8" target="_blank">here <span class="icon fa fa-external-link" aria-hidden="true"></span></a>.
+                            </p>
+                            <p style="padding-left: 1em; font-size: large;">The answer sheet is in the next page.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-2" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 2</div>
+                            <div class="problem-grade" id="Problem2">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>What is the largest degree of a vertex in a simple graph with n vertices ? What is the largest number
+                                    of edges in a simple graph with n vertices ?</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem2">
+                                <div class="layui-form-item">
+                                    <p style="font-size: medium;">a) Is it possible to draw a simple graph with 5 vertices and 11 edges ? If the answer is yes, draw an example.</p>
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="Yes">
+                                        <input type="radio" name="q1" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">b) Is it possible to draw a graph with 5 vertices v1, v2, v3, v4, v5 such that deg(v1) = 2, deg(v2) = 3, deg(v3) =
+                                        4, deg(v4) = 5, and deg(v5) = 6 ? If the answer is yes, draw an example.</p>
+                                    <div class="question q2 q-radio">
+                                        <input type="radio" name="q2" value="A" title="Yes">
+                                        <input type="radio" name="q2" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-3" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 4</div>
+                            <div class="problem-grade" id="Problem4">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Is there a simple graph whose degree sequence is:</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem4">
+                                <div class="layui-form-item">
+                                    <p style="font-size: medium;">a) 5, 4, 3, 3, 3, 2, 1 ? If yes, draw one.</p>
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="Yes">
+                                        <input type="radio" name="q1" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">b) 4, 3, 3, 2, 2 ? If yes, draw one.</p>
+                                    <div class="question q2 q-radio">
+                                        <input type="radio" name="q2" value="A" title="Yes">
+                                        <input type="radio" name="q2" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-4" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 5</div>
+                            <div class="problem-grade" id="Problem5">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>In a group with 20 children is it possible that 7 of them have exactly 3 friends, 9 of them have exactly
+                                    4 friends, and 4 of them have exactly 5 friends ?</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem5">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="Yes">
+                                        <input type="radio" name="q1" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-5" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 6</div>
+                            <div class="problem-grade" id="Problem6">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Let G be a graph with 12 vertices and 31 edges. Assume that each vertex in G has degree 4 or 6. How
+                                    many vertices of degree 4 the graph G has ?</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem6">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-text">
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "SI120",
+        "name": "Discrete Mathematics",
+        "semester": "Spring 2019",
+        "category": "Homework 作业",
+        "title": "Homework 1-graph"
+    };
+
+    var answers = {
+        'Problem2': [10,{
+            'q1': [5,{
+                'B': 5
+            }],
+            'q2': [5,{
+                'B': 5
+            }]
+        }],
+        'Problem4': [10,{
+            'q1': [5,{
+                'B': 5
+            }],
+            'q2': [5,{
+                'A': 5
+            }]
+        }],
+        'Problem5': [10,{
+            'q1': [10,{
+                'B': 10
+            }]
+        }],
+        'Problem6': [10,{
+            'q1': [10,{
+                '5': 10
+            }]
+        }]
+    };
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

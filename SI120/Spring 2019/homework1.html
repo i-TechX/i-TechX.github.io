@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Homework 1 (Deadline: March 1, 2019)</h1>
+
+                    <div class="layui-hide" id="page-1" page-type="book">
+
+                        <div class="reading-content" style="font-size: large;">
+                            <hr>
+                            <div class="problem-title">Problem 1</div>
+                            <br>
+                            <p style="padding-left: 1em;">
+                                Let <img src='http://latex.codecogs.com/svg.latex?p, q, r, \text{and }s'/> be propositional variables. Construct the truth table for the
+                                formula <img src='http://latex.codecogs.com/svg.latex?p \to \neg q \lor r \to \neg(\neg r \to s \land p)'/>.
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-2" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 2</div>
+                            <div class="problem-grade" id="Problem2">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Let <img src='http://latex.codecogs.com/svg.latex?p, q, r, \text{and }s'/> be propositional variables. Determine the types of the following
+                                formulas (tautology, contradiction or contingency). Explain your answers.
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem2">
+                                <div class="layui-form-item">
+                                    <div class="problem-content">
+                                        <hr>
+                                        (1) <img src='http://latex.codecogs.com/svg.latex?(\neg p \lor q) \land (q \to \neg r \land \neg p) \land (p \lor r)'/>
+                                    </div>
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="tautology">
+                                        <input type="radio" name="q1" value="B" title="contradiction">
+                                        <input type="radio" name="q1" value="C" title="contingency">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="problem-content">
+                                        <hr>
+                                        (2) <img src='http://latex.codecogs.com/svg.latex?(p \to q) \land (q \to r) \to (p \to r)'/>
+                                    </div>
+                                    <div class="question q2 q-radio">
+                                        <input type="radio" name="q2" value="A" title="tautology">
+                                        <input type="radio" name="q2" value="B" title="contradiction">
+                                        <input type="radio" name="q2" value="C" title="contingency">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="problem-content">
+                                        <hr>
+                                        (3) <img src='http://latex.codecogs.com/svg.latex?((p \lor q) \land (r \lor s)) \to (((p \to q) \lor (p \to r)) \land ((q \to p) \lor (q \to p)))'/>
+                                    </div>
+                                    <div class="question q3 q-radio">
+                                        <input type="radio" name="q3" value="A" title="tautology">
+                                        <input type="radio" name="q3" value="B" title="contradiction">
+                                        <input type="radio" name="q3" value="C" title="contingency">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-3" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 3</div>
+                            <div class="problem-grade" id="Problem3">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Let <img src='http://latex.codecogs.com/svg.latex?l, q, n, \text{and }b'/> be the following propositions:</p>
+                                <p><ul>
+                                    <li style="list-style-type: disc; margin: 0.5em;"><img src='http://latex.codecogs.com/svg.latex?l'/>: "The file system is locked."</li>
+                                    <li style="list-style-type: disc; margin: 0.5em;"><img src='http://latex.codecogs.com/svg.latex?q'/>: "New messages will be queued."</li>
+                                    <li style="list-style-type: disc; margin: 0.5em;"><img src='http://latex.codecogs.com/svg.latex?n'/>: "The system is functioning normally."</li>
+                                    <li style="list-style-type: disc; margin: 0.5em;"><img src='http://latex.codecogs.com/svg.latex?b'/>: "New messages will be sent to the message buffer."</li>
+                                </ul></p>
+
+                                <p>Determine if the following system specications are consistent using <img src='http://latex.codecogs.com/svg.latex?l, q, n, \text{and }b'/>:</p>
+
+                                <p><ol>
+                                    <li>(1) If the file system is not locked, then new messages will be queued.</li>
+                                    <li>(2) If the file system is not locked, then the system is functioning normally, and conversely.</li>
+                                    <li>(3) If new messages are not queued, then they will be sent to the message buffer.</li>
+                                    <li>(4) If the file system is not locked, then new messages will be sent to the message buffer.</li>
+                                    <li>(5) New messages will not be sent to the message buffer.</li>
+                                </ol></p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem3">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="Yes">
+                                        <input type="radio" name="q1" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-4" page-type="book">
+
+                        <div class="reading-content" style="font-size: large;">
+                            <hr>
+                            <div class="problem-title">Problem 4</div>
+                            <br>
+                            <div style="padding-left: 1em;">
+                                <p>Let <img src='http://latex.codecogs.com/svg.latex?a, b, c, \text{and }d'/> be propositions as below.</p>
+                                <p><ul>
+                                    <li style="list-style-type: disc; margin: 0.5em;"><img src='http://latex.codecogs.com/svg.latex?a'/>: "Alice attends the meeting."</li>
+                                    <li style="list-style-type: disc; margin: 0.5em;"><img src='http://latex.codecogs.com/svg.latex?b'/>: "Bob attends the meeting."</li>
+                                    <li style="list-style-type: disc; margin: 0.5em;"><img src='http://latex.codecogs.com/svg.latex?c'/>: "Charlie attends the meeting."</li>
+                                    <li style="list-style-type: disc; margin: 0.5em;"><img src='http://latex.codecogs.com/svg.latex?d'/>: "David attends the meeting."</li>
+                                </ul></p>
+
+                                <p>Translate the following statements into propositional formulas in <img src='http://latex.codecogs.com/svg.latex?a, b, c, \text{and }d'/>.</p>
+
+                                <p><ol>
+                                    <li>(1) "A necessary condition for Alice attending the meeting, is that, if Bob and Charlie
+                                        aren't attending, David attends."</li>
+                                    <li>(2) "Alice, Bob and Charlie attend the meeting if and only if David doesn't attend, but,
+                                        if neither Alice nor Bob attend, then David attends only if Charlie attends."</li>
+                                </ol></p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-5" page-type="book">
+
+                        <div class="reading-content" style="font-size: large;">
+                            <hr>
+                            <div class="problem-title">Problem 5</div>
+                            <br>
+                            <div style="padding-left: 1em;">
+                                <p>Show that <img src='http://latex.codecogs.com/svg.latex?P \leftrightarrow (Q \leftrightarrow R) \equiv (P \leftrightarrow Q) \leftrightarrow R'/>.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-6" page-type="book">
+
+                        <div class="reading-content" style="font-size: large;">
+                            <hr>
+                            <div class="problem-title">Problem 6</div>
+                            <br>
+                            <div style="padding-left: 1em;">
+                                <p>Let <img src='http://latex.codecogs.com/svg.latex?P, Q, R \text{and } S'/> be propositional formulas. Show that</p>
+                                <p align="center"><img src='http://latex.codecogs.com/svg.latex?(P \land Q \land S) \lor (P \land \neg Q \land \neg R) \lor (P \land Q \land \neg S) \lor \neg(P \land R \to Q) \equiv P'/></p>
+                                <p>using the rule of replacement. (You can use any laws on page 10, 11 of lec2.)</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-7" page-type="book">
+
+                        <div class="reading-content" style="font-size: large;">
+                            <hr>
+                            <div class="problem-title">Problem 7</div>
+                            <br>
+                            <div style="padding-left: 1em;">
+                                <p>Let <img src='http://latex.codecogs.com/svg.latex?\triangle'/> be the unary logical connective defined by the follow truth table</p>
+                                <div align="center"><table class="layui-table" style="width: fit-content;">
+                                    <thead>
+                                        <tr>
+                                            <td><img src='http://latex.codecogs.com/svg.latex?p'/></td>
+                                            <td><img src='http://latex.codecogs.com/svg.latex?\triangle p'/></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>T</td>
+                                            <td>F</td>
+                                        </tr>
+                                        <tr>
+                                            <td>F</td>
+                                            <td>F</td>
+                                        </tr>
+                                    </tbody>
+                                </table></div>
+                                <p>Represent the following formulas</p>
+                                <p><ol>
+                                    <li>(1) <img src='http://latex.codecogs.com/svg.latex?\neg p'/></li>
+                                    <li>(2) <img src='http://latex.codecogs.com/svg.latex?p \land q'/></li>
+                                    <li>(3) <img src='http://latex.codecogs.com/svg.latex?p \lor q'/></li>
+                                </ol></p>
+                                <p>as formulas that only use the connectives <img src='http://latex.codecogs.com/svg.latex?\triangle'/> and <img src='http://latex.codecogs.com/svg.latex?\to'/>.</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-8" page-type="book">
+
+                        <div class="reading-content" style="font-size: large;">
+                            <hr>
+                            <div class="problem-title">Problem 8</div>
+                            <br>
+                            <div style="padding-left: 1em;">
+                                <p>Let <img src='http://latex.codecogs.com/svg.latex?A_1, A_2, \cdots, A_8 \text{and } A'/> be formulas defined by the following truth table.</p>
+                                <div align="center"><table class="layui-table" style="width: fit-content;">
+                                    <thead>
+                                        <tr>
+                                            <td><img src='http://latex.codecogs.com/svg.latex?p'/></td>
+                                            <td><img src='http://latex.codecogs.com/svg.latex?q'/></td>
+                                            <td><img src='http://latex.codecogs.com/svg.latex?r'/></td>
+                                            <td><img src='http://latex.codecogs.com/svg.latex?A_1'/></td>
+                                            <td><img src='http://latex.codecogs.com/svg.latex?A_2'/></td>
+                                            <td><img src='http://latex.codecogs.com/svg.latex?A_3'/></td>
+                                            <td><img src='http://latex.codecogs.com/svg.latex?A_4'/></td>
+                                            <td><img src='http://latex.codecogs.com/svg.latex?A_5'/></td>
+                                            <td><img src='http://latex.codecogs.com/svg.latex?A_6'/></td>
+                                            <td><img src='http://latex.codecogs.com/svg.latex?A_7'/></td>
+                                            <td><img src='http://latex.codecogs.com/svg.latex?A_8'/></td>
+                                            <td><img src='http://latex.codecogs.com/svg.latex?A'/></td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>T</td><td>T</td><td>T</td><td>T</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td>
+                                        </tr>
+                                        <tr>
+                                            <td>T</td><td>T</td><td>F</td><td>F</td><td>T</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>T</td>
+                                        </tr>
+                                        <tr>
+                                            <td>T</td><td>F</td><td>T</td><td>F</td><td>F</td><td>T</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td>
+                                        </tr>
+                                        <tr>
+                                            <td>T</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>T</td><td>F</td><td>F</td><td>F</td><td>F</td><td>T</td>
+                                        </tr>
+                                        <tr>
+                                            <td>F</td><td>T</td><td>T</td><td>F</td><td>F</td><td>F</td><td>F</td><td>T</td><td>F</td><td>F</td><td>F</td><td>F</td>
+                                        </tr>
+                                        <tr>
+                                            <td>F</td><td>T</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>T</td><td>F</td><td>F</td><td>T</td>
+                                        </tr>
+                                        <tr>
+                                            <td>F</td><td>F</td><td>T</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>T</td><td>F</td><td>T</td>
+                                        </tr>
+                                        <tr>
+                                            <td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>T</td><td>T</td>
+                                        </tr>
+                                    </tbody>
+                                </table></div>
+                                <p><ol>
+                                    <li>(a) Determine the formulas <img src='http://latex.codecogs.com/svg.latex?A_1, A_2, \cdots, A_8'/>.</li>
+                                    <li>(b) Determine the formula <img src='http://latex.codecogs.com/svg.latex?A'/> with the observation <img src='http://latex.codecogs.com/svg.latex?A \equiv A_2 \lor A_4 \lor A_6 \lor A_7 \lor A_8'/>.</li>
+                                </ol></p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "SI120",
+        "name": "Discrete Mathematics",
+        "semester": "Spring 2019",
+        "category": "Homework 作业",
+        "title": "Homework 1"
+    };
+
+    var answers = {
+        'Problem2': [10,{
+            'q1': [3,{
+                'C': 3
+            }],
+            'q2': [3,{
+                'A': 3
+            }],
+            'q3': [4,{
+                'C': 4
+            }]
+        }],
+        'Problem3': [10,{
+            'q1': [10,{
+                'A': 10
+            }]
+        }]
+    };
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

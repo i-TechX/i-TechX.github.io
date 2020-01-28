@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Homework 7 (Deadline: April 25, 2019)</h1>
+
+                    <div class="layui-hide" id="page-1" page-type="book">
+
+                        <div class="reading-content" style="font-size: large;">
+                            <hr>
+                            <div class="problem-title">Question Sheet</div>
+                            <br>
+                            <p style="padding-left: 1em; font-size: large;">
+                                You can get the homework file <a href="https://docs.zoho.com.cn/file/r1fx8dcb65e00a5104720bc5aba18f5dbf96b" target="_blank">here <span class="icon fa fa-external-link" aria-hidden="true"></span></a>.
+                            </p>
+                            <p style="padding-left: 1em; font-size: large;">The answer sheet is in the next page.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-2" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 2</div>
+                            <div class="problem-grade" id="Problem2">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Let <img src='http://latex.codecogs.com/svg.latex?a_r'/> be the number of ways of distributing <img src='http://latex.codecogs.com/svg.latex?r'/> identical books into 3 identical boxes
+                                such that at most 1 box is empty.
+                                Determine <img src='http://latex.codecogs.com/svg.latex?a_{1000}'/> with the generating function of <img src='http://latex.codecogs.com/svg.latex?\{a_r\}_{r\geq 0}'/>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem2">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-text">
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-3" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 7</div>
+                            <div class="problem-grade" id="Problem7">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Find <img src='http://latex.codecogs.com/svg.latex?gcd(a, b)'/>, and two integers <img src='http://latex.codecogs.com/svg.latex?s,t'/> such that <img src='http://latex.codecogs.com/svg.latex?gcd(a, b) = as+bt'/>, where</p>
+
+                                <p>a=1797693134862315907729305190789024733617976978942306572734300811577326758055009
+                                6313270847732240753602112011387987139335765878976881441662249284743063947707409
+                                5512480796227391561801824887394139579933613278628104952355769470429079061808809
+                                522886423955917442317693387325171135071792698344550223571732405562649211;</p>
+                                <p>b=1797693134862315907729305190789024733617976978942306572734300811577326758055009
+                                6313270847732240753602112011387987139335765878976881441662249284743063947988973
+                                5177768741618302107051448115080910246755937681237426900258951040875394506673937
+                                916489039005637257224383606487241814360108088853329912322798696840339821.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem7">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-text-no-eval">
+                                        <p><img src='http://latex.codecogs.com/svg.latex?gcd(a, b)='/></p>
+                                        <textarea placeholder="" name="q1" class="layui-textarea" style="height: 1em;"></textarea>
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q2 q-text-no-eval">
+                                        <p><img src='http://latex.codecogs.com/svg.latex?s='/></p>
+                                        <textarea placeholder="" name="q2" class="layui-textarea" style="height: 1em;"></textarea>
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q3 q-text-no-eval">
+                                        <p><img src='http://latex.codecogs.com/svg.latex?t='/></p>
+                                        <textarea placeholder="" name="q3" class="layui-textarea" style="height: 1em;"></textarea>
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-4" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 8</div>
+                            <div class="problem-grade" id="Problem8">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Decrypt the ciphertext <img src='http://latex.codecogs.com/svg.latex?c'/> in RSA, where</p>
+
+                                <p>p=6703903964971298549787012499102923063739682910296196688861780721860882015036773
+                                    488400937149083451713845015929093243025426876941405973284973216824503042159;</p>
+                                <p>q=6703903964971298549787012499102923063739682910296196688861780721860882015036773
+                                    488400937149083451713845015929093243025426876941405973284973216824503042857;</p>
+                                <p>N=4494232837155789769323262976972561834044942447355766431835752028943316895137524
+                                    0783177119330601884005280028469967848339414697442203604155623211857659874698686
+                                    0897469508821753705747295895301640381407432389750042804736496820394495519778071
+                                    39812363584867575042325912358143379538270713424498384198560948854808263;</p>
+                                <p>e=9636981456622546792465301480551349289696413451851526452462786147487977806983166
+                                    0663897677046727957192703934803972250616430609259595745097617769926942112134367
+                                    5943078374885009884736539822262577575411065325146334523993975040737932311779827
+                                    20744337722569856046005247772492366591236471725562440735800298613269;</p>
+                                <p>c=2891727949404584416984483039628011793418731724707010912459311103904063699345063
+                                    9906028218239456795157060227418502117640834059825921727531379410113218367312325
+                                    5708332039723416640978029255415012590200795354638894179182667241957163554915136
+                                    1562690084861544977890629208820465212228909954211513216097290151297004.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem8">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-text-no-eval">
+                                        <textarea placeholder="" name="q1" class="layui-textarea" style="height: 1em;"></textarea>
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "SI120",
+        "name": "Discrete Mathematics",
+        "semester": "Spring 2019",
+        "category": "Homework 作业",
+        "title": "Homework 7"
+    };
+
+    var answers = {
+        'Problem2': [10,{
+            'q1': [10,{
+                '83833': 10
+            }]
+        }],
+        'Problem7': [10,{
+            'q1': [4,{
+                '13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084241': 4,
+                '13407807929942597099574024998205846127479365820592393377723561443721764030073546976801874298166903427690031858186486050853753882811946569946433649006084241\n': 4
+            }],
+            'q2': [3,{
+                '-3766955561269586804166035594734023435815631349595005758503286310378971798925425103006240874246891915398627998252393700001768948028118322032569453768376088': 3,
+                '-3766955561269586804166035594734023435815631349595005758503286310378971798925425103006240874246891915398627998252393700001768948028118322032569453768376088\n': 3,
+            }],
+            'q3': [3,{
+                '3766955561269586804166035594734023435815631349595005758503286310378971798925425103006240874246891915398627998252393700001768948028118322032569453768376029': 3,
+                '3766955561269586804166035594734023435815631349595005758503286310378971798925425103006240874246891915398627998252393700001768948028118322032569453768376029\n': 3,
+            }]
+        }],
+        'Problem8': [10,{
+            'q1': [10,{
+                '21901117025114964040305392436625187040695163470237446020295807020233905780163699671113037884909456394676262692845266679688481847750843861143699416191759070117456891447204693850314865556867390187774234481269014465723277071717132283569144455204933053504034742139896220841279932710423798768213939953157869023930': 10,
+                '21901117025114964040305392436625187040695163470237446020295807020233905780163699671113037884909456394676262692845266679688481847750843861143699416191759070117456891447204693850314865556867390187774234481269014465723277071717132283569144455204933053504034742139896220841279932710423798768213939953157869023930\n': 10
+            }]
+        }]
+    };
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

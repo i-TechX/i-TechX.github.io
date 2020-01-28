@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Homework 5-graph (Deadline: 2019/06/06)</h1>
+
+                    <div class="layui-hide" id="page-1" page-type="book">
+
+                        <div class="reading-content" style="font-size: large;">
+                            <hr>
+                            <div class="problem-title">Question Sheet</div>
+                            <br>
+                            <p style="padding-left: 1em; font-size: large;">
+                                You can get the homework file <a href="https://docs.zoho.com.cn/file/r1fx8c135d3f6bfb34ba889c483e5d068a5db" target="_blank">here <span class="icon fa fa-external-link" aria-hidden="true"></span></a>.
+                            </p>
+                            <p style="padding-left: 1em; font-size: large;">The answer sheet is in the next page.</p>
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-2" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 1</div>
+                            <div class="problem-grade" id="Problem1">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem1">
+                                <div class="layui-form-item">
+                                    <p style="font-size: medium;">(a) Given the rooted tree T, answer the following questions:</p>
+                                    <p style="font-size: medium;">i. Is T a m-ary tree for some positive integer m? If not, what is the minimal number of edges to
+                                        add to T to make it a m-ary tree?</p>
+                                    <div class="question q1-1-1 q-radio">
+                                        <input type="radio" name="q1-1-1" value="A" title="Yes">
+                                        <input type="radio" name="q1-1-1" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">If the answer is Yes, leave this box blank.</p>
+                                    <div class="question q1-1-2 q-text-no-eval">
+                                        <input type="text" name="q1-1-2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p style="font-size: medium;">ii. Is T a full m-ary tree for some positive integer m? If not, what is the minimal number of edges
+                                        to add to T to make it a full m-ary tree? Draw the corresponding m-ary tree.</p>
+                                    <div class="question q1-2-1 q-radio">
+                                        <input type="radio" name="q1-2-1" value="A" title="Yes">
+                                        <input type="radio" name="q1-2-1" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">If the answer is Yes, leave this box blank.</p>
+                                    <div class="question q1-2-2 q-text">
+                                        <input type="text" name="q1-2-2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p style="font-size: medium;">iii. Is T balanced? If not, what is the minimal number of edges to add to T to make it balanced?
+                                        Draw the corresponding balanced tree.</p>
+                                    <div class="question q1-3-1 q-radio">
+                                        <input type="radio" name="q1-3-1" value="A" title="Yes">
+                                        <input type="radio" name="q1-3-1" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">If the answer is Yes, leave this box blank.</p>
+                                    <div class="question q1-3-2 q-text">
+                                        <input type="text" name="q1-3-2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(b) Let n be a power of 2. How many steps are needed to add n numbers using a tree-connected network
+                                        of n - 1 processors? Explain your answer.</p>
+                                    <p style="font-size: medium;">What is the answer when n=1024?</p>
+                                    <div class="question q2 q-text">
+                                        <input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-3" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 2</div>
+                            <div class="problem-grade" id="Problem2">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem2">
+                                <div class="layui-form-item">
+                                    <p style="font-size: medium;">(a) How many nonisomorphic unrooted trees are there with 5 vertices?</p>
+                                    <div class="question q1 q-text">
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(b) How many nonisomorphic rooted trees are there with 5 vertices (using isomorphisms for directed
+                                        graphs)?</p>
+                                    <div class="question q2 q-text">
+                                        <input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-4" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 3</div>
+                            <div class="problem-grade" id="Problem3">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem3">
+                                <div class="layui-form-item">
+                                    <p style="font-size: medium;">(a) Build a binary search tree for words Japan, Corea, Thailand, China, Indonesia, Singapour.</p>
+                                    <p style="font-size: medium;">(b) How many comparisons are needed to locate Indonesia?</p>
+                                    <div class="question q1 q-text">
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(c) How many comparisons are needed to add Mongolia in the binary search tree?</p>
+                                    <div class="question q2 q-text">
+                                        <input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(d) Find at least three different orderings of the words Japan, Corea, Thailand, China, Indonesia,
+                                        Singapour, Mongolia such that the corresponding binary search tree gives optimal worst-case complexity
+                                        for binary searching.</p>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-5" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 4</div>
+                            <div class="problem-grade" id="Problem4">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem4">
+                                <div class="layui-form-item">
+                                    <p style="font-size: medium;">(a) Which of the following codes are prefix codes:</p>
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="i. a:001, b:01, c:100, d:0">
+                                        <input type="checkbox" name="q1-B" title="ii. a:000, b:111, c:11000, d:00111, e:01000">
+                                        <input type="checkbox" name="q1-C" title="iii. a:101, b:00, c:1000, d:10101, e:1101">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(b) Construct the binary tree with prefix codes representing these coding scheme:
+                                    <br>    i. a:00, b:01, c:110, d:111
+                                    <br>    ii. a:01, b:100, c:110, d:1110
+                                    <br>    iii. a:10, b:110, c:1000, d:11100, e:11110</p>
+                                    <p style="font-size: medium;">(c) Given the code scheme a:10, e:0011, l:1100, p:1110, r:010, find the words represented by:</p>
+                                    <div class="question q2-1 q-text">
+                                        <p style="font-size: medium;">101110111011000011</p>
+                                        <input type="text" name="q2-1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2-2 q-text">
+                                        <p style="font-size: medium;">1110001110010</p>
+                                        <input type="text" name="q2-2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2-3 q-text">
+                                        <p style="font-size: medium;">11100011100101100</p>
+                                        <input type="text" name="q2-3" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2-4 q-text">
+                                        <p style="font-size: medium;">11101011000011</p>
+                                        <input type="text" name="q2-4" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(d) Explain why the prefix code in question (b)i. is not optimal (assuming all characters appear with the
+                                        same frequency). Without changing the codes for a, b, c, and d, how many other characters can we
+                                        encode without changing the height of the corresponding tree?</p>
+                                    <div class="question q3-1 q-text">
+                                        <input type="text" name="q3-1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p style="font-size: medium;">Is this code optimal?</p>
+                                    <div class="question q3-2 q-radio">
+                                        <input type="radio" name="q3-2" value="A" title="Yes">
+                                        <input type="radio" name="q3-2" value="B" title="No">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-6" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 5</div>
+                            <div class="problem-grade" id="Problem5">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Consider the following pairs of symbols and frequencies (R,0.4), (S,0.27), (T,0.33).
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem5">
+                                <div class="layui-form-item">
+                                    <p style="font-size: medium;">(a) Find a Huffman coding for these symbols.</p>
+                                    <div class="question q1-1 q-text-no-eval">
+                                        <p style="font-size: medium; display: inline; margin-right: 1em;">R: </p>
+                                        <input type="text" name="q1-1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q1-2 q-text-no-eval">
+                                        <p style="font-size: medium; display: inline; margin-right: 1em;">S: </p>
+                                        <input type="text" name="q1-2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q1-3 q-text-no-eval">
+                                        <p style="font-size: medium; display: inline; margin-right: 1em;">T: </p>
+                                        <input type="text" name="q1-3" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(b) Assume we have a text containing only the symbols R, S and T.We group together symbols by blocks
+                                        of two symbols. Construct a Huffman code for the symbols RR, RS, RT, SR, SS, ST, TR, TS, TT,
+                                        assuming that the occurrences of symbols in the text are independent.</p>
+                                    <div class="question q2-RR q-text-no-eval">
+                                        <p style="font-size: medium; display: inline; margin-right: 1em;">RR: </p>
+                                        <input type="text" name="q2-RR" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2-RS q-text-no-eval">
+                                        <p style="font-size: medium; display: inline; margin-right: 1em;">RS: </p>
+                                        <input type="text" name="q2-RS" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2-RT q-text-no-eval">
+                                        <p style="font-size: medium; display: inline; margin-right: 1em;">RT: </p>
+                                        <input type="text" name="q2-RT" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2-SR q-text-no-eval">
+                                        <p style="font-size: medium; display: inline; margin-right: 1em;">SR: </p>
+                                        <input type="text" name="q2-SR" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2-SS q-text-no-eval">
+                                        <p style="font-size: medium; display: inline; margin-right: 1em;">SS: </p>
+                                        <input type="text" name="q2-SS" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2-ST q-text-no-eval">
+                                        <p style="font-size: medium; display: inline; margin-right: 1em;">ST: </p>
+                                        <input type="text" name="q2-ST" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2-TR q-text-no-eval">
+                                        <p style="font-size: medium; display: inline; margin-right: 1em;">TR: </p>
+                                        <input type="text" name="q2-TR" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2-TS q-text-no-eval">
+                                        <p style="font-size: medium; display: inline; margin-right: 1em;">TS: </p>
+                                        <input type="text" name="q2-TS" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2-TT q-text-no-eval">
+                                        <p style="font-size: medium; display: inline; margin-right: 1em;">TT: </p>
+                                        <input type="text" name="q2-TT" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(c) For each Huffman code, what is the average number of bits required to encode the text?</p>
+                                    <div class="question q3-1 q-text">
+                                        <p style="font-size: medium;">For the Huffman code in (a):</p>
+                                        <input type="text" name="q3-1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q3-2 q-text">
+                                        <p style="font-size: medium;">For the Huffman code in (b):</p>
+                                        <input type="text" name="q3-2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p style="font-size: medium;">Which code is the more efficient?</p>
+                                    <div class="question q3-3 q-radio">
+                                        <input type="radio" name="q3-3" value="A" title="The code in (a)">
+                                        <input type="radio" name="q3-3" value="B" title="The code in (b)">
+                                        <input type="radio" name="q3-3" value="C" title="They are the same">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+                                        <p><b>Explanation</b></p>
+                                        <p>Larger probability should be in the left. In this semester, if this rule is not obeyed, half of the scores will be deducted.</p>
+                                    </blockquote>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-7" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 6</div>
+                            <div class="problem-grade" id="Problem6">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Alice and Bob are playing a game with the following rules: there are 2 white balls and 3 black
+                                    balls. The players play in turn. At each turn they can withdraw one ball or two balls with different colors.
+                                    The winner is the one who withdraw the last ball(s) (i.e. a winning position is (1,0), (0,1), or (1,1), where
+                                    the pair (x,y) means that there are still x white balls and y black balls on the table).</p>
+                                <p>(a) Draw the corresponding game tree.</p>
+                                <p>(b) Assign values to the vertices.</p>
+                                <p>(c) Assume Alice is the first player. Who wins the game if Alice and Bob follow an optimal strategy?</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem6">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="Alice wins.">
+                                        <input type="radio" name="q1" value="B" title="Bob wins.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-8" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Problem 7</div>
+                            <div class="problem-grade" id="Problem7">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Suppose the universal address of a vertex V in an ordered rooted tree is 4.3.7.2.3.6.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Problem7">
+                                <div class="layui-form-item">
+                                    <p style="font-size: medium;">(a) What is the level of V?</p>
+                                    <div class="question q1 q-text">
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(b) What is the minimum number of siblings of V?</p>
+                                    <div class="question q2 q-text">
+                                        <input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p style="font-size: medium;">(c) Give the universal address of the ancestors of V.</p>
+                                    <p style="font-size: medium;">(d) What is the minimum number of vertices in the tree?</p>
+                                    <div class="question q3 q-text">
+                                        <input type="text" name="q3" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "SI120",
+        "name": "Discrete Mathematics",
+        "semester": "Spring 2019",
+        "category": "Homework 作业",
+        "title": "Homework 5-graph"
+    };
+
+    var answers = {
+        'Problem1': [10,{
+            'q1-1-1': [1,{
+                'A': 1
+            }],
+            'q1-1-2': [1,{
+                '': 1
+            }],
+            'q1-2-1': [1,{
+                'B': 1
+            }],
+            'q1-2-2': [1,{
+                '7': 1
+            }],
+            'q1-3-1': [1,{
+                'B': 1
+            }],
+            'q1-3-2': [1,{
+                '4': 1
+            }],
+            'q2': [4,{
+                '10': 4
+            }]
+        }],
+        'Problem2': [10,{
+            'q1': [5, {
+                '3': 5
+            }],
+            'q2': [5, {
+                '9': 5
+            }]
+        }],
+        'Problem3': [10,{
+            'q1': [5, {
+                '3': 5
+            }],
+            'q2': [5, {
+                '3': 5
+            }]
+        }],
+        'Problem4': [10,{
+            'q1': [2, {
+                'B': 2
+            }],
+            'q2-1': [1, {
+                'apple': 1
+            }],
+            'q2-2': [1, {
+                'pear': 1
+            }],
+            'q2-3': [1, {
+                'pearl': 1
+            }],
+            'q2-4': [1, {
+                'pale': 1
+            }],
+            'q3-1': [2, {
+                '2': 2
+            }],
+            'q3-2': [2, {
+                'A': 2
+            }]
+        }],
+        'Problem5': [10,{
+            'q1-1': [0.5, {
+                '1': 0.5
+            }],
+            'q1-2': [0.5, {
+                '01': 0.5
+            }],
+            'q1-3': [0.5, {
+                '00': 0.5
+            }],
+            'q2-ST': [0.5, {
+                '111': 0.5
+            }],
+            'q2-SR': [0.5, {
+                '110': 0.5
+            }],
+            'q2-RS': [0.5, {
+                '101': 0.5
+            }],
+            'q2-TT': [0.5, {
+                '100': 0.5
+            }],
+            'q2-TR': [0.5, {
+                '011': 0.5
+            }],
+            'q2-RT': [0.5, {
+                '010': 0.5
+            }],
+            'q2-RR': [0.5, {
+                '001': 0.5
+            }],
+            'q2-SS': [0.5, {
+                '0001': 0.5
+            }],
+            'q2-TS': [0.5, {
+                '0000': 0.5
+            }],
+            'q3-1': [1, {
+                '1.6': 1
+            }],
+            'q3-2': [2, {
+                '1.581': 2
+            }],
+            'q3-3': [1, {
+                'B': 1
+            }]
+        }],
+        'Problem6': [10,{
+            'q1': [10, {
+                'A': 10
+            }]
+        }],
+        'Problem7': [10,{
+            'q1': [3, {
+                '6': 3
+            }],
+            'q2': [3, {
+                '5': 3
+            }],
+            'q3': [4, {
+                '26': 4
+            }]
+        }],
+    };
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>
