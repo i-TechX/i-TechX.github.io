@@ -13,7 +13,7 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
             return answer.join('');
         } else if (type === 'radio' || type === 'text-no-eval') {
             return json[questionName];
-        } else if (type === 'text' || type === 'text-no-repetition') {
+        } else if (type === 'text' || type === 'text-no-repetition' || type === 'text-include') {
             try{
                 return eval(json[questionName]);
             } catch (err) {
@@ -55,7 +55,7 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
 
     var courseBenchTpl = lay('#courseBench')[0].innerHTML;
     lay('#courseBench').html(layui.laytpl(courseBenchTpl).render({
-        "url": "https://www.coursebench.net/course/"+courseInfo.code+"/"
+        "url": "https://www.coursebench.net/course/"+(courseInfo.hasOwnProperty("coursebench") ? courseInfo.coursebench : courseInfo.code)+"/"
     }))
     .removeClass('layui-hide');
 
@@ -223,6 +223,16 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
 
                     var myAnswer = answerParse(questionName, type, data.field);
                     var score = !answers[problem][1][questionName][1][myAnswer] ? 0 : answers[problem][1][questionName][1][myAnswer];
+                    if (type === 'text-include') {
+                        for (const key in answers[problem][1][questionName][1]) {
+                            if (answers[problem][1][questionName][1].hasOwnProperty(key)) {
+                                const cur_value = answers[problem][1][questionName][1][key];
+                                if (myAnswer && myAnswer.toString().indexOf(key)!=-1 && cur_value>score) {
+                                    score = cur_value;
+                                }
+                            }
+                        }                        
+                    }
                     var totalScore = answers[problem][1][questionName][0];
                     var correct = 0;
                     if (score === totalScore) {
@@ -268,7 +278,7 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
                                 }
                             }
                         }
-                    } else if (type === 'text' || type === 'text-no-repetition' || type === 'text-no-eval') {
+                    } else if (type === 'text' || type === 'text-no-repetition' || type === 'text-no-eval' || type === 'text-include') {
                         for (const elem in questionElement.children) {
                             if (questionElement.children.hasOwnProperty(elem)) {
                                 const element = questionElement.children[elem];

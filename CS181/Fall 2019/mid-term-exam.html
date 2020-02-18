@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Mid-term Exam</h1>
+
+                    <div class="layui-hide" id="page-1" page-type="book">
+                        <hr>
+                        <div class="reading-content" style="margin: 0 5em;">
+                        <h1>CS 181 Artificial Intelligence (Fall 2019), Midterm Exam</h1>
+                        <p style="text-align: left; margin: 0;"><b>INSTRUCTIONS:</b></p>
+                            <ul>
+                                <li style="list-style-type: disc; margin: 0.5em;"> Time: 1-2:40am (100 minutes)</li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> This exam is closed-book, but you may bring one A4-size cheat sheet. Put all the study
+                                    materials and electronic devices into your bag and put your bag in the front, back, or sides
+                                    of the classroom.</li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> You can write your answers in either English or Chinese.</li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> Two blank pieces of paper are attached, which you can use as scratch paper. Raise your
+                                    hand if you need more paper.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="layui-hide" id="page-2" page-type="question">
+                        <hr>
+                        <div class="reading-content" style="margin: 1em;">
+                            <h2 style="margin-bottom: 0.5em;"><b>Multiple choice (10 pt)</b></h2>
+                            <p>Each question has one or more correct answer(s). Select all the correct answer(s). For each
+                                question, you get 0 point if you select one or more wrong answers, but you get 0.5 point if you
+                                select a non-empty proper subset of the correct answers.</p>
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 1</div>
+                            <div class="problem-grade" id="Question1">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Consider graph search in a finite state space graph. Which of the following statement(s) is/are correct?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="BFS is complete and optimal when all the edge costs are the same.">
+                                        <input type="checkbox" name="q1-B" title="The space complexity of iterative deepening search is lower than that of BFS.">
+                                        <input type="checkbox" name="q1-C" title="A* is optimal if the heuristic is admissible.">
+                                        <input type="checkbox" name="q1-D" title="Greedy search is complete but not optimal.">
+                                        <input type="checkbox" name="q1-E" title="None of the above">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 2</div>
+                            <div class="problem-grade" id="Question2">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>For a CSP represented by the following constraint graph, suppose we initially enforce arc
+                                    consistency and then run backtracking search with no filtering. Which of the following
+                                    orderings of variable assignments can guarantee that no backtracking will be necessary when
+                                    finding a solution?</p>
+                                <img src="image/mid-q2.jpg"/>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question2">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="A-B-C-D-E-F">
+                                        <input type="checkbox" name="q1-B" title="D-E-F-C-B-A">
+                                        <input type="checkbox" name="q1-C" title="B-C-D-A-E-F">
+                                        <input type="checkbox" name="q1-D" title="B-D-A-F-E-C">
+                                        <input type="checkbox" name="q1-E" title="None of the above">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 3</div>
+                            <div class="problem-grade" id="Question3">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Which of the following statement(s) about propositional logic is/are correct?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question3">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="If a sentence <img src='http://latex.codecogs.com/svg.latex?S'/> is unsatisfiable, then <img src='http://latex.codecogs.com/svg.latex?\neg S'/> is valid.">
+                                        <input type="checkbox" name="q1-B" title="If we use the resolution algorithm to prove <img src='http://latex.codecogs.com/svg.latex?A \land B \models A'/>, then it will yield an empty clause in the process.">
+                                        <input type="checkbox" name="q1-C" title="<img src='http://latex.codecogs.com/svg.latex?\neg A \land \neg B \land C \land D'/> is a Horn clause.">
+                                        <input type="checkbox" name="q1-D" title="Forward chaining and backward chaining are sound and complete with Horn clauses and run linear in space and time.">
+                                        <input type="checkbox" name="q1-E" title="None of the above">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 4</div>
+                            <div class="problem-grade" id="Question4">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Which of the following statement(s) about first-order logic is/are correct?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question4">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="<img src='http://latex.codecogs.com/svg.latex?\exists x At(x, SIST) \Rightarrow Loves(x, AI)'/> represents 'Someone at SIST loves AI'.">
+                                        <input type="checkbox" name="q1-B" title="<img src='http://latex.codecogs.com/svg.latex?\forall x Has(x,y)'/> satisfies FOL syntax.">
+                                        <input type="checkbox" name="q1-C" title="If <img src='http://latex.codecogs.com/svg.latex?\forall x \exists y (x>y)'/> is true, then <img src='http://latex.codecogs.com/svg.latex?\exists y \forall x (x>y)'/> is also true.">
+                                        <input type="checkbox" name="q1-D" title="Unification of <img src='http://latex.codecogs.com/svg.latex?Marries(Alice, x)'/> and <img src='http://latex.codecogs.com/svg.latex?Marries(x,Bob)'/> fails but the failure can be avoided by standardizing apart.">
+                                        <input type="checkbox" name="q1-E" title="None of the above">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 5</div>
+                            <div class="problem-grade" id="Question5">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Which of the following statement(s) of equivalence is/are correct?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question5">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="<img src='http://latex.codecogs.com/svg.latex?((A \Rightarrow C) \land (B \Rightarrow C)) \equiv (A \land B \Rightarrow C)'/>">
+                                        <input type="checkbox" name="q1-B" title="<img src='http://latex.codecogs.com/svg.latex?((A \Rightarrow C) \lor (B \Rightarrow C)) \equiv (A \lor B \Rightarrow C)'/>">
+                                        <input type="checkbox" name="q1-C" title="<img src='http://latex.codecogs.com/svg.latex?(\neg A \lor \neg B) \equiv ((A \land B) \Rightarrow (A \land \neg A))'/>">
+                                        <input type="checkbox" name="q1-D" title="<img src='http://latex.codecogs.com/svg.latex?[C \lor (\neg A \land \neg B)] \equiv [(\neg A \land \neg B) \lor (C \land \neg B) \lor (\neg A \land C) \lor C]'/>">
+                                        <input type="checkbox" name="q1-E" title="None of the above">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 6</div>
+                            <div class="problem-grade" id="Question6">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Which of the following statement(s) about independence and Bayesian networks is/are correct? <img src='http://latex.codecogs.com/svg.latex?X, Y, Z'/> are random variables.
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question6">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="<img src='http://latex.codecogs.com/svg.latex?X \perp\kern-7pt\perp Y | Z'/> if and only if <img src='http://latex.codecogs.com/svg.latex?P(X|Y,Z)=P(X|Z)'/>">
+                                        <input type="checkbox" name="q1-B" title="<img src='http://latex.codecogs.com/svg.latex?X \perp\kern-7pt\perp Y'/> can imply <img src='http://latex.codecogs.com/svg.latex?P(X,Y|Z)=P(X|Z)P(Y|Z)'/>">
+                                        <input type="checkbox" name="q1-C" title="In Bayesian networks, every variable is conditionally independent of its non-descendants given one of its parents.">
+                                        <input type="checkbox" name="q1-D" title="In Bayesian networks, every variable is conditionally independent of all other variables given its Markov blanket.">
+                                        <input type="checkbox" name="q1-E" title="Bayesian networks need to reflect the true causal patterns.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 7</div>
+                            <div class="problem-grade" id="Question7">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Which of the following statement(s) about conditional independence in the following Bayesian
+                                    network and Markov network is/are correct? <img src='http://latex.codecogs.com/svg.latex?B_i, M_i'/> are random variables.
+                                    </p>
+                                <img src="image/mid-q7.jpg" style="height: 300px;"/>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question7">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="<img src='http://latex.codecogs.com/svg.latex?B_1 \perp\kern-7pt\perp B_5 | \emptyset'/>">
+                                        <input type="checkbox" name="q1-B" title="<img src='http://latex.codecogs.com/svg.latex?B_1 \perp\kern-7pt\perp B_2 | B_0'/>">
+                                        <input type="checkbox" name="q1-C" title="<img src='http://latex.codecogs.com/svg.latex?B_0 \perp\kern-7pt\perp B_4 | B_1, B_2, B_5'/>">
+                                        <input type="checkbox" name="q1-D" title="<img src='http://latex.codecogs.com/svg.latex?\{M_0, M_1\} \perp\kern-7pt\perp \{M_4, M_5\} | \{M_2, M_3\}'/>">
+                                        <input type="checkbox" name="q1-E" title="If we add an edge from <img src='http://latex.codecogs.com/svg.latex?B_4'/> to <img src='http://latex.codecogs.com/svg.latex?B_5'/> in the Bayesian network, and also we assume <img src='http://latex.codecogs.com/svg.latex?B_i'/> and
+                                        <img src='http://latex.codecogs.com/svg.latex?M_i'/> are the same random variable for <img src='http://latex.codecogs.com/svg.latex?i\in \{0,1,2,3,4,5\}'/>, then the two graphical models
+                                        encode exactly the same set of conditional independence.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 8</div>
+                            <div class="problem-grade" id="Question8">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Consider the Markov network below. Which of the following statement(s) is/are correct?</p>
+                                <img src="image/mid-q8.jpg" style="height: 300px;"/>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question8">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="The Markov blanket of any node in this network contains exactly 6 nodes.">
+                                        <input type="checkbox" name="q1-B" title="We need to define exactly 6 potential functions on this network.">
+                                        <input type="checkbox" name="q1-C" title="A and G can become conditionally independent given at least 3 other nodes.">
+                                        <input type="checkbox" name="q1-D" title="Given any joint distribution on the 8 nodes, it is always possible to represent the distri-
+                                        bution using this network by adding at most 15 edges.">
+                                        <input type="checkbox" name="q1-E" title="None of the above.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 9</div>
+                            <div class="problem-grade" id="Question9">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Consider the Bayesian network below, where <img src='http://latex.codecogs.com/svg.latex?E=e'/> is the evidence. Which of the following
+                                    statement(s) is/are correct?</p>
+                                <img src="image/mid-q9.jpg" style="height: 300px;" />
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question9">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="In Gibbs sampling, after initialization A must be sampled at least once before the first sampling of D.">
+                                        <input type="checkbox" name="q1-B" title="In Gibbs sampling, assume that the sample is currently <img src='http://latex.codecogs.com/svg.latex?(A,B,C,D,E)=(a,b,c,d,e)'/>; to
+                                        sample C in the next step, we should sample from the distribution <img src='http://latex.codecogs.com/svg.latex?P(C|B=b,E=e)'/>.">
+                                        <input type="checkbox" name="q1-C" title="In variable elimination, A must be eliminated before D.">
+                                        <input type="checkbox" name="q1-D" title="In variable elimination, D must be eliminated before A.">
+                                        <input type="checkbox" name="q1-E" title="None of the above.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 10</div>
+                            <div class="problem-grade" id="Question10">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                For a Markov logic network (MLN), which of the following statement(s) is/are correct?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question10">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="First-order logic is a special case of MLNs.">
+                                        <input type="checkbox" name="q1-B" title="A formula in the MLN generates exactly one clique in the ground Markov network.">
+                                        <input type="checkbox" name="q1-C" title="If all the formula weights are finite, the probability of a world is zero as long as it violates a formula.">
+                                        <input type="checkbox" name="q1-D" title="Every probabilistic relational model can be converted to an equivalent MLN.">
+                                        <input type="checkbox" name="q1-E" title="None of the above.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-3" page-type="book">
+                        <hr>
+                        <div class="reading-content">
+                            <h2 style="font-family: Quicksand;">Resources</h2>
+                            <br>
+                            More questions and the answer of the whole exam can be found <a href="https://docs.zoho.com.cn/file/xse0ob18cbc315a4c4a4586328d4a0e28ac28">here</a>.
+                        </div>
+                    </div>                    
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "CS181",
+        "name": "Artificial Intelligence I",
+        "coursebench": "CS281H",
+        "semester": "Fall 2019",
+        "category": "Exam 考试",
+        "title": "Mid-term Exam"
+    };
+
+    var answers = {
+        'Question1': [1,{
+            'q1': [1,{
+                'ABD':1,
+                'AB':0.5,
+                'AD':0.5,
+                'BD':0.5,
+                'A':0.5,
+                'B':0.5,
+                'D':0.5
+            }]
+        }],
+        'Question2': [1,{
+            'q1': [1,{
+                'C':1
+            }]
+        }],
+        'Question3': [1,{
+            'q1': [1,{
+                'ABD':1,
+                'AB':0.5,
+                'AD':0.5,
+                'BD':0.5,
+                'A':0.5,
+                'B':0.5,
+                'D':0.5
+            }]
+        }],
+        'Question4': [1,{
+            'q1': [1,{
+                'D':1
+            }]
+        }],
+        'Question5': [1,{
+            'q1': [1,{
+                'CD':1,
+                'C':0.5,
+                'D':0.5
+            }]
+        }],
+        'Question6': [1,{
+            'q1': [1,{
+                'AD':1,
+                'A':0.5,
+                'D':0.5
+            }]
+        }],
+        'Question7': [1,{
+            'q1': [1,{
+                'BC':1,
+                'B':0.5,
+                'C':0.5
+            }]
+        }],
+        'Question8': [1,{
+            'q1': [1,{
+                'C':1
+            }]
+        }],
+        'Question9': [1,{
+            'q1': [1,{
+                'E':1
+            }]
+        }],
+        'Question10': [1,{
+            'q1': [1,{
+                'AD':1,
+                'A':0.5,
+                'D':0.5
+            }]
+        }]
+    };
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Final Exam</h1>
+
+                    <div class="layui-hide" id="page-1" page-type="book">
+                        <hr>
+                        <div class="reading-content" style="margin: 0 5em;">
+                        <h1>CS 181 Artificial Intelligence (Fall 2018), Final Exam</h1>
+                        <p style="text-align: left; margin: 0;"><b>INSTRUCTIONS:</b></p>
+                            <ul>
+                                <li style="list-style-type: disc; margin: 0.5em;"> Time: 9 - 10:40am (100 minutes)</li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> This exam is closed-book, but you may bring an A4-size cheat sheet. Put all the study
+                                    materials and electronic devices (with the exception of a calculator) into your bag and put
+                                    your bag in the front, back, or sides of the classroom.</li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> You can write your answers in either English or Chinese.</li>
+                                <li style="list-style-type: disc; margin: 0.5em;"> Two blank pieces of paper are attached, which you can use as scratch paper. Raise your
+                                    hand if you need more paper.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="layui-hide" id="page-2" page-type="question">
+                        <hr>
+                        <div class="reading-content" style="margin: 1em;">
+                            <h2 style="margin-bottom: 0.5em;"><b>1 Multiple choice (10 pt)</b></h2>
+                            <h3 style="margin-bottom: 0.5em;"><b>1.1 Each question has only one correct answer</b></h3>
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 1</div>
+                            <div class="problem-grade" id="Question1">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Consider an HMM with state variables <img src='http://latex.codecogs.com/svg.latex?\{X_T\}'/> and evidence variables <img src='http://latex.codecogs.com/svg.latex?\{E_T\}'/>. Which of the
+                                following equations is correct?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="<img src='http://latex.codecogs.com/svg.latex?P(e_{t+1}, e_{1:t}|X_{t+1}) = P(e_{t+1}|X_{t+1}) P(X_{t+1}|e_{1:t})'/>">
+                                        <input type="radio" name="q1" value="B" title="<img src='http://latex.codecogs.com/svg.latex?P(X_{t+1}|e_{1:t+1})=P(e_{t+1}|X_{t+1},e_{1:t})P(X_{t+1}|e_{1:t})'/>">
+                                        <input type="radio" name="q1" value="C" title="<img src='http://latex.codecogs.com/svg.latex?P(X_{t+1}|e_{1:t})=\sum_{X_t}P(X_t|e_{1:t})P(X_{t+1}|X_{t},e_{1:t})'/>">
+                                        <input type="radio" name="q1" value="D" title="<img src='http://latex.codecogs.com/svg.latex?P(X_{t+1},e_{t+1}|X_t)=P(X_{t+1}|X_t)P(e_{t+1}|X_{t})'/>">
+                                        <input type="radio" name="q1" value="E" title="None of the above.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 2</div>
+                            <div class="problem-grade" id="Question2">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Consider an MDP with the set of states <img src='http://latex.codecogs.com/svg.latex?S = \{s_i | 1 \leq i \leq N, i \in \mathbb{Z}^+\}'/> and the set of
+                                actions <img src='http://latex.codecogs.com/svg.latex?A = \{a_i | 1 \leq i \leq N, i \in \mathbb{Z}^+\}'/>. <img src='http://latex.codecogs.com/svg.latex?N \in \mathbb{Z}^+'/> is a finite constant. Which of the following
+                                transition function is valid? A transition tuple <img src='http://latex.codecogs.com/svg.latex?(s_i, a_j, s_k)'/> means state <img src='http://latex.codecogs.com/svg.latex?s_i'/> transits to state <img src='http://latex.codecogs.com/svg.latex?s_k'/>
+                                after taking action <img src='http://latex.codecogs.com/svg.latex?a_j'/> .
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question2">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="<img src='http://latex.codecogs.com/svg.latex?T(s_i, a_j, s_k)=\left\{
+                                            \begin{array}{lcl}
+                                            0.5      &      & {\text{if } j=k}\\
+                                            0.5     &      & {\text{otherwise}}
+                                            \end{array} \right. '/>">
+                                        <input type="radio" name="q1" value="B" title="<img src='http://latex.codecogs.com/svg.latex?T(s_i, a_j, s_k)=\left\{
+                                            \begin{array}{lcl}
+                                            0      &      & {\text{if } j=k}\\
+                                            1     &      & {\text{otherwise}}
+                                            \end{array} \right. '/>">
+                                        <input type="radio" name="q1" value="C" title="<img src='http://latex.codecogs.com/svg.latex?T(s_i, a_j, s_k)=\left\{
+                                            \begin{array}{lcl}
+                                            1      &      & {\text{if } i=k}\\
+                                            0     &      & {\text{otherwise}}
+                                            \end{array} \right. '/>">
+                                        <input type="radio" name="q1" value="D" title="<img src='http://latex.codecogs.com/svg.latex?T(s_i, a_j, s_k)=\left\{
+                                            \begin{array}{lcl}
+                                            \frac{1}{N}      &      & {\text{if } i=k}\\
+                                            0     &      & {\text{otherwise}}
+                                            \end{array} \right. '/>">
+                                        <input type="radio" name="q1" value="E" title="None of the above.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 3</div>
+                            <div class="problem-grade" id="Question3">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Which of the following statements is correct?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question3">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="In TD-Learning, when the learning rate <img src='http://latex.codecogs.com/svg.latex?\alpha'/> is 0.5, it is equivalent to taking the average of
+                                        all the previous samples.">
+                                        <input type="radio" name="q1" value="B" title="Q-learning can converge to the optimal policy even if you are acting sub-optimally when
+                                        you explore.">
+                                        <input type="radio" name="q1" value="C" title="When applying <img src='http://latex.codecogs.com/svg.latex?\epsilon'/>-greedy learning strategy, discounting <img src='http://latex.codecogs.com/svg.latex?\epsilon'/> faster results in lower overall
+                                        regret">
+                                        <input type="radio" name="q1" value="D" title="When applying <img src='http://latex.codecogs.com/svg.latex?\epsilon'/>-greedy learning strategy, discounting <img src='http://latex.codecogs.com/svg.latex?\epsilon'/> slower results in lower overall
+                                        regret">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 4</div>
+                            <div class="problem-grade" id="Question4">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Which of the following statements about EM (Expectation Maximization) is WRONG?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question4">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="We maximize the marginal likelihood when we use EM to learn a GMM (Gaussian mixture
+                                        model).">
+                                        <input type="radio" name="q1" value="B" title="EM can be used to learn models with hidden variables.">
+                                        <input type="radio" name="q1" value="C" title="When using EM to learn a GMM, we assign each data point to one Gaussian distribution
+                                        during the E-step.">
+                                        <input type="radio" name="q1" value="D" title="K-means is a special case of EM for GMM.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 5</div>
+                            <div class="problem-grade" id="Question5">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                How many components are there in a context-free grammar?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question5">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="2">
+                                        <input type="radio" name="q1" value="B" title="3">
+                                        <input type="radio" name="q1" value="C" title="4">
+                                        <input type="radio" name="q1" value="D" title="5">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    
+                    </div>
+
+                    <div class="layui-hide" id="page-3" page-type="question">
+                        <hr>
+                        <div class="reading-content" style="margin: 1em;">
+                            <h2 style="margin-bottom: 0.5em;"><b>1 Multiple choice (10 pt)</b></h2>
+                            <h3 style="margin-bottom: 0.5em;"><b>1.2 Each question has one or more correct answers</b></h3>
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 6</div>
+                            <div class="problem-grade" id="Question6">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Consider an HMM with state variables <img src='http://latex.codecogs.com/svg.latex?\{X_T\}'/> and evidence variables <img src='http://latex.codecogs.com/svg.latex?\{E_T\}'/>. Which of the
+                                following statements is/are correct?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question6">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="An HMM is a special case of a Dynamic Bayes Net.">
+                                        <input type="checkbox" name="q1-B" title="Given the evidence variables, the state variables are conditionally independent.">
+                                        <input type="checkbox" name="q1-C" title="The time complexity and space complexity of computing <img src='http://latex.codecogs.com/svg.latex?P(X_t|e_{1:t})'/> by using the forward
+                                        algorithm are both <img src='http://latex.codecogs.com/svg.latex?O(t|X|)'/>.">
+                                        <input type="checkbox" name="q1-D" title="The time complexities of the forward algorithm and the Viterbi algorithm are the same.">
+                                        <input type="checkbox" name="q1-E" title="None of the above.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 7</div>
+                            <div class="problem-grade" id="Question7">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Which of the following statements of particle filtering is/are correct?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question7">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="Each iteration of particle filtering consists of propagate forward, observe and resample.">
+                                        <input type="checkbox" name="q1-B" title="Particle filtering is equivalent to likelihood weighting.">
+                                        <input type="checkbox" name="q1-C" title="In propagate forward, we sample the next state of each particle based on the transition
+                                        model.">
+                                        <input type="checkbox" name="q1-D" title="In particle filtering, the evidence variables have no in
+                                        uence on the set of sampled particles.">
+                                        <input type="checkbox" name="q1-E" title="None of the above.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 8</div>
+                            <div class="problem-grade" id="Question8">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Which of the following statements is/are correct? Recall that the Bellman Equation of MDP
+                                is: <img src='http://latex.codecogs.com/svg.latex?V(s)=\max_a \sum_{s%27} T(s, a, s%27)[R(s,a,s%27)+\gamma V(s%27)]'/>, and <img src='http://latex.codecogs.com/svg.latex?S, A'/> denote the sizes of the state space and action space.
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question8">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="<img src='http://latex.codecogs.com/svg.latex?V(s)'/> is the undiscounted expected utility of state <img src='http://latex.codecogs.com/svg.latex?s'/> when <img src='http://latex.codecogs.com/svg.latex?\gamma = 0'/>.">
+                                        <input type="checkbox" name="q1-B" title="Setting <img src='http://latex.codecogs.com/svg.latex?\gamma < 1'/> helps Value Iteration converge.">
+                                        <input type="checkbox" name="q1-C" title="Value Iteration is guaranteed to converge to the optimal values in <img src='http://latex.codecogs.com/svg.latex?O(S^2A)'/>.">
+                                        <input type="checkbox" name="q1-D" title="Policy Iteration converges to the optimal policy much faster than Value Iteration under
+                                        some conditions.">
+                                        <input type="checkbox" name="q1-E" title="None of the above.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 9</div>
+                            <div class="problem-grade" id="Question9">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Which of the following statements about regression is/are correct?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question9">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="The output is discrete in regression.">
+                                        <input type="checkbox" name="q1-B" title="The output is real-valued in regression.">
+                                        <input type="checkbox" name="q1-C" title="We aim to minimize the error over the training set (possibly with regularization) during
+                                        training.">
+                                        <input type="checkbox" name="q1-D" title="We aim to minimize the error over the testing set (possibly with regularization) during
+                                        testing.">
+                                        <input type="checkbox" name="q1-E" title="None of the above.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 10</div>
+                            <div class="problem-grade" id="Question10">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                Which of the following statements about k-means is/are correct?
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question10">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="The time complexity is <img src='http://latex.codecogs.com/svg.latex?O(tkn)'/>, where <img src='http://latex.codecogs.com/svg.latex?n'/> is the number of data points, <img src='http://latex.codecogs.com/svg.latex?k'/> is the number of
+                                        clusters, and <img src='http://latex.codecogs.com/svg.latex?t'/> is the number of iterations.">
+                                        <input type="checkbox" name="q1-B" title="K-means may perform poorly when there are noisy data points very far away from the
+                                        other data points.">
+                                        <input type="checkbox" name="q1-C" title="The results of k-means can be different given different initializations.">
+                                        <input type="checkbox" name="q1-D" title="K-means minimizes the total Euclidean distances between data points and their cluster
+                                        centers.">
+                                        <input type="checkbox" name="q1-E" title="None of the above.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-4" page-type="book">
+                        <hr>
+                        <div class="reading-content">
+                            <h2 style="font-family: Quicksand;">Resources</h2>
+                            <br>
+                            The whole question sheet can be found <a href="https://docs.zoho.com.cn/file/xse0o685cc998e251470e83c7f018ac35a80c">here</a>.
+                            <br>
+                            The answer of the exam can be found <a href="https://docs.zoho.com.cn/file/xse0o4793789c076c48208c3ae975ab11ba72">here</a>.
+                        </div>
+                    </div>                    
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "CS181",
+        "name": "Artificial Intelligence I",
+        "coursebench": "CS281H",
+        "semester": "Fall 2018",
+        "category": "Exam 考试",
+        "title": "Final Exam"
+    };
+
+    var answers = {
+        'Question1': [1,{
+            'q1': [1,{
+                'C':1
+            }]
+        }],
+        'Question2': [1,{
+            'q1': [1,{
+                'C':1
+            }]
+        }],
+        'Question3': [1,{
+            'q1': [1,{
+                'B':1
+            }]
+        }],
+        'Question4': [1,{
+            'q1': [1,{
+                'C':1
+            }]
+        }],
+        'Question5': [1,{
+            'q1': [1,{
+                'C':1
+            }]
+        }],
+        'Question6': [1,{
+            'q1': [1,{
+                'AD':1,
+                'A':0.5,
+                'D':0.5
+            }]
+        }],
+        'Question7': [1,{
+            'q1': [1,{
+                'AC':1,
+                'A':0.5,
+                'C':0.5
+            }]
+        }],
+        'Question8': [1,{
+            'q1': [1,{
+                'BD':1,
+                'B':0.5,
+                'D':0.5
+            }]
+        }],
+        'Question9': [1,{
+            'q1': [1,{
+                'BC':1,
+                'B':0.5,
+                'C':0.5
+            }]
+        }],
+        'Question10': [1,{
+            'q1': [1,{
+                'ABC':1,
+                'AB':0.5,
+                'AC':0.5,
+                'BC':0.5,
+                'A':0.5,
+                'B':0.5,
+                'C':0.5
+            }]
+        }]
+    };
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

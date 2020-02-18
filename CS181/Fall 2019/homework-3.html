@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Homework 3</h1>
+
+                    <div class="layui-hide" id="page-1" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 1</div>
+                            <div class="problem-grade" id="Question1">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Below is a table listing the probabilities of three binary random variables. In the empty table cells, fill in the correct values for each marginal or conditional probability. Round your answers to 3 decimal places.</p>
+                                <p><img src="image/hw3/xid-1240199_1" height="400" /></p>
+                                <p>Please answer the following expressions:</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-text">
+                                        <p style="display: inline;"><img src='http://latex.codecogs.com/svg.latex?P(X_0=1, X_1=1, X_2=0) = '/> </p>
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2 q-text">
+                                        <p style="display: inline;"><img src='http://latex.codecogs.com/svg.latex?P(X_1=0, X_2=1) = '/> </p>
+                                        <input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q3 q-text">
+                                        <p style="display: inline;"><img src='http://latex.codecogs.com/svg.latex?P(X_1=1) = '/> </p>
+                                        <input type="text" name="q3" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q4 q-text">
+                                        <p style="display: inline;"><img src='http://latex.codecogs.com/svg.latex?P(X_0=1, X_1=0| X_2=1) = '/> </p>
+                                        <input type="text" name="q4" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q5 q-text">
+                                        <p style="display: inline;"><img src='http://latex.codecogs.com/svg.latex?P(X_0=1| X_1=0, X_2=0) = '/> </p>
+                                        <input type="text" name="q5" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-2" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 2</div>
+                            <div class="problem-grade" id="Question2">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>You are given several graphical models below, and each graphical model is associated with an independence (or conditional independence) assertion. Please specify if the assertion is <b>true</b> or <b>false</b>.</p>
+                                <p><img src="image/hw3/xid-1240205_1" height="400" /></p>
+                                <p><b>Assertion</b>: It is guaranteed that A is independent of L given G, K.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question2">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 3</div>
+                            <div class="problem-grade" id="Question3">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p><img src="image/hw3/xid-1419957_1" height="400" /></p>
+                                <p><b>Assertion</b>: It is guaranteed that C is independent of H given A, I.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question3">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 4</div>
+                            <div class="problem-grade" id="Question4">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p><img src="image/hw3/xid-1417323_1" height="400" /></p>
+                                <p><b>Assertion</b>: It is guaranteed that C is independent of F given D, G.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question4">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-3" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 5</div>
+                            <div class="problem-grade" id="Question5">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Given the factors <img src='http://latex.codecogs.com/svg.latex?P(A|B)'/> and <img src='http://latex.codecogs.com/svg.latex?P(A|C)'/> and <img src='http://latex.codecogs.com/svg.latex?P(B)'/> which factor will be created after joining on <img src='http://latex.codecogs.com/svg.latex?B'/> and summing out over <img src='http://latex.codecogs.com/svg.latex?B'/> ?</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question5">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="<img src='http://latex.codecogs.com/svg.latex?P(A)'/>">
+                                        <input type="radio" name="q1" value="B" title="<img src='http://latex.codecogs.com/svg.latex?P(B)'/>">
+                                        <input type="radio" name="q1" value="C" title="<img src='http://latex.codecogs.com/svg.latex?P(C)'/>">
+                                        <input type="radio" name="q1" value="D" title="<img src='http://latex.codecogs.com/svg.latex?P(B,C)'/>">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 6</div>
+                            <div class="problem-grade" id="Question6">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Given the factors <img src='http://latex.codecogs.com/svg.latex?P(A|C)'/> and <img src='http://latex.codecogs.com/svg.latex?P(B|A,C)'/> , what is the resulting factor after joining over <img src='http://latex.codecogs.com/svg.latex?C'/> ?</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question6">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="<img src='http://latex.codecogs.com/svg.latex?P(A,B,C)'/>">
+                                        <input type="radio" name="q1" value="B" title="<img src='http://latex.codecogs.com/svg.latex?P(A,B|C)'/>">
+                                        <input type="radio" name="q1" value="C" title="<img src='http://latex.codecogs.com/svg.latex?P(A|B,C)'/>">
+                                        <input type="radio" name="q1" value="D" title="None of the above">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-4" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 7</div>
+                            <div class="problem-grade" id="Question7">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>For four random variables, there exists a Markov Network to represent it as:</p>
+                                <p><img src="image/hw3/xid-1240208_1" height="400" /></p>
+                                <p>Please choose the Bayesian Network that can precisely (no more, no less) represent the distribution of this Markov Network from the two models:</p>
+                                <p style="display: inline;"><img src="image/hw3/xid-1240209_1" /></p>
+                                <p style="display: inline;"><img src="image/hw3/xid-1240210_1" /></p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question7">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="the first model">
+                                        <input type="radio" name="q1" value="B" title="the second model">
+                                        <input type="radio" name="q1" value="C" title="both of them">
+                                        <input type="radio" name="q1" value="D" title="neither of them">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-5" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 8</div>
+                            <div class="problem-grade" id="Question8">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Assume the following Bayes Net and corresponding CPTs. In this exercise, we are given the query <img src='http://latex.codecogs.com/svg.latex?P(C|e=1)'/> , and we will complete the tables for each factor generated during the elimination process.</p>
+                                <p><img width="136" height="360" src="./image/hw3/xid-1240211_1"></p>
+                                <p>After introducing evidence, we have the following probability tables.</p>
+                                <p><img style="max-width: 95%;" src="./image/hw3/xid-1240212_1"></p>
+                                <p>Three steps are required for elimination, with the resulting factors listed below:</p>
+                                <ol style="padding-left: 20px;">
+                                    <li style="list-style: decimal; margin-bottom: 0.70788em; line-height: 1.4em;">Eliminate <img src='http://latex.codecogs.com/svg.latex?A'/> . We get the factor <img src='http://latex.codecogs.com/svg.latex?f_1(B)=\sum_{a} P(a)P(B|a)'/> .</li>
+                                    <li style="list-style: decimal; margin-bottom: 0.70788em; line-height: 1.4em;">Eliminate <img src='http://latex.codecogs.com/svg.latex?B'/> . We get the factor <img src='http://latex.codecogs.com/svg.latex?f_2(C,D)=\sum_{b} P(C|b)P(D|b)f_1(b)'/> .</li>
+                                    <li style="list-style: decimal; margin-bottom: 0.70788em; line-height: 1.4em;">Eliminate <img src='http://latex.codecogs.com/svg.latex?D'/> . We get the factor <img src='http://latex.codecogs.com/svg.latex?f_3(C,e=1)=\sum_{d} P(e=1|C,d)f_2(C,d)'/> .</li>
+                                </ol>
+                                <p>Complete the tables below for the factors generated during elimination. Some values have been evaluated for you, note that these values are precise and feel free to use them. You should also fill precise values in the blanks, and round to a fixed number of decimal places (the same or potentially more digits than actually required and have trailing zeros).</p>
+                                <p><img width="917" height="252" src="./image/hw3/xid-1419783_1"></p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question8">
+                                <div class="layui-form-item">
+                                    <p>For the following 2 blanks, fill in the <b>precise values</b> and round to <b>2 decimal places</b>.</p>
+                                    <div class="question q1 q-text">
+                                        <p style="display: inline;">Blank 1 = </p>
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2 q-text">
+                                        <p style="display: inline;">Blank 2 = </p>
+                                        <input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p>For the following 2 blanks, fill in the <b>precise values</b> and round to <b>4 decimal places</b>.</p>
+                                    <div class="question q3 q-text">
+                                        <p style="display: inline;">Blank 3 = </p>
+                                        <input type="text" name="q3" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q4 q-text">
+                                        <p style="display: inline;">Blank 4 = </p>
+                                        <input type="text" name="q4" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p>For the following 2 blanks, fill in the <b>precise values</b> and round to <b>5 decimal places</b>.</p>
+                                    <div class="question q5 q-text">
+                                        <p style="display: inline;">Blank 5 = </p>
+                                        <input type="text" name="q5" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <p>After getting the final factor <img src='http://latex.codecogs.com/svg.latex?P(C|e=1)'/> ,  a final renormalization step needs be carried out to obtain the conditional probability <img src='http://latex.codecogs.com/svg.latex?P(C|e=1)'/> . Please fill into the table below. These values are not necessarily precise.</p>
+                                    <p><img width="298" height="182" src="./image/hw3/xid-1240215_1"></p>
+                                    <p>Round your answers to <b>3 decimal places</b>.</p>
+                                    <div class="question q6 q-text">
+                                        <p style="display: inline;">Blank 6 = </p>
+                                        <input type="text" name="q6" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q7 q-text">
+                                        <p style="display: inline;">Blank 7 = </p>
+                                        <input type="text" name="q7" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 9</div>
+                            <div class="problem-grade" id="Question9">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>We will work with a Bayes' net of the following structure. </p>
+                                <p><img width="136" height="360" src="./image/hw3/xid-1240211_1"></p>
+                                <p>In this question, we will perform rejection sampling to estimate <img src='http://latex.codecogs.com/svg.latex?P(D|B=0, E=1)'/> . Perform one round of rejection sampling, using the random samples given in the table below. </p> 
+                                <p>Variables are sampled in the order A, B, C, D, E. In the boxes below, choose the value (0 or 1) that each variable gets assigned to.</p>
+                                <p><b>Note that the sampling attempt should stop as soon as you discover that the sample will be rejected.</b> In that case, mark the assignment of that variable and leave the boxes corresponding to the rest of the variables blank.</p>
+                                <p>To generate random samples, use as many values as needed from the table below, which we generated independently and uniformly at random from 0 to 1. Use numbers from left to right. To sample a binary variable <img src='http://latex.codecogs.com/svg.latex?W'/> with probability <img src='http://latex.codecogs.com/svg.latex?P(W=0)=p'/> , select a value <img src='http://latex.codecogs.com/svg.latex?a'/> from the table, and choose <img src='http://latex.codecogs.com/svg.latex?W=1'/> if <img src='http://latex.codecogs.com/svg.latex?a \geq p'/> and <img src='http://latex.codecogs.com/svg.latex?W=0'/> otherwise.</p>
+                                <table class="layui-table" style="width: 500px;" border="1">   <tbody>    <tr>     <td>0.426</td>     <td>0.348</td>     <td>0.584</td>     <td>0.913</td>     <td>0.637</td>     <td>0.885</td>     <td>0.479</td>     <td>0.670</td>     <td>0.402</td>     <td>0.882</td>    </tr>   </tbody>  </table>
+                                <table class="layui-table" style="width: fit-content; float: left; margin-right: 1em;" border="1"> <thead> <tr> <th>A</th>     <th>P(A)</th>    </tr> </thead>  <tbody >        <tr >     <td >0</td>     <td >0.3</td>    </tr>    <tr >     <td >1</td>     <td >0.7</td>    </tr>   </tbody>  </table>
+                                <table class="layui-table" style="width: fit-content; float: left; margin-right: 1em;" border="1"> <thead><tr >     <th >B</th>     <th >A</th>     <th >P(B|A)</th>    </tr></thead>  <tbody >        <tr >     <td >0</td>     <td >0</td>     <td >0.2</td>    </tr>    <tr >     <td >1</td>     <td >0</td>     <td >0.8</td>    </tr>    <tr >     <td >0</td>     <td >1</td>     <td >0.4</td>    </tr>    <tr >     <td >1</td>     <td >1</td>     <td >0.6</td>    </tr>   </tbody>  </table>
+                                <table class="layui-table" style="width: fit-content; float: left; margin-right: 1em;" border="1"> <thead><tr >     <td >C</td>     <td >B</td>     <td >P(C|B)</td>    </tr></thead>  <tbody >    <tr >     <td >0</td>     <td >0</td>     <td >0.5</td>    </tr>    <tr >     <td >1</td>     <td >0</td>     <td >0.5</td>    </tr>    <tr >     <td >0</td>     <td >1</td>     <td >0.1</td>    </tr>    <tr >     <td >1</td>     <td >1</td>     <td >0.9</td>    </tr>   </tbody>  </table>
+                                <table class="layui-table" style="width: fit-content; float: left; margin-right: 1em;" border="1"> <thead><tr >     <td >D</td>     <td >B</td>     <td >P(D|B)</td>    </tr></thead>  <tbody >        <tr >     <td >0</td>     <td >0</td>     <td >0.6</td>    </tr>    <tr >     <td >1</td>     <td >0</td>     <td >0.4</td>    </tr>    <tr >     <td >0</td>     <td >1</td>     <td >0.3</td>    </tr>    <tr >     <td >1</td>     <td >1</td>     <td >0.7</td>    </tr>   </tbody>  </table>
+                                <table class="layui-table" style="width: fit-content; float: left; margin-right: 1em;" border="1"> <thead> <tr >     <td >E</td>     <td >C</td>     <td >D</td>     <td >P(E|C,D)</td>    </tr> </thead>  <tbody >      <tr >     <td >0</td>     <td >0</td>     <td >0</td>     <td >0.7</td>    </tr>    <tr >     <td >1</td>     <td >0</td>     <td >0</td>     <td >0.3</td>    </tr>    <tr >     <td >0</td>     <td >1</td>     <td >0</td>     <td >0.6</td>    </tr>    <tr >     <td >1</td>     <td >1</td>     <td >0</td>     <td >0.4</td>    </tr>    <tr >     <td >0</td>     <td >0</td>     <td >1</td>     <td >0.5</td>    </tr>    <tr >     <td >1</td>     <td >0</td>     <td >1</td>     <td >0.5</td>    </tr>    <tr >     <td >0</td>     <td >1</td>     <td >1</td>     <td >0.9</td>    </tr>    <tr >     <td >1</td>     <td >1</td>     <td >1</td>     <td >0.1</td>    </tr>   </tbody>  </table>
+                                <p style="clear: both;">Enter either a 0 or 1 for each variable that you assign a value to. Upon rejecting a sample, enter its assigned value, and leave the fields for the remaining variables blank. For example, if C gets rejected, do not fill in any values for D and E.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question9">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-text">
+                                        <p style="display: inline;">A = </p>
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2 q-text">
+                                        <p style="display: inline;">B = </p>
+                                        <input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q3 q-text">
+                                        <p style="display: inline;">C = </p>
+                                        <input type="text" name="q3" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q4 q-text">
+                                        <p style="display: inline;">D = </p>
+                                        <input type="text" name="q4" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q5 q-text">
+                                        <p style="display: inline;">E = </p>
+                                        <input type="text" name="q5" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q6 q-text">
+                                        <p>Which variable will get rejected? If no variables will get rejected, leave the field below blank.</p>
+                                        <input type="text" name="q6" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 10</div>
+                            <div class="problem-grade" id="Question10">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Below are a set of samples obtained by running rejection sampling for the Bayes' net from the previous question. Use them to estimate <img src='http://latex.codecogs.com/svg.latex?P(D=1|B=0, E=1)'/> and round to 3 decimal places. If the estimation cannot be made, input -1.</p>
+                                <p><img width="748" height="298" src="./image/hw3/xid-1419213_1"></p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question10">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-text">
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 11</div>
+                            <div class="problem-grade" id="Question11">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>We will work with a Bayes' net of the following structure. </p>
+                                <p><img width="136" height="360" src="./image/hw3/xid-1240211_1"></p>
+                                <p>In this question, we will perform likelihood weighting to estimate <img src='http://latex.codecogs.com/svg.latex?P(D|B=0, E=1)'/> . Generate a sample and its weight, using the random samples given in the table below. </p> 
+                                <p>Variables are sampled in the order A, B, C, D, E. In the table below, select the assignments to the variables you sampled.</p>
+                                <p>To generate random samples, use as many values as needed from the table below, which we generated independently and uniformly at random from 0 to 1. Use numbers from left to right. To sample a binary variable <img src='http://latex.codecogs.com/svg.latex?W'/> with probability <img src='http://latex.codecogs.com/svg.latex?P(W=0)=p'/> , select a value <img src='http://latex.codecogs.com/svg.latex?a'/> from the table, and choose <img src='http://latex.codecogs.com/svg.latex?W=1'/> if <img src='http://latex.codecogs.com/svg.latex?a \geq p'/> and <img src='http://latex.codecogs.com/svg.latex?W=0'/> otherwise.</p>
+                                <table class="layui-table" style="width: 500px;" border="1">   <tbody>    <tr>     <td>0.123</td>     <td>0.822</td>     <td>0.170</td>     <td>0.626</td>     <td>0.593</td>     <td>0.261</td>     <td>0.558</td>     <td>0.064</td>     <td>0.796</td>     <td>0.178</td>    </tr>   </tbody>  </table>
+                                <table class="layui-table" style="width: fit-content; float: left; margin-right: 1em;" border="1"> <thead><tr >     <td >A</td>     <td >P(A)</td>    </tr> </thead>  <tbody >       <tr >     <td >0</td>     <td >0.3</td>    </tr>    <tr >     <td >1</td>     <td >0.7</td>    </tr>   </tbody>  </table>
+                                <table class="layui-table" style="width: fit-content; float: left; margin-right: 1em;" border="1">  <thead><tr >     <td >B</td>     <td >A</td>     <td >P(B|A)</td>    </tr></thead> <tbody >        <tr >     <td >0</td>     <td >0</td>     <td >0.2</td>    </tr>    <tr >     <td >1</td>     <td >0</td>     <td >0.8</td>    </tr>    <tr >     <td >0</td>     <td >1</td>     <td >0.4</td>    </tr>    <tr >     <td >1</td>     <td >1</td>     <td >0.6</td>    </tr>   </tbody>  </table>
+                                <table class="layui-table" style="width: fit-content; float: left; margin-right: 1em;" border="1"> <thead><tr >     <td >C</td>     <td >B</td>     <td >P(C|B)</td>    </tr></thead>  <tbody >     <tr >     <td >0</td>     <td >0</td>     <td >0.5</td>    </tr>    <tr >     <td >1</td>     <td >0</td>     <td >0.5</td>    </tr>    <tr >     <td >0</td>     <td >1</td>     <td >0.1</td>    </tr>    <tr >     <td >1</td>     <td >1</td>     <td >0.9</td>    </tr>   </tbody>  </table>
+                                <table class="layui-table" style="width: fit-content; float: left; margin-right: 1em;" border="1"> <thead> <tr >     <td >D</td>     <td >B</td>     <td >P(D|B)</td>    </tr>  </thead>  <tbody >     <tr >     <td >0</td>     <td >0</td>     <td >0.6</td>    </tr>    <tr >     <td >1</td>     <td >0</td>     <td >0.4</td>    </tr>    <tr >     <td >0</td>     <td >1</td>     <td >0.3</td>    </tr>    <tr >     <td >1</td>     <td >1</td>     <td >0.7</td>    </tr>   </tbody>  </table>
+                                <table class="layui-table" style="width: fit-content; float: left; margin-right: 1em;" border="1"> <thead> <tr >     <td >E</td>     <td >C</td>     <td >D</td>     <td >P(E|C,D)</td>    </tr>  </thead>  <tbody >     <tr >     <td >0</td>     <td >0</td>     <td >0</td>     <td >0.7</td>    </tr>    <tr >     <td >1</td>     <td >0</td>     <td >0</td>     <td >0.3</td>    </tr>    <tr >     <td >0</td>     <td >1</td>     <td >0</td>     <td >0.6</td>    </tr>    <tr >     <td >1</td>     <td >1</td>     <td >0</td>     <td >0.4</td>    </tr>    <tr >     <td >0</td>     <td >0</td>     <td >1</td>     <td >0.5</td>    </tr>    <tr >     <td >1</td>     <td >0</td>     <td >1</td>     <td >0.5</td>    </tr>    <tr >     <td >0</td>     <td >1</td>     <td >1</td>     <td >0.9</td>    </tr>    <tr >     <td >1</td>     <td >1</td>     <td >1</td>     <td >0.1</td>    </tr>   </tbody>  </table>
+                                <p style="clear: both;">Enter either a 0 or 1 for each variable assigned by a pass of likelihood weighting with the generated samples above.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question11">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-text">
+                                        <p style="display: inline;">A = </p>
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2 q-text">
+                                        <p style="display: inline;">B = </p>
+                                        <input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q3 q-text">
+                                        <p style="display: inline;">C = </p>
+                                        <input type="text" name="q3" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q4 q-text">
+                                        <p style="display: inline;">D = </p>
+                                        <input type="text" name="q4" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q5 q-text">
+                                        <p style="display: inline;">E = </p>
+                                        <input type="text" name="q5" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q6 q-text">
+                                        <p>What is the weight for the sample you obtained above? Round your answer to 2 decimal places.</p>
+                                        <input type="text" name="q6" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 12</div>
+                            <div class="problem-grade" id="Question12">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Below are a set of weighted samples obtained by running likelihood weighting for the Bayes' net from the previous question. Use them to estimate <img src='http://latex.codecogs.com/svg.latex?P(D=1|B=0, E=1)'/> Round your answer to 3 decimal places. Input -1 in the box below if the estimation cannot be made.</p>
+                                <p><img width="719" height="329" src="./image/hw3/xid-1419586_1"></p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question12">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-text">
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    
+                    </div>  
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "CS181",
+        "name": "Artificial Intelligence I",
+        "coursebench": "CS281H",
+        "semester": "Fall 2019",
+        "category": "Homework 作业",
+        "title": "Homework 3"
+    };
+
+    var answers = {
+        'Question1': [20,{
+            'q1': [4,{
+                '0.16':4,
+            }],
+            'q2': [4,{
+                '0.26':4,
+            }],
+            'q3': [4,{
+                '0.48':4,
+            }],
+            'q4': [4,{
+                '0.2':4,
+            }],
+            'q5': [4,{
+                '0.846':4,
+            }]
+        }],
+        'Question2': [10,{
+            'q1': [10,{
+                'B':10
+            }]
+        }],
+        'Question3': [10,{
+            'q1': [10,{
+                'A':10
+            }]
+        }],
+        'Question4': [10,{
+            'q1': [10,{
+                'B':10
+            }]
+        }],
+        'Question5': [10,{
+            'q1': [10,{
+                'A':10
+            }]
+        }],
+        'Question6': [10,{
+            'q1': [10,{
+                'B':10
+            }]
+        }],
+        'Question7': [10,{
+            'q1': [10,{
+                'D':10
+            }]
+        }],
+        'Question8': [30,{
+            'q1': [4,{
+                '0.68':4
+            }],
+            'q2': [4,{
+                '0.32':4
+            }],
+            'q3': [4,{
+                '0.0944':4
+            }],
+            'q4': [4,{
+                '0.1416':4
+            }],
+            'q5': [4,{
+                '0.16':4
+            }],
+            'q6': [5,{
+                '0.475':5
+            }],
+            'q7': [5,{
+                '0.525':5
+            }]
+        }],
+        'Question9': [10,{
+            'q1': [1.6,{
+                '1':1.6
+            }],
+            'q2': [1.6,{
+                '0':1.6
+            }],
+            'q3': [1.6,{
+                '1':1.6
+            }],
+            'q4': [1.6,{
+                '1':1.6
+            }],
+            'q5': [1.6,{
+                '0':1.6
+            }],
+            'q6': [2,{
+                'E':2
+            }]
+        }],
+        'Question10': [10,{
+            'q1': [10,{
+                '0.667':10
+            }]
+        }],
+        'Question11': [30,{
+            'q1': [5,{
+                '0':5
+            }],
+            'q2': [5,{
+                '0':5
+            }],
+            'q3': [5,{
+                '1':5
+            }],
+            'q4': [5,{
+                '0':5
+            }],
+            'q5': [5,{
+                '1':5
+            }],
+            'q6': [5,{
+                '0.08':5
+            }]
+        }],
+        'Question12': [10,{
+            'q1': [10,{
+                '0.833':10
+            }]
+        }]
+    };
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

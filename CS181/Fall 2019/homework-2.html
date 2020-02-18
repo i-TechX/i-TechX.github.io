@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Homework 2</h1>
+
+                    <div class="layui-hide" id="page-1" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 1</div>
+                            <div class="problem-grade" id="Question1">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p><img src='http://latex.codecogs.com/svg.latex?(A \Leftrightarrow B) \land (\neg A \lor \neg B)'/> (A and B are propositions) is satisfiable.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 2</div>
+                            <div class="problem-grade" id="Question2">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p><img src='http://latex.codecogs.com/svg.latex?\neg (A \lor B) \land \neg (A \Rightarrow B)'/> (A and B are propositions) is unsatisfiable.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question2">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 3</div>
+                            <div class="problem-grade" id="Question3">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>A, B are propositions, we have <img src='http://latex.codecogs.com/svg.latex?\neg (A \land \neg B) \equiv \neg B \Rightarrow \neg A'/></p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question3">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 4</div>
+                            <div class="problem-grade" id="Question4">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p><img src='http://latex.codecogs.com/svg.latex?((A \lor B) \land C) \equiv (A \lor C) \land (B \lor C)'/></p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question4">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 5</div>
+                            <div class="problem-grade" id="Question5">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p><img src="./image/hw2/xid-1240198_1" height="200"></p>
+                                <p>These 4 sentences are all equivalent to each other</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question5">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-2" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 6</div>
+                            <div class="problem-grade" id="Question6">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>The expression: <img src='http://latex.codecogs.com/svg.latex?(A \lor B) \land C \land \neg D \land (E \lor F)'/> is in CNF form.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question6">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 7</div>
+                            <div class="problem-grade" id="Question7">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>The clauses in the expression: <img src='http://latex.codecogs.com/svg.latex?(A \lor B) \land \neg C \land \neg D'/> are all in Horn form.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question7">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 8</div>
+                            <div class="problem-grade" id="Question8">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Sentence: <img src='http://latex.codecogs.com/svg.latex?Sunny \lor Monday'/> entails Sunny</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question8">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    
+                    </div>
+
+                    <div class="layui-hide" id="page-3" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 9</div>
+                            <div class="problem-grade" id="Question9">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Choose all the correct options:</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question9">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="A is valid if and only if True entails A">
+                                        <input type="checkbox" name="q1-B" title="<img src='http://latex.codecogs.com/svg.latex?A \equiv B'/> if and only if <img src='http://latex.codecogs.com/svg.latex?(A \Leftrightarrow B)'/> is valid">
+                                        <input type="checkbox" name="q1-C" title="A entails B if and only if <img src='http://latex.codecogs.com/svg.latex?(A \Rightarrow B)'/> is valid">
+                                        <input type="checkbox" name="q1-D" title="A entails B if and only if <img src='http://latex.codecogs.com/svg.latex?A \land \neg B'/> is unsatisfiable">
+                                        <input type="checkbox" name="q1-E" title="If A entails <img src='http://latex.codecogs.com/svg.latex?(B \land C)'/> , then A entails B and A entails C">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    
+                    </div>
+
+                    <div class="layui-hide" id="page-4" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 10</div>
+                            <div class="problem-grade" id="Question10">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Consider the sentence in first order logic: HeightOf(X) (where X is a variable). Is the syntax of the expression correct in first order logic? Yes or No</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question10">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 11</div>
+                            <div class="problem-grade" id="Question11">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Consider the sentence in first order logic: <img src='http://latex.codecogs.com/svg.latex?\forall x \forall y , Int(x) \land Int(y) \Rightarrow >(x,y)'/> (where x,y are variables). Is the syntax of the expression correct in first order logic? Yes or No</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question11">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    
+                    </div>
+
+                    <div class="layui-hide" id="page-5" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 12</div>
+                            <div class="problem-grade" id="Question12">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>The sentence in first order logic capture the English meaning: "Any small orange costs less than any large orange": </p>
+                                <p><img src='http://latex.codecogs.com/svg.latex?\forall x \forall y , [Orange(x) \land Small(x) \land Orange(y) \land Large(y)] \Rightarrow Cost(x) < Cost(y)'/></p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question12">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 13</div>
+                            <div class="problem-grade" id="Question13">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>The sentence in first order logic capture the English meaning: "There is an animal that is cute and lazy":  </p>
+                                <p><img src='http://latex.codecogs.com/svg.latex?\exists x , Animal(x) \Rightarrow [Cute(x) \land Lazy(x)]'/></p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question13">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 14</div>
+                            <div class="problem-grade" id="Question14">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>The sentence in first order logic capture the English meaning: "All the pandas are cute and lazy": </p>
+                                <p><img src='http://latex.codecogs.com/svg.latex?\forall x , Panda(x) \Rightarrow [Cute(x) \land Lazy(x)]'/></p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question14">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 15</div>
+                            <div class="problem-grade" id="Question15">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>The sentence in first order logic capture the English meaning: "No city in Jiangsu borders any city in Guangdong": </p>
+                                <p><img src='http://latex.codecogs.com/svg.latex?\neg (\exists x,y,In(x, Jiangsu) \land In(y, Guangdong) \land Borders(x,y))'/></p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question15">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 16</div>
+                            <div class="problem-grade" id="Question16">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>The sentence in first order logic capture the English meaning: "No city in Jiangsu borders any city in Guangdong": </p>
+                                <p><img src='http://latex.codecogs.com/svg.latex?\forall x, y, [In(x, Guangdong) \land In(y, Jiangsu)] \Rightarrow \neg Borders(x,y)'/></p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question16">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 17</div>
+                            <div class="problem-grade" id="Question17">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>The sentence in first order logic capture the English meaning: "No city in Jiangsu borders any city in Guangdong": </p>
+                                <p><img src='http://latex.codecogs.com/svg.latex?\neg [\forall x \exists y ,In(x, Jiangsu) \land In(y, Guangdong) \Rightarrow Borders(x,y)]'/></p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question17">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    
+                    </div>
+
+                    <div class="layui-hide" id="page-6" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 18</div>
+                            <div class="problem-grade" id="Question18">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Use resolution to solve the following problem: </p>
+                                <p>The knowledge base:</p>
+                                <p><img src='http://latex.codecogs.com/svg.latex?B \land C \Rightarrow A'/></p>
+                                <p><img src='http://latex.codecogs.com/svg.latex?B'/></p>
+                                <p><img src='http://latex.codecogs.com/svg.latex?D \land E \Rightarrow C'/></p>
+                                <p><img src='http://latex.codecogs.com/svg.latex?E \lor F'/></p>
+                                <p><img src='http://latex.codecogs.com/svg.latex?D \land \neg F'/></p>
+                                <p>The query:</p>
+                                <p><img src='http://latex.codecogs.com/svg.latex?A'/></p>
+                                <p>Does the knowledge base entail the query?</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question18">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="对">
+                                        <input type="radio" name="q1" value="B" title="错">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    
+                    </div>     
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "CS181",
+        "name": "Artificial Intelligence I",
+        "coursebench": "CS281H",
+        "semester": "Fall 2019",
+        "category": "Homework 作业",
+        "title": "Homework 2"
+    };
+
+    var answers = {
+        'Question1': [10,{
+            'q1': [10,{
+                'A':10,
+            }]
+        }],
+        'Question2': [10,{
+            'q1': [10,{
+                'A':10
+            }]
+        }],
+        'Question3': [10,{
+            'q1': [10,{
+                'A':10
+            }]
+        }],
+        'Question4': [10,{
+            'q1': [10,{
+                'B':10
+            }]
+        }],
+        'Question5': [10,{
+            'q1': [10,{
+                'A':10
+            }]
+        }],
+        'Question6': [10,{
+            'q1': [10,{
+                'A':10
+            }]
+        }],
+        'Question7': [10,{
+            'q1': [10,{
+                'B':10
+            }]
+        }],
+        'Question8': [10,{
+            'q1': [10,{
+                'B':10
+            }]
+        }],
+        'Question9': [10,{
+            'q1': [10,{
+                'ABCDE':10,'ABCD':5,'ABCE':5,'ABDE':5,'ACDE':5,'BCDE':5,'ABC':5,'ABD':5,'ABE':5,'ACD':5,'ACE':5,'ADE':5,'BCD':5,'BCE':5,'BDE':5,'CDE':5,'AB':5,'AC':5,'AD':5,'AE':5,'BC':5,'BD':5,'BE':5,'CD':5,'CE':5,'DE':5,'A':5,'B':5,'C':5,'D':5,'E':5
+            }]
+        }],
+        'Question10': [10,{
+            'q1': [10,{
+                'B':10
+            }]
+        }],
+        'Question11': [10,{
+            'q1': [10,{
+                'A':10
+            }]
+        }],
+        'Question12': [10,{
+            'q1': [10,{
+                'A':10
+            }]
+        }],
+        'Question13': [10,{
+            'q1': [10,{
+                'B':10
+            }]
+        }],
+        'Question14': [10,{
+            'q1': [10,{
+                'A':10
+            }]
+        }],
+        'Question15': [10,{
+            'q1': [10,{
+                'A':10
+            }]
+        }],
+        'Question16': [10,{
+            'q1': [10,{
+                'A':10
+            }]
+        }],
+        'Question17': [10,{
+            'q1': [10,{
+                'B':10
+            }]
+        }],
+        'Question18': [10,{
+            'q1': [10,{
+                'A':10
+            }]
+        }]
+    };
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

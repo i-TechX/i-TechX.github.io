@@ -163,6 +163,7 @@ abbr {
   background-color: #efe7fd;
   padding-right:0;
   width: 100%;
+  height: auto;
 }
 .layui-form-radio *{
   font-size: inherit;
@@ -183,9 +184,7 @@ abbr {
   transition: 0.1s;
   padding: 0.4em 1em;
   margin: 0.5em 0;
-}
-.layui-form-checkbox{
-  margin: 20px 0;
+  white-space: normal;
 }
 .layui-form-checkbox span::before, .layui-form-radio span::before{
   border: 2px solid;
@@ -302,7 +301,7 @@ summary:focus {
   color: rgb(172, 172, 172);
   margin: 1.3em 0;
 }
-.problem .problem-content, .reading-content {
+.problem .problem-content, .reading-content, .question p {
   font-size: medium;
   margin: 1em 0;
 }

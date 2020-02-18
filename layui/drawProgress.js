@@ -4,7 +4,8 @@ function draw(semesterLabel, courseInfo, semester, passScore) {
 
     var legendData = [],
         xAxisData = [],
-        series = [];
+        series = [],
+        logData = {};
 
     semesterScore = {};
     seriesData = {};
@@ -28,6 +29,7 @@ function draw(semesterLabel, courseInfo, semester, passScore) {
                     titleScore = 0;
                     if (localStorage.hasOwnProperty(key_cur)) {
                         titleScore = 100*localStorage.getItem(key_cur)/localStorage.getItem(key_tol);
+                        logData[title] = [localStorage.getItem(key_cur), localStorage.getItem(key_tol)];
                     };
                     categoryScore += titleScore*titlePercentage;
 
@@ -119,7 +121,8 @@ function draw(semesterLabel, courseInfo, semester, passScore) {
                     let series2 = params[i];
                     if (typeof(series2.data) === "string")
                         // res = series2.axisValue + "<br/>" + series2.marker + series2.seriesName + ":" + series2.data + "<br/>";
-                        return series2.marker + series2.axisValue + " : " + series2.data + "%<br/>";
+                        if (logData.hasOwnProperty(series2.axisValue)) return series2.marker + series2.axisValue + " : " + series2.data + "% (" + logData[series2.axisValue][0] + '/' + logData[series2.axisValue][1] + ")<br/>";
+                        else return series2.marker + series2.axisValue + " : " + series2.data + "%<br/>";
                 }
             },
         },

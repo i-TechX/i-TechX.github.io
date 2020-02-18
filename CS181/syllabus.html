@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../dashboard.html">
+                <img src="../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="index.html"><li>课程</li></a>
+            <a href="#"><li class="layui-this">教学大纲</li class="layui-this"></a>
+            <a href="progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+    </div>
+
+    <div class="layui-tab-content" style="height: auto;">
+        <div class="layui-tab-item layui-show">
+            <div class="main-content" style="margin: 1em 5%;">
+                <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Course Syllabus 课程大纲</h1>
+                <hr>
+
+                <fieldset class="layui-elem-field">
+                    <legend>Fall 2019</legend>
+                    <div class="layui-field-box">
+                        <!-- START -->
+                        <table width="90%" align="center">
+                            <tbody><tr>
+                                <td>
+                                    <h1>人工智能I教学大纲</h1>
+                                    <h2>一、课程基本信息</h2>
+                                    <table class="layui-table" width="100%">
+                                        <tbody><tr>
+                                             <td class="title">开课单位:</td>
+                                             <td class="content"></td>
+                                             <td class="title">课程代码:</td>
+                                             <td class="content">CS181</td>
+                                        </tr>
+                                        <tr>
+                                             <td class="title">课程名称:</td>
+                                             <td class="content">人工智能I</td>
+                                             <td class="title">英文名称:</td>
+                                             <td class="content" style="font-family:Times New Roman">Artificial Intelligence I</td>
+                                        </tr>
+                                        <tr>
+                                             <td class="title">学    分:</td>
+                                             <td class="content">4</td>
+                                             <td class="title">学    时:</td>
+                                             <td class="content">64</td>
+                                        </tr>
+                                        <tr>
+                                             <td class="title">授课对象:</td>
+                                             <td class="content">&nbsp;</td>
+                                             <td class="title">授课语言:</td>
+                                             <td class="content">中英文</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">先修课程:</td>
+                                            <td class="content" colspan="3">
+                        </td>
+                                        </tr>
+                                    </tbody></table>
+                                    <h2>二、课程简介和教学目的</h2>
+                                    <table>
+                                        <tbody><tr>
+                                            <td class="content">人工智能专题，包含：搜索、约束满足问题、博弈、符号逻辑、概率模型、强化学习、机器学习基础、自然语言处理基础等。</td>
+                                        </tr>
+                                    
+                                    </tbody></table>
+                                    
+                                    <h2>三、教学内容、教学方式和学时安排</h2>
+                                    <table align="center">
+                                        <tbody><tr>
+                                            <td><table class="layui-table" border="1" cellspacing="0" cellpadding="6"><tbody><tr><td style="height:28px; width:321px"><p style="margin-left:-2.95pt">简介</p></td><td style="height:28px; width:111px"><p>第1周</p></td></tr><tr><td style="height:28px; width:321px"><p style="margin-left:-2.95pt">搜索</p></td><td style="height:28px; width:111px"><p>第1周</p></td></tr><tr><td style="height:28px; width:321px"><p style="margin-left:-2.95pt">约束满足问题</p></td><td style="height:28px; width:111px"><p>第2周</p></td></tr><tr><td style="height:28px; width:321px"><p style="margin-left:-2.95pt">博弈</p></td><td style="height:28px; width:111px"><p>第3周</p></td></tr><tr><td style="height:21px; width:321px"><p style="margin-left:-2.95pt">符号逻辑</p></td><td style="height:21px; width:111px"><p>第4-5周</p></td></tr><tr><td style="height:9px; width:321px"><p style="margin-left:-2.95pt">语义万维网</p></td><td style="height:9px; width:111px"><p>第5周</p></td></tr><tr><td style="height:9px; width:321px"><p style="margin-left:-2.95pt">概率图模型</p></td><td style="height:9px; width:111px"><p>第5-7周</p></td></tr><tr><td style="height:9px; width:321px"><p style="margin-left:-2.95pt">概率逻辑</p></td><td style="height:9px; width:111px"><p>第7周</p></td></tr><tr><td style="height:9px; width:321px"><p style="margin-left:-2.95pt">概率时域模型</p></td><td style="height:9px; width:111px"><p>第8周</p></td></tr><tr><td style="height:9px; width:321px"><p style="margin-left:-2.95pt">课程设计开题</p></td><td style="height:9px; width:111px"><p>第9周</p></td></tr><tr><td style="height:9px; width:321px"><p style="margin-left:-2.95pt">增强学习</p></td><td style="height:9px; width:111px"><p>第10-11周</p></td></tr><tr><td style="height:9px; width:321px"><p style="margin-left:-2.95pt">机器学习基础</p></td><td style="height:9px; width:111px"><p>第12-13周</p></td></tr><tr><td style="height:9px; width:321px"><p style="margin-left:-2.95pt">自然语言处理基础</p></td><td style="height:9px; width:111px"><p>第13-14周</p></td></tr><tr><td style="height:23px; width:321px"><p style="margin-left:-2.95pt">课程设计展示</p></td><td style="height:23px; width:111px"><p>第15-16周</p></td></tr><tr><td style="height:23px; width:321px"><p style="margin-left:-2.95pt">人工智能哲学</p></td><td style="height:23px; width:111px"><p>第16周</p></td></tr></tbody></table></td>
+                                        </tr>
+                                    </tbody></table>
+                                    <h2>四、考核方式和成绩评定</h2>
+                                    <table>
+                                        <tbody><tr>
+                                            <td class="content">6次作业，5次编程作业，2次考试，1个课程设计</td>
+                                        </tr>
+                                    </tbody></table>
+                                    
+                                    <h2>五、推荐教材和参考书目</h2>
+                                    <table class="layui-table" width="100%">
+                                        <tbody><tr align="center">
+                                            <td width="12%">书名</td>
+                                            <td width="10%">作者</td>
+                                            <td width="10%">译者</td>
+                                            <td width="20%">出版社</td>
+                                            <td width="20%">出版时间</td>
+                                            <td width="25%">ISBN</td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>Artificial Intelligence: A Modern Approach, 3rd edition</td>
+                                            <td>	
+                                                Stuart Russell, Peter Norvig
+                                            </td>
+                                            <td>	
+                                                
+                                            </td>
+                                            <td>	
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>	
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>Pattern Recognition and Machine Learning</td>
+                                            <td>	
+                                                Christopher Bishop
+                                            </td>
+                                            <td>	
+                                                
+                                            </td>
+                                            <td>	
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>	
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>Speech and Language Processing, 2nd edition</td>
+                                            <td>	
+                                                Daniel Jurafsky and James H. Martin
+                                            </td>
+                                            <td>	
+                                                
+                                            </td>
+                                            <td>	
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>	
+                                                
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                    
+                                    <h2>六、其他说明</h2>
+                                    <table>
+                                        <tbody><tr>
+                                            <td class="content"></td>
+                                        </tr>
+                                    </tbody></table>
+                                    
+                                    <h2>七、教师信息</h2>
+                                    <table class="layui-table">
+                                        <tbody><tr>
+                                            <td class="content">授课教师：
+                                                屠可伟
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="content">课程负责人：
+                                                屠可伟
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <!-- END -->
+                    </div>
+                </fieldset>
+                
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+</div>
+
+<script src="../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "CS181",
+        "name": "Artificial Intelligence I",
+        "coursebench": "CS281H"
+    };
+
+    document.title = 'iTechX | ' + courseInfo.code + ' ' + courseInfo.name;
+
+    layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], function(){
+        var layer = layui.layer
+            ,form = layui.form
+            ,element = layui.element
+            ,laytpl = layui.laytpl
+            ,laydate = layui.laydate
+            ,$ = layui.$
+            ,laypage = layui.laypage;
+
+        var courseHeaderTpl = lay('#courseHeader')[0].innerHTML;
+        lay('#courseHeader').html(layui.laytpl(courseHeaderTpl).render({}))
+        .removeClass('layui-hide');
+
+        var courseBenchTpl = lay('#courseBench')[0].innerHTML;
+        lay('#courseBench').html(layui.laytpl(courseBenchTpl).render({
+            "url": "https://www.coursebench.net/course/"+(courseInfo.hasOwnProperty("coursebench") ? courseInfo.coursebench : courseInfo.code)+"/"
+        }))
+        .removeClass('layui-hide');
+        
+    });
+</script>
+</body>
+</html>
