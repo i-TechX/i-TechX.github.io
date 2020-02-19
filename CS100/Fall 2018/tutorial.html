@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Tutorial 习题课</h1>
+                    <hr>
+
+                    <div class="layui-hide" id="page-1" page-type="book">
+                        <div class="reading-content">
+                            <div class="layui-form" style="margin: 0 10%;">
+                                <table class="layui-table">
+                                  <colgroup>
+                                    <col>
+                                    <col>
+                                  </colgroup>
+                                  <thead>
+                                    <tr>
+                                      <th>Tutorial Material</th>
+                                      <th>Solution</th>
+                                    </tr> 
+                                  </thead>
+                                  <tbody>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o410997a549f14848adc5110115209169" target="_blank">CS100_tutorial_0.pptx</a></td><td></td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0odaa568e4f505438a8f35348a1d5cf006" target="_blank">CS100_tutorial_1.pdf</a></td>
+                                        <td><a href="https://docs.zoho.com.cn/file/xse0oe67464cb363140199c44740558c14b02" target="_blank">CS100_tutorial_1_solution.pdf</a></td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o48b87322e51d4a83b66ba23d4e50321d" target="_blank">CS100_tutorial_2.pdf</a></td>
+                                        <td><a href="https://docs.zoho.com.cn/file/xse0o5fda45e269054efa9d7d28d8cda0bf2c" target="_blank">CS100_tutorial_2_solution.pdf</a></td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o3b2a34be909d41b0b6baabd2539adf6b" target="_blank">CS100_tutorial_3.pdf</a></td>
+                                        <td><a href="https://docs.zoho.com.cn/file/xse0o0792937e4f794de692b25ea52e099e6f" target="_blank">CS100_tutorial_3_solution.pdf</a></td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0oc73daec4a120417591aa46b58ae95d1c" target="_blank">CS100_tutorial_4.pdf</a></td>
+                                        <td><a href="https://docs.zoho.com.cn/file/xse0oc51c8722faea49b5b242b7871e9a206f" target="_blank">CS100_tutorial_4_solution.pdf</a></td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0odefe9efeefbf4629aaf18d69d553d568" target="_blank">CS100_Tutorial_5.pdf</a></td>
+                                        <td><a href="https://docs.zoho.com.cn/file/xse0o62fc12dc67bd4ad0b48f18ac2558c6ae" target="_blank">CS100_Tutorial5_solution.zip</a></td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0of9cb3c9c2cce493a8b96d2a8b47c5139" target="_blank">CS100_Tutorial_6.pdf</a></td>
+                                        <td><a href="https://docs.zoho.com.cn/file/xse0o99aa6a3cc17247138cb35c36dfa30bfb" target="_blank">CS100_Tutorial6_solution.zip</a></td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o8c38b5645a614523a07c48524d0e8799" target="_blank">CS100_Tutorial_7.pdf</a></td>
+                                        <td><a href="https://docs.zoho.com.cn/file/xse0o8728a4d57b3d4aabb24681f750d04b0d" target="_blank">CS100_Tutorial7_codes.zip</a></td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0of5f3539bfda94351991c53c36abd1d86" target="_blank">CS100_Tutorial_8.pdf</a></td>
+                                        <td><a href="https://docs.zoho.com.cn/file/xse0o846898977b574c12a502a0d2588040f1" target="_blank">CS100_Tutorial_8_code.zip</a></td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o2c90058d66f9480cbaa496f9be248903" target="_blank">CS100_Tutorial_9.pdf</a></td>
+                                        <td><a href="https://docs.zoho.com.cn/file/xse0oaf0a5b88da9a491785b3d7ffb7afdbaa" target="_blank">CS100_Tutorial_9_codes.zip</a></td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o59c989cb7aa146a594522db8c6346493" target="_blank">CS100_Tutorial_10.pdf</a></td>
+                                        <td><a href="https://docs.zoho.com.cn/file/xse0o7935fa2e4424462fb5f1b7a3771c076f" target="_blank">CS100_tutorial_10_codes.rar</a></td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o159b7043f41243f2ab26630fc90ff36d" target="_blank">CS100_Tutorial_11.pdf</a></td>
+                                        <td><a href="https://docs.zoho.com.cn/file/xse0o7d55536b6ad042ea980337a4b7e82421" target="_blank">CS100_tutorial_11_codes.rar</a></td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0ocebc68d1cb844a1cb87ba4b3a07e6328" target="_blank">CS100_Tutorial_12.pdf</a></td><td></td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0oa71dc3bef3394596a1234e2c2f3008c6" target="_blank">CS100_Tutorial_13.pdf</a><br>
+                                        <a href="https://docs.zoho.com.cn/file/xse0od368bfd36279470088fece362098d2fe" target="_blank">weather_data.xlsx</a></td><td></td></tr>
+                                  </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>                    
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "CS100",
+        "name": "Introduction to Programming",
+        "semester": "Fall 2018",
+        "category": "Lecture & Tutorial Slides 教学课件",
+        "title": "Tutorial 习题课"
+    };
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Homework 作业</h1>
+                    <hr>
+
+                    <div class="layui-hide" id="page-1" page-type="book">
+                        <div class="reading-content">
+                            <div class="layui-form" style="margin: 0 0;">
+                                <table class="layui-table">
+                                  <colgroup>
+                                    <col>
+                                    <col>
+                                  </colgroup>
+                                  <thead>
+                                    <tr>
+                                      <th>Homework</th>
+                                      <th>Due Date</th>
+                                      <th>Homework Instruction</th>
+                                      <th>Template File</th>
+                                      <th>Testcases</th>
+                                      <th>Solution</th>
+                                    </tr> 
+                                  </thead>
+                                  <tbody>
+                                        <tr>
+                                            <td><strong>Homework 1</strong></td>
+                                            <td>Oct 14, 2018</td>
+                                            <td><a href="https://docs.zoho.com.cn/file/xse0o0f4a2c385b1e49fa90c739a5c7c1455d" target="_blank">CS100_homework1.pdf</a></td>
+                                            <td>No such thing...</td>
+                                            <td><a href="https://docs.zoho.com.cn/file/xse0o4da20d65aadd4a478433a1265ce84ab5" target="_blank">Testcases_HW1.zip</a></td>
+                                            <td><a href="https://docs.zoho.com.cn/file/xse0o9e3ff2fcb0b64c558202dc1fbe16ff29" target="_blank">CS100_homework1_solution.pdf</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Homework 2</strong></td>
+                                            <td>Oct 28, 2018</td>
+                                            <td><a href="https://docs.zoho.com.cn/file/xse0odc6e524d536541ca96f86206490d2266" target="_blank">CS100_homework2.pdf</a></td>
+                                            <td>No such thing...</td>
+                                            <td><a href="https://docs.zoho.com.cn/file/xse0oc8a30b5fa5614cc493b765d32fe74801" target="_blank">hw2_testexamples.zip</a></td>
+                                            <td><a href="https://docs.zoho.com.cn/file/xse0od91386ebb3384471947e8d5da73c7228" target="_blank">CS100_homework2_solution.pdf</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Homework 3</strong></td>
+                                            <td>Nov 18, 2018</td>
+                                            <td><a href="https://docs.zoho.com.cn/file/xse0ofa5ddf76c55746e3b50f7d4abf456890" target="_blank">CS100_homework3.pdf</a></td>
+                                            <td>No such thing...</td>
+                                            <td></td>
+                                            <td><a href="https://docs.zoho.com.cn/file/xse0oe50e971ace5e48909c8f197a1d62e1b3" target="_blank">CS100_homework3_solution.zip</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Homework 4</strong></td>
+                                            <td>Dec 6, 2018</td>
+                                            <td><a href="https://docs.zoho.com.cn/file/xse0o985f36342a69441aa8c1786fc0a6e9e8" target="_blank">CS100_homework4.pdf</a></td>
+                                            <td colspan="2"><a href="https://docs.zoho.com.cn/file/xse0oc4cd16ea148c49f3aa5c36125453f939" target="_blank">hw4.zip</a> (testcases are not the final ones)</td>
+                                            <td><a href="https://docs.zoho.com.cn/file/xse0ob079b62cd63a42c89e836ee7ead45b4d" target="_blank">CS100_homework4_solution.zip</a></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Homework 5</strong></td>
+                                            <td>Dec 23, 2018</td>
+                                            <td rowspan="2"><a href="https://docs.zoho.com.cn/file/xse0o1ef2b74c8cf64b8c9c33ce8379f4ecc0" target="_blank">Homework56.pdf</a></td>
+                                            <td>No such thing...</td>
+                                            <td><a href="https://docs.zoho.com.cn/file/xse0ob0c59f4d517e4937a737edb93c363bf8" target="_blank">hw5_testcase.zip</a> (Not official)</td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>Homework 6</strong></td>
+                                            <td>Dec 23, 2018</td>
+                                            <td>No such thing...</td>
+                                            <td><a href="https://docs.zoho.com.cn/file/xse0oc67269380d15424dbc72c8f178bb50eb" target="_blank">hw6_testcase.zip</a> (Not official)</td>
+                                            <td></td>
+                                        </tr>
+                                  </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>                    
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "CS100",
+        "name": "Introduction to Programming",
+        "semester": "Fall 2018",
+        "category": "Homework 作业",
+        "title": "Homework"
+    };
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

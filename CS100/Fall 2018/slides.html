@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Lecture Slides 教学课件</h1>
+                    <hr>
+
+                    <div class="layui-hide" id="page-1" page-type="book">
+                        <div class="reading-content">
+                            <div class="layui-form" style="margin: 0 10%;">
+                                <table class="layui-table">
+                                  <colgroup>
+                                    <col>
+                                    <col>
+                                  </colgroup>
+                                  <thead>
+                                    <tr>
+                                      <th>Lecture Notes</th>
+                                      <th>Lecture Date</th>
+                                    </tr> 
+                                  </thead>
+                                  <tbody>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0of49b5bc71e2847838c898f5a7a158592" target="_blank">CS100_Lecture_0_course_introduction.pdf</a></td>
+                                        <td>Sep 19, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o534f4453c6c34480bc348f4e6f805add" target="_blank">CS100_Lecture_1_C_program_structure.pdf</a></td>
+                                        <td>Sep 19, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o5f0d6a4e231646ba95ca9b4227507898" target="_blank">CS100_Lecture_2_data_types_operators.pdf</a></td>
+                                        <td>Sep 21, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o29af2f36594c459ab11c5ec729ae8112" target="_blank">CS100_Lecture_3_simple_IO.pdf</a></td>
+                                        <td>Sep 26, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o802f91b9cb8949028487dc7593666fc3" target="_blank">CS100_Lecture_4_control_flow.pdf</a></td>
+                                        <td>Sep 28, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o10fce7b0ed19499f9e9d6c1bf29d3419" target="_blank">CS100_Lecture_5_functions.pdf</a></td>
+                                        <td>Oct 10, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o66a2253975744a359ad5346326cf5642" target="_blank">CS100_Lecture_6_pointers.pdf</a></td>
+                                        <td>Oct 12, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o5bfa2411435d462abe851665fdffc442" target="_blank">CS100_Lecture_7_arrays.pdf</a></td>
+                                        <td>Oct 17, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o37196e290a194a959d65ddc38c1f0bbc" target="_blank">CS100_Lecture_8_character_strings.pdf</a></td>
+                                        <td>Oct 19, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o805560d248a3466a97a12a0433fc651b" target="_blank">CS100_Lecture_9_structures.pdf</a></td>
+                                        <td>Oct 24, 2018</td></tr>    
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0of158825757ce4cb9a87fe31c755a8619" target="_blank">CS100_Lecture_10_recursion.pdf</a></td>
+                                        <td>Oct 26, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0obd433f3f96d341a29e0cf9c5f144ce9c" target="_blank">CS100_Lecture_11_Encapsulation2.pdf</a></td>
+                                        <td>Oct 31, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o08557da2238b43f69ec93d6a01e09168" target="_blank">CS100_Lecture_12_Inheritance.pdf</a></td>
+                                        <td>Nov 2, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o94425336959a4986aa70031c24b40b3f" target="_blank">CS100_Lecture_13_Polymorphism.pdf</a></td>
+                                        <td>Nov 7, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o2b211d1c1b024d5b8d1437fbd59c6fcb" target="_blank">CS100_Lecture_14_STL_Templates.pdf</a></td>
+                                        <td>Nov 9, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o773ab5d05dd042e788ec67344b384153" target="_blank">CS100_Lecture_15_STL_Containers.pdf</a></td>
+                                        <td>Nov 14, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0of9fb80f08afb49649b5a83b58231bc33" target="_blank">CS100_Lecture_17_Memory_management.pdf</a></td>
+                                        <td>Nov 21, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o5b3f89cbe4584f6b9ea72854c51077a9" target="_blank">CS100_Lecture_18_Concurrency.pdf</a></td>
+                                        <td>Nov 23, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o4968b87649b445afa246b12e212a8dc1" target="_blank">CS100_Lecture_19_Advanced_topics.pdf</a></td>
+                                        <td>Nov 28, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0ob972b16d3f564fd79782c97c5aae0ded" target="_blank">CS100_Lecture_20_Advanced_topics_II.pdf</a></td>
+                                        <td>Nov 30, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o7766d0a2aabf45ab9a2931348160f64a" target="_blank">CS100_Lecture_21_Introduction_to_Python.pdf</a></td>
+                                        <td>Dec 5, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0oc380acad91bb41ef853fa794c3c5d3e6" target="_blank">CS100_Lecture_22_structure_data_model_control_flow.pdf</a></td>
+                                        <td>Dec 7, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o2b4e9ebe0b8642949b6473b1a1c5b0dc" target="_blank">CS100_Lecture_23_functions_Scope.pdf</a></td>
+                                        <td>Dec 12, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o0099b3f04b694d88a141cc89f7b5c9bd" target="_blank">CS100_Lecture_24_class.pdf</a></td>
+                                        <td>Dec 14, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o4623296146db4a358f25e9114dd7093c" target="_blank">CS100_Lecture_25_sequence_set_mapping_.pdf</a></td>
+                                        <td>Dec 19, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0of26f4a23b47442f29e5cff1bf5b62f7f" target="_blank">CS100_Lecture_26_inheritance.pdf</a></td>
+                                        <td>Dec 21, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0of5a32c9ee0344c2bbc62b38d81ca2481" target="_blank">CS100_Lecture_27_garbage_collection.pdf</a></td>
+                                        <td>Dec 26, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0obccc2b255eef449bb498d323cd73c61f" target="_blank">CS100_Lecture_28_data_analytics_visualization.pdf</a></td>
+                                        <td>Dec 28, 2018</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o31fb09bac4ca4d548e2203c558548063" target="_blank">CS100_Lecture_29_Part_1_Revision_C.pdf</a></td>
+                                        <td>Jan 2, 2019</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o89e2571b405b4a2db18c841a3953af70" target="_blank">CS100_Lecture_29_Part_2_Summary_Cpp.pdf</a></td>
+                                        <td>Jan 2, 2019</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0o803a29a688c74770b5b3bba346695042" target="_blank">CS100_Lecture_29_Part_3_Summary.pdf</a></td>
+                                        <td>Jan 4, 2019</td></tr>
+                                    <tr><td><a href="https://docs.zoho.com.cn/file/xse0oc08fec24ee6a46b0b0392c3b0d44877e" target="_blank">CS100_Lecture_30_Cpp_Example_questions.pdf</a></td>
+                                        <td>Jan 4, 2019</td></tr>                                
+                                  </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+
+                    </div>                    
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "CS100",
+        "name": "Introduction to Programming",
+        "semester": "Fall 2018",
+        "category": "Lecture & Tutorial Slides 教学课件",
+        "title": "Lecture Slides 教学课件"
+    };
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>
