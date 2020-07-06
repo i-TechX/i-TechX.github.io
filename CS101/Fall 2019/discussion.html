@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Discussion 习题课课件
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col><col></colgroup><thead><tr><th>Discussion Slides</th><th>Discussion Date</th></tr></thead><tbody><tr><td><a href="https://docs.zoho.com.cn/file/prghu192d06fe0a944e38a6de40f27db7e206">Discussion Week 2.pdf</a> <br> <a href="https://docs.zoho.com.cn/file/prghu113b9944aa8d4bfdbba1d968c9e4c5bb">TC102 Discussion Week2.pdf</a></td><td>Sep 16, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghue4181d857a844b67a449fb06ebc61257">Discussion Week 3.pdf</a> <br> <a href="https://docs.zoho.com.cn/file/prghu1c386cc63d044df195cd9f916971f291">Discussion Week 3 (updated).pdf</a></td><td>Sep 23, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghubce1521be52c48b89f14ff8fa88aca93">Discussion Week 4.pdf</a> <br> <a href="https://docs.zoho.com.cn/file/prghu5a69507487d445f9b98a73610ef5bd02">TC102 Discussion Week4.pdf</a></td><td>Sep 29, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghua21c1c9985924c34af3b8771d653b431">Discussion Week 6.pdf</a></td><td>Oct 14, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghuc7137e2a44d3477da90cf6647c966a40">Discussion Week 7.pdf</a></td><td>Oct 21, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu8175611f13a949408ba141cda02e6749">Discussion Week 8.pdf</a></td><td>Oct 28, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu9097a3dd0b344d108617f7ba32f62369">Midterm Review Part1.pdf</a></td><td>Oct 28, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu6e806ab905ee4fecab9333f18f287294">Discussion Week 9.pdf</a></td><td>Nov 2, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu0e4f435458de4285a5151b508c087a26">Midterm Review Part2.pdf</a></td><td>Nov 2, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghucb5bb02ad65045dfbe868bcbf4ff9168">Discussion Week 10.pdf</a></td><td>Nov 11, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu1d0d45e90a6643bea86b32b98396cdbf">Discussion Week 11.pdf</a> <br> <a href="https://docs.zoho.com.cn/file/prghu9120b0b689964c9f9b01ab1ef3577c72">Discussion Week 11.pptx</a></td><td>Nov 18, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghuf293ec995a2d4fb5997a22f86dc07edd">Discussion Week 12.pdf</a></td><td>Nov 25, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghud46509aae2c64536b90e86db34dad7c7">Discussion Week 13.pdf</a> <br> <a href="https://docs.zoho.com.cn/file/prghud27fcdae87a2443581b3d0c6b685f123">Discussion Week 13 (updated).pdf</a></td><td>Dec 2, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghue5d578ba49c74fcc99840ecbe61e6253">Discussion Week 14.pdf</a></td><td>Dec 9, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghuab02a23933f743cb8e07365d64145ce9">Discussion Week 15.pdf</a></td><td>Dec 16, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghucfb089f02d284946a62953ea7f7487df">Discussion Week 16.pdf</a></td><td>Dec 23, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghucd2d9fe4f68841bfb5df6f21b50c0503">Final Review.pdf</a></td><td>Dec 23, 2019</td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"CS101",
+"name":"Algorithms and Data Structures",
+"semester":"Fall 2019",
+"category":"Discussion 习题课课件",
+"title":"Discussion 习题课课件",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

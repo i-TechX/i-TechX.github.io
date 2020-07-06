@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Homework 作业
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col><col><col><col><col></colgroup><thead><tr><th>Homework PDF</th><th>Homework Latex</th><th>Homework solution</th><th>Release Date</th><th>Due Date</th></tr></thead><tbody><tr><td><a href="https://docs.zoho.com.cn/file/prghu1da09676c3544e3bbd647f0bfb231921">Weekly_Homework_1.pdf</a></td><td>[corrupted]</td><td><a href="https://docs.zoho.com.cn/file/prghu503ee13951aa4c4aab7890d7fe7b7bd6">HW1_sol.pdf</a></td><td>SEP 16</td><td>SEP 22 AT 11:59PM</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghuc12e00145aee43e3b19a15f138616ac7">HW2.pdf</a></td><td>[corrupted]</td><td><a href="https://docs.zoho.com.cn/file/prghua8743985666c46c2965a50a1cde937a0">HW2_sol.pdf</a></td><td>SEP 23</td><td>SEP 29 AT 11:59PM</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu9a5cf684cf2f427fa00cc41f409d6497">Homework_3.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghu9bcab32ed504405a80e9661e340507fc">Week_3.rar</a></td><td><a href="https://docs.zoho.com.cn/file/prghuacf6a35a29684193886cc0c2d96dc7f9">HW3_sol.pdf</a></td><td>SEP 30</td><td>OCT 06 AT 11:59PM</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu2843b4c1b749459d992ce19b7deae777">Homework4_origin.pdf</a></td><td>[corrupted]</td><td><a href="https://docs.zoho.com.cn/file/prghua4c83e040ba145bbac3aabc7cbb7f498">Homework4Solutions.pdf</a></td><td>OCT 14</td><td>OCT 20 AT 11:59PM</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghufc1e48ae5a374c058b24af159919ed9a">Homework5_origin.pdf</a></td><td>[corrupted]</td><td><a href="https://docs.zoho.com.cn/file/prghu3a6343a0da064b26b0e21f3e654b8589">Homework5_solution.pdf</a></td><td>OCT 21</td><td>OCT 27 AT 11:59PM</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu9f46a6307b704a5e84e6668e65925328">Homework6.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghu6157dce560224b15b57343b1e563ef58">Homework_6Latex.rar</a></td><td><a href="https://docs.zoho.com.cn/file/prghu711b787cf53f499da1f65475e51ef864">Homework6_solution.pdf</a></td><td>OCT 28</td><td>NOV 03 AT 11:59PM</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu647e34cc080b4d369ef0362c6644e5ee">Homework7.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghuc26bea91a4e2441f87a68a9de76d8e4b">Homework_7Latex.zip</a></td><td><a href="https://docs.zoho.com.cn/file/prghubb450736e8454184b447419735d98d02">hw7_sol.pdf</a></td><td>NOV 04</td><td>NOV 10 AT 11:59PM</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghuf2ed167c42cc4527b0cc30708ecd6381">HW8_origin.pdf</a></td><td>[corrupted]</td><td><a href="https://docs.zoho.com.cn/file/prghu9987cbd973a3400cba760e5720ee2e26">HW8_sol.pdf</a></td><td>NOV 11</td><td>NOV 17 AT 11:59PM</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu8b4b85f888bb423ea2fb7b9bb4d8f8ac">Homework9.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghu3868783c540b40dbacd8d573b93b7ee6">Homework9Latex.rar</a></td><td><a href="https://docs.zoho.com.cn/file/prghu0351dd15ae7d46edb2b23404ccf76047">Homework9Solutions.pdf</a></td><td>NOV 18</td><td>NOV 24 AT 11:59PM</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu4a3b3b5c5eba46b59d398dbd0fcc648f">Homework10.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghudda1b841f645454bb724b562d21f0cb8">Homework10Latex.rar</a></td><td><a href="https://docs.zoho.com.cn/file/prghu61161c4e304443f3a3952f851d3ec9be">Homework10_solution.pdf</a></td><td>NOV 25</td><td>DEC 01 AT 11:59PM</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghuc3fcdf3147ff4ef9b0a5427f696b17f8">Homework11_origin.pdf</a></td><td>[corrupted]</td><td>[missing]</td><td>DEC 02</td><td>DEC 08 AT 11:59PM</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu8b2962be9abd4126a42737839ab7b1d6">Homework12_origin.pdf</a></td><td>[corrupted]</td><td><a href="https://docs.zoho.com.cn/file/prghu405754634e7b4cf1a794d98b4e0aab38">Homework12_solution.pdf</a></td><td>DEC 09</td><td>DEC 15 AT 11:59PM</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu021395ecde7a4ebb9123b3b7277f62c4">Homework13_origin.pdf</a></td><td>[corrupted]</td><td>[missing]</td><td>DEC 16</td><td>DEC 26 AT 11:59PM</td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"CS101",
+"name":"Algorithms and Data Structures",
+"semester":"Fall 2019",
+"category":"Homework 作业",
+"title":"Homework 作业",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

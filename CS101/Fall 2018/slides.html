@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Lecture Slides 教学课件
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col></colgroup><thead><tr><th>Lecture Notes</th></tr></thead><tbody><tr><td><a href="https://docs.zoho.com.cn/file/prghu7e5dbaee16ed465ea41b7b29b7f61260">1.1_Course_Overview.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu6e7f8daa999543bf810dd182a845179d">1.2_Space_vs_Time.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu9846bc926efc46ebaf6f7313dd03b2e1">1.3_Linked_List.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghud06286ad59ce440a905d937244a333af">2.1_Queue.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu4766bb21c9dc415395991a99a2c47164">2.1_Stack.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu4659bf751a0e4d0db8df5d79099976fc">2.2_Insertion_and_Bubble_Sort.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghuf034a0e74b674ef19e2dcc183fada3bb">4.1_Algorithm_Analysis.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu356d0273cd8449b6b31384f4c5cdcb69">4.2_Trees.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghue17c2a7486ca4b16a22940999f286f6b">5.1_Binary_Trees.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu3b59b1c1c12748718be75cf0ba63c26b">5.2_Priority_Queues_Heap_and_Heap_Sort.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu037f2d13d80a482aaf2f8deaf91ac0f2">6.1_Binary_Search_Trees.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu623787f4e7894f6a885d0747ac0555d7">6.2_AVL_Trees.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu6a08fda2f32f4169bb97ddc03fb52162">7.1_Disjoint_Sets.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu2991a57e5c624ca0b647db987855234a">8.1_Minimum_Spanning_Tree.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghuc13b62d5e3bb4c68b09af1090a0aa2f9">8.1_Minimum_Spanning_Tree.pptx</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu4971992fe2e94e02bda56f25a874c867">9.1_Shortest_Path.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghuc9080538664a4054bb9f3fe77e64c9aa">9.2_A_star_Search.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu932e3fe383674edbb59ada63240068e7">9.2_A_Star_Search_Marked.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu4011addf4cef4b61b3f566f95edf40d1">11.1_Divide_and_Conquer.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghuf9ca9c50130b4115a36651fac0063450">Maxflow_Mincut_Theorem.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu2e53f070f8794d16bbd408b774d5ed5f">Midterm_Review.pdf</a></td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"CS101",
+"name":"Algorithms and Data Structures",
+"semester":"Fall 2018",
+"category":"Lecture Slides 教学课件",
+"title":"Lecture Slides 教学课件",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

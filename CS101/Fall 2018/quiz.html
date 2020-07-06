@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Quiz 习题课测验
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col><col><col></colgroup><thead><tr><th>Number</th><th>Quiz</th><th>Quiz solution</th></tr></thead><tbody><tr><td>1-1</td><td><a href="https://docs.zoho.com.cn/file/prghud9b40879756948d693279e484d740de9">Quiz11.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghu66ad711cee584983989d8acc4eba2987">Quiz11_solution.pdf</a></td></tr><tr><td>1-4</td><td><a href="https://docs.zoho.com.cn/file/prghu031476529c1148a79bc394f34caed4ca">Quiz14.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghua3e107dcca9d46e89d2ee24cd03542cd">Quiz14_solution.pdf</a></td></tr><tr><td>2-1</td><td><a href="https://docs.zoho.com.cn/file/prghu8a2f27ca4d3f4241b9ec70027f637f08">QuizA2_1.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghu0ef160a9192e4631a89fad8d8fac77c1">QuizA_solution2_1.pdf</a></td></tr><tr><td>2-2</td><td><a href="https://docs.zoho.com.cn/file/prghu69c3c397dba44c95904cf66b77d43300">QuizB2_2.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghu04e9bf8cc6134e6e88a1800d6788b905">QuizB_solution2_2.pdf</a></td></tr><tr><td>3-1</td><td><a href="https://docs.zoho.com.cn/file/prghud53feb805e834597be754b1fdd8ff1a7">Quiz31.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghu7de19fde55a44595bb984ffab1924ee6">Quiz31s.pdf</a></td></tr><tr><td>3-2</td><td><a href="https://docs.zoho.com.cn/file/prghu31cc33623f0448048b8e8a3aada5c1bc">Quiz32.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghu817be6f7d6e54eb5a7ea573661227bbf">Quiz32s.pdf</a></td></tr><tr><td>4-1</td><td><a href="https://docs.zoho.com.cn/file/prghua2d1f342ecfd4459a7ee3399cdb4d8e7">QuizA 4_1.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghuea1000f7a7ab44c282504580ce236903">QuizASolution4_1.pdf</a></td></tr><tr><td>4-4</td><td><a href="https://docs.zoho.com.cn/file/prghu96d16637b588403289f04eb9444bba18">QuizB_4_4.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghu9a74f5ce7cf64c879cc7155de94e8354">QuizBSolution4_4.pdf</a></td></tr><tr><td>7-1</td><td><a href="https://docs.zoho.com.cn/file/prghu9f19ae1e21e54202adce41910bc4c414">Quiz71.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghu61599472c593414bbdf6a0649b59dba7">Quiz71_Solution.pdf</a></td></tr><tr><td>7-4</td><td><a href="https://docs.zoho.com.cn/file/prghu79131015e25a4a408370ac675b4561bd">Quiz74.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghuf70535f344d041a1b8302335e3a01799">Quiz74_Solution.pdf</a></td></tr><tr><td>8-1</td><td><a href="https://docs.zoho.com.cn/file/prghu93c5f9d99695476582630ef0c69e3b05">Quiz8_1.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghue164970d2910497e8e116567e7130a7e">Quiz8_1_solution.pdf</a></td></tr><tr><td>8-1A</td><td><a href="https://docs.zoho.com.cn/file/prghuc7642ef5ddc24fccb16ad753c31c10a6">QuizA 8_1.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghua2a134f4b98347e7aa9f5f9c8a84c1f6">QuizASolution8_1.pdf</a></td></tr><tr><td>8-2</td><td><a href="https://docs.zoho.com.cn/file/prghuc32598d828534cd997de8d1e7e67c84f">Quiz8_2.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghuc91aaf26f6384e79aa0ea167e82e737a">Quiz8_2_solution.pdf</a></td></tr><tr><td>8-4</td><td><a href="https://docs.zoho.com.cn/file/prghu2ae41ff2e2264b61a808c5c0621b6b50">QuizB8_4.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghuf2b16394396a4be7bd45a8d0e8ae063a">QuizBSolution8_4.pdf</a></td></tr><tr><td>9-1</td><td><a href="https://docs.zoho.com.cn/file/prghub084f3b68a2047b9a49ff3c575e38528">Quiz91.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghu3532dc8e75334362b16356ad678a56e7">Quiz91sol.pdf</a></td></tr><tr><td>9-2</td><td><a href="https://docs.zoho.com.cn/file/prghu1a0598e0d66f4d579e5c17b35e1b9f13">Quiz92.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghudf45af8f304440029c5d2079f502e8a5">Quiz92sol.pdf</a></td></tr><tr><td>12-1</td><td><a href="https://docs.zoho.com.cn/file/prghu8b4979df87844a27803733474e50a18a">Quiz121.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghucb8fce61529e47bd9e70c781ce315322">Quiz121sol.pdf</a></td></tr><tr><td>12-2</td><td><a href="https://docs.zoho.com.cn/file/prghuc0fb46e9232d45f0a50b8204fb03f909">Quiz122.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghu555ffffdb5be4ced9ad94bd02124932f">Quiz122sol.pdf</a></td></tr><tr><td>13-1</td><td><a href="https://docs.zoho.com.cn/file/prghucf926775d1974052a36a903f90b36e84">Quiz131.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghuea7cc51c7b47457db736537077fd46bc">Quiz131_sol.pdf</a></td></tr><tr><td>13-2</td><td><a href="https://docs.zoho.com.cn/file/prghu35bf8979ae0b42a09033610d7429d17f">Quiz132.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghu6c1f24811b9a4890ad2fdb246b9cd546">Quiz132_sol.pdf</a></td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"CS101",
+"name":"Algorithms and Data Structures",
+"semester":"Fall 2018",
+"category":"Quiz 习题课测验",
+"title":"Quiz 习题课测验",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

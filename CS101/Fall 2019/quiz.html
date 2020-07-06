@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Quiz 习题课测验
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col><col><col></colgroup><thead><tr><th>Number</th><th>Week</th><th>Quiz solution</th></tr></thead><tbody><tr><td>1</td><td>week 2</td><td><a href="https://docs.zoho.com.cn/file/prghuacec428803c34b29980f81deb90b38ca">quizA_solution.pdf</a> <br> <a href="https://docs.zoho.com.cn/file/prghu441f076e38e94ab3b501dadf9006b6d0">quizB_solution.pdf</a></td></tr><tr><td>2</td><td>week 3</td><td><a href="https://docs.zoho.com.cn/file/prghuf5143fecd53f44d2a847a169d1fa3eaf">quizA_solution.pdf</a> <br> <a href="https://docs.zoho.com.cn/file/prghu9e82614222a2482f8445b8c16cb53969">quizB_solution.pdf</a></td></tr><tr><td>3</td><td>week 4</td><td><a href="https://docs.zoho.com.cn/file/prghufcff62f18eef44188f1c4751649ae021">quizA_solution.pdf</a> <br> <a href="https://docs.zoho.com.cn/file/prghua52bb58703df4a2db6dab2004213f0e0">quizB_solution.pdf</a></td></tr><tr><td>4</td><td>week 6</td><td><a href="https://docs.zoho.com.cn/file/prghufc092d071e5e442ca6669ab83d2e346e">quizA_Solution.pdf</a> <br> <a href="https://docs.zoho.com.cn/file/prghu53b2f42121b4498788a18a44e85ea561">quizB_Solution.pdf</a></td></tr><tr><td>5</td><td>week 7</td><td><a href="https://docs.zoho.com.cn/file/prghu8cedc9ec33cb4292b418cd8718d8ef89">quizA_solution.pdf</a> <br> <a href="https://docs.zoho.com.cn/file/prghu57f149fdba8b4b2588f53f12a3c6b777">quizB_solution.pdf</a></td></tr><tr><td>6</td><td>week 11</td><td><a href="https://docs.zoho.com.cn/file/prghu42fcc392457b4004bf4a5f9f22fb7565">quizA.pdf</a> [no solution]</td></tr><tr><td>7</td><td>week 12</td><td><a href="https://docs.zoho.com.cn/file/prghubd124b053380405c9c0331e55ded7343">quizA_solution.pdf</a> <br> <a href="https://docs.zoho.com.cn/file/prghu787b4b99a886479e83717274371cd848">quizB_solution.pdf</a></td></tr><tr><td>8</td><td>week 13</td><td></td></tr><tr><td>9</td><td>week 14</td><td></td></tr><tr><td>10</td><td>week 15</td><td></td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"CS101",
+"name":"Algorithms and Data Structures",
+"semester":"Fall 2019",
+"category":"Quiz 习题课测验",
+"title":"Quiz 习题课测验",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

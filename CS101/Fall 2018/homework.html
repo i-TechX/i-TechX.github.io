@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Homework 作业
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col><col><col></colgroup><thead><tr><th>Homework PDF</th><th>Homework Latex</th><th>Homework solution</th></tr></thead><tbody><tr><td><a href="https://docs.zoho.com.cn/file/prghu1a936750e65949ef932389a4cba7a47f">Homework1.pdf</a></td><td></td><td><a href="https://docs.zoho.com.cn/file/prghua9dcd128e9e84cb1871ef19ff4959b60">Homework_1_Solution.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghube9f4ad31a3d494890e63ef26e1c52c9">Homework2.pdf</a></td><td></td><td><a href="https://docs.zoho.com.cn/file/prghu987d4a27ccbc413089b77f0c633bc073">HW2sol.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu6e0551ffedf64316b17e89234af1b665">HW3.pdf</a></td><td></td><td><a href="https://docs.zoho.com.cn/file/prghu976ef8569e1d4de1bc9acfe7f474b741">HW3solution.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu59963cfe5de94c99aa000061acbbfe94">Homework4.pdf</a></td><td></td><td><a href="https://docs.zoho.com.cn/file/prghu1f63a875374a471c840f966385ab503a">Homework4__Solution.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu0c932e63fbe44fcb8cf287f48dc26144">HW5.pdf</a></td><td></td><td><a href="https://docs.zoho.com.cn/file/prghu6cc8dfaee29a40d1bbdd5e6f51378ec2">HW5_Solution.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghua6c679c538a34bcfa71306078799fd04">HW6.pdf</a></td><td></td><td><a href="https://docs.zoho.com.cn/file/prghude002b9e4b8242c8ab2d152908f3c036">HW6sol.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu630246e4e3f24d4cb9acf2ae56b1e07c">Homework7.pdf</a></td><td></td><td><a href="https://docs.zoho.com.cn/file/prghu69656484a461421caa132691b2c083a5">hw7solution.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu86ec636cd8354499b955522c10fed054">HW8.pdf</a></td><td></td><td><a href="https://docs.zoho.com.cn/file/prghu1dc714a269a2400f866b14927ce1fb59">HW8_sol.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu28fc6f5716374862baae931d520a777c">HW9.pdf</a></td><td></td><td></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu124246ce2c8a411eabafb772e3a7ce9b">HW10.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/prghuce2d279a1e1f466cb61631ff106c07c2">HW10_Latex.rar</a></td><td></td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"CS101",
+"name":"Algorithms and Data Structures",
+"semester":"Fall 2018",
+"category":"Homework 作业",
+"title":"Homework 作业",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

@@ -69,6 +69,7 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
 
     var icons = {
         "book": '<i class="fa fa-book" aria-hidden="true"></i>'
+        ,"video": '<i class="fa fa-film" aria-hidden="true"></i>'
         ,"question": '<i class="fa fa-pencil-square-o" aria-hidden="true"></i>'
         ,"passed": ' <i class="fa fa-check-circle" aria-hidden="true" style="color: green"></i>'
     };
@@ -87,7 +88,7 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
     
     var pageRender1 = function(curr){
         if (laypage.lastPage != 0)
-        if (laypage.types[laypage.lastPage-1].indexOf('book')!=-1 &&
+        if (laypage.types[laypage.lastPage-1].indexOf('question')==-1 &&
             laypage.types[laypage.lastPage-1].indexOf('passed')==-1) {
             key = [courseInfo.code, courseInfo.semester, courseInfo.category, courseInfo.title, laypage.lastPage-1].join('.').replace(/ /g,'');
             localStorage.setItem(key, 'visited');
@@ -138,7 +139,7 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
 
     var pageRender2 = function(curr){
         if (laypage.lastPage != 0)
-        if (laypage.types[laypage.lastPage-1].indexOf('book')!=-1 &&
+        if (laypage.types[laypage.lastPage-1].indexOf('question')==-1 &&
             laypage.types[laypage.lastPage-1].indexOf('passed')==-1) {
             key = [courseInfo.code, courseInfo.semester, courseInfo.category, courseInfo.title, laypage.lastPage-1].join('.').replace(/ /g,'');
             localStorage.setItem(key, 'visited');

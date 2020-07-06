@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Lecture Slides 教学课件
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col><col></colgroup><thead><tr><th>Lecture Notes</th><th>Lecture Date</th></tr></thead><tbody><tr><td><a href="https://docs.zoho.com.cn/file/prghu40725826da4746dcb7907a9a7ecfbfde">Lecture 0 - Admininstrative Stuff.pdf</a></td><td>Sep 10, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu70975f1b3cc443c4a3a6078c489876fa">Lecture 1 - Introduction.pdf</a></td><td>Sep 10, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu51a1fd2aa7c84a36886c3b2acc4ea13b">Lecture 2 - Array and linked list.pdf</a></td><td>Sep 12, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu0ad5b57298cb4bf88542a3c1562412d7">Lecture 3 - Stack.pdf</a></td><td>Sep 17, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghua6279d6f06ed49c6805ebde7a2dc4a02">Lecture 3 - Queue.pdf</a></td><td>Sep 17, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghuf40230e32ea54cbd9576ca27491be9a6">Lecture 4 - Algorithm Analysis.pdf</a></td><td>Sep 19, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu3d8a9b77b94b47f3965c82f3f28bb29b">Lecture 5 - Insertion and Bubble Sort.pdf</a></td><td>Sep 24, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu29f4332d3a6b442aaeee9e9d1174e4a0">Lecture 6 - Trees.pdf</a></td><td>Sep 26, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu8839dfb2f18b4020916e97c31efda05d">Lecture 7 - Binary Trees (updated).pdf</a> <br> <a href="https://docs.zoho.com.cn/file/prghu895363a1e62e41449ce5aac31b150b1f">Lecture 7 - Binary Trees (with note).pdf</a></td><td>Oct 8, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu058ea5bbeed643d78378ddf7f56238fd">Lecture 8 - Priority Queues, Heap and Heap Sort.pdf</a></td><td>Oct 10, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu7fc257fe152147949669bfc857040cd7">Lecture 9 - Binary Search Trees.pdf</a></td><td>Oct 15, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu3f6a46226bc247a4a2acc2ef8ca42546">Lecture 10 - AVL Tree.pdf</a></td><td>Oct 17, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghucc2281ad5fe74190acaa688f57b80cae">Lecture 11 - Graph.pdf</a></td><td>Oct 22, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghuf66e3318c3ed42f499a88fbc2233a12d">Lecture 11 - Graph Traversal.pdf</a></td><td>Oct 22, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu13862f130eac4a928f5a36b20b90ba48">Lecture 12 - Disjoint Sets.pdf</a></td><td>Oct 24, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghua18c63d830be465d891734fc2679835f">Lecture 13 - Minimum Spanning Tree.pdf</a></td><td>Oct 29, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghue40049be80e34d47a791030086a8efc5">Lecture 14 - Topological Sort.pdf</a></td><td>Oct 31, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu8e81f7cb84304a33a0a001bec1b66d05">Lecture 15 - Shortest Path.pdf</a></td><td>Nov 9, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu67505022e117472bbd2df6cd8d10b59b">Lecture 16 - Hash Table.pdf</a></td><td>Nov 12, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghuc7b016128ea344c38a91fdd6ee3dcaef">Lecture 17&18 - Divide and Conquer, Merge Sort, Quick Sort.pdf</a></td><td>Nov 14, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghudc757b0c7f25414286357f0ef94b94e7">Lecture 19 - Divide and Conquer, Median of Medians.pptx</a> <br> <a href="https://docs.zoho.com.cn/file/prghu9dc183fda7204a7f8607ff9592510de4">Lecture 19 - Divide and Conquer, Median of Medians.pdf</a></td><td>Nov 21, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu2c4cdb4ada804a2fbf37a563c36ddcff">Lecture 20 - Greedy Algorithms I.pdf</a></td><td>Nov 26, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghuda2902b8205249acabc0cfb437c8bd55">Lecture 21 - Greedy Algorithms II.pdf</a></td><td>Nov 28, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghuef555a12135249959cea735b0b8496bf">Lecture 22&23 - Dynamic Programming.pdf</a></td><td>Dec 3, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghue723e40747904b3cb9735dc41348c4c3">Lecture 24&25 - Intractability and Reduction.pdf</a></td><td>Dec 10, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu1a95f82e87ba46b5a10cad50c44672f7">Lecture 26 - Intractability and NP/NPC.pdf</a></td><td>Dec 17, 2019</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/prghu4bd3cfdaa10c40ffb40784b03837a31c">Lecture 27 - Network Flow.pdf</a></td><td>Dec 24, 2019</td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"CS101",
+"name":"Algorithms and Data Structures",
+"semester":"Fall 2019",
+"category":"Lecture Slides 教学课件",
+"title":"Lecture Slides 教学课件",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>
