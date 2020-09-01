@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Week 01
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="video">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;"><h2 style="font-family: Quicksand; font-weight: bold; text-align: left; margin: 1.2em">Lecture 01 (53m17s)</h2></div>
+<center><iframe height=540 width=960 src='https://player.bilibili.com/player.html?aid=711918983' frameborder=0 allowfullscreen="true"></iframe></center>
+</div>
+<div class="layui-hide" id="page-2" page-type="question">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;"><h2 style="font-family: Quicksand; font-weight: bold; text-align: left; margin: 1.2em 0">Quiz for Lecture 01</h2></div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 1</div>
+<div class="problem-grade" id="Question1">?/? point (graded)</div>
+<div class="problem-content">There are infinitely many primes.</div>
+<form class="layui-form" action="" lay-filter="Question1">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="It is not a proposition.">
+<input type="radio" name="q1" value="B" title="It is a proposition, and the truth value is True.">
+<input type="radio" name="q1" value="C" title="It is a proposition, and the truth value is False.">
+<input type="radio" name="q1" value="D" title="It is a proposition, and the truth value is not determined."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 2</div>
+<div class="problem-grade" id="Question2">?/? point (graded)</div>
+<div class="problem-content">Every positive integer is either a prime or a composite.</div>
+<form class="layui-form" action="" lay-filter="Question2">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="It is not a proposition.">
+<input type="radio" name="q1" value="B" title="It is a proposition, and the truth value is True.">
+<input type="radio" name="q1" value="C" title="It is a proposition, and the truth value is False.">
+<input type="radio" name="q1" value="D" title="It is a proposition, and the truth value is not determined."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 3</div>
+<div class="problem-grade" id="Question3">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?\{1,2,\cdots,n\}'/>has <img src='http://latex.codecogs.com/svg.latex?2^n'/> nonempty subsets.</div>
+<form class="layui-form" action="" lay-filter="Question3">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="It is not a proposition.">
+<input type="radio" name="q1" value="B" title="It is a proposition, and the truth value is True.">
+<input type="radio" name="q1" value="C" title="It is a proposition, and the truth value is False.">
+<input type="radio" name="q1" value="D" title="It is a proposition, and the truth value is not determined."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 4</div>
+<div class="problem-grade" id="Question4">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?\lim_{n \to \infty} (\sqrt{n+1} - \sqrt{n}) = 0'/>.</div>
+<form class="layui-form" action="" lay-filter="Question4">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="It is not a proposition.">
+<input type="radio" name="q1" value="B" title="It is a proposition, and the truth value is True.">
+<input type="radio" name="q1" value="C" title="It is a proposition, and the truth value is False.">
+<input type="radio" name="q1" value="D" title="It is a proposition, and the truth value is not determined."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 5</div>
+<div class="problem-grade" id="Question5">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?\lim_{n \to \infty} (1 + \frac{1}{2} + \frac{1}{3} + \cdots + \frac{1}{n})^\frac{1}{n} = \frac{1}{2}'/>.</div>
+<form class="layui-form" action="" lay-filter="Question5">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="It is not a proposition.">
+<input type="radio" name="q1" value="B" title="It is a proposition, and the truth value is True.">
+<input type="radio" name="q1" value="C" title="It is a proposition, and the truth value is False.">
+<input type="radio" name="q1" value="D" title="It is a proposition, and the truth value is not determined."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 6</div>
+<div class="problem-grade" id="Question6">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?\sin x \ge 0'/>.</div>
+<form class="layui-form" action="" lay-filter="Question6">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="It is not a proposition.">
+<input type="radio" name="q1" value="B" title="It is a proposition, and the truth value is True.">
+<input type="radio" name="q1" value="C" title="It is a proposition, and the truth value is False.">
+<input type="radio" name="q1" value="D" title="It is a proposition, and the truth value is not determined."><p class="tick-label"></p>
+        </div><blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+<p><b>Explanation</b></p>
+<p>It is neither true nor false. See plain slide page 7, the last example.<br></p>
+</blockquote>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 7</div>
+<div class="problem-grade" id="Question7">?/? point (graded)</div>
+<div class="problem-content">Answer this question.</div>
+<form class="layui-form" action="" lay-filter="Question7">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="It is not a proposition.">
+<input type="radio" name="q1" value="B" title="It is a proposition, and the truth value is True.">
+<input type="radio" name="q1" value="C" title="It is a proposition, and the truth value is False.">
+<input type="radio" name="q1" value="D" title="It is a proposition, and the truth value is not determined."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+</div>
+<div class="layui-hide" id="page-3" page-type="video">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;"><h2 style="font-family: Quicksand; font-weight: bold; text-align: left; margin: 1.2em">Lecture 02 (39m44s)</h2></div>
+<center><iframe height=540 width=960 src='https://player.bilibili.com/player.html?aid=754391498' frameborder=0 allowfullscreen="true"></iframe></center>
+</div>
+<div class="layui-hide" id="page-4" page-type="question">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;"><h2 style="font-family: Quicksand; font-weight: bold; text-align: left; margin: 1.2em 0">Quiz for Lecture 02</h2></div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 1-1</div>
+<div class="problem-grade" id="Question8">?/? point (graded)</div>
+<div class="problem-content"><p>Determine if the below conditional statement is true or false.</p>
+<p>If 1 + 1 = 3, then <img src='http://latex.codecogs.com/svg.latex?\pi'/> is irrational.</p></div>
+<form class="layui-form" action="" lay-filter="Question8">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div><blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+<p><b>Explanation</b></p>
+<p><img src='http://latex.codecogs.com/svg.latex?p \rightarrow q'/>, where <img src='http://latex.codecogs.com/svg.latex?p'/> is false and <img src='http://latex.codecogs.com/svg.latex?q'/> is true.<br></p>
+</blockquote>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 1-2</div>
+<div class="problem-grade" id="Question9">?/? point (graded)</div>
+<div class="problem-content"><p>Determine if the below conditional statement is true or false.</p>
+<p>If 1 + 1 = 3, then dogs can fly.</p></div>
+<form class="layui-form" action="" lay-filter="Question9">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div><blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+<p><b>Explanation</b></p>
+<p><img src='http://latex.codecogs.com/svg.latex?p \rightarrow q'/>, where <img src='http://latex.codecogs.com/svg.latex?p'/> is false and <img src='http://latex.codecogs.com/svg.latex?q'/> is false.<br></p>
+</blockquote>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 1-3</div>
+<div class="problem-grade" id="Question10">?/? point (graded)</div>
+<div class="problem-content"><p>Determine if the below conditional statement is true or false.</p>
+<p>If 1 + 1 = 2, then dogs can fly.</p></div>
+<form class="layui-form" action="" lay-filter="Question10">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div><blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+<p><b>Explanation</b></p>
+<p><img src='http://latex.codecogs.com/svg.latex?p \rightarrow q'/>, where <img src='http://latex.codecogs.com/svg.latex?p'/> is true and <img src='http://latex.codecogs.com/svg.latex?q'/> is false.<br></p>
+</blockquote>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 1-4</div>
+<div class="problem-grade" id="Question11">?/? point (graded)</div>
+<div class="problem-content"><p>Determine if the below conditional statement is true or false.</p>
+<p>If 2 + 2 = 4, then 1 + 2 = 3.</p></div>
+<form class="layui-form" action="" lay-filter="Question11">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div><blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+<p><b>Explanation</b></p>
+<p><img src='http://latex.codecogs.com/svg.latex?p \rightarrow q'/>, where <img src='http://latex.codecogs.com/svg.latex?p'/> is true and <img src='http://latex.codecogs.com/svg.latex?q'/> is true.<br></p>
+</blockquote>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 2-1</div>
+<div class="problem-grade" id="Question12">?/? point (graded)</div>
+<div class="problem-content"><p>Determine whether the below biconditional is true or false.</p>
+<p>2 + 2 = 4 if and only if 1 + 1 = 2.</p></div>
+<form class="layui-form" action="" lay-filter="Question12">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div><blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+<p><b>Explanation</b></p>
+<p><img src='http://latex.codecogs.com/svg.latex?p \leftrightarrow q'/>, where <img src='http://latex.codecogs.com/svg.latex?p'/> is true and <img src='http://latex.codecogs.com/svg.latex?q'/> is true.<br></p>
+</blockquote>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 2-2</div>
+<div class="problem-grade" id="Question13">?/? point (graded)</div>
+<div class="problem-content"><p>Determine whether the below biconditional is true or false.</p>
+<p>1 + 1 = 2 if and only if 2 + 3 = 4.</p></div>
+<form class="layui-form" action="" lay-filter="Question13">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div><blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+<p><b>Explanation</b></p>
+<p><img src='http://latex.codecogs.com/svg.latex?p \leftrightarrow q'/>, where <img src='http://latex.codecogs.com/svg.latex?p'/> is true and <img src='http://latex.codecogs.com/svg.latex?q'/> is false.<br></p>
+</blockquote>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 2-3</div>
+<div class="problem-grade" id="Question14">?/? point (graded)</div>
+<div class="problem-content"><p>Determine whether the below biconditional is true or false.</p>
+<p>1 + 1 = 3 if and only if monkeys can fly.</p></div>
+<form class="layui-form" action="" lay-filter="Question14">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div><blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+<p><b>Explanation</b></p>
+<p><img src='http://latex.codecogs.com/svg.latex?p \leftrightarrow q'/>, where <img src='http://latex.codecogs.com/svg.latex?p'/> is false and <img src='http://latex.codecogs.com/svg.latex?q'/> is false.<br></p>
+</blockquote>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 2-4</div>
+<div class="problem-grade" id="Question15">?/? point (graded)</div>
+<div class="problem-content"><p>Determine whether the below biconditional is true or false.</p>
+<p>0 > 1 if and only if 2 > 1.</p></div>
+<form class="layui-form" action="" lay-filter="Question15">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div><blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+<p><b>Explanation</b></p>
+<p><img src='http://latex.codecogs.com/svg.latex?p \leftrightarrow q'/>, where <img src='http://latex.codecogs.com/svg.latex?p'/> is false and <img src='http://latex.codecogs.com/svg.latex?q'/> is true.<br></p>
+</blockquote>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"SI120",
+"name":"Discrete Mathematics",
+"semester":"Spring 2020",
+"category":"Video 教学视频",
+"title":"Week 01",
+    };
+
+    var answers = {
+'Question1': [1,{'q1': [1,{'B':1}]}],
+'Question2': [1,{'q1': [1,{'C':1}]}],
+'Question3': [1,{'q1': [1,{'C':1}]}],
+'Question4': [1,{'q1': [1,{'B':1}]}],
+'Question5': [1,{'q1': [1,{'C':1}]}],
+'Question6': [1,{'q1': [1,{'A':1}]}],
+'Question7': [1,{'q1': [1,{'A':1}]}],
+'Question8': [1,{'q1': [1,{'A':1}]}],
+'Question9': [1,{'q1': [1,{'A':1}]}],
+'Question10': [1,{'q1': [1,{'B':1}]}],
+'Question11': [1,{'q1': [1,{'A':1}]}],
+'Question12': [1,{'q1': [1,{'A':1}]}],
+'Question13': [1,{'q1': [1,{'B':1}]}],
+'Question14': [1,{'q1': [1,{'A':1}]}],
+'Question15': [1,{'q1': [1,{'B':1}]}],
+};
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

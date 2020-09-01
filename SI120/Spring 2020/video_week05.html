@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Week 05
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="video">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;"><h2 style="font-family: Quicksand; font-weight: bold; text-align: left; margin: 1.2em">Lecture 09 (57m31s)</h2><p style="font-family: Quicksand; margin: 1.5em"><b>Password</b>: iTechXinvitationcode</p></div>
+<center><iframe height=540 width=960 src='https://player.youku.com/embed/XNDgyMzY4NjQzMg==' frameborder=0 allowfullscreen="true"></iframe></center>
+</div>
+<div class="layui-hide" id="page-2" page-type="question">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;"><h2 style="font-family: Quicksand; font-weight: bold; text-align: left; margin: 1.2em 0">Quiz for Lecture 09 - Part 1</h2></div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 1</div>
+<div class="problem-grade" id="Question1">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?a|b'/> iff <img src='http://latex.codecogs.com/svg.latex?|a|'/> divides <img src='http://latex.codecogs.com/svg.latex?|b|'/></div>
+<form class="layui-form" action="" lay-filter="Question1">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 2</div>
+<div class="problem-grade" id="Question2">?/? point (graded)</div>
+<div class="problem-content">If <img src='http://latex.codecogs.com/svg.latex?n>1'/> is a composite, then there is a prime <img src='http://latex.codecogs.com/svg.latex?p < \sqrt{n}'/></div>
+<form class="layui-form" action="" lay-filter="Question2">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 3</div>
+<div class="problem-grade" id="Question3">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?gcd(a, 0) = |a|'/></div>
+<form class="layui-form" action="" lay-filter="Question3">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 4</div>
+<div class="problem-grade" id="Question4">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?gcd(a, 1) = 1'/></div>
+<form class="layui-form" action="" lay-filter="Question4">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 5</div>
+<div class="problem-grade" id="Question5">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?gcd(a, a) = |a|'/></div>
+<form class="layui-form" action="" lay-filter="Question5">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 6</div>
+<div class="problem-grade" id="Question6">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?gcd(a, b) = gcd(b,a)'/></div>
+<form class="layui-form" action="" lay-filter="Question6">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 7</div>
+<div class="problem-grade" id="Question7">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?gcd(a, b) = |a|'/> iff <img src='http://latex.codecogs.com/svg.latex?a|b'/></div>
+<form class="layui-form" action="" lay-filter="Question7">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 8</div>
+<div class="problem-grade" id="Question8">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?gcd(ab, ac) = a\cdot gcd(b,c)'/></div>
+<form class="layui-form" action="" lay-filter="Question8">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 9</div>
+<div class="problem-grade" id="Question9">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?gcd(ab, ac) = |a|\cdot gcd(b,c)'/></div>
+<form class="layui-form" action="" lay-filter="Question9">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 10</div>
+<div class="problem-grade" id="Question10">?/? point (graded)</div>
+<div class="problem-content">There is an integer <img src='http://latex.codecogs.com/svg.latex?a'/> such that <img src='http://latex.codecogs.com/svg.latex?gcd(a, a+3) = 5'/></div>
+<form class="layui-form" action="" lay-filter="Question10">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 11</div>
+<div class="problem-grade" id="Question11">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?gcd(a, a+1) = 1'/> for any integer <img src='http://latex.codecogs.com/svg.latex?a'/></div>
+<form class="layui-form" action="" lay-filter="Question11">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 12</div>
+<div class="problem-grade" id="Question12">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?gcd(a, a+6) \in \{1,2,3,6\}'/> for any integer <img src='http://latex.codecogs.com/svg.latex?a'/></div>
+<form class="layui-form" action="" lay-filter="Question12">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+</div>
+<div class="layui-hide" id="page-3" page-type="question">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;"><h2 style="font-family: Quicksand; font-weight: bold; text-align: left; margin: 1.2em 0">Quiz for Lecture 09 - Part 2</h2></div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 1</div>
+<div class="problem-grade" id="Question13">?/? point (graded)</div>
+<div class="problem-content">If <img src='http://latex.codecogs.com/svg.latex?d|(a-b)'/>, then <img src='http://latex.codecogs.com/svg.latex?d|(a^5-b^5)'/></div>
+<form class="layui-form" action="" lay-filter="Question13">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 2</div>
+<div class="problem-grade" id="Question14">?/? point (graded)</div>
+<div class="problem-content">For any integer <img src='http://latex.codecogs.com/svg.latex?n>0'/>, if <img src='http://latex.codecogs.com/svg.latex?d|(a-b)'/>, then <img src='http://latex.codecogs.com/svg.latex?d|(a^n-b^n)'/></div>
+<form class="layui-form" action="" lay-filter="Question14">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 3</div>
+<div class="problem-grade" id="Question15">?/? point (graded)</div>
+<div class="problem-content">If <img src='http://latex.codecogs.com/svg.latex?d|a'/>, <img src='http://latex.codecogs.com/svg.latex?d|b'/>, then <img src='http://latex.codecogs.com/svg.latex?d|(5a+7b)'/></div>
+<form class="layui-form" action="" lay-filter="Question15">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 4</div>
+<div class="problem-grade" id="Question16">?/? point (graded)</div>
+<div class="problem-content">If <img src='http://latex.codecogs.com/svg.latex?d \nmid a'/>, <img src='http://latex.codecogs.com/svg.latex?d \nmid b'/>, then <img src='http://latex.codecogs.com/svg.latex?d \nmid (5a+7b)'/></div>
+<form class="layui-form" action="" lay-filter="Question16">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 5</div>
+<div class="problem-grade" id="Question17">?/? point (graded)</div>
+<div class="problem-content">6\mathbb{Z} + 8\mathbb{Z} + 12\mathbb{Z} = 26\mathbb{Z}</div>
+<form class="layui-form" action="" lay-filter="Question17">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 6</div>
+<div class="problem-grade" id="Question18">?/? point (graded)</div>
+<div class="problem-content">The integers <img src='http://latex.codecogs.com/svg.latex?s,t'/> such that <img src='http://latex.codecogs.com/svg.latex?6s+8t=2'/> are unique</div>
+<form class="layui-form" action="" lay-filter="Question18">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 7</div>
+<div class="problem-grade" id="Question19">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?R=\{(a,b):a,b\in\mathbb{Z},a\le b\}'/>is an equivalence relation</div>
+<form class="layui-form" action="" lay-filter="Question19">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 8</div>
+<div class="problem-grade" id="Question20">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?R=\{(a,b):a,b\in\{1,2,3,6\},a|b\}'/>is an equivalence relation</div>
+<form class="layui-form" action="" lay-filter="Question20">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 9</div>
+<div class="problem-grade" id="Question21">?/? point (graded)</div>
+<div class="problem-content">A, B have coins of 2 dollars and 5 dollars. Is it possible for A to transfer 1 dollars to B?</div>
+<form class="layui-form" action="" lay-filter="Question21">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="It is possible.">
+<input type="radio" name="q1" value="B" title="It is impossible."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 10</div>
+<div class="problem-grade" id="Question22">?/? point (graded)</div>
+<div class="problem-content">A, B have coins of 2 dollars and 5 dollars. Is it possible for A to transfer 3 dollars to B?</div>
+<form class="layui-form" action="" lay-filter="Question22">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="It is possible.">
+<input type="radio" name="q1" value="B" title="It is impossible."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 11</div>
+<div class="problem-grade" id="Question23">?/? point (graded)</div>
+<div class="problem-content">A has containers of 23L and 29L. Is it possible for A to get 1L of water?</div>
+<form class="layui-form" action="" lay-filter="Question23">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="It is possible.">
+<input type="radio" name="q1" value="B" title="It is impossible."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 12</div>
+<div class="problem-grade" id="Question24">?/? point (graded)</div>
+<div class="problem-content">A has containers of 23L and 29L. Is it possible for A to get 5L of water?</div>
+<form class="layui-form" action="" lay-filter="Question24">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="It is possible.">
+<input type="radio" name="q1" value="B" title="It is impossible."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+</div>
+<div class="layui-hide" id="page-4" page-type="video">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;"><h2 style="font-family: Quicksand; font-weight: bold; text-align: left; margin: 1.2em">Lecture 10 (42m03s)</h2><p style="font-family: Quicksand; margin: 1.5em"><b>Password</b>: iTechXinvitationcode</p></div>
+<center><iframe height=540 width=960 src='https://player.youku.com/embed/XNDgyMzY5MDU5Ng==' frameborder=0 allowfullscreen="true"></iframe></center>
+</div>
+<div class="layui-hide" id="page-5" page-type="question">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;"><h2 style="font-family: Quicksand; font-weight: bold; text-align: left; margin: 1.2em 0">Quiz for Lecture 10</h2></div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 1</div>
+<div class="problem-grade" id="Question25">?/? point (graded)</div>
+<div class="problem-content">If <img src='http://latex.codecogs.com/svg.latex?x'/> is not an integer, then <img src='http://latex.codecogs.com/svg.latex?\lceil x \rceil - \lfloor x \rfloor = 1'/>.</div>
+<form class="layui-form" action="" lay-filter="Question25">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 2</div>
+<div class="problem-grade" id="Question26">?/? point (graded)</div>
+<div class="problem-content">If <img src='http://latex.codecogs.com/svg.latex?x'/> is an integer, then <img src='http://latex.codecogs.com/svg.latex?\lceil x \rceil - \lfloor x \rfloor = 0'/>.</div>
+<form class="layui-form" action="" lay-filter="Question26">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 3</div>
+<div class="problem-grade" id="Question27">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?\lfloor -x \rfloor = -\lceil x \rceil'/>.</div>
+<form class="layui-form" action="" lay-filter="Question27">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 4</div>
+<div class="problem-grade" id="Question28">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?\lceil -x \rceil = -\lfloor x \rfloor'/>.</div>
+<form class="layui-form" action="" lay-filter="Question28">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 5</div>
+<div class="problem-grade" id="Question29">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?\lfloor x+n \rfloor = \lfloor x \rfloor + n'/>.</div>
+<form class="layui-form" action="" lay-filter="Question29">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 6</div>
+<div class="problem-grade" id="Question30">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?\lceil x+n \rceil = \lceil x \rceil + n'/>.</div>
+<form class="layui-form" action="" lay-filter="Question30">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 7</div>
+<div class="problem-grade" id="Question31">?/? point (graded)</div>
+<div class="problem-content">For any integer <img src='http://latex.codecogs.com/svg.latex?y'/>, <img src='http://latex.codecogs.com/svg.latex?|\lfloor x+\frac{1}{2} \rfloor - x| \le |y-x|'/></div>
+<form class="layui-form" action="" lay-filter="Question31">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 8</div>
+<div class="problem-grade" id="Question32">?/? point (graded)</div>
+<div class="problem-content">For any integer <img src='http://latex.codecogs.com/svg.latex?y'/>, <img src='http://latex.codecogs.com/svg.latex?|\lceil x-\frac{1}{2} \rceil - x| \le |y-x|'/></div>
+<form class="layui-form" action="" lay-filter="Question32">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 9</div>
+<div class="problem-grade" id="Question33">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?\mathbb{Z}_{12}^{*} = \{1,3,5,7,9,11\}'/></div>
+<form class="layui-form" action="" lay-filter="Question33">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 10</div>
+<div class="problem-grade" id="Question34">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?\mathbb{Z}_{16}^{*} = \{1,3,5,7,9,11,13,15\}'/></div>
+<form class="layui-form" action="" lay-filter="Question34">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The statement is true.">
+<input type="radio" name="q1" value="B" title="The statement is false."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 11</div>
+<div class="problem-grade" id="Question35">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?\phi(18)=?'/></div>
+<form class="layui-form" action="" lay-filter="Question35">
+    <div class="layui-form-item">
+        <div class="question q1 q-text"><input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;"><p class="tick-label" style="display: inline;"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 12</div>
+<div class="problem-grade" id="Question36">?/? point (graded)</div>
+<div class="problem-content"><img src='http://latex.codecogs.com/svg.latex?\phi(2^{100}3^{200}5^{1000})=c2^x3^y5^z, 2\nmid c, 3\nmid c, 5\nmid c, c+x-y+z=?'/></div>
+<form class="layui-form" action="" lay-filter="Question36">
+    <div class="layui-form-item">
+        <div class="question q1 q-text"><input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;"><p class="tick-label" style="display: inline;"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"SI120",
+"name":"Discrete Mathematics",
+"semester":"Spring 2020",
+"category":"Video 教学视频",
+"title":"Week 05",
+    };
+
+    var answers = {
+'Question1': [1,{'q1': [1,{'A':1}]}],
+'Question2': [1,{'q1': [1,{'B':1}]}],
+'Question3': [1,{'q1': [1,{'A':1}]}],
+'Question4': [1,{'q1': [1,{'A':1}]}],
+'Question5': [1,{'q1': [1,{'A':1}]}],
+'Question6': [1,{'q1': [1,{'A':1}]}],
+'Question7': [1,{'q1': [1,{'A':1}]}],
+'Question8': [1,{'q1': [1,{'B':1}]}],
+'Question9': [1,{'q1': [1,{'A':1}]}],
+'Question10': [1,{'q1': [1,{'B':1}]}],
+'Question11': [1,{'q1': [1,{'A':1}]}],
+'Question12': [1,{'q1': [1,{'A':1}]}],
+'Question13': [1,{'q1': [1,{'A':1}]}],
+'Question14': [1,{'q1': [1,{'A':1}]}],
+'Question15': [1,{'q1': [1,{'A':1}]}],
+'Question16': [1,{'q1': [1,{'B':1}]}],
+'Question17': [1,{'q1': [1,{'B':1}]}],
+'Question18': [1,{'q1': [1,{'B':1}]}],
+'Question19': [1,{'q1': [1,{'B':1}]}],
+'Question20': [1,{'q1': [1,{'A':1}]}],
+'Question21': [1,{'q1': [1,{'A':1}]}],
+'Question22': [1,{'q1': [1,{'A':1}]}],
+'Question23': [1,{'q1': [1,{'A':1}]}],
+'Question24': [1,{'q1': [1,{'A':1}]}],
+'Question25': [1,{'q1': [1,{'A':1}]}],
+'Question26': [1,{'q1': [1,{'A':1}]}],
+'Question27': [1,{'q1': [1,{'A':1}]}],
+'Question28': [1,{'q1': [1,{'A':1}]}],
+'Question29': [1,{'q1': [1,{'A':1}]}],
+'Question30': [1,{'q1': [1,{'A':1}]}],
+'Question31': [1,{'q1': [1,{'A':1}]}],
+'Question32': [1,{'q1': [1,{'A':1}]}],
+'Question33': [1,{'q1': [1,{'B':1}]}],
+'Question34': [1,{'q1': [1,{'A':1}]}],
+'Question35': [1,{'q1': [1,{'6':1}]}],
+'Question36': [1,{'q1': [1,{'903':1}]}],
+};
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>
