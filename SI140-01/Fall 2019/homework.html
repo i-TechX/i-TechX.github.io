@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Homework 作业
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;"><p style="padding-left: 1em; font-size: large;">Please download the <a href="https://docs.zoho.com.cn/file/akx8s9eef187fc6624295b4be8a1e827517b8" target="_blank">template <span class="icon fa fa-external-link" aria-hidden="true"></span></a> for the homework.</p></div>
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col><col><col></colgroup><thead><tr><th>Number</th><th>Homework Content</th><th>Due Date</th></tr></thead><tbody><tr><td>1</td><td><a href="https://docs.zoho.com.cn/file/akx8s2b96438b189047538b3d62f8f63347ec">hw1.pdf</a></td><td>Sep 23, 2019, 11:59am</td></tr><tr><td>2</td><td><b>BH</b> Chapter 1: 25, 31, 40, 58, 60</td><td>Sep 30, 2019, 11:59 am</td></tr><tr><td>3</td><td><b>BH</b> Chapter 2: 12, 26, 37, 39, 43, 63</td><td>October 9, 2019, 11:59 am.</td></tr><tr><td>4</td><td><b>BH</b> Chapter 3: 25,  33, 36, 37, 44</td><td>October 14,  11:59 am.</td></tr><tr><td>5</td><td><b>BH</b> Chapter 4: 20,  25,  27,  39,  54,  83</td><td>October 23,  11:59 am.</td></tr><tr><td>6</td><td><b>BH</b> Chapter 5:  8, 20, 31, 45 <br> Chapter 6:  21 <p><b>Programming Assignment:</b> Given Unif(0,1), please generate random variables satisfying Logistic distribution and Rayleigh distribution, respectively. You are required to show graphs of both the histogram and the corresponding PDF.  You also need to prove your algorithms indeed generate random variables with the desired distributions. </p></td><td>November 06,  11:59 am.</td></tr><tr><td>7</td><td><b>BH</b> Chapter 7:  5, 9, 10, 11, 12, 20, 59</td><td>November 13,  11:59 am.</td></tr><tr><td>8</td><td><b>BH</b> Chapter 7:  23, 48, 55, 57, 58, 68, 75</td><td>November 20,  11:59 am.</td></tr><tr><td>9</td><td><b>BH</b> Chapter 8:  13, 15, 20, 28, 41, 43, 48 <p><b>Programming Assignment:</b> Please use the Box-Muller methods for generating random variables with standard  Normal distribution and make verifications.  </p></td><td>November 27,  11:59 am.</td></tr><tr><td>10</td><td><b>BH</b> Chapter 8:  30, 35, 37, 39, 40</td><td>December 04,  11:59 am.</td></tr><tr><td>11</td><td><b>BH</b> Chapter 9:   4, 10, 17, 18, 27, 50</td><td>December 10,  9:59 am.</td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"SI140-01",
+"coursebench":"SI140",
+"name":"Probability and Mathematical Statistics",
+"semester":"Fall 2019",
+"category":"Homework 作业",
+"title":"Homework 作业",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

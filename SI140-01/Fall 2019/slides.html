@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Lecture Slides 教学课件
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col><col><col></colgroup><thead><tr><th>Lecture Notes</th><th>Lecture Print Meterials</th><th>Lecture Slides</th></tr></thead><tbody><tr><td></td><td><a href="https://docs.zoho.com.cn/file/akx8s6de4053940b642c1861b0727c45d3e4d">L0.pdf</a></td><td></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/akx8s4acc25bf15c7431d9cfde0bd055162ed">L1_note.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8sdd700c59a83140d0accdf9912ecdf098">L1mark.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8s02d892cbd9be44fd800770c6807af651">L1print.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/akx8s05ed8335452f4d18832e77b971324806">L2_note.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8sd87c8522451d4ea4b85f14a73aa2e223">L2mark.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8s30a2f47643e74fe399283475c7a20298">L2print.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/akx8s0e142ad0c8954a568dcb2a0719348cbc">L3_note.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8s5c20bb8fd7d947289cd1b7a229f9df16">L3mark.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8s0c8b794de4fa41fe8f11750ad8f37ef3">L3print.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/akx8sf50a878071b94226b73ab2ea16b22dbb">L4_note.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8sf56cca91cb38453fb0ddde1e18113a86">L4mark.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8s8d4b230596584b0aa229ed28e83dcb1e">L4print.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/akx8s3962e8e317d14bb1b4c76ce51db6ab8b">L5_note.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8s06a28d799d2e4199b67ade1b10efcfcb">L5mark.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8sa4919ec672f446618b0965a56510f42c">L5print.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/akx8s6c0a9a07492643fc86076ad835abe7de">L6_note.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8s15c1e78d896e4eb8bb29e7655d086a95">L6mark.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8s91ec5129b3944233826ec4e3f047870f">L6print.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/akx8s53f1a9c934474bf8b44a40dd825fc360">L7_note.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8sa23aa173f8da48c68699715933e20302">L7mark.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8sb60ba4454f2f41bf9b6e8744ea9b49fd">L7print.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/akx8s457284606d12494cb146e2593a179797">L8_note.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8s1bc3ddb5f4e14fb8bfc3129cac56f2ca">L8mark.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8s38d2bca310a5430ca1b683cef8d139d7">L8print.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/akx8s221173d4e75447cdabb8b367b2305fed">L9_note.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8sd8bb27ee5fa641a0a5bb34a73e19d2b7">L9mark.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8s30120ef5546b4f6ea28474f3ac14f562">L9print.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/akx8s0985921bd41b4f509f3c5539f898e896">L10_note.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8s1b3013a577a5479d9f36db3640cce611">L10mark.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8s6d9ab112832d43ef8028560c35dace4c">L10print.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/akx8s7076960e556e41dea68f2871145a1ec7">L11_note.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8s05fe56a141da49109e71a06f75445bfc">L11mark.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/akx8s05f1685390ce40728099ce7cf2752024">L11print.pdf</a></td></tr><tr><td></td><td></td><td><a href="https://docs.zoho.com.cn/file/akx8s2c3128709dc24d0eaac60b266e8bff71">L12mark.pdf</a></td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"SI140-01",
+"coursebench":"SI140",
+"name":"Probability and Mathematical Statistics",
+"semester":"Fall 2019",
+"category":"Lecture Slides 教学课件",
+"title":"Lecture Slides 教学课件",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

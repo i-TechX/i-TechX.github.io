@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../dashboard.html">
+                <img src="../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="index.html"><li>课程</li></a>
+            <a href="#"><li class="layui-this">教学大纲</li class="layui-this"></a>
+            <a href="progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+    </div>
+
+    <div class="layui-tab-content" style="height: auto;">
+        <div class="layui-tab-item layui-show">
+            <div class="main-content" style="margin: 1em 5%;">
+                <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Course Syllabus 课程大纲</h1>
+                <hr>
+
+                <fieldset class="layui-elem-field">
+                    <legend>Fall 2019</legend>
+                    <div class="layui-field-box">
+                        <!-- START -->
+                        <table width="90%" align="center">
+                            <tbody><tr>
+                                <td>
+                                    <h1>概率论与数理统计教学大纲</h1>
+                                    <h2>一、课程基本信息</h2>
+                                    <table class="layui-table" width="100%">
+                                        <tbody><tr>
+                                             <td class="title">开课单位:</td>
+                                             <td class="content"></td>
+                                             <td class="title">课程代码:</td>
+                                             <td class="content">SI140</td>
+                                        </tr>
+                                        <tr>
+                                             <td class="title">课程名称:</td>
+                                             <td class="content">概率论与数理统计</td>
+                                             <td class="title">英文名称:</td>
+                                             <td class="content" style="font-family:Times New Roman">Probability and Statistics</td>
+                                        </tr>
+                                        <tr>
+                                             <td class="title">学    分:</td>
+                                             <td class="content">4</td>
+                                             <td class="title">学    时:</td>
+                                             <td class="content">64</td>
+                                        </tr>
+                                        <tr>
+                                             <td class="title">授课对象:</td>
+                                             <td class="content">&nbsp;</td>
+                                             <td class="title">授课语言:</td>
+                                             <td class="content">中英文</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">先修课程:</td>
+                                            <td class="content" colspan="3">
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                    <h2>二、课程简介和教学目的</h2>
+                                    <table>
+                                        <tbody><tr>
+                                            <td class="content">本课程是信息学院的一门基础课，通过本课程的学习，使学生掌握概率论与数理统计的基本概念、基本理论与方法，为后续相关专业课程奠定必要的数学基础。</td>
+                                        </tr>
+                                    
+                                    </tbody></table>
+                                    
+                                    <h2>三、教学内容、教学方式和学时安排</h2>
+                                    <table class="layui-table">
+                                        <tbody><tr>
+                                            <td class="content"><p>本课程主要讲授以下内容:<br>1. Introduction to Probability<br>a. Events, set theory and probability<br>b. Basic relationships of probability<br>c. Conditional probability<br>d. Bayes’ Theorem<br>2. Discrete Probability Distributions<br>a. Random variables<br>b. Discrete probability distribution<br>c. Low order statistical moments: mean and variance<br>d. Special distributions: Binomial distributions<br>3. Continuous Probability Distributions<br>a. Uniform Distribution<br>b. Normal Distribution<br>c. Approximation of distributions<br>4. Random Vectors and Large Random Samples<br>a. Joint distributions, covariance, correlation, independence<br>b. The law of large numbers<br>c. The central limit theorem｀<br>5. Markov Chain<br>6. Markov Chain Monte Carlo</p></td>
+                                        </tr>
+                                    </tbody></table>
+                                    <h2>四、考核方式和成绩评定</h2>
+                                    <table>
+                                        <tbody><tr>
+                                            <td class="content">本课程的成绩由以下3部分组成： 1) 平时作业：10%  2) 3次小测验，45% 3) 期末考试：45%</td>
+                                        </tr>
+                                    </tbody></table>
+                                    
+                                    <h2>五、推荐教材和参考书目</h2>
+                                    <table class="layui-table" width="100%">
+                                        <tbody><tr align="center">
+                                            <td width="12%">书名</td>
+                                            <td width="10%">作者</td>
+                                            <td width="10%">译者</td>
+                                            <td width="20%">出版社</td>
+                                            <td width="20%">出版时间</td>
+                                            <td width="25%">ISBN</td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>Introduction to Probability</td>
+                                            <td>	
+                                                Joseph K. Blitzstein &amp; Jessica Hwang
+                                            </td>
+                                            <td>	
+                                                
+                                            </td>
+                                            <td>	
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>	
+                                                
+                                            </td>
+                                        </tr>
+                                        <tr align="center">
+                                            <td>Introduction to Probability（2nd edition）</td>
+                                            <td>	
+                                                Dimitris P. Bertsekas &amp; John N. Tsitsiklis
+                                            </td>
+                                            <td>	
+                                                
+                                            </td>
+                                            <td>	
+                                                
+                                            </td>
+                                            <td>
+                                                
+                                            </td>
+                                            <td>	
+                                                
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                    
+                                    <h2>六、其他说明</h2>
+                                    <table>
+                                        <tbody><tr>
+                                            <td class="content"></td>
+                                        </tr>
+                                    </tbody></table>
+                                    
+                                    <h2>七、教师信息</h2>
+                                    <table class="layui-table">
+                                        <tbody><tr>
+                                            <td class="content">授课教师：
+                                                王浩
+                                                邵子瑜
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td class="content">课程负责人：
+                                                王浩
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <!-- END -->
+                    </div>
+                </fieldset>
+                
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020 iTechX - MIT license.</p>
+        </div>
+    </div>
+</div>
+
+<script src="../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "SI140-01",
+        "coursebench": "SI140",
+        "name": "Probability and Mathematical Statistics"
+    };
+
+    document.title = 'iTechX | ' + courseInfo.code + ' ' + courseInfo.name;
+
+    layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], function(){
+        var layer = layui.layer
+            ,form = layui.form
+            ,element = layui.element
+            ,laytpl = layui.laytpl
+            ,laydate = layui.laydate
+            ,$ = layui.$
+            ,laypage = layui.laypage;
+
+        var courseHeaderTpl = lay('#courseHeader')[0].innerHTML;
+        lay('#courseHeader').html(layui.laytpl(courseHeaderTpl).render({}))
+        .removeClass('layui-hide');
+
+        var courseBenchTpl = lay('#courseBench')[0].innerHTML;
+        lay('#courseBench').html(layui.laytpl(courseBenchTpl).render({
+            "url": "https://www.coursebench.net/course/"+(courseInfo.hasOwnProperty("coursebench") ? courseInfo.coursebench : courseInfo.code)+"/"
+        }))
+        .removeClass('layui-hide');
+        
+    });
+</script>
+</body>
+</html>
