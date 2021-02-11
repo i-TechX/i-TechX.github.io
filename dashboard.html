@@ -8,6 +8,16 @@
     <link rel="stylesheet" href="layui/css/layui.css">
     <link rel="stylesheet" href="layui/css/style.css">
     <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+    
+    <style type="text/css">
+        .activate {
+            border: 2px solid #ebe09f;
+            border-radius: 12px;
+            background: #5c5d34;
+            box-shadow: .5px .5px 10px 2px rgba(251, 255, 0, 0.3);
+            margin-bottom: 1em;
+        }
+    </style>
 </head>
 <body>
 
@@ -91,7 +101,11 @@
         ]
 
         info.forEach(elem => {
-            document.getElementById('course-cards').innerHTML += '<div class="layui-card" style="border-radius: 10px;"><div class="layui-card-body"><div class="layui-row"><div class="layui-col-md3"><a href="'+ elem.url +'"><img class="shadow" src="'+ elem.cover +'"style="width:100%;"></a></div><div class="layui-col-md9"><div style="margin: 5px 1em;"><div style="font-family: Quicksand; font-weight: bold; text-align: left; font-size: 2em;"><a href="'+ elem.url +'">'+ elem.name +'</a></div><div class="layui-row"><div class="layui-col-md9"><p style="padding-top: 14%; text-align: left; font-size: 1.2em; margin-bottom: 0.2em;">'+ elem.code +'</p><p style="text-align: left; font-size: 1.2em;">'+ elem.semester +'</p></div><div class="layui-col-md3" style="padding-top: 12%; text-align: center;"><a href="'+ elem.url +'" class="layui-btn layui-btn-lg layui-btn-violet" style="font-weight: normal;">查看课程</a></div></div></div></div></div></div></div>';
+            if (elem.hasOwnProperty("status") && elem.status == "activate") {
+                document.getElementById('course-cards').innerHTML += '<div class="activate"><div class="layui-card" style="border-radius: 10px;"><div class="layui-card-body"><div class="layui-row"><div class="layui-col-md3"><a href="'+ elem.url +'"><img class="shadow" src="'+ elem.cover +'"style="width:100%;"></a></div><div class="layui-col-md9"><div style="margin: 5px 1em;"><div style="font-family: Quicksand; font-weight: bold; text-align: left; font-size: 2em;"><a href="'+ elem.url +'">'+ elem.name +'</a></div><div class="layui-row"><div class="layui-col-md9"><p style="padding-top: 1%; text-align: left; font-family: Quicksand; font-weight: bold; font-size: 1.2em; margin-bottom: 0.2em; color:#8FBC8F;">ACTIVATE</p></div></div><div class="layui-row"><div class="layui-col-md9"><p style="padding-top: 7%; text-align: left; font-size: 1.2em; margin-bottom: 0.2em;">'+ elem.code +'</p><p style="text-align: left; font-size: 1.2em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">'+ elem.semester +'</p></div><div class="layui-col-md3" style="padding-top: 5%; text-align: center;"><a href="'+ elem.url +'" class="layui-btn layui-btn-lg layui-btn-violet" style="font-weight: normal;">查看课程</a></div></div></div></div></div></div></div></div>';
+            } else {
+                document.getElementById('course-cards').innerHTML += '<div class="layui-card" style="border-radius: 10px;"><div class="layui-card-body"><div class="layui-row"><div class="layui-col-md3"><a href="'+ elem.url +'"><img class="shadow" src="'+ elem.cover +'"style="width:100%;"></a></div><div class="layui-col-md9"><div style="margin: 5px 1em;"><div style="font-family: Quicksand; font-weight: bold; text-align: left; font-size: 2em;"><a href="'+ elem.url +'">'+ elem.name +'</a></div><div class="layui-row"><div class="layui-col-md9"><p style="padding-top: 14%; text-align: left; font-size: 1.2em; margin-bottom: 0.2em;">'+ elem.code +'</p><p style="text-align: left; font-size: 1.2em; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">'+ elem.semester +'</p></div><div class="layui-col-md3" style="padding-top: 12%; text-align: center;"><a href="'+ elem.url +'" class="layui-btn layui-btn-lg layui-btn-violet" style="font-weight: normal;">查看课程</a></div></div></div></div></div></div></div>';
+            }
         });
         
     });
