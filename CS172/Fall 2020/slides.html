@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Lecture Slides 教学课件
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col><col><col></colgroup><thead><tr><th>Index</th><th>Lecture Slides</th><th>Lecture PDF</th></tr></thead><tbody><tr><td>1</td><td><a href="https://docs.zoho.com.cn/file/gkbi564273796aa074977bdb3118f0fe45245">01_introduction.pptx</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5f4fd0e6745ea42529efe30c27a75d790">01_introduction.pdf</a></td></tr><tr><td>2</td><td><a href="https://docs.zoho.com.cn/file/gkbi529478c2d4876458c9b1d237457bfd103">lec02_perspective-daf.pptx</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5818b974a506c4984bed197309b298475">lec02_perspective-daf.pdf</a></td></tr><tr><td>3</td><td><a href="https://docs.zoho.com.cn/file/gkbi5a6a3ddafddca45b398a190b5d3d17007">lec03_light.pptx</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi51e336b7fab4643549f16239325b95a27">lec03_light.pdf</a></td></tr><tr><td>4</td><td><a href="https://docs.zoho.com.cn/file/gkbi51d9b5012ea49431bb18b97c7b394d05c">lec04-camera.pptx</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5d8aa56e0731f49f1b9ed35974d1a3e7d">lec04-camera.pdf</a></td></tr><tr><td>5</td><td><a href="https://docs.zoho.com.cn/file/gkbi5ac42dd26696f460da97d770ffb911fbd">lec05_color.pptx</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi510bf8e84afa14937a6c3df753c2fe252">lec05_color.pdf</a></td></tr><tr><td>6</td><td><a href="https://docs.zoho.com.cn/file/gkbi50073b7cb34d7474186c237aa1966446f">lec06_filter.pptx</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi54fefffef9fbe481ba539b3ff619a4760">lec06_filter.pdf</a></td></tr><tr><td>7</td><td><a href="https://docs.zoho.com.cn/file/gkbi50cdb7cd818204127950c43f04cbe60e9">lec07_edge.pptx</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5a10f4355cfcb4ceb96abea3fcf5092d4">lec07_edge.pdf</a></td></tr><tr><td>8</td><td><a href="https://docs.zoho.com.cn/file/gkbi5f067d4098c3b4dd6ad14bb89872f47ae">lec08_corner.pptx</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5437f56bfbb4c46cabbe4971be87ff21b">lec08_corner.pdf</a></td></tr><tr><td>9</td><td><a href="https://docs.zoho.com.cn/file/gkbi58943d1c1677d4e9fa0fb32ac97f070aa">lec09_sift.pptx</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5b298288b75874143ad244f5069ba53a9">lec09_sift.pdf</a></td></tr><tr><td>10</td><td><a href="https://docs.zoho.com.cn/file/gkbi55c8e2a74f0b540d68744b7fdd9c42fbb">lec10_fitting.pptx</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5879fe5fcaa97481491e01237214c62cc">lec10_fitting.pdf</a></td></tr><tr><td>11</td><td><a href="https://docs.zoho.com.cn/file/gkbi5421591b4b90a413b9ca12356cf8c1d7c">lec11_hough.pptx</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5e81c05b0c9384f519ff7b21b4f534460">lec11_hough.pdf</a></td></tr><tr><td>12</td><td><a href="https://docs.zoho.com.cn/file/gkbi5cd339b591f6e482ab753ceba7cae32e8">lec12_alignment.pptx</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi55b77143f665942f593b843f027d81eb8">lec12_alignment.pdf</a></td></tr><tr><td>13</td><td><a href="https://docs.zoho.com.cn/file/gkbi586052748bba14d68bdb8943f6c99c525">lec13_recognition_intro.pptx</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5c0509c40465a4d15ba5cbe4b8308d16a">lec13_recognition_intro.pdf</a></td></tr><tr><td>14</td><td></td><td><a href="https://docs.zoho.com.cn/file/gkbi5adea765b8785434e8e64a8c85cc68eb3">lec14-cnn.pdf</a></td></tr><tr><td>16</td><td><a href="https://docs.zoho.com.cn/file/gkbi5aa65bf43c8214e769aa66f30bee4e38e">lec16_calibration.pptx</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5667bb48034e34ed9bece25eb0abcd64b">lec16_calibration.pdf</a></td></tr><tr><td>17</td><td><a href="https://docs.zoho.com.cn/file/gkbi55213c64b15f54dabad89a57b6b332d29">lec17_single_view.pptx</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi55c64d52b69f84f72b9fb51861fcd0854">lec17_single_view.pdf</a></td></tr><tr><td>18</td><td><a href="https://docs.zoho.com.cn/file/gkbi5e1cc0bd4dc2647f08bbdbcd2dd41e9d5">lec18_epipolar.pptx</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5d8179413eac0471e9f7816f128023d8c">lec18_epipolar.pdf</a></td></tr><tr><td>19</td><td><a href="https://docs.zoho.com.cn/file/gkbi5fb50538e4d614b8bae61af8b83b03f73">lec19_stereo.pptx</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi53c1390844b3e4708ad56ab90271cfcee">lec19_stereo.pdf</a></td></tr><tr><td>Review</td><td><a href="https://docs.zoho.com.cn/file/gkbi500387fac83dd487281fe49d1fa265995">review.pptx</a></td><td></td></tr><tr><td>Guest</td><td></td><td><a href="https://docs.zoho.com.cn/file/gkbi54a30472179934d1bab944050ac257d5e">Intro for CV in AV-Yuexin Ma.pdf</a></td></tr><tr><td>A1</td><td></td><td><a href="https://docs.zoho.com.cn/file/gkbi558d72c82f3004cc680b5684eab531342">ShuffleNet.pdf</a></td></tr><tr><td>A2</td><td></td><td><a href="https://docs.zoho.com.cn/file/gkbi53b190b51701142dca75bdd17003cbd10">MobileNets.pdf</a></td></tr><tr><td>A3</td><td></td><td><a href="https://docs.zoho.com.cn/file/gkbi57632ef8de9764701b6c98a93fa5336fb">a note on height measuring.pptx</a></td></tr><tr><td>A4</td><td></td><td><a href="https://docs.zoho.com.cn/file/gkbi5ab4869b9c6474b3c969cb27f6008ab17">2011_Cours7_Document2_Loop-Zhang-CVPR1999.pdf</a></td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"CS172",
+"name":"Computer Vision I",
+"semester":"Fall 2020",
+"category":"Lecture Slides 教学课件",
+"title":"Lecture Slides 教学课件",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>
