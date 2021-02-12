@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Lecture Slides 教学课件
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col></colgroup><thead><tr><th>Lecture Slides</th></tr></thead><tbody><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5da0a669234f8475ab6eb21ed28a69598">01 Introduction.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi585ae85356a6c430385562d87a0cc1963">02 Search.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5e25725b267d647b79cf90fa18895fbb3">03 CSP.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5c39585b3005f472388140922145d6d29">04 Adversarial search.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5767c20bd8f494b4c96cb31b1ea2b67c7">05 Propositional logic.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5394b3204587549e0a819558bc5f4a22a">06 First-order logic.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5cf45c2177aad440da0ea9988d2b29308">07-1 Probability and Bayesian networks.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi51342d9ef4b2f432e985ff22574f32aac">07-2 Bayesian networks.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5be82333115ba4478a4a8a9c064793318">07-3 Bayesian networks.pptx</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi525ad78a246944697beb9ffdf5118fef4">08-1 BN exact Inference.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5abf58f2666f24dcaa73bbf63327e6f53">08-2 BN exact Inference.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5735f61a27dfd46968a5f331fe267ab34">09-1 BN approximate inference.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5d155a18fbced401b8f9d2f3f4715c48a">09-2 BN approximate inference.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi59f2a90c5f0ea437785078581ae861d4a">10 Probabilistic temporal models.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5857ac0eba4034fd8b132915656e43ec7">11 Probabilistic logics.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi560e916f17caa4126aea9776a982b0dd5">12 Natural language processing.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi59020730caf474ea880b149621d9f5d57">13 Machine learning - naivebayes.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi55b714de9ec724f479373b446e06d9348">14 Machine learning - nn.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi567d26691c34046faad6b2074868feb3d">15 Machine learning - unsupervised.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5e14ee013e0c84f91be36a5b685976bb0">16 Markov decision process.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi514784921a63f427db1706fde925f96eb">17 Reinforcement learning.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5ce0826636fdd4c13b27b6375dd6c2740">18 Reinforcement learning II.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi50c7cf9cb689a4db6bc78e978de7189b5">19 AI philosophy.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5322d0f6bb8914e2fabd74c2b63129c8d">Final review.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5aaa3220a0a414cbfad197596fa383726">Midterm review.pdf</a></td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"CS181",
+"coursebench":"CS281H",
+"name":"Artificial Intelligence I",
+"semester":"Fall 2020",
+"category":"Lecture Slides 教学课件",
+"title":"Lecture Slides 教学课件",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

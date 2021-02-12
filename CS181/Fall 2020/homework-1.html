@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Homework 1</h1>
+
+                    <div class="layui-hide" id="page-1" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 1 - Graph Search Part 1</div>
+                            <div class="problem-grade" id="Question1">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Consider a graph search from S to G on the graph below. Edges are labeled with action costs. Assume that ties are broken alphabetically (so a partial plan S->X->A would be expanded before S->X->B and S->A->Z would be expanded before S->B->A.)</p>
+                                <p><img src="./image/hw1//xid-1252304_1" width="402" height="362"></p>
+                                <p>Which search strategy will return the path S-B-G?</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question1">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="Breadth-First Search">
+                                        <input type="checkbox" name="q1-B" title="Depth-First-Search">
+                                        <input type="checkbox" name="q1-C" title="Uniform Cost Search">
+                                        <input type="checkbox" name="q1-D" title="None">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 2 - Graph Search Part 2</div>
+                            <div class="problem-grade" id="Question2">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p><img src="./image/hw1/xid-1254377_1" width="402" height="362"></p>
+                                <p>Continue with Graph Search Part 2, which search strategy will return the path S-A-D-E-G?</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question2">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="Breadth-First Search">
+                                        <input type="checkbox" name="q1-B" title="Depth-First-Search">
+                                        <input type="checkbox" name="q1-C" title="Uniform Cost Search">
+                                        <input type="checkbox" name="q1-D" title="None">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 3 - Graph Search: Uniform Cost Search</div>
+                            <div class="problem-grade" id="Question3">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Consider uniform cost graph search from S to G on the graph below. Arcs are labeled with action costs. Assume that ties are broken alphabetically (so a partial plan S->X->A would be expanded before S->X->B and S->A->Z would be expanded before S->B->A.</p>
+                                <p><img src="./image/hw1/xid-1252666_1" height="362"><p>
+                                <p>Rank the nodes according to the visiting sequence during uniform cost search.</p>
+                                <p>Note: nodes visited during UCS might not be included in the path returned by UCS.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question3">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio" style="float: left; margin-right: 1em;">
+                                        <p align="center">Node 1</p>
+                                        <input type="radio" name="q1" value="A" title="S">
+                                        <input type="radio" name="q1" value="B" title="A">
+                                        <input type="radio" name="q1" value="C" title="B">
+                                        <input type="radio" name="q1" value="D" title="C">
+                                        <input type="radio" name="q1" value="E" title="D">
+                                        <input type="radio" name="q1" value="F" title="G">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q2 q-radio" style="float: left; margin-right: 1em;">
+                                        <p align="center">Node 2</p>
+                                        <input type="radio" name="q2" value="A" title="S">
+                                        <input type="radio" name="q2" value="B" title="A">
+                                        <input type="radio" name="q2" value="C" title="B">
+                                        <input type="radio" name="q2" value="D" title="C">
+                                        <input type="radio" name="q2" value="E" title="D">
+                                        <input type="radio" name="q2" value="F" title="G">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q3 q-radio" style="float: left; margin-right: 1em;">
+                                        <p align="center">Node 3</p>
+                                        <input type="radio" name="q3" value="A" title="S">
+                                        <input type="radio" name="q3" value="B" title="A">
+                                        <input type="radio" name="q3" value="C" title="B">
+                                        <input type="radio" name="q3" value="D" title="C">
+                                        <input type="radio" name="q3" value="E" title="D">
+                                        <input type="radio" name="q3" value="F" title="G">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q4 q-radio" style="float: left; margin-right: 1em;">
+                                        <p align="center">Node 4</p>
+                                        <input type="radio" name="q4" value="A" title="S">
+                                        <input type="radio" name="q4" value="B" title="A">
+                                        <input type="radio" name="q4" value="C" title="B">
+                                        <input type="radio" name="q4" value="D" title="C">
+                                        <input type="radio" name="q4" value="E" title="D">
+                                        <input type="radio" name="q4" value="F" title="G">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q5 q-radio" style="float: left; margin-right: 1em;">
+                                        <p align="center">Node 5</p>
+                                        <input type="radio" name="q5" value="A" title="S">
+                                        <input type="radio" name="q5" value="B" title="A">
+                                        <input type="radio" name="q5" value="C" title="B">
+                                        <input type="radio" name="q5" value="D" title="C">
+                                        <input type="radio" name="q5" value="E" title="D">
+                                        <input type="radio" name="q5" value="F" title="G">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q6 q-radio" style="float: left; margin-right: 1em;">
+                                        <p align="center">Node 6</p>
+                                        <input type="radio" name="q6" value="A" title="S">
+                                        <input type="radio" name="q6" value="B" title="A">
+                                        <input type="radio" name="q6" value="C" title="B">
+                                        <input type="radio" name="q6" value="D" title="C">
+                                        <input type="radio" name="q6" value="E" title="D">
+                                        <input type="radio" name="q6" value="F" title="G">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div style="clear: left;"></div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 4 - Graph Search: A*</div>
+                            <div class="problem-grade" id="Question4">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Given the heuristic for each node. Consider A* search from S to G on the graph below. Arcs are labeled with action costs. Assume that ties are broken alphabetically (so a partial plan S->X->A would be expanded before S->X->B and S->A->Z would be expanded before S->B->A.</p>
+                                <p><img src="./image/hw1/xid-1252794_1" height="400"></p>
+                                <p>Choose the path returned by A* search.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question4">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="S-A-C-G">
+                                        <input type="radio" name="q1" value="B" title="S-B-D-G">
+                                        <input type="radio" name="q1" value="C" title="S-A-B-D-C-G">
+                                        <input type="radio" name="q1" value="D" title="S-A-B-D-G">
+                                        <input type="radio" name="q1" value="E" title="S-B-D-C-G">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 5 - A*: Admissibility and Consistency</div>
+                            <div class="problem-grade" id="Question5">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Given another heuristic assignment for each node. Consider A* search from S to G on the graph below. Arcs are labeled with action costs. Assume that ties are broken alphabetically (so a partial plan S->X->A would be expanded before S->X->B and S->A->Z would be expanded before S->B->A.</p>
+                                <p><img src="./image/hw1/xid-1252824_1" height="400"></p>
+                                <p>The heuristic violates admissibility and consistency. Change the heuristic of only one node to make the heuristic meet admissibility and consistency.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question5">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-text">
+                                        <p style="display: inline;">The node you choose (Write your answer in capital): </p>
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2 q-text">
+                                        <p style="display: inline;">The new heuristic value for the choosen node : </p>
+                                        <input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>
+
+                    <div class="layui-hide" id="page-2" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 6 - HIVE MINDS Part 1</div>
+                            <div class="problem-grade" id="Question6">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>You control one or more insects in a rectangular maze-like environment with dimensions M*N, as shown in the figure below.</p>
+                                <p><img src="./image/hw1/xid-1240222_1" width="377" height="357"></p>
+                                <p>At each time step, an insect can move into an adjacent square if that square is currently free, or the insect may stay in its current location. Squares may be blocked by walls, but the map is known.
+                                <b>Optimality is always in terms of time steps; all actions have cost 1 regardless of the number of insects moving or where they move</b>.</p>
+                                <p>For each question, you should answer for a general instance of the problem, not simply for the example maps shown.</p>
+                                <p>You control a single insect as shown in the maze below, which must reach a designated target location X, also known as the hive. There are no other insects moving around.</p>
+                                <p>Which of the following is a <i>minimal</i> correct state space representation?</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question6">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="An integer d encoding the Manhattan distance to the hive.">
+                                        <input type="radio" name="q1" value="B" title="A tuple (x, y) encoding the x and y coordinates of the insect.">
+                                        <input type="radio" name="q1" value="C" title="A tuple (x,y,d)  encoding the insect's x and y coordinates as well as the Manhattan distance to the hive.">
+                                        <input type="radio" name="q1" value="D" title="This cannot be represented as a search problem.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 7 - HIVE MINDS Part 2</div>
+                            <div class="problem-grade" id="Question7">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Only in this question, suppose there is a pellet somewhere in the maze (not on the walls). Before reaching the designated location X, the insect must eat this pellet.</p>
+                                <p>By adding this assumption, please give a tight upper bound on the size of the state space.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question7">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="<img src='http://latex.codecogs.com/svg.latex?2^{M \times N + 1}'/>">
+                                        <input type="radio" name="q1" value="B" title="<img src='http://latex.codecogs.com/svg.latex?M \times N \times 2'/>">
+                                        <input type="radio" name="q1" value="C" title="<img src='http://latex.codecogs.com/svg.latex?M \times N'/>">
+                                        <input type="radio" name="q1" value="D" title="<img src='http://latex.codecogs.com/svg.latex?(M + N) \times 2'/>">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 8 - HIVE MINDS Part 3</div>
+                            <div class="problem-grade" id="Question8">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>You control a single insect as shown in the maze below, which must reach a designated target location X, also known as the hive. There are no other insects moving around.</p>
+                                <p><img src="./image/hw1/xid-1240223_1" width="377" height="357"></p>
+                                <p>Which of the following heuristics are admissible (if any)?</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question8">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="Manhattan distance from the insect’s location to the hive.">
+                                        <input type="checkbox" name="q1-B" title="Euclidean distance from the insect’s location to the hive.">
+                                        <input type="checkbox" name="q1-C" title="Number of steps taken by the insect.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    
+                    </div>
+
+                    <div class="layui-hide" id="page-3" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 9 - Early Goal Checking Graph Search Part1</div>
+                            <div class="problem-grade" id="Question9">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Recall from lecture the general algorithm for GRAPH-SEARCH reproduced below.</p>
+                                <p><img src="./image/hw1/xid-1240224_1" width="1004" height="359"></p>
+                                <p>With the above implementation a node that reaches a goal state may sit on the fringe while the algorithm continues to search for a path that reaches a goal state. Let's consider altering the algorithm by testing whether a node reaches a goal state when inserting into the fringe. Concretely, we add the line of code highlighted below:</p>
+                                <p><img src="./image/hw1/xid-1240225_1" width="1008" height="398"></p>
+                                <p>Now, we've produced a graph search algorithm that can find a solution faster. However, In doing so we might have affected some properties of the algorithm. To explore the possible differences, consider the example graph below.</p>
+                                <p><img src="./image/hw1/xid-1240226_1" width="976" height="444"></p>
+                                <p>If using EARLY-GOAL-CHECKING-GRAPH-SEARCH with an A* node expansion strategy, which path, if any, will the algorithm return?</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question9">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="S-G">
+                                        <input type="radio" name="q1" value="B" title="S-A-G">
+                                        <input type="radio" name="q1" value="C" title="EARLY-GOAL-CHECKING-GRAPH-SEARCH will not find a solution path.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 10 - Early Goal Checking Graph Search Part 2</div>
+                            <div class="problem-grade" id="Question10">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p><img src="./image/hw1/xid-1240227_1" width="1008" height="398"></p>
+                                <p>Assume you run EARLY-GOAL-CHECKING-GRAPH-SEARCH with the A* node expansion strategy and a consistent heuristic, select all statements that are true.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question10">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="The EXPAND function cannot be called more than once for each state.">
+                                        <input type="checkbox" name="q1-B" title="The algorithm is complete.">
+                                        <input type="checkbox" name="q1-C" title="The algorithm will return an optimal solution.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    
+                    </div>
+
+                    <div class="layui-hide" id="page-4" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 11 - Campus Layout Part 1</div>
+                            <div class="problem-grade" id="Question11">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>You are asked to determine the layout of a new, small college. The campus will have four structures: an administration structure (A), a bus stop (B), a classroom (C), and a dormitory (D). Each structure (including the bus stop) must be placed somewhere on the grid shown below.</p>
+                                <p><img src="./image/hw1/xid-1240228_1" width="674" height="215"></p>
+                                <p>The layout must satisfy the following constraints:</p>
+                                <ol style="padding-left: 20px;">
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The bus stop (B) must be adjacent to the road.</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) and the classroom (C)
+                                        must both be adjacent to the bus stop (B).</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The classroom (C) must be adjacent to the dormitory (D).
+                                    </li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) must not be adjacent to
+                                        the dormitory (D).</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) must not be on a hill.
+                                    </li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The dormitory (D) must be on a hill or adjacent to the
+                                        road.</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">All structures must be in different grid squares.</li>
+                                </ol>
+                                <p>Here, <i>adjacent</i> means that the structures must share a grid edge, not just a corner.</p>
+                                <p>Which of the constraints above are unary constraints?</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question11">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                        <input type="checkbox" name="q1-A" title="i">
+                                        <input type="checkbox" name="q1-B" title="ii">
+                                        <input type="checkbox" name="q1-C" title="iii">
+                                        <input type="checkbox" name="q1-D" title="iv">
+                                        <input type="checkbox" name="q1-E" title="v">
+                                        <input type="checkbox" name="q1-F" title="vi">
+                                        <input type="checkbox" name="q1-G" title="vii">
+                                        <input type="checkbox" name="q1-H" title="None of the above">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 12 - Campus Layout Part 2</div>
+                            <div class="problem-grade" id="Question12">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p><img src="./image/hw1/xid-1240228_1" width="674" height="215"></p>
+                                <ol style="padding-left: 20px;">
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The bus stop (B) must be adjacent to the road.</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) and the classroom (C)
+                                        must both be adjacent to the bus stop (B).</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The classroom (C) must be adjacent to the dormitory (D).
+                                    </li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) must not be adjacent to
+                                        the dormitory (D).</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) must not be on a hill.
+                                    </li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The dormitory (D) must be on a hill or adjacent to the
+                                        road.</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">All structures must be in different grid squares.</li>
+                                </ol>
+
+                                <p>Select the domains of all variables after unary constraints have been applied.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question12">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> A </p>
+                                        <input type="checkbox" name="q1-A" title="(1,1)">
+                                        <input type="checkbox" name="q1-B" title="(1,2)">
+                                        <input type="checkbox" name="q1-C" title="(1,3)">
+                                        <input type="checkbox" name="q1-D" title="(2,1)">
+                                        <input type="checkbox" name="q1-E" title="(2,2)">
+                                        <input type="checkbox" name="q1-F" title="(2,3)">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q2 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> B </p>
+                                        <input type="checkbox" name="q2-A" title="(1,1)">
+                                        <input type="checkbox" name="q2-B" title="(1,2)">
+                                        <input type="checkbox" name="q2-C" title="(1,3)">
+                                        <input type="checkbox" name="q2-D" title="(2,1)">
+                                        <input type="checkbox" name="q2-E" title="(2,2)">
+                                        <input type="checkbox" name="q2-F" title="(2,3)">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q3 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> C </p>
+                                        <input type="checkbox" name="q3-A" title="(1,1)">
+                                        <input type="checkbox" name="q3-B" title="(1,2)">
+                                        <input type="checkbox" name="q3-C" title="(1,3)">
+                                        <input type="checkbox" name="q3-D" title="(2,1)">
+                                        <input type="checkbox" name="q3-E" title="(2,2)">
+                                        <input type="checkbox" name="q3-F" title="(2,3)">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q4 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> D </p>
+                                        <input type="checkbox" name="q4-A" title="(1,1)">
+                                        <input type="checkbox" name="q4-B" title="(1,2)">
+                                        <input type="checkbox" name="q4-C" title="(1,3)">
+                                        <input type="checkbox" name="q4-D" title="(2,1)">
+                                        <input type="checkbox" name="q4-E" title="(2,2)">
+                                        <input type="checkbox" name="q4-F" title="(2,3)">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div style="clear: left;"></div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 13 - Campus Layout Part 3</div>
+                            <div class="problem-grade" id="Question13">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p><img src="./image/hw1/xid-1240228_1" width="674" height="215"></p>
+                                <p>The layout must satisfy the following constraints:</p>
+                                <ol style="padding-left: 20px;">
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The bus stop (B) must be adjacent to the road.</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) and the classroom (C)
+                                        must both be adjacent to the bus stop (B).</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The classroom (C) must be adjacent to the dormitory (D).
+                                    </li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) must not be adjacent to
+                                        the dormitory (D).</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) must not be on a hill.
+                                    </li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The dormitory (D) must be on a hill or adjacent to the
+                                        road.</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">All structures must be in different grid squares.</li>
+                                </ol>
+
+                                <p>Let's start from the answer to Part 2(in which unary constraints are enforced) and enforce arc consistency. Initally, the queue contains all arcs (in alphabetical order). Select the domains of all variables after Arightwards arrow B is enforced.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question13">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> A </p>
+                                        <input type="checkbox" name="q1-A" title="(1,1)">
+                                        <input type="checkbox" name="q1-B" title="(1,2)">
+                                        <input type="checkbox" name="q1-C" title="(1,3)">
+                                        <input type="checkbox" name="q1-D" title="(2,1)">
+                                        <input type="checkbox" name="q1-E" title="(2,2)">
+                                        <input type="checkbox" name="q1-F" title="(2,3)">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q2 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> B </p>
+                                        <input type="checkbox" name="q2-A" title="(1,1)">
+                                        <input type="checkbox" name="q2-B" title="(1,2)">
+                                        <input type="checkbox" name="q2-C" title="(1,3)">
+                                        <input type="checkbox" name="q2-D" title="(2,1)">
+                                        <input type="checkbox" name="q2-E" title="(2,2)">
+                                        <input type="checkbox" name="q2-F" title="(2,3)">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q3 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> C </p>
+                                        <input type="checkbox" name="q3-A" title="(1,1)">
+                                        <input type="checkbox" name="q3-B" title="(1,2)">
+                                        <input type="checkbox" name="q3-C" title="(1,3)">
+                                        <input type="checkbox" name="q3-D" title="(2,1)">
+                                        <input type="checkbox" name="q3-E" title="(2,2)">
+                                        <input type="checkbox" name="q3-F" title="(2,3)">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q4 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> D </p>
+                                        <input type="checkbox" name="q4-A" title="(1,1)">
+                                        <input type="checkbox" name="q4-B" title="(1,2)">
+                                        <input type="checkbox" name="q4-C" title="(1,3)">
+                                        <input type="checkbox" name="q4-D" title="(2,1)">
+                                        <input type="checkbox" name="q4-E" title="(2,2)">
+                                        <input type="checkbox" name="q4-F" title="(2,3)">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div style="clear: left;"></div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 14 - Campus Layout Part 4</div>
+                            <div class="problem-grade" id="Question14">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p><img src="./image/hw1/xid-1240228_1" width="674" height="215"></p>
+                                <p>The layout must satisfy the following constraints:</p>
+                                <ol style="padding-left: 20px;">
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The bus stop (B) must be adjacent to the road.</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) and the classroom (C)
+                                        must both be adjacent to the bus stop (B).</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The classroom (C) must be adjacent to the dormitory (D).
+                                    </li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) must not be adjacent to
+                                        the dormitory (D).</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) must not be on a hill.
+                                    </li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The dormitory (D) must be on a hill or adjacent to the
+                                        road.</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">All structures must be in different grid squares.</li>
+                                </ol>
+
+                                <p>You can verify that enforcing consistency for A<img src="./image/hw1/xid-1240231_1" style="vertical-align: -9px;">C, A<img src="./image/hw1/xid-1240231_1" style="vertical-align: -9px;">D, B<img src="./image/hw1/xid-1240231_1" style="vertical-align: -9px;">A, B<img src="./image/hw1/xid-1240231_1" style="vertical-align: -9px;">C, B<img src="./image/hw1/xid-1240231_1" style="vertical-align: -9px;">D, and C<img src="./image/hw1/xid-1240231_1" style="vertical-align: -9px;">A do not change the domains of any variables. After enforcing these arcs, the next is C<img src="./image/hw1/xid-1240231_1" style="vertical-align: -9px;">B.</p>
+                                <p>Continuing from the previous parts, select the domains of all variables after C<img src="./image/hw1/xid-1240231_1" style="vertical-align: -9px;">B is enforced.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question14">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> A </p>
+                                        <input type="checkbox" name="q1-A" title="(1,1)">
+                                        <input type="checkbox" name="q1-B" title="(1,2)">
+                                        <input type="checkbox" name="q1-C" title="(1,3)">
+                                        <input type="checkbox" name="q1-D" title="(2,1)">
+                                        <input type="checkbox" name="q1-E" title="(2,2)">
+                                        <input type="checkbox" name="q1-F" title="(2,3)">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q2 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> B </p>
+                                        <input type="checkbox" name="q2-A" title="(1,1)">
+                                        <input type="checkbox" name="q2-B" title="(1,2)">
+                                        <input type="checkbox" name="q2-C" title="(1,3)">
+                                        <input type="checkbox" name="q2-D" title="(2,1)">
+                                        <input type="checkbox" name="q2-E" title="(2,2)">
+                                        <input type="checkbox" name="q2-F" title="(2,3)">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q3 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> C </p>
+                                        <input type="checkbox" name="q3-A" title="(1,1)">
+                                        <input type="checkbox" name="q3-B" title="(1,2)">
+                                        <input type="checkbox" name="q3-C" title="(1,3)">
+                                        <input type="checkbox" name="q3-D" title="(2,1)">
+                                        <input type="checkbox" name="q3-E" title="(2,2)">
+                                        <input type="checkbox" name="q3-F" title="(2,3)">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q4 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> D </p>
+                                        <input type="checkbox" name="q4-A" title="(1,1)">
+                                        <input type="checkbox" name="q4-B" title="(1,2)">
+                                        <input type="checkbox" name="q4-C" title="(1,3)">
+                                        <input type="checkbox" name="q4-D" title="(2,1)">
+                                        <input type="checkbox" name="q4-E" title="(2,2)">
+                                        <input type="checkbox" name="q4-F" title="(2,3)">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div style="clear: left;"></div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 15 - Campus Layout Part 5</div>
+                            <div class="problem-grade" id="Question15">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p><img src="./image/hw1/xid-1240228_1" width="674" height="215"></p>
+                                <p>The layout must satisfy the following constraints:</p>
+                                <ol style="padding-left: 20px;">
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The bus stop (B) must be adjacent to the road.</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) and the classroom (C)
+                                        must both be adjacent to the bus stop (B).</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The classroom (C) must be adjacent to the dormitory (D).
+                                    </li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) must not be adjacent to
+                                        the dormitory (D).</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) must not be on a hill.
+                                    </li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The dormitory (D) must be on a hill or adjacent to the
+                                        road.</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">All structures must be in different grid squares.</li>
+                                </ol>
+
+                                <p>Continuing from the previous parts, select the domains of all variables after enforcing arc consistency until the queue is empty. Remember that the queue currently contains C<img src="./image/hw1/xid-1240231_1" style="vertical-align: -9px;">D, D<img src="./image/hw1/xid-1240231_1" style="vertical-align: -9px;">A, D<img src="./image/hw1/xid-1240231_1" style="vertical-align: -9px;">B, D<img src="./image/hw1/xid-1240231_1" style="vertical-align: -9px;">C, and any arcs that were added while enforcing C<img src="./image/hw1/xid-1240231_1" style="vertical-align: -9px;">B.</p>
+                                
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question15">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> A </p>
+                                        <input type="checkbox" name="q1-A" title="(1,1)">
+                                        <input type="checkbox" name="q1-B" title="(1,2)">
+                                        <input type="checkbox" name="q1-C" title="(1,3)">
+                                        <input type="checkbox" name="q1-D" title="(2,1)">
+                                        <input type="checkbox" name="q1-E" title="(2,2)">
+                                        <input type="checkbox" name="q1-F" title="(2,3)">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q2 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> B </p>
+                                        <input type="checkbox" name="q2-A" title="(1,1)">
+                                        <input type="checkbox" name="q2-B" title="(1,2)">
+                                        <input type="checkbox" name="q2-C" title="(1,3)">
+                                        <input type="checkbox" name="q2-D" title="(2,1)">
+                                        <input type="checkbox" name="q2-E" title="(2,2)">
+                                        <input type="checkbox" name="q2-F" title="(2,3)">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q3 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> C </p>
+                                        <input type="checkbox" name="q3-A" title="(1,1)">
+                                        <input type="checkbox" name="q3-B" title="(1,2)">
+                                        <input type="checkbox" name="q3-C" title="(1,3)">
+                                        <input type="checkbox" name="q3-D" title="(2,1)">
+                                        <input type="checkbox" name="q3-E" title="(2,2)">
+                                        <input type="checkbox" name="q3-F" title="(2,3)">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q4 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> D </p>
+                                        <input type="checkbox" name="q4-A" title="(1,1)">
+                                        <input type="checkbox" name="q4-B" title="(1,2)">
+                                        <input type="checkbox" name="q4-C" title="(1,3)">
+                                        <input type="checkbox" name="q4-D" title="(2,1)">
+                                        <input type="checkbox" name="q4-E" title="(2,2)">
+                                        <input type="checkbox" name="q4-F" title="(2,3)">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div style="clear: left;"></div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 16 - Campus Layout Part 6</div>
+                            <div class="problem-grade" id="Question16">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p><img src="./image/hw1/xid-1240228_1" width="674" height="215"></p>
+                                <p>The layout must satisfy the following constraints:</p>
+                                <ol style="padding-left: 20px;">
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The bus stop (B) must be adjacent to the road.</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) and the classroom (C)
+                                        must both be adjacent to the bus stop (B).</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The classroom (C) must be adjacent to the dormitory (D).
+                                    </li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) must not be adjacent to
+                                        the dormitory (D).</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) must not be on a hill.
+                                    </li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The dormitory (D) must be on a hill or adjacent to the
+                                        road.</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">All structures must be in different grid squares.</li>
+                                </ol>
+
+                                <p>Arc consistency had resulted in domains having more than one single value left. In order to solve the problem, we need to start searching. Use the MRV (minimum remaining values) heuristic to choose which variable gets assigned next (breaking any ties alphabetically).</p>
+                                <p>Which variable gets assigned next?</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question16">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="A">
+                                        <input type="radio" name="q1" value="B" title="B">
+                                        <input type="radio" name="q1" value="C" title="C">
+                                        <input type="radio" name="q1" value="D" title="D">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 17 - Campus Layout Part 7</div>
+                            <div class="problem-grade" id="Question17">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p><img src="./image/hw1/xid-1240228_1" width="674" height="215"></p>
+                                <p>The layout must satisfy the following constraints:</p>
+                                <ol style="padding-left: 20px;">
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The bus stop (B) must be adjacent to the road.</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) and the classroom (C)
+                                        must both be adjacent to the bus stop (B).</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The classroom (C) must be adjacent to the dormitory (D).
+                                    </li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) must not be adjacent to
+                                        the dormitory (D).</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The administration structure (A) must not be on a hill.
+                                    </li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">The dormitory (D) must be on a hill or adjacent to the
+                                        road.</li>
+                                    <li style="list-style: lower-roman; margin-bottom: 0.70788em; line-height: 1.4em;">All structures must be in different grid squares.</li>
+                                </ol>
+
+                                <p>The variable you selected should have two values left in its domain. We will use the least-constraining value (LCV) heuristic to decide which value to assign before contuing with the search. To choose which value is the least-constraining value, enforce arc consistency for each value (on a scratch piece of paper). For each value, count the total number of values remaining over all variables.</p>
+                                <p>Which value has the largest number of values remaining (and therefore is the least constraining value)?</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question17">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio">
+                                        <input type="radio" name="q1" value="A" title="(1,1)">
+                                        <input type="radio" name="q1" value="B" title="(1,2)">
+                                        <input type="radio" name="q1" value="C" title="(1,3)">
+                                        <input type="radio" name="q1" value="D" title="(2,1)">
+                                        <input type="radio" name="q1" value="E" title="(2,2)">
+                                        <input type="radio" name="q1" value="F" title="(2,3)">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    
+                    </div>
+
+                    <div class="layui-hide" id="page-5" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 18 - Solving Tree-Structured CSPs Part 1</div>
+                            <div class="problem-grade" id="Question18">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Consider the following tree-structured CSP that encodes a coloring problem in which neighboring nodes cannot have the same color. The domains of each node are shown.</p>
+                                <p><img src="./image/hw1/xid-1240236_1" width="276" height="212" style="border: none; transform: rotate(0.00rad); -webkit-transform: rotate(0.00rad);"></p>
+                                <p>The algorithm for solving tree-structured CSPs starts by picking a root variable. We can pick any variable for this. For this exercise, we will pick A. There are several linearizations consistent with A as the root; we will use the one shown below.</p>
+                                <p><img src="./image/hw1/xid-1240237_1" width="418" height="221" style="border: none; transform: rotate(0.00rad); -webkit-transform: rotate(0.00rad);"></p>
+                                <h3><b>Step 1: Remove Backward</b></h3>
+                                <p>In this step we start with the right-most node (E), enforce arc-consistency for its parent (B),then do the same for the second-to-right-most node (C) and its parent (B), and so on. Execute this process, and then mark the remaining values for each variable below.</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question18">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> A </p>
+                                        <input type="checkbox" name="q1-A" title="red">
+                                        <input type="checkbox" name="q1-B" title="green">
+                                        <input type="checkbox" name="q1-C" title="blue">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q2 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> B </p>
+                                        <input type="checkbox" name="q2-A" title="red">
+                                        <input type="checkbox" name="q2-B" title="green">
+                                        <input type="checkbox" name="q2-C" title="blue">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q3 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> C </p>
+                                        <input type="checkbox" name="q3-A" title="red">
+                                        <input type="checkbox" name="q3-B" title="green">
+                                        <input type="checkbox" name="q3-C" title="blue">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q4 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> D </p>
+                                        <input type="checkbox" name="q4-A" title="red">
+                                        <input type="checkbox" name="q4-B" title="green">
+                                        <input type="checkbox" name="q4-C" title="blue">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q5 q-checkbox" style="float: left; margin-right: 1em;">
+                                        <p align="center"> E </p>
+                                        <input type="checkbox" name="q5-A" title="red">
+                                        <input type="checkbox" name="q5-B" title="green">
+                                        <input type="checkbox" name="q5-C" title="blue">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div style="clear: left;"></div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 19 - Solving Tree-Structured CSPs Part 2</div>
+                            <div class="problem-grade" id="Question19">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p><img src="./image/hw1/xid-1240237_1" width="418" height="221" style="border: none; transform: rotate(0.00rad); -webkit-transform: rotate(0.00rad);"></p>
+                                <h3><b>Step 2: Assign Forward</b></h3>
+                                <p>Now that all domains have been pruned, we can find the solution in a single forward pass (i.e. no need for backtracking). This is done by starting at the left-most node (A), picking any value remaining in its domain, then going to the next variable (B), picking any value in its domain that is consistent with its parent, and continue left to right, always picking a value consistent with its parent’s assignment.</p>
+                                <p>If at any given node there are multiple colors left that are consistent with its parent’s value, break ties by picking red over green, and then green over blue.</p>
+                                <p>What is the solution found by running the algorithm? </p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question19">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-radio" style="float: left; margin-right: 1em;">
+                                        <p align="center"> A </p>
+                                        <input type="radio" name="q1" value="A" title="red">
+                                        <input type="radio" name="q1" value="B" title="green">
+                                        <input type="radio" name="q1" value="C" title="blue">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q2 q-radio" style="float: left; margin-right: 1em;">
+                                        <p align="center"> B </p>
+                                        <input type="radio" name="q2" value="A" title="red">
+                                        <input type="radio" name="q2" value="B" title="green">
+                                        <input type="radio" name="q2" value="C" title="blue">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q3 q-radio" style="float: left; margin-right: 1em;">
+                                        <p align="center"> C </p>
+                                        <input type="radio" name="q3" value="A" title="red">
+                                        <input type="radio" name="q3" value="B" title="green">
+                                        <input type="radio" name="q3" value="C" title="blue">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q4 q-radio" style="float: left; margin-right: 1em;">
+                                        <p align="center"> D </p>
+                                        <input type="radio" name="q4" value="A" title="red">
+                                        <input type="radio" name="q4" value="B" title="green">
+                                        <input type="radio" name="q4" value="C" title="blue">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div class="question q5 q-radio" style="float: left; margin-right: 1em;">
+                                        <p align="center"> E </p>
+                                        <input type="radio" name="q5" value="A" title="red">
+                                        <input type="radio" name="q5" value="B" title="green">
+                                        <input type="radio" name="q5" value="C" title="blue">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <div style="clear: left;"></div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    
+                    </div>
+
+                    <div class="layui-hide" id="page-6" page-type="question">
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 20 - Minimax</div>
+                            <div class="problem-grade" id="Question20">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Consider the zero-sum game tree shown below. Triangles that point up, such as at the top node (root), represent choices for the maximizing player; triangles that point down represent choices for the minimizing player. Outcome values for the maximizing player are listed for each leaf node, represented by the values in squares at the bottom of the tree. Assuming both players act optimally, carry out the minimax search algorithm. Enter the values for the letter nodes in the boxes below the tree. </p>
+                                <p><img src="./image/hw1/minmax.png" height="400"></p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question20">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-text">
+                                        <p style="display: inline;">A: </p>
+                                        <input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q2 q-text">
+                                        <p style="display: inline;">B: </p>
+                                        <input type="text" name="q2" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q3 q-text">
+                                        <p style="display: inline;">C: </p>
+                                        <input type="text" name="q3" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <div class="question q4 q-text">
+                                        <p style="display: inline;">D: </p>
+                                        <input type="text" name="q4" placeholder="" class="layui-input" style="display: inline;">
+                                        <p class="tick-label" style="display: inline;"></p>
+                                    </div>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                        <div class="problem">
+                            <hr>
+                            <div class="problem-title">Question 21 - Possible Pruning</div>
+                            <div class="problem-grade" id="Question21">?/? point (graded)</div>
+
+                            <div class="problem-content">
+                                <p>Assume we run α-β pruning, expanding successors from left to right, on a game with trees as shown below.</p>
+                                <p><img src="./image/hw1/hw3_alpha-beta-d.png" width=30%></p>
+                                <p>(a)</p>
+                                <p><img src="./image/hw1/hw3_alpha-beta-e(1).png" width=30%></p>
+                                <p>(b)</p>
+                                <p><img src="./image/hw1/hw3_alpha-beta-f.png" width=30%></p>
+                                <p>(c)</p>
+                            </div>
+
+                            <form class="layui-form" action="" lay-filter="Question21">
+                                <div class="layui-form-item">
+                                    <div class="question q1 q-checkbox">
+                                            <input type="checkbox" name="q1-A" title="There exists an assignment of utilities to the terminal nodes such that the pruning shown in Figure (a) will be achieved.">
+                                            <input type="checkbox" name="q1-B" title="There exists an assignment of utilities to the terminal nodes such that the pruning shown in Figure (b) will be achieved.">
+                                            <input type="checkbox" name="q1-C" title="There exists an assignment of utilities to the terminal nodes such that the pruning shown in Figure (c) will be achieved.">
+                                            <input type="checkbox" name="q1-D" title="None of the above.">
+                                        <p class="tick-label"></p>
+                                    </div>
+                                    <blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+                                        <p><b>Explanation</b></p>
+                                        <p>a,b) The left-most node has α=−∞, so any value seen will be greater than α, and thus none of its children can be pruned.
+                                            <br>
+                                            c) The leaf that we want to prune has β=∞, so any value in the first child will be less than β, and thus no pruning is possible.</p>
+                                        <p>Perhaps the simplest check is as follows: pruning of children of a minimizer node m is possible (for some assignment to the terminal nodes), when both of the following conditions are met: (i) the value of another child of m has already been determined, (ii) somewhere on the path from m to the root node, there is a maximizer node M for which an alternative option has already been explored. The pruning will then happen if any such alternative option for the maximizer had a higher value than the value of the "another child" of m for which the value was already determined.</p>
+                                    </blockquote>
+                                    <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+                                </div>
+                            </form>
+
+                        </div>
+
+                    </div>                  
+
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "CS181",
+        "name": "Artificial Intelligence I",
+        "coursebench": "CS281H",
+        "semester": "Fall 2020",
+        "category": "Homework 作业",
+        "title": "Homework 1"
+    };
+
+    var answers = {
+        'Question1': [10,{
+            'q1': [10,{
+                'A':10,
+            }]
+        }],
+        'Question2': [10,{
+            'q1': [10,{
+                'BC':10,
+                'B':5,
+                'C':5
+            }]
+        }],
+        'Question3': [10,{
+            'q1': [1.6,{
+                'A': 1.6
+            }],
+            'q2': [1.7,{
+                'B': 1.7
+            }],
+            'q3': [1.7,{
+                'C': 1.7
+            }],
+            'q4': [1.7,{
+                'E': 1.7
+            }],
+            'q5': [1.7,{
+                'D': 1.7
+            }],
+            'q6': [1.6,{
+                'F': 1.6
+            }]
+        }],
+        'Question4': [10,{
+            'q1': [10,{
+                'D':10
+            }]
+        }],
+        'Question5': [10,{
+            'q1': [5,{
+                'B':5
+            }],
+            'q2': [5,{
+                '3.5':5
+            }]
+        }],
+        'Question6': [10,{
+            'q1': [10,{
+                'B':10
+            }]
+        }],
+        'Question7': [10,{
+            'q1': [10,{
+                'B':10
+            }]
+        }],
+        'Question8': [10,{
+            'q1': [10,{
+                'AB':10,
+                'A':5,
+                'B':5
+            }]
+        }],
+        'Question9': [10,{
+            'q1': [10,{
+                'A':10
+            }]
+        }],
+        'Question10': [10,{
+            'q1': [10,{
+                'AB':10,
+                'A':5,
+                'B':5
+            }]
+        }],
+        'Question11': [10,{
+            'q1': [10,{
+                'AEF':10,
+                'AE':5,
+                'AF':5,
+                'EF':5,
+                'A':5,
+                'E':5,
+                'F':5
+            }]
+        }],
+        'Question12': [10,{
+            'q1': [2.5,{
+                'ACEF': 2.5
+            }],
+            'q2': [2.5,{
+                'CF': 2.5
+            }],
+            'q3': [2.5,{
+                'ABCDEF': 2.5
+            }],
+            'q4': [2.5,{
+                'BCDF': 2.5
+            }],
+        }],
+        'Question13': [10,{
+            'q1': [2.5,{
+                'CEF': 2.5
+            }],
+            'q2': [2.5,{
+                'CF': 2.5
+            }],
+            'q3': [2.5,{
+                'ABCDEF': 2.5
+            }],
+            'q4': [2.5,{
+                'BCDF': 2.5
+            }],
+        }],
+        'Question14': [10,{
+            'q1': [2.5,{
+                'CEF': 2.5
+            }],
+            'q2': [2.5,{
+                'CF': 2.5
+            }],
+            'q3': [2.5,{
+                'BCEF': 2.5
+            }],
+            'q4': [2.5,{
+                'BCDF': 2.5
+            }],
+        }],
+        'Question15': [10,{
+            'q1': [2.5,{
+                'CEF': 2.5
+            }],
+            'q2': [2.5,{
+                'CF': 2.5
+            }],
+            'q3': [2.5,{
+                'BCEF': 2.5
+            }],
+            'q4': [2.5,{
+                'BCD': 2.5
+            }],
+        }],
+        'Question16': [10,{
+            'q1': [10,{
+                'B':10
+            }]
+        }],
+        'Question17': [10,{
+            'q1': [10,{
+                'F':10
+            }]
+        }],
+        'Question18': [10,{
+            'q1': [2,{
+                'A': 2
+            }],
+            'q2': [2,{
+                'AC': 2
+            }],
+            'q3': [2,{
+                'B': 2
+            }],
+            'q4': [2,{
+                'AC': 2
+            }],
+            'q5': [2,{
+                'AC': 2
+            }],
+        }],
+        'Question19': [10,{
+            'q1': [2,{
+                'A': 2
+            }],
+            'q2': [2,{
+                'C': 2
+            }],
+            'q3': [2,{
+                'B': 2
+            }],
+            'q4': [2,{
+                'A': 2
+            }],
+            'q5': [2,{
+                'A': 2
+            }],
+        }],
+        'Question20': [10,{
+            'q1': [2.5,{
+                '3':2.5
+            }],
+            'q2': [2.5,{
+                '2':2.5
+            }],
+            'q3': [2.5,{
+                '2':2.5
+            }],
+            'q4': [2.5,{
+                '3':2.5
+            }]
+        }],
+        'Question21': [10,{
+            'q1': [10,{
+                'D':10
+            }]
+        }]
+    };
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

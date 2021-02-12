@@ -46,6 +46,13 @@
                 <hr>
 
                 <div class="layui-card">
+                    <div class="layui-card-header" style="font-family: Quicksand; font-weight: bold; text-align: center; font-size: large;">Fall 2020</div>
+                    <div class="layui-card-body">
+                        <div id="Fall 2020" style="width: 90%;height: 400px;margin:0 auto;"> </div>
+                    </div>
+                </div>
+
+                <div class="layui-card">
                     <div class="layui-card-header" style="font-family: Quicksand; font-weight: bold; text-align: center; font-size: large;">Fall 2019</div>
                     <div class="layui-card-body">
                         <div id="Fall 2019" style="width: 90%;height: 400px;margin:0 auto;"> </div>
@@ -80,6 +87,20 @@
     };
 
     var semester = {
+        "Fall 2020": {
+            "Homework 作业": [0.1/0.6, {
+                "Homework 1": 1/6,
+                "Homework 2": 1/6,
+                "Homework 3": 1/6,
+                "Homework 4": 1/6,
+                "Homework 5": 1/6,
+                "Homework 6": 1/6,
+            }],
+            "Exam 考试": [0.5/0.6, {
+                "Mid-term Exam": 0.5,
+                "Final Exam": 0.5
+            }]
+        },
         "Fall 2019": {
             "Homework 作业": [0.1/0.6, {
                 "Homework 1": 1/6,

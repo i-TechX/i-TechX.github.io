@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Mid-term Exam
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;">
+<h1>CS 181 Artificial Intelligence (Fall 2020), Midterm Exam</h1>
+<p style="text-align: left; margin: 0;"><b>INSTRUCTIONS:</b></p>
+<div style="margin: 0 5em;">
+    <ul>
+        <li style="list-style-type: disc; margin: 0.5em;"> Time: 8:15–9:55am (100 minutes)</li>
+        <li style="list-style-type: disc; margin: 0.5em;"> This exam is closed-book, but you may bring one A4-size cheat sheet. Put all the study
+            materials and electronic devices into your bag and put your bag in the front, back, or sides
+            of the classroom.</li>
+        <li style="list-style-type: disc; margin: 0.5em;"> You can write your answers in either English or Chinese.</li>
+        <li style="list-style-type: disc; margin: 0.5em;"> Two blank pieces of paper are attached, which you can use as scratch paper. Raise your
+            hand if you need more paper.</li>
+    </ul>
+</div>
+</div>
+</div>
+<div class="layui-hide" id="page-2" page-type="question">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;">
+<h2 style="margin-bottom: 0.5em;"><b>Multiple choice (10 pt)</b></h2>
+<p>Each question has one or more correct answer(s). Select all the correct answer(s). For each
+    question, you get 0 point if you select one or more wrong answers, but you get 0.5 point if you
+    select a non-empty proper subset of the correct answers.</p>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 1</div>
+<div class="problem-grade" id="Question1">?/? point (graded)</div>
+<div class="problem-content">Which of the following tree search algorithm can <b>always</b> find the optimal solution?</div>
+<form class="layui-form" action="" lay-filter="Question1">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="Depth-First Search (DFS).">
+<input type="checkbox" name="q1-B" title="Breadth-First Search (BFS).">
+<input type="checkbox" name="q1-C" title="Uniform Cost Search (UCS) with nonnegative edge.">
+<input type="checkbox" name="q1-D" title="Greedy Search.">
+<input type="checkbox" name="q1-E" title="A* Search."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 2</div>
+<div class="problem-grade" id="Question2">?/? point (graded)</div>
+<div class="problem-content">Consider the search problem in a finite state space. Which of the following statement(s) is/are correct?</div>
+<form class="layui-form" action="" lay-filter="Question2">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="Suppose the depth of the shallowest solution is <img src='http://latex.codecogs.com/svg.latex?s'/> and the branching factor is <img src='http://latex.codecogs.com/svg.latex?b'/>. BFS would take time complexity of <img src='http://latex.codecogs.com/svg.latex?O(b^s)'/> and space complexity of <img src='http://latex.codecogs.com/svg.latex?O(bs)'/>.  ">
+<input type="checkbox" name="q1-B" title="Iterative deepening is not complete under certain circumstances. ">
+<input type="checkbox" name="q1-C" title="For UCS, both time complexity and space complexity are exponential in its effective depth. ">
+<input type="checkbox" name="q1-D" title="<img src='http://latex.codecogs.com/svg.latex?A^*'/> is optimal if the heuristic is admissible in tree search. ">
+<input type="checkbox" name="q1-E" title="None of the above"><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 3</div>
+<div class="problem-grade" id="Question3">?/? point (graded)</div>
+<div class="problem-content">On the map coloring CSP represented by the following binary constraint graph, we run backtracking search starting from variable A. The domain of each variable is <img src='http://latex.codecogs.com/svg.latex?D=\{\text{R, G, B}\}'/>. Suppose we do not enforce arc consistency. Given the variable order "A B C D E" during backtracking search, which of the following statements is/are true.
+<p style="text-align:center; margin: 1em;"><img src="./image/mid/CSP_multichoice.png" width=30%/></p></div>
+<form class="layui-form" action="" lay-filter="Question3">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="The given variable order satisfies the minimum remaining values ordering.">
+<input type="checkbox" name="q1-B" title="The value assignment R G G B R satisfies the least constraining value ordering.">
+<input type="checkbox" name="q1-C" title="The value assignment R G B B R satisfies the least constraining value ordering.">
+<input type="checkbox" name="q1-D" title="The value assignment R B B G R satisfies the least constraining value ordering."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 4</div>
+<div class="problem-grade" id="Question4">?/? point (graded)</div>
+<div class="problem-content">Run min-max search with alpha-beta pruning in the following game tree. Choose all the nodes that will not be visited because of pruning.
+<p style="text-align:center; margin: 1em;"><img src="./image/mid/MinMax2020.png" width=30%/></p></div>
+<form class="layui-form" action="" lay-filter="Question4">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="G">
+<input type="checkbox" name="q1-B" title="K">
+<input type="checkbox" name="q1-C" title="N">
+<input type="checkbox" name="q1-D" title="O"><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 5</div>
+<div class="problem-grade" id="Question5">?/? point (graded)</div>
+<div class="problem-content">Which of the following statements about propositional logic is/are correct?</div>
+<form class="layui-form" action="" lay-filter="Question5">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="If a sentence <img src='http://latex.codecogs.com/svg.latex?S'/> is satisfiable, then <img src='http://latex.codecogs.com/svg.latex?\neg S'/> is unsatisfiable.">
+<input type="checkbox" name="q1-B" title="If a sentence <img src='http://latex.codecogs.com/svg.latex?S'/> is unsatisfiable, then <img src='http://latex.codecogs.com/svg.latex?\neg S'/> is satisfiable but not valid.">
+<input type="checkbox" name="q1-C" title="<img src='http://latex.codecogs.com/svg.latex?A, B, C'/> are clauses. Suppose applying resolution to <img src='http://latex.codecogs.com/svg.latex?A, B'/> produces <img src='http://latex.codecogs.com/svg.latex?C'/>. So we have <img src='http://latex.codecogs.com/svg.latex?A \wedge B \equiv C'/>.">
+<input type="checkbox" name="q1-D" title="<img src='http://latex.codecogs.com/svg.latex?A, B, C'/> are clauses. Suppose applying resolution to <img src='http://latex.codecogs.com/svg.latex?A, B'/> produces <img src='http://latex.codecogs.com/svg.latex?C'/>. So we have <img src='http://latex.codecogs.com/svg.latex?A \wedge B \implies C'/>."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 6</div>
+<div class="problem-grade" id="Question6">?/? point (graded)</div>
+<div class="problem-content">Which of the following statements about first-order logic is/are correct?</div>
+<form class="layui-form" action="" lay-filter="Question6">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="<img src='http://latex.codecogs.com/svg.latex?\exists \ x, \text{Likes}(x, y)'/> satisfies FOL syntax, where <img src='http://latex.codecogs.com/svg.latex?x, y'/> are variables.">
+<input type="checkbox" name="q1-B" title="<img src='http://latex.codecogs.com/svg.latex?\forall x, \text{Is}(x, \text{cat}) \wedge \text{Cute}(x)'/> means "every cat is cute".">
+<input type="checkbox" name="q1-C" title="<img src='http://latex.codecogs.com/svg.latex?\exists x, \text{Likes}(x, \text{iphone}) \equiv \neg \forall x \neg \text{Likes}(x, \text{iphone})'/>.">
+<input type="checkbox" name="q1-D" title="None of the above."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 7</div>
+<div class="problem-grade" id="Question7">?/? point (graded)</div>
+<div class="problem-content">Which one of the following statements about first order logic is correct?</div>
+<form class="layui-form" action="" lay-filter="Question7">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="For every pair of expressions, there is one and only one single most general unifier (or MGU) that is unique up to renaming and substitution of variables.">
+<input type="checkbox" name="q1-B" title="Forward chaining is sound since every inference is essentially an application of Modus Ponens, but not complete since not every entailed atomic sentence will be derived.">
+<input type="checkbox" name="q1-C" title="Backward chaining can avoid infinite loops by checking current goal against every goal on stack, but cannot avoid repeated subgoals since the previous results are gone.">
+<input type="checkbox" name="q1-D" title="Let the domain be people in the world. <img src='http://latex.codecogs.com/svg.latex?Loves(x,y)'/> means <img src='http://latex.codecogs.com/svg.latex?x'/> loves <img src='http://latex.codecogs.com/svg.latex?y'/> (<img src='http://latex.codecogs.com/svg.latex?y'/> may not love <img src='http://latex.codecogs.com/svg.latex?x'/>). Then <img src='http://latex.codecogs.com/svg.latex?\exists y \forall x \ Loves(x, y)'/> entails <img src='http://latex.codecogs.com/svg.latex?\forall x \exists y \ Loves(x, y)'/>."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 8</div>
+<div class="problem-grade" id="Question8">?/? point (graded)</div>
+<div class="problem-content">Given factors <img src='http://latex.codecogs.com/svg.latex?P(C|A), P(D|A,B,C), P(B|A,C)'/>, what is the
+resulting factor after joining over <img src='http://latex.codecogs.com/svg.latex?C'/> and summing over <img src='http://latex.codecogs.com/svg.latex?C'/>?</div>
+<form class="layui-form" action="" lay-filter="Question8">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="<img src='http://latex.codecogs.com/svg.latex?P(D|A)'/>">
+<input type="checkbox" name="q1-B" title="<img src='http://latex.codecogs.com/svg.latex?P(C,D|A)'/>">
+<input type="checkbox" name="q1-C" title="<img src='http://latex.codecogs.com/svg.latex?P(B,C,D|A)'/>">
+<input type="checkbox" name="q1-D" title="<img src='http://latex.codecogs.com/svg.latex?P(C,B|A,D)*P(A|D)'/>">
+<input type="checkbox" name="q1-E" title="None of the above."><p class="tick-label"></p>
+        </div><blockquote class="layui-elem-quote q-explanation layui-hide" style="margin: 2em; margin-bottom: 1em;">
+<p><b>Explanation</b></p>
+<p>should be <img src='http://latex.codecogs.com/svg.latex?P(B,D|A)'/><br></p>
+</blockquote>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 9</div>
+<div class="problem-grade" id="Question9">?/? point (graded)</div>
+<div class="problem-content">Which of the following statement(s) is/are correct?</div>
+<form class="layui-form" action="" lay-filter="Question9">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="Bayes Net can be a cyclic graph.">
+<input type="checkbox" name="q1-B" title="In Bayes Net, each node is conditionally independent of all its ancestor nodes in the graph, given all of its parents.">
+<input type="checkbox" name="q1-C" title="<img src='http://latex.codecogs.com/svg.latex?P(X,Y,Z) = P(Z|X,Y)P(Y|X)P(X)'/>">
+<input type="checkbox" name="q1-D" title="<img src='http://latex.codecogs.com/svg.latex?X \perp\kern-7pt\perp Y|Z'/> can imply <img src='http://latex.codecogs.com/svg.latex?P(X,Y)=P(X)P(Y)'/>.">
+<input type="checkbox" name="q1-E" title="None of the above"><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 10</div>
+<div class="problem-grade" id="Question10">?/? point (graded)</div>
+<div class="problem-content">Consider the Bayes Net below, which of the following statement(s) is/are correct?
+<p style="text-align:center; margin: 1em;"><img src="./image/mid/q10.png" width=30%/></p></div>
+<form class="layui-form" action="" lay-filter="Question10">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="It is guaranteed that <img src='http://latex.codecogs.com/svg.latex?G'/> is independent of <img src='http://latex.codecogs.com/svg.latex?H'/> given <img src='http://latex.codecogs.com/svg.latex?D'/>.">
+<input type="checkbox" name="q1-B" title="It is guaranteed that <img src='http://latex.codecogs.com/svg.latex?A'/> is independent of <img src='http://latex.codecogs.com/svg.latex?C'/>.">
+<input type="checkbox" name="q1-C" title="It is guaranteed that <img src='http://latex.codecogs.com/svg.latex?D'/> is independent of <img src='http://latex.codecogs.com/svg.latex?C'/> given <img src='http://latex.codecogs.com/svg.latex?F'/>.">
+<input type="checkbox" name="q1-D" title="It is guaranteed that <img src='http://latex.codecogs.com/svg.latex?E'/> is independent of <img src='http://latex.codecogs.com/svg.latex?F'/> given <img src='http://latex.codecogs.com/svg.latex?B'/> and <img src='http://latex.codecogs.com/svg.latex?C'/>.">
+<input type="checkbox" name="q1-E" title="None of the above."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+</div>
+<div class="layui-hide" id="page-3" page-type="book">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;">
+<div style="padding-left: 1em; font-family: Quicksand;">
+<h2 style="font-family: Quicksand;">Resources</h2>
+<br>
+<p>
+More questions and the answer of the whole exam can be found <a href="https://docs.zoho.com.cn/file/gkbi5fad4380a813d48f99d9df5cde2d197d0">here (question sheet)</a> and <a href="https://docs.zoho.com.cn/file/gkbi5bf5616489c8f4b8dbada61144848a392">here (solution)</a>.
+</p>
+</div>
+</div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"CS181",
+"coursebench":"CS281H",
+"name":"Artificial Intelligence I",
+"semester":"Fall 2020",
+"category":"Exam 考试",
+"title":"Mid-term Exam",
+    };
+
+    var answers = {
+'Question1': [1,{'q1': [1,{'C':1}]}],
+'Question2': [1,{'q1': [1,{'CD':1,'C':0,'D':0}]}],
+'Question3': [1,{'q1': [1,{'BD':1,'B':0,'D':0}]}],
+'Question4': [1,{'q1': [1,{'BD':1,'B':0,'D':0}]}],
+'Question5': [1,{'q1': [1,{'D':1}]}],
+'Question6': [1,{'q1': [1,{'C':1}]}],
+'Question7': [1,{'q1': [1,{'D':1}]}],
+'Question8': [1,{'q1': [1,{'D':1}]}],
+'Question9': [1,{'q1': [1,{'BC':1,'B':0,'C':0}]}],
+'Question10': [1,{'q1': [1,{'BD':1,'B':0,'D':0}]}],
+};
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

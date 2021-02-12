@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Final Exam
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;">
+<h1>CS 181 Artificial Intelligence (Fall 2020), Final Exam</h1>
+<p style="text-align: left; margin: 0;"><b>INSTRUCTIONS:</b></p>
+<div style="margin: 0 5em;">
+    <ul>
+        <li style="list-style-type: disc; margin: 0.5em;"> Time: 15:20 -- 17:00 (100 minutes)</li>
+        <li style="list-style-type: disc; margin: 0.5em;"> This exam is closed-book, but you may bring one A4-size cheat sheet. Put all the study materials and electronic devices (except a calculator) into your bag and put your bag in the front, back, or sides of the classroom.</li>
+        <li style="list-style-type: disc; margin: 0.5em;"> You can write your answers in either English or Chinese.</li>
+        <li style="list-style-type: disc; margin: 0.5em;"> Two blank pieces of paper are attached, which you can use as scratch paper. Raise your
+            hand if you need more paper.</li>
+    </ul>
+</div>
+</div>
+</div>
+<div class="layui-hide" id="page-2" page-type="question">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;">
+<h2 style="margin-bottom: 0.5em;"><b>Multiple choice (10 pt)</b></h2>
+<p>Each question has one or more correct answer(s). Select all the correct answer(s). For each
+    question, you get 0 point if you select one or more wrong answers, but you get 0.5 point if you
+    select a non-empty proper subset of the correct answers.</p>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 1</div>
+<div class="problem-grade" id="Question1">?/? point (graded)</div>
+<div class="problem-content">Which of the following statements about Markov process and the hidden Markov model (HMM) is/are correct?</div>
+<form class="layui-form" action="" lay-filter="Question1">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="The transition model for a second-order Markov process is the conditional distribution <img src='http://latex.codecogs.com/svg.latex?\mathrm{\mathbf{P}}(\mathrm{\mathbf{X}}_t|\mathrm{\mathbf{X}}_{t-2},\mathrm{\mathbf{X}}_{t-1})'/>">
+<input type="checkbox" name="q1-B" title="Both the time complexity and the space complexity of the Viterbi algorithm are linear in the length of the sequence.">
+<input type="checkbox" name="q1-C" title="Both the time complexity and the space complexity of the filtering algorithm are linear in the length of the sequence.">
+<input type="checkbox" name="q1-D" title="Every hidden Markov model can be represented as a dynamic Bayesian network with a single state variable and a single evidence variable.">
+<input type="checkbox" name="q1-E" title="None of the above."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 2</div>
+<div class="problem-grade" id="Question2">?/? point (graded)</div>
+<div class="problem-content">Which of the following statements about Markov Logic is/are correct?</div>
+<form class="layui-form" action="" lay-filter="Question2">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="Markov logic only models hard constraints.">
+<input type="checkbox" name="q1-B" title="A Markov logic network is a set of pairs <img src='http://latex.codecogs.com/svg.latex?(F, w)'/>, where <img src='http://latex.codecogs.com/svg.latex?F'/> is a ">
+<input type="checkbox" name="q1-C" title="formula in first-order logic and <img src='http://latex.codecogs.com/svg.latex?w'/> is a real number.">
+<input type="checkbox" name="q1-D" title="If all the weights in a Markov logic network are the same, then it becomes first-order logic.">
+<input type="checkbox" name="q1-E" title="Markov logic does not allow contradictions between formulas.">
+<input type="checkbox" name="q1-F" title="None of the above."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 3</div>
+<div class="problem-grade" id="Question3">?/? point (graded)</div>
+<div class="problem-content">Which of the following statements are true for an MDP?</div>
+<form class="layui-form" action="" lay-filter="Question3">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="If the only difference between two MDPs is the value of the discount factor then they must have the same optimal policy.">
+<input type="checkbox" name="q1-B" title="For an infinite horizon MDP with a finite number of states and actions and with a discount factor <img src='http://latex.codecogs.com/svg.latex?\gamma'/> that satisfies <img src='http://latex.codecogs.com/svg.latex?0 < \gamma < 1'/>, value iteration is guaranteed to converge.">
+<input type="checkbox" name="q1-C" title="When running value iteration, if the policy (the greedy policy with respect to the values) has converged, the values must have converged as well.">
+<input type="checkbox" name="q1-D" title="MDP does not satisfy the memoryless property.">
+<input type="checkbox" name="q1-E" title="None of the above."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 4</div>
+<div class="problem-grade" id="Question4">?/? point (graded)</div>
+<div class="problem-content">Bob notices value iteration converges more quickly with smaller <img src='http://latex.codecogs.com/svg.latex?\gamma'/> and rather than using the true discount 
+factor <img src='http://latex.codecogs.com/svg.latex?\gamma'/>, he decides to use a discount factor of <img src='http://latex.codecogs.com/svg.latex?\alpha\gamma'/> with <img src='http://latex.codecogs.com/svg.latex?0<\alpha<1'/> when running value iteration.  
+Mark each of the following that are guaranteed to be true:</div>
+<form class="layui-form" action="" lay-filter="Question4">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="If the MDP's transition model is deterministic and the MDP has zero rewards everywhere, except for a single transition">
+<input type="checkbox" name="q1-B" title="     at the goal with a positive reward, then Bob will still find the optimal policy.">
+<input type="checkbox" name="q1-C" title="If the MDP's transition model is deterministic, then Bob will still find the optimal policy.">
+<input type="checkbox" name="q1-D" title="Bob's policy will tend to more heavily favor short-term rewards over long-term ">
+<input type="checkbox" name="q1-E" title="rewards compared to the optimal policy.">
+<input type="checkbox" name="q1-F" title="None of the above."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 5</div>
+<div class="problem-grade" id="Question5">?/? point (graded)</div>
+<div class="problem-content">Let <img src='http://latex.codecogs.com/svg.latex?X_1, \cdots ,X_N'/> represent words of a length-<img src='http://latex.codecogs.com/svg.latex?N'/> sentence and <img src='http://latex.codecogs.com/svg.latex?Y_1, \cdots, Y_N'/> represent the words' corresponding labels. Which of the following statements about sequence labeling models is/are correct?
+<p style="text-align:center; margin: 1em;"><img src="./image/final/q5.png" width=30%/></p></div>
+<form class="layui-form" action="" lay-filter="Question5">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="Recall the simplest method for sequence labeling: for each word, predict its most frequent label. For this method, we have <img src='http://latex.codecogs.com/svg.latex?Y_i \perp\kern-7pt\perp X_j \text{ for } i \not= j, 1 \le i \le N, 1 \le j \le N'/> .">
+<input type="checkbox" name="q1-B" title="For HMM, we have: <img src='http://latex.codecogs.com/svg.latex?X_i \perp\kern-7pt\perp X_j \mid Y_i \text{ for } i \not= j, 1 \le i \le N, 1 \le j \le N'/> .">
+<input type="checkbox" name="q1-C" title="For MEMM, we have: <img src='http://latex.codecogs.com/svg.latex?X_i \not\kern-1pt\perp\kern-7pt\perp X_j \mid Y_i \text{ for } 1 \le i < j \le  N'/> .">
+<input type="checkbox" name="q1-D" title="MEMM prefers labels with higher numbers of transitions to other labels.">
+<input type="checkbox" name="q1-E" title="Unlike MEMM, CRF is based on global normalization."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 6</div>
+<div class="problem-grade" id="Question6">?/? point (graded)</div>
+<div class="problem-content">Which of the following statements about overfitting is/are correct?</div>
+<form class="layui-form" action="" lay-filter="Question6">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="Overfitting occurs when the model fits the training data very closely but fits the test data poorly.">
+<input type="checkbox" name="q1-B" title="Overfitting occurs when the model always performs bad on the held-out data. ">
+<input type="checkbox" name="q1-C" title="Overfitting could happen when there are too few training examples or there are too few attributes.">
+<input type="checkbox" name="q1-D" title="Making the model more expressive can avoid overfitting.">
+<input type="checkbox" name="q1-E" title="None of the above."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 7</div>
+<div class="problem-grade" id="Question7">?/? point (graded)</div>
+<div class="problem-content">Which of the following statements about supervised learning is/are correct?</div>
+<form class="layui-form" action="" lay-filter="Question7">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="The naïve Bayes assumption takes all features to be independent given the class label.">
+<input type="checkbox" name="q1-B" title="We can use smoothing or regularization to improve model's generalization.">
+<input type="checkbox" name="q1-C" title="A neural network with a sufficient number of neurons and a complex enough architecture can approximate any continuous function to any desired accuracy.">
+<input type="checkbox" name="q1-D" title="In Convolutional Neural Networks, different hidden units organized into the same “feature map” share weight parameters.">
+<input type="checkbox" name="q1-E" title="None of the above."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 8</div>
+<div class="problem-grade" id="Question8">?/? point (graded)</div>
+<div class="problem-content">Which of the following statements about unsupervised learning is/are correct?</div>
+<form class="layui-form" action="" lay-filter="Question8">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="K-means algorithm can always find the global optimal.">
+<input type="checkbox" name="q1-B" title="EM algorithm can always find the global optimal.">
+<input type="checkbox" name="q1-C" title="If we assume that all the Gaussians of a Gaussian mixture model are spherical and have identical weights and covariances, EM algorithm will degrade to k-means.">
+<input type="checkbox" name="q1-D" title="In E-step of the EM algorithm, we compute new parameter values to maximize expected log likelihood based on distributions over hidden variables.">
+<input type="checkbox" name="q1-E" title="None of the above."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 9</div>
+<div class="problem-grade" id="Question9">?/? point (graded)</div>
+<div class="problem-content">In general, which of the following is/are necessary or Q-Learning to converge to the optimal Q-values?</div>
+<form class="layui-form" action="" lay-filter="Question9">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="Every state-action pair is visited infinitely often.">
+<input type="checkbox" name="q1-B" title="The learning rate <img src='http://latex.codecogs.com/svg.latex?\alpha'/> (weight given to new samples) is decreased to <img src='http://latex.codecogs.com/svg.latex?0'/> over time.">
+<input type="checkbox" name="q1-C" title="The discount <img src='http://latex.codecogs.com/svg.latex?\gamma'/> is less than <img src='http://latex.codecogs.com/svg.latex?0.5'/>.">
+<input type="checkbox" name="q1-D" title="Actions get chosen according to <img src='http://latex.codecogs.com/svg.latex?\arg\max_a Q(s,a)'/>."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 10</div>
+<div class="problem-grade" id="Question10">?/? point (graded)</div>
+<div class="problem-content">In which of the following Reinforecement Learning method(s), the policy is not given?</div>
+<form class="layui-form" action="" lay-filter="Question10">
+    <div class="layui-form-item">
+        <div class="question q1 q-checkbox"><input type="checkbox" name="q1-A" title="Direct Evaluation">
+<input type="checkbox" name="q1-B" title="Temporal difference learning">
+<input type="checkbox" name="q1-C" title="Q-learning">
+<input type="checkbox" name="q1-D" title="None of the above."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+</div>
+<div class="layui-hide" id="page-3" page-type="book">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;">
+<div style="padding-left: 1em; font-family: Quicksand;">
+<h2 style="font-family: Quicksand;">Resources</h2>
+<br>
+<p>
+More questions and the answer of the whole exam can be found <a href="https://docs.zoho.com.cn/file/gkbi5370802f4136d48f79b9c87cc740c7f4b">here (question sheet)</a> and <a href="https://docs.zoho.com.cn/file/gkbi56104cb2a00cc4315aa3bfae2d1f7ad2f">here (solution)</a>.
+</p>
+</div>
+</div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"CS181",
+"coursebench":"CS281H",
+"name":"Artificial Intelligence I",
+"semester":"Fall 2020",
+"category":"Exam 考试",
+"title":"Final Exam",
+    };
+
+    var answers = {
+'Question1': [1,{'q1': [1,{'ABD':1,'AB':0,'AD':0,'BD':0,'A':0,'B':0,'D':0}]}],
+'Question2': [1,{'q1': [1,{'B':1}]}],
+'Question3': [1,{'q1': [1,{'B':1}]}],
+'Question4': [1,{'q1': [1,{'AC':1,'A':0,'C':0}]}],
+'Question5': [1,{'q1': [1,{'ABE':1,'AB':0,'AE':0,'BE':0,'A':0,'B':0,'E':0}]}],
+'Question6': [1,{'q1': [1,{'A':1}]}],
+'Question7': [1,{'q1': [1,{'ABCD':1,'ABC':0,'ABD':0,'ACD':0,'BCD':0,'AB':0,'AC':0,'AD':0,'BC':0,'BD':0,'CD':0,'A':0,'B':0,'C':0,'D':0}]}],
+'Question8': [1,{'q1': [1,{'E':1}]}],
+'Question9': [1,{'q1': [1,{'AB':1,'A':0,'B':0}]}],
+'Question10': [1,{'q1': [1,{'C':1}]}],
+};
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>
