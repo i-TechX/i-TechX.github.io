@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Lecture Slides 教学课件
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col><col><col><col></colgroup><thead><tr><th>Lecture PDF (before class)</th><th>Lecture PDF</th><th>Lecture Slides</th><th>Lecture Date</th></tr></thead><tbody><tr><td></td><td><a href="https://docs.zoho.com.cn/file/gkbi51d3d5834300d444a8a115e7b3d74e4b0">lec1.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5e68cc7e5849b45a6a7cc5da321c66f13">lec1.pptx</a></td><td>Sep 7, 2020</td></tr><tr><td></td><td><a href="https://docs.zoho.com.cn/file/gkbi5d245750bd2f747929d38b69f82409509">lec2 (1).pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi574e5908b900e4eb9ba1ecada1caf6e24">lec2 (1).pptx</a></td><td>Sep 9, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi52cc934db2bd84264a28b0789fb4923dd">lec3.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5348465602e984707aeaa8e4b6cc7cd59">lec3.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi58172a34572c148b2ae51c658f60cc2ab">lec3.pptx</a></td><td>Sep 14, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi54e27d5ff4eb54c13b67cccf72aebec62">lec4.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5105b1f9794514a19b496c357826ace62">lec4.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi50dbe6d9b782e40139ed27e0ba1fe0e91">lec4.pptx</a></td><td>Sep 16, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi582f409df21a546ee976ad910b403998c">lec5.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5d15265dc8cb246319fc1ef2f0b742e34">lec5.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5ee6c82df3c43420a89fb4faf9defd382">lec5.pptx</a></td><td>Sep 21, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5ecf0a617b3fc4eb6a4060d302ef86c35">lec6.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi560df7bc61f814fc9b792613fc5d76970">lec6.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5345844f78b7649968d09016071394c9f">lec6.pptx</a></td><td>Sep 23, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi50ffea0009b0f4be98b037eec1678eadc">lec7.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi55b5cda87edbd44b0807bf8024dc3abad">lec7.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi58af38a2fe88f44c3a84447e31064ab4c">lec7.pptx</a></td><td>Sep 27, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5a09a10bd5a9a43b6a075db95f0326b2b">lec8.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi55bf3841eea264f8a93a8b9ccbc5067c9">lec8.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5366ff766987d46598155779541485f9b">lec8.pptx</a></td><td>Sep 28, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5316ea4fc3e8c47fd8193c151d39336c0">lec9.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5180d5db91f4947c899c1e8855d2cc74a">lec9.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5a0783e82ae844966be41bb92db800d55">lec9.pptx</a></td><td>Sep 30, 2020</td></tr><tr><td></td><td><a href="https://docs.zoho.com.cn/file/gkbi5d0704bdc136740faa48b6c1f840d8cde">lec10.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi589a1ab73e96d4b07a42cb271e759509c">lec10.pptx</a></td><td>Oct 12, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5497a7433c6fb48768e03bf0a990b1689">lec11.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi536f6cda17ed44cbebe49b4879aab03e5">lec11.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5d676f796720d4856a4e8fe32afa9a379">lec11.pptx</a></td><td>Oct 14, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5f73acc42648c4d658ee242be08dd5b89">lec12.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5107a778257f54e998699db3e8ef358ef">lec12.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5ad8d7f3ccd6e4c9fbb0213dc4bb96a20">lec12.pptx</a></td><td>Oct 19, 2020</td></tr><tr><td></td><td><a href="https://docs.zoho.com.cn/file/gkbi5b116bb9af5fb4912a1eb7dfe3bfb7e05">lec13.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi525b19650de8a4ce8b893943c9ac963a7">lec13.pptx</a></td><td>Oct 21, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5a43041aefbe945dcb6fd7b4f6eff12e3">lec14.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5830b2e78d2094d2cbdea9d5abba4671c">lec14.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi54ebea06be21d41718b57340744a1aff3">lec14.pptx</a></td><td>Oct 26, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5276328b0630b4e4b88f6d960b31a2dcf">lec15.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi578572d8cc6424b12adad090bdacfa2bc">lec15.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5161172aae007420fb2072a16ae498a00">lec15.pptx</a></td><td>Oct 28, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi596c8b4e3b0c548e78a627f9c6ee445f7">lec16.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5dc13269551754f638f55c0466b35709a">lec16.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi55620c6014a4c4c1a8daa5d35055fa473">lec16.pptx</a></td><td>Nov 2, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi512df6bcb1ee54df4958bafdee38daf46">lec17.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5a3e95bce40a04b36828ff1af3038eb4e">lec17.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi51fc103c0fde5457ea0bdb0cda35971f8">lec17.pptx</a></td><td>Nov 9, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi506193d0ab25945c9a6cf66ec56d4e546">lec18.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi595f362eeb22a4038b20c8470ee5bcf28">lec18.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi503917ed22e3440bb91048ed1d926712c">lec18.pptx</a></td><td>Nov 11, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5ebb2cef0b5c449a08643cfe0a4212349">lec19.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi51f22d5a1e35a466693166a6e83454e10">lec19.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5023071515307407cb8d1dfe3aebb22f8">lec19.pptx</a></td><td>Nov 16, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi58a7eeb3ac9264ac1b2d5fa6a03a3d58e">lec20.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5c1ce7d6e41e04ea88c9aded5cb69674d">lec20.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi54fb78f7acd5b4f02a9f47f5be2a47c55">lec20.pptx</a></td><td>Nov 18, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi540adf81b3b654f2e88bc8cb4c5839487">lec21.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi57813e417a0af43c491e31123013f7438">lec21.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5af71836de3464f9da5d03156c27c9673">lec21.pptx</a></td><td>Nov 23, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5d38be73c260b42b9b1061672ed875a7d">lec22.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5dad0aec97a7e4a06804546e5f58ce235">lec22.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5effe114cedd14b749a227e12cae4f6cb">lec22.pptx</a></td><td>Nov 25, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5d5d9b045b87545c0ae3c31a100c9d52d">lec23.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi52de650914cfe494c9cdff497901abc6b">lec23.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi505282a9489364c22baadf3149a1d0bc2">lec23.pptx</a></td><td>Nov 30, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5d533404126d8470ab04cddea94d439f9">lec24.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi573b9ade9a1b94afe99e36125ce6f9a3c">lec24.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi53dfa48e689f84a3880696d790f6b5fec">lec24.pptx</a></td><td>Dec 2, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi575220a3df6cd42c8aae9aea485500fdc">lec25.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5fcc01115f5a54e2b938bf13c24eec6fc">lec25.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi51f11695fff6441f5a420b190c850cd70">lec25.pptx</a></td><td>Dec 7, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi51d2bd9138e814e14866c5b26124797b9">lec26.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi539b712a20e4d4804b2f8b7111723a2c0">lec26.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi51e7d74b5cbda4334b8dc14018ef43a01">lec26.pptx</a></td><td>Dec 9, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5423619762ec3449b871829f5f6638d14">lec27.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi593886b043ca94bf69e44e5dd267c771c">lec27.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi57093de7353fb4139beec8e5decf72cfa">lec27.pptx</a></td><td>Dec 14, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi58ef370c8a4e745ddb67e5a9282b2861d">lec28.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi50fdb2463f3cb48529446285b4ca50a8f">lec28.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi58adf633e69534c9d951118dc5a0783f1">lec28.pptx</a></td><td>Dec 16, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5bd23419cc1064047ab21f4513b69faec">lec29.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi52ce6f6c3675d4b898052aa38f3db635d">lec29.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5a991389a3bf540aeb30556cbc686c03b">lec29.pptx</a></td><td>Dec 21, 2020</td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi557a3ddd152664f149c494f725964002e">lec30.0.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5a1e38edbf3f64612a6226abe20cdf451">lec30.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi513ca827f10ed4960a0cbc24d5563f9df">lec30.pptx</a></td><td>Dec 23, 2020</td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"CS152",
+"coursebench":"CS252",
+"name":"Applied Cryptography",
+"semester":"Fall 2020",
+"category":"Lecture Slides 教学课件",
+"title":"Lecture Slides 教学课件",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../dashboard.html">
+                <img src="../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="index.html"><li>课程</li></a>
+            <a href="#"><li class="layui-this">教学大纲</li class="layui-this"></a>
+            <a href="progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+    </div>
+
+    <div class="layui-tab-content" style="height: auto;">
+        <div class="layui-tab-item layui-show">
+            <div class="main-content" style="margin: 1em 5%;">
+                <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Course Syllabus 课程大纲</h1>
+                <hr>
+
+                <fieldset class="layui-elem-field">
+                    <legend>Fall 2020</legend>
+                    <div class="layui-field-box">
+                        <!-- START -->
+                        <table width="90%" align="center">
+                            <tbody><tr>
+                                <td>
+                                    <h1>《应用密码学》教学大纲</h1>
+                                    <h2>一、课程基本信息</h2>
+                                    <table class="layui-table" width="100%">
+                                        <tbody><tr>
+                                            <td class="title">开课单位:</td>
+                                            <td class="content">信息科学与技术学院</td>
+                                            <td class="title">课程代码:</td>
+                                            <td class="content">CS152</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">课程名称:</td>
+                                            <td class="content">应用密码学</td>
+                                            <td class="title">英文名称:</td>
+                                            <td class="content" style="font-family:Times New Roman">Applied Cryptography</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">学    分:</td>
+                                            <td class="content">4</td>
+                                            <td class="title">学    时:</td>
+                                            <td class="content">64</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">授课对象:</td>
+                                            <td class="content">&nbsp;</td>
+                                            <td class="title">授课语言:</td>
+                                            <td class="content">中英文</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">先修课程:</td>
+                                            <td class="content" colspan="3">
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                    <h2>二、课程简介和教学目的</h2>
+                                    <table width="100%">
+                                        <tbody><tr>
+                                            <td class="content" style="word-break:break-all"><pre>
+本课程是密码学的基础入门课程, 授课目标为计算机专业本科生。 密码学是信息安全
+的理论基础，其核心目标是保证通信的机密性、完整性。本课程将探讨分组密码、流密
+码、哈希函数、消息认证、公钥加密、数字签名、身份识别、密钥分发、密钥协商、安
+全计算等论题；本课程还将就密码学最新进展作简单探讨。本课程强调对密码学基本概
+念、基本构造、基本原理的一般性了解，使学习者具备理解信息安全相关文献的能力。</pre></td>
+                                        </tr>
+                                    </tbody></table>
+                
+                                    <h2>三、教学内容、教学方式和学时安排</h2>
+                                    <table width="100%">
+                                        <tbody><tr>
+                                            <td class="content" style="word-break:break-all"><table class="layui-table" border="1" cellspacing="0" style="border-collapse:collapse; border:solid windowtext 1.0pt; margin-left:7px; width:836px" class="Table"><tbody><tr><td style="height:16.25pt; vertical-align:top; width:193.5pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:11.0pt"><span style="font-family:SimSun">课堂教学内容</span></span></strong></span></span></p></td><td style="height:16.25pt; vertical-align:top; width:125.45pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:11.0pt"><span style="font-family:SimSun">教学进度和学时安排</span></span></strong></span></span></p></td><td style="height:16.25pt; vertical-align:top; width:99.25pt"><p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:11.0pt"><span style="font-family:SimSun">教学方式</span></span></strong></span></span></p></td></tr><tr><td style="height:20.8pt; vertical-align:top; width:193.5pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">基础知识</span></span></span></span></p></td><td style="height:20.8pt; vertical-align:top; width:125.45pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">第一周</span></span></span></span></p></td><td style="height:20.8pt; vertical-align:top; width:99.25pt"><p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">课堂教学、作业</span></span></span></span></p></td></tr><tr><td style="height:15.9pt; vertical-align:top; width:193.5pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">古典加密及其安全</span></span></span></span></p></td><td style="height:15.9pt; vertical-align:top; width:125.45pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">第二周</span></span></span></span></p></td><td style="height:15.9pt; vertical-align:top; width:99.25pt"><p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">课堂教学、作业</span></span></span></span></p></td></tr><tr><td style="height:6.85pt; vertical-align:top; width:193.5pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">完善保密</span></span><span style="font-size:11.0pt">, </span><span style="font-size:11.0pt"><span style="font-family:SimSun">一次一密</span></span></span></span></p></td><td style="height:6.85pt; vertical-align:top; width:125.45pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">第三周</span></span></span></span></p></td><td style="height:6.85pt; vertical-align:top; width:99.25pt"><p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">课堂教学、作业</span></span></span></span></p></td></tr><tr><td style="height:6.85pt; vertical-align:top; width:193.5pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">分组密码</span></span><span style="font-size:11.0pt">, (</span><span style="font-size:11.0pt"><span style="font-family:SimSun">高级</span></span><span style="font-size:11.0pt">)</span><span style="font-size:11.0pt"><span style="font-family:SimSun">数据加密标准</span></span></span></span></p></td><td style="height:6.85pt; vertical-align:top; width:125.45pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">第四周</span></span></span></span></p></td><td style="height:6.85pt; vertical-align:top; width:99.25pt"><p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">课堂教学、作业</span></span></span></span></p></td></tr><tr><td style="height:6.85pt; vertical-align:top; width:193.5pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">加密模式</span></span><span style="font-size:11.0pt">, </span><span style="font-size:11.0pt"><span style="font-family:SimSun">流密码</span></span></span></span></p></td><td style="height:6.85pt; vertical-align:top; width:125.45pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">第五周</span></span></span></span></p></td><td style="height:6.85pt; vertical-align:top; width:99.25pt"><p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">课堂教学、作业</span></span></span></span></p></td></tr><tr><td style="height:17.55pt; vertical-align:top; width:193.5pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">哈希函数</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:125.45pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">第六周</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:99.25pt"><p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">课堂教学、作业</span></span></span></span></p></td></tr><tr><td style="height:17.55pt; vertical-align:top; width:193.5pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">消息认证码</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:125.45pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">第七周</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:99.25pt"><p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">课堂教学、作业</span></span></span></span></p></td></tr><tr><td style="height:17.55pt; vertical-align:top; width:193.5pt"><p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:11.0pt"><span style="font-family:SimSun">期中考试</span></span></strong></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:125.45pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">第八周</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:99.25pt"><p style="text-align:justify"><br></p></td></tr><tr><td style="height:17.55pt; vertical-align:top; width:193.5pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt">RSA</span><span style="font-size:11.0pt"><span style="font-family:SimSun">及其安全</span></span><span style="font-size:11.0pt">, </span><span style="font-size:11.0pt"><span style="font-family:SimSun">素性检验</span></span><span style="font-size:11.0pt">, </span><span style="font-size:11.0pt"><span style="font-family:SimSun">大整数分解</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:125.45pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">第九周</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:99.25pt"><p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">课堂教学、作业</span></span></span></span></p></td></tr><tr><td style="height:17.55pt; vertical-align:top; width:193.5pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt">ElGamal</span><span style="font-size:11.0pt"><span style="font-family:SimSun">加密</span></span><span style="font-size:11.0pt">, </span><span style="font-size:11.0pt"><span style="font-family:SimSun">离散对数，椭圆曲线</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:125.45pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">第十周</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:99.25pt"><p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">课堂教学、作业</span></span></span></span></p></td></tr><tr><td style="height:17.55pt; vertical-align:top; width:193.5pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt">RSA</span><span style="font-size:11.0pt"><span style="font-family:SimSun">签名</span></span><span style="font-size:11.0pt">, ElGamal</span><span style="font-size:11.0pt"><span style="font-family:SimSun">签名，证书</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:125.45pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">第十一周</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:99.25pt"><p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">课堂教学、作业</span></span></span></span></p></td></tr><tr><td style="height:17.55pt; vertical-align:top; width:193.5pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">身份识别</span></span><span style="font-size:11.0pt">, </span><span style="font-size:11.0pt"><span style="font-family:SimSun">身份认证</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:125.45pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">第十二周</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:99.25pt"><p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">课堂教学、作业</span></span></span></span></p></td></tr><tr><td style="height:17.55pt; width:193.5pt"><p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">密钥分发</span></span><span style="font-size:11.0pt">, </span><span style="font-size:11.0pt"><span style="font-family:SimSun">秘密分享</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:125.45pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">第十三周</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:99.25pt"><p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">课堂教学、作业</span></span></span></span></p></td></tr><tr><td style="height:17.55pt; vertical-align:top; width:193.5pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">密钥协商</span></span><span style="font-size:11.0pt">, Diffie-Hellman</span><span style="font-size:11.0pt"><span style="font-family:SimSun">密钥协商</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:125.45pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">第十四周</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:99.25pt"><p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">课堂教学、作业</span></span></span></span></p></td></tr><tr><td style="height:17.55pt; vertical-align:top; width:193.5pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">密码学的最新进展</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:125.45pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">第十五周</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:99.25pt"><p style="text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">课堂教学、作业</span></span></span></span></p></td></tr><tr><td style="height:17.55pt; vertical-align:top; width:193.5pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><strong><span style="font-size:11.0pt"><span style="font-family:SimSun">期末考试</span></span></strong></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:125.45pt"><p style="margin-left:-4px; text-align:justify"><span style="font-size:10.5pt"><span style="font-family:Calibri,sans-serif"><span style="font-size:11.0pt"><span style="font-family:SimSun">第十六周</span></span></span></span></p></td><td style="height:17.55pt; vertical-align:top; width:99.25pt"><p style="text-align:justify"><br></p></td></tr></tbody></table></td>
+                                        </tr>
+                                    </tbody></table>
+                                    <h2>四、考核方式和成绩评定</h2>
+                                    <table width="100%">
+                                        <tbody><tr>
+                                            <td class="content" style="word-break:break-all"><pre>出勤率: 10 % ； 课后作业: 50%； 期中考试: 20%； 期末考试: 20%</pre></td>
+                                        </tr>
+                                    </tbody></table>
+                
+                                    <h2>五、推荐教材</h2>
+                                    <table class="layui-table" width="100%">
+                                        <tbody><tr align="center">
+                                            <td width="15%">书名</td>
+                                            <td width="10%">作者</td>
+                                            <td width="15%">译者</td>
+                                            <td width="20%">出版社</td>
+                                            <td width="20%">出版时间</td>
+                                            <td width="20%">ISBN</td>
+                                        </tr>
+                                            <tr align="center">
+                                                <td>Cryptography: Theory and Practice (4th edition)</td>
+                                                <td>
+                                                    Douglas Robert Stinson, Maura Paterson
+                                                </td>
+                                                <td>
+                                                    
+                                                </td>
+                                                <td>
+                                                    Chapman and Hall/CRC
+                                                </td>
+                                                <td>
+                                                    September 11, 2018
+                                                </td>
+                                                <td>
+                                                    9781138197015
+                                                </td>
+                                            </tr>
+                                    </tbody></table>
+                
+                                    <h2>六、参考书目</h2>
+                                    <table class="layui-table" width="100%">
+                                        <tbody><tr align="center">
+                                            <td width="15%">书名</td>
+                                            <td width="10%">作者</td>
+                                            <td width="15%">译者</td>
+                                            <td width="20%">出版社</td>
+                                            <td width="20%">出版时间</td>
+                                            <td width="20%">ISBN</td>
+                                        </tr>
+                                            <tr align="center">
+                                                <td>Introduction to Modern Cryptography</td>
+                                                <td>
+                                                    Jonathan Katz, Yehuda Lindell
+                                                </td>
+                                                <td>
+                                                    
+                                                </td>
+                                                <td>
+                                                    Chapman and Hall/CRC
+                                                </td>
+                                                <td>
+                                                    November 6, 2014
+                                                </td>
+                                                <td>
+                                                    9781466570269
+                                                </td>
+                                            </tr>
+                                    </tbody></table>
+                
+                                    <h2>七、其他说明</h2>
+                                    <table width="100%">
+                                        <tbody><tr>
+                                            <td class="content" style="word-break:break-all"><pre></pre></td>
+                                        </tr>
+                                    </tbody></table>
+                
+                                    <h2>八、教师信息和开课单位审核意见</h2>
+                                    <table class="layui-table" width="100%">
+                                                <tbody><tr>
+                                                    <td width="20%" rowspan="2">授课教师</td>
+                                                    <td width="50%" rowspan="2"><p align="right">（签名） </p>&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;日</td>
+                                                    <td width="10%" height="20">邮&nbsp; 箱</td>
+                                                    <td width="20%">zhanglf@shanghaitech.edu.cn</td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="20">电&nbsp; 话</td>
+                                                    <td></td>
+                                                </tr>
+                                        <tr>
+                                            <td>开课单位审核意见</td>
+                                            <td colspan="3"><p align="right">（签名） </p>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;日</td>
+                                        </tr>
+                                    </tbody></table>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <!-- END -->
+                    </div>
+                </fieldset>
+                
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+</div>
+
+<script src="../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"CS152",
+        "coursebench":"CS252",
+        "name":"Applied Cryptography",
+    };
+
+    document.title = 'iTechX | ' + courseInfo.code + ' ' + courseInfo.name;
+
+    layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], function(){
+        var layer = layui.layer
+            ,form = layui.form
+            ,element = layui.element
+            ,laytpl = layui.laytpl
+            ,laydate = layui.laydate
+            ,$ = layui.$
+            ,laypage = layui.laypage;
+
+        var courseHeaderTpl = lay('#courseHeader')[0].innerHTML;
+        lay('#courseHeader').html(layui.laytpl(courseHeaderTpl).render({}))
+        .removeClass('layui-hide');
+
+        var courseBenchTpl = lay('#courseBench')[0].innerHTML;
+        lay('#courseBench').html(layui.laytpl(courseBenchTpl).render({
+            "url": "https://www.coursebench.net/course/"+(courseInfo.hasOwnProperty("coursebench") ? courseInfo.coursebench : courseInfo.code)+"/"
+        }))
+        .removeClass('layui-hide');
+        
+    });
+</script>
+</body>
+</html>
