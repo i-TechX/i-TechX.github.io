@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Lecture Slides 教学课件
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;">
+<h2 style="font-family: Quicksand; font-weight: bold; text-align: center;">Analog Part</h2>
+</div>
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col></colgroup><thead><tr><th>Lecture PDF</th></tr></thead><tbody><tr><td><a href="https://docs.zoho.com.cn/file/gkbi520c83a600e994540b904741bafd7ddc9">20 Lecture00-Admin.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5d27f9db7eef848f997484210be452057">20 Lecture01-Introduction.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5d4b5df7b03a0431e953530fbc364a68c">20 Lecture02 Opamp basics.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5f0ad0af1365042c582d612ba339019e7">20 Lecture03-Ideal-Op-Amp.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi56edf0ede16c34ccfbbcd64a5eda63152">20 Lecture04-Non-Ideal Op Amp.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi511ab5ac71e124d6692371f7adddfbf1f">20 Lecture05-Semiconductors.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi57474926166974134abd199e8856b1b86">20 Lecture06-PN junction.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi50c4f1df46e1e451c8d27b13da8deb6b1">20 Lecture07-08 MOSFET.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi525a203b485d646a1b50703a45ef30120">20 Lecture09-10 BJT.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi533709d1637474907afc745fd87e54dc6">20 Lecture11 Transistor amplifier1.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi591a3b09e3d364ee79d867d0c10db539e">20 Lecture12 Transistor amplifier2.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi56135ecf3ca7a439b9b3c5bb0aceef9e0">20 Lecture13 Transistor amplifier3.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5a7ec27a768144117b03be44775c10615">20 Lecture14 Transistor amplifier4.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi537f7ef95fe8741f08ce5951e8ad10b6c">20 Lecture15 Building blocks1.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5f7f59dcbbc91405d84e9ebc7254c06a0">20 Lecture16 Building blocks2.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi57e6b3a41f4224e388eb37bed1e3bd8b2">20 Lecture18 Differential amplifier1.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi54bbe6f61cc054c0499f0794a9a544f09">20 Lecture19 Differential amplifier2.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5debc983f264f449581980b1ba4b831f4">20 Lecture20 Two-stage amplifier.pdf</a></td></tr></tbody></table></div></div>
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;">
+<h2 style="font-family: Quicksand; font-weight: bold; text-align: center;">Digital Part</h2>
+</div>
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col><col></colgroup><thead><tr><th>Lecture PDF</th><th>Lecture Slides</th></tr></thead><tbody><tr><td><a href="https://docs.zoho.com.cn/file/gkbi500dd1940bc9645d2a45c2bc4650a4f46">EE115 Topic 1 Introduction.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5036c228705fd479cb4974d1edf0610db">EE115 Topic 1 Introduction.ppt</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5097b508f375a4146a67ec59788fd3d85">EE115 Topic 2 VHDL Programming I.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5314274d2ce6540fbbf442a9157c5af2e">EE115 Topic 2 VHDL Programming I.ppt</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5b1d2c8a3cda240e494aff0ec1b1da961">EE115 Topic 2 VHDL Programming II.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi51e9f8d124fc8487fb80ec41406834542">EE115 Topic 2 VHDL Programming II.ppt</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi528e6d2ec447043419d4f5dab734439fa">EE115 Topic 3 Number System.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5a59179b89dc045298eb7364538b13022">EE115 Topic 3 Number System.ppt</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi570779b8212724373aac60d150b283fca">EE115 Topic 4 Logic Gates.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi59f4002c1eba44bf598212fe3a6a2e452">EE115 Topic 4 Logic Gates.ppt</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5552616b04ddf4a8d8f1d318954ded441">EE115 Topic 5 Boolean Algebra and Logic Simplification.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5c1127308a54c4ad68f0d5ca146659d78">EE115 Topic 5 Boolean Algebra and Logic Simplification.ppt</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5684a094fee564097a5c9596bba216732">EE115 Topic 6 Combinational Logic.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi59356572bb2254dfab8702cb4d95e3cc0">EE115 Topic 6 Combinational Logic.ppt</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi5e6ccb5b7a64942338137fa23ab05e9fc">EE116 Topic 7 Course Review.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi552c19f21be604cb79e1ab833bb4b1d6e">EE116 Topic 7 Course Review.ppt</a></td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"EE115",
+"name":"Analog and Digital Circuits",
+"semester":"Fall 2020",
+"category":"Lecture Slides 教学课件",
+"title":"Lecture Slides 教学课件",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>

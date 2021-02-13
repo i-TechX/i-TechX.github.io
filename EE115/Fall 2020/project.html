@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.googleapis.com/css?family=Quicksand' >
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Project 课程设计
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;">
+<h2 style="font-family: Quicksand; font-weight: bold; text-align: center;">Analog Part</h2>
+</div>
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col></colgroup><thead><tr><th>Documents</th></tr></thead><tbody><tr><td><a href="https://docs.zoho.com.cn/file/gkbi509db0eabafcf4b1da18d958152686c77">2020 Analog Research Project.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi58b047099e75146dc8cebea50cf53c2e6">A Low-Cost Time-Correlated Single Photon Counting System for Multiview Time-Domain Diffuse Optical Tomography.pdf</a></td></tr></tbody></table></div></div>
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;">
+<h2 style="font-family: Quicksand; font-weight: bold; text-align: center;">Digital Part</h2>
+</div>
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col><col><col><col></colgroup><thead><tr><th>Tutorial</th><th>Part 1</th><th>Part 2</th><th>Solution</th></tr></thead><tbody><tr><td><a href="https://docs.zoho.com.cn/file/gkbi584592ecbc8c64d028a448e3927f5fdc7">Tutorial 1 Vivado Install.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi58fc584551e83412392fd6b1ffa80a205">EE115 part1.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi5d49275af51c74844a521e832d1325cd7">Project_II.pdf</a></td><td><a href="https://docs.zoho.com.cn/file/gkbi571afcc761c28464d80539cd0c594404f">Solution.pdf</a></td></tr><tr><td><a href="https://docs.zoho.com.cn/file/gkbi55de54d30a1f94e489a227c2cf3379949">Tutorial 2 Vivado Usage.pdf</a></td><td></td><td><a href="https://docs.zoho.com.cn/file/gkbi565d3aba4ecdd4beca9bb315c9c4a90a7">Project Part II.zip</a></td><td></td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"EE115",
+"name":"Analog and Digital Circuits",
+"semester":"Fall 2020",
+"category":"Project 课程设计",
+"title":"Project 课程设计",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js"></script>
+</body>
+</html>
