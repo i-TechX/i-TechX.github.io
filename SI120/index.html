@@ -32,7 +32,7 @@
 <div class="layui-fluid" style="margin: 2em 20px;">
     <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
         <ul class="layui-tab-title layui-hide" id="courseBench">
-            <a href="#"><li class="layui-this">课程</li></a>
+            <a href="Spring 2021\schedule.html"><li>时间表</li></a><a href="#"><li class="layui-this">课程</li></a><!-- activated -->
             <a href="syllabus.html"><li>教学大纲</li></a>
             <a href="progress.html"><li>进度</li></a>
             <a href={{d.url}}><li>课程评价</li></a>
@@ -46,6 +46,30 @@
                 
                 <div class="layui-row">
                     <div class="layui-col-sm9">
+
+                        <!-- 目录 -->
+                        <div class="container menu5">
+                            <fieldset class="layui-elem-field layui-field-title">
+                                <legend>Spring 2021</legend>
+                            </fieldset>
+                            <details>
+                                <summary>Schedule 教学安排</summary>
+                                <div class="details-wrapper">
+                                <div class="details-styling">
+                                    <a href="Spring 2021/schedule.html">Schedule 教学安排</a>
+                                </div>
+                                </div>
+                            </details>
+                            <details>
+                                <summary>Lecture Slides 教学课件</summary>
+                                <div class="details-wrapper">
+                                <div class="details-styling">
+                                    <a href="Spring 2021/slides.html">Lecture Slides 教学课件</a>
+                                </div>
+                                </div>
+                            </details>
+                        </div>
+                        <!-- 目录 结束 -->
 
                         <!-- 目录 -->
                         <div class="container menu1">
@@ -267,6 +291,9 @@
     var accordion = new Collapse(makeMePretty, { accordion: false }).init();}
 
     {var makeMePretty = document.querySelector(".menu4");
+    var accordion = new Collapse(makeMePretty, { accordion: false }).init();}
+
+    {var makeMePretty = document.querySelector(".menu5");
     var accordion = new Collapse(makeMePretty, { accordion: false }).init();}
 
     
