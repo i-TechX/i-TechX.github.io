@@ -67,6 +67,13 @@
                         <div id="Spring 2019" style="width: 90%;height: 400px;margin:0 auto;"> </div>
                     </div>
                 </div>
+
+                <div class="layui-card">
+                    <div class="layui-card-header" style="font-family: Quicksand; font-weight: bold; text-align: center; font-size: large;">Spring 2018</div>
+                    <div class="layui-card-body">
+                        <div id="Spring 2018" style="width: 90%;height: 400px;margin:0 auto;"> </div>
+                    </div>
+                </div>
                 
             </div>
         </div>
@@ -119,6 +126,11 @@
             "Exam 考试": [0.3/0.65, {
                 "Mid-term Exam": 1
             }]
+        },
+        "Spring 2018": {
+            "Exam 考试": [1/1, {
+                "Final Sample Exam": 83/83
+            }]
         }
     };
 
@@ -127,20 +139,23 @@
     document.title = 'iTechX | ' + courseInfo.code + ' ' + courseInfo.name;
 
     for (const key in semester) {
-        if (semester.hasOwnProperty(key)) {
-            var t = document.getElementById(key).getBoundingClientRect().top;
-            var h = window.screen.availHeight;
-            if (t/h < 0.5 && t/h > -0.25)
-                draw(key, courseInfo, semester, passScore);
-            else
-                window.addEventListener('scroll', function(){
-                    var t = document.getElementById(key).getBoundingClientRect().top;
-                    var h = window.screen.availHeight;
-                    if (t/h < 0.5 && t/h > -0.25)
-                        draw(key, courseInfo, semester, passScore);
-                })
-        }
+        draw(key, courseInfo, semester, passScore);
     }
+    // for (const key in semester) {
+    //     if (semester.hasOwnProperty(key)) {
+    //         var t = document.getElementById(key).getBoundingClientRect().top;
+    //         var h = window.screen.availHeight;
+    //         if (t/h < 0.5 && t/h > -0.25)
+    //             draw(key, courseInfo, semester, passScore);
+    //         else
+    //             window.addEventListener('scroll', function(){
+    //                 var t = document.getElementById(key).getBoundingClientRect().top;
+    //                 var h = window.screen.availHeight;
+    //                 if (t/h < 0.5 && t/h > -0.25)
+    //                     draw(key, courseInfo, semester, passScore);
+    //             })
+    //     }
+    // }
 
     layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], function(){
         var layer = layui.layer
