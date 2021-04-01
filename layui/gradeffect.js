@@ -1,5 +1,27 @@
 layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], function(){
 
+    layui.$.getScript('https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.8/clipboard.min.js',function(){
+        var clipboard = new ClipboardJS('.pwd-copy-btn', {
+            target: function(trigger) {
+                return trigger.parentElement.previousElementSibling.firstElementChild;
+            }
+        });
+        clipboard.on('success', function(e) {
+            trigger = e.trigger;
+            trigger.parentElement.nextElementSibling.style.display = 'inline';
+            setTimeout(() => {
+                trigger.parentElement.nextElementSibling.style.display = 'none';
+            }, 3000);
+        });
+        clipboard.on('error', function(e) {
+            trigger = e.trigger;
+            trigger.parentElement.nextElementSibling.nextElementSibling.style.display = 'inline';
+            setTimeout(() => {
+                trigger.parentElement.nextElementSibling.nextElementSibling.style.display = 'none';
+            }, 3000);
+        });
+    });
+
     function answerParse(questionName, type, json){
         if (type === 'checkbox') {
             var answer = [];
@@ -132,6 +154,7 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
                 laypage.lastPage = obj.curr;
                 if(!first){
                     pageRender2(obj.curr);
+                    MathJax.Hub.Queue(["Reprocess",MathJax.Hub]);
                 }
             }
         });
@@ -171,6 +194,7 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
                 //首次不执行
                 if(!first){
                     pageRender1(obj.curr);
+                    MathJax.Hub.Queue(["Reprocess",MathJax.Hub]);
                     $("html,body").animate({scrollTop:"0px"},500);
                 }
                 obj.lastPage = obj.curr;
@@ -387,4 +411,10 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
             }
         }
     }
+
+    layui.$.getScript("https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML", function() {
+        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\\(','\\\)']], displayMath: [['$$','$$'], ["\\\[","\\\]"]]}});
+        var math = document.getElementsByClassName("main-content")[0];
+        MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
+    });
 });

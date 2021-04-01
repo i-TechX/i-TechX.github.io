@@ -97,14 +97,5 @@ Lecture Slides 教学课件
     document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
 </script>
 <script src="../../layui/gradeffect.js"></script>
-<script>
-    window.onload = function () {
-        layui.$.getScript("https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML", function() {
-            MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\\(','\\\)']], displayMath: [['$$','$$'], ["\\\[","\\\]"]]}});
-            var math = document.getElementsByClassName("main-content")[0];
-            MathJax.Hub.Queue(["Typeset",MathJax.Hub,math]);
-        });
-    };
-</script>
 </body>
 </html>
