@@ -7,17 +7,17 @@ layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], 
             }
         });
         clipboard.on('success', function(e) {
-            trigger = e.trigger;
-            trigger.parentElement.nextElementSibling.style.display = 'inline';
+            target = e.trigger.parentElement.nextElementSibling;
+            target.style.display = 'inline';
             setTimeout(() => {
-                trigger.parentElement.nextElementSibling.style.display = 'none';
+                target.style.display = 'none';
             }, 3000);
         });
         clipboard.on('error', function(e) {
-            trigger = e.trigger;
-            trigger.parentElement.nextElementSibling.nextElementSibling.style.display = 'inline';
+            target = e.trigger.parentElement.nextElementSibling.nextElementSibling;
+            target.style.display = 'inline';
             setTimeout(() => {
-                trigger.parentElement.nextElementSibling.nextElementSibling.style.display = 'none';
+                target.style.display = 'none';
             }, 3000);
         });
     });
