@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.geekzu.org/css?family=Quicksand' >
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "../layui/hm.js";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../dashboard.html">
+                <img src="../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="index.html"><li>课程</li></a>
+            <a href="#"><li class="layui-this">教学大纲</li class="layui-this"></a>
+            <a href="progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+    </div>
+
+    <div class="layui-tab-content" style="height: auto;">
+        <div class="layui-tab-item layui-show">
+            <div class="main-content" style="margin: 1em 5%;">
+                <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">Course Syllabus 课程大纲</h1>
+                <hr>
+
+                <fieldset class="layui-elem-field">
+                    <legend>Spring 2021</legend>
+                    <div class="layui-field-box">
+                        <!-- START -->
+                        <table width="90%" align="center">
+                            <tbody><tr>
+                                <td>
+                                    <h1>《软件工程》教学大纲</h1>
+                                    <h2>一、课程基本信息</h2>
+                                    <table class="layui-table" width="100%">
+                                        <tbody><tr>
+                                            <td class="title">开课单位:</td>
+                                            <td class="content">信息科学与技术学院</td>
+                                            <td class="title">课程代码:</td>
+                                            <td class="content">CS132</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">课程名称:</td>
+                                            <td class="content">软件工程</td>
+                                            <td class="title">英文名称:</td>
+                                            <td class="content" style="font-family:Times New Roman">Software Engineering</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">学    分:</td>
+                                            <td class="content">4</td>
+                                            <td class="title">学    时:</td>
+                                            <td class="content">64</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">授课对象:</td>
+                                            <td class="content">&nbsp;</td>
+                                            <td class="title">授课语言:</td>
+                                            <td class="content">中英文</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="title">先修课程:</td>
+                                            <td class="content" colspan="3">
+                                            </td>
+                                        </tr>
+                                    </tbody></table>
+                                    <h2>二、课程简介和教学目的</h2>
+                                    <table width="100%">
+                                        <tbody><tr>
+                                            <td class="content" style="word-break:break-all"><pre>在实际应用中，复杂软件通常由一个团队分工合作完成。软件工程是研究如何在团队合作中提升软件开发效率，减小沟通成本的一门学科。在本课程中，同学们将通过课程及项目实践理解如下知识与技能：
+•	什么是软件工程？为什么叫软件“工程”而不是软件“科学”？
+•	软件生命周期中的步骤及分工
+•	软件项目管理方法及应用
+•	如何利用需求分析将用户需求分解为软件需求
+•	如何利用模型进行软件早期开发及分析
+•	如何在开发过程中维护软件可追溯性，确保软件需求被完整的实现
+•	如何利用软件测试与验证保证软件的安全性与正确性
+•	如何在保证可追溯性的前提下对原有软件进行修改</pre></td>
+                                        </tr>
+                                    </tbody></table>
+                
+                                    <h2>三、教学内容、教学方式和学时安排</h2>
+                                    <table width="100%">
+                                        <tbody><tr>
+                                            <td class="content" style="word-break:break-all"><p>本课程的教学和实践主要分为如下几个阶段：</p><ul><li>阶段1：软件工程简介<ul style="list-style-type:circle"><li>了解软件工程基本原理以及应用场景</li><li>掌握软件项目管理的方法以及应用</li><li>风险管理在软件生命周期中的应用</li></ul></li><li>阶段2：基于模型的软件开发流程<ul style="list-style-type:circle"><li>如何建立软件模型</li><li>如何为软件运行环境建立模型</li><li>利用模型验证提供早期软件正确性证明</li><li>软件测试原理</li><li>利用模型生成软件测试集</li><li>利用模型生成代码</li></ul></li><li>期中考试</li><li>阶段3：项目实践与团队合作<ul style="list-style-type:circle"><li>通过项目实践的方式体验团队合作中不同角色</li></ul></li></ul></td>
+                                        </tr>
+                                    </tbody></table>
+                                    <h2>四、考核方式和成绩评定</h2>
+                                    <table width="100%">
+                                        <tbody><tr>
+                                            <td class="content" style="word-break:break-all">
+                                                <p>作业 20%</p>
+                                                <p>期中考试 20%</p>
+                                                <p>课程项目 60%</p></td>
+                                        </tr>
+                                    </tbody></table>
+                
+                                    <h2>五、推荐教材</h2>
+                                    <table  class="layui-table" width="100%">
+                                        <tbody><tr align="center">
+                                            <td width="15%">书名</td>
+                                            <td width="10%">作者</td>
+                                            <td width="15%">译者</td>
+                                            <td width="20%">出版社</td>
+                                            <td width="20%">出版时间</td>
+                                            <td width="20%">ISBN</td>
+                                        </tr>
+                                    </tbody></table>
+                
+                                    <h2>六、参考书目</h2>
+                                    <table class="layui-table" width="100%">
+                                        <tbody><tr align="center">
+                                            <td width="15%">书名</td>
+                                            <td width="10%">作者</td>
+                                            <td width="15%">译者</td>
+                                            <td width="20%">出版社</td>
+                                            <td width="20%">出版时间</td>
+                                            <td width="20%">ISBN</td>
+                                        </tr>
+                                            <tr align="center">
+                                                <td>Principles of Model Checking</td>
+                                                <td>
+                                                    Christel Baier and Joost-Pieter Katoen
+                                                </td>
+                                                <td>
+                                                    
+                                                </td>
+                                                <td>
+                                                    The MIT Press
+                                                </td>
+                                                <td>
+                                                    2008
+                                                </td>
+                                                <td>
+                                                    9780262026499
+                                                </td>
+                                            </tr>
+                                            <tr align="center">
+                                                <td>Principles of Cyber-Physical Systems (The MIT Press)</td>
+                                                <td>
+                                                    Rajeev Alur
+                                                </td>
+                                                <td>
+                                                    
+                                                </td>
+                                                <td>
+                                                    The MIT Press
+                                                </td>
+                                                <td>
+                                                    2015
+                                                </td>
+                                                <td>
+                                                    978-0262029117
+                                                </td>
+                                            </tr>
+                                    </tbody></table>
+                
+                                    <h2>七、其他说明</h2>
+                                    <table width="100%">
+                                        <tbody><tr>
+                                            <td class="content" style="word-break:break-all"><pre></pre></td>
+                                        </tr>
+                                    </tbody></table>
+                
+                                    <h2>八、教师信息和开课单位审核意见</h2>
+                                    <table class="layui-table" width="100%">
+                                                <tbody><tr>
+                                                    <td width="20%" rowspan="2">授课教师</td>
+                                                    <td width="50%" rowspan="2"><p align="right">（签名） </p>&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;日</td>
+                                                    <td width="10%" height="20">邮&nbsp; 箱</td>
+                                                    <td width="20%">jiangzhh@shanghaitech.edu.cn</td>
+                                                </tr>
+                                                <tr>
+                                                    <td height="20">电&nbsp; 话</td>
+                                                    <td></td>
+                                                </tr>
+                                        <tr>
+                                            <td>开课单位审核意见</td>
+                                            <td colspan="3"><p align="right">（签名） </p>
+                                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;年&nbsp;&nbsp;&nbsp;月&nbsp;&nbsp;&nbsp;日</td>
+                                        </tr>
+                                    </tbody></table>
+                                </td>
+                            </tr>
+                        </tbody></table>
+                        <!-- END -->
+                    </div>
+                </fieldset>
+                
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+</div>
+
+<script src="../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "CS132",
+        "name": "Software Engineering"
+    };
+
+    document.title = 'iTechX | ' + courseInfo.code + ' ' + courseInfo.name;
+
+    layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util', 'laypage'], function(){
+        var layer = layui.layer
+            ,form = layui.form
+            ,element = layui.element
+            ,laytpl = layui.laytpl
+            ,laydate = layui.laydate
+            ,$ = layui.$
+            ,laypage = layui.laypage;
+
+        var courseHeaderTpl = lay('#courseHeader')[0].innerHTML;
+        lay('#courseHeader').html(layui.laytpl(courseHeaderTpl).render({}))
+        .removeClass('layui-hide');
+
+        var courseBenchTpl = lay('#courseBench')[0].innerHTML;
+        lay('#courseBench').html(layui.laytpl(courseBenchTpl).render({
+            "url": "https://www.coursebench.net/course/"+courseInfo.code+"/"
+        }))
+        .removeClass('layui-hide');
+        
+    });
+</script>
+</body>
+</html>

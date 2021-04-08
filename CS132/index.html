@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+    
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.geekzu.org/css?family=Quicksand' >
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "../layui/hm.js";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../dashboard.html">
+                <img src="../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="#"><li class="layui-this">课程</li></a>
+            <a href="syllabus.html"><li>教学大纲</li></a>
+            <a href="progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <div class="layui-hide" id="courseName">
+                    <h1 style="font-family: Quicksand; margin: 1em;"><b>{{courseInfo.name}}</b></h1>
+                </div>
+                <hr>
+                
+                <div class="layui-row">
+                    <div class="layui-col-sm9">
+
+                        <!-- 目录 -->
+                        <div class="container menu1">
+                            <fieldset class="layui-elem-field layui-field-title">
+                                <legend>Spring 2020</legend>
+                            </fieldset>
+                            <details>
+                                <summary>Lecture Slides 教学课件</summary>
+                                <div class="details-wrapper">
+                                <div class="details-styling">
+                                    <a href="Spring 2020/slides.html">Lecture Slides 教学课件</a>
+                                </div>
+                                </div>
+                            </details>
+                            <details>
+                                <summary>Homework 作业</summary>
+                                <div class="details-wrapper">
+                                <div class="details-styling">
+                                    <a href="Spring 2020/homework.html">Homework 作业</a>
+                                </div>
+                                </div>
+                            </details>
+                            <details>
+                                <summary>Project 课程设计</summary>
+                                <div class="details-wrapper">
+                                <div class="details-styling">
+                                    <a href="Spring 2020/project.html">Project 课程设计</a>
+                                </div>
+                                </div>
+                            </details>
+                            <details>
+                                <summary>Exam 考试</summary>
+                                <div class="details-wrapper">
+                                <div class="details-styling">
+                                    <a href="Spring 2020/mid-term.html">Mid-term Exam 期中考试</a>
+                                </div>
+                                </div>
+                            </details>
+                        </div>
+                        <!-- 目录 结束 -->
+
+                        <!-- 目录 -->
+                        <div class="container menu2">
+                            <fieldset class="layui-elem-field layui-field-title">
+                                <legend>Spring 2019</legend>
+                            </fieldset>
+                            <details>
+                                <summary>Exam 考试</summary>
+                                <div class="details-wrapper">
+                                <div class="details-styling">
+                                    <a href="Spring 2020/mid-term.html">Mid-term Exam 期中考试</a>
+                                </div>
+                                </div>
+                            </details>
+                        </div>
+                        <!-- 目录 结束 -->
+
+                    </div>
+                    <div class="layui-col-sm3">
+                        <div style="margin: 2em;">
+                            <p><b>重要课程日期</b></p>
+                            <blockquote class="layui-elem-quote" id='date' style="font-weight: bold; margin-bottom: 0;"></blockquote>
+                            <blockquote class="layui-grey-quote">
+                                您拥有完全访问许可。
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div> 
+    
+</div>
+
+<script  src="../layui/accordion.js"></script>
+<script src="../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code": "CS132",
+        "name": "Software Engineering"
+    };
+
+    {var makeMePretty = document.querySelector(".menu1");
+    var accordion = new Collapse(makeMePretty, { accordion: false }).init();}
+
+    {var makeMePretty = document.querySelector(".menu2");
+    var accordion = new Collapse(makeMePretty, { accordion: false }).init();}
+
+    
+    document.title = 'iTechX | ' + courseInfo.code + ' ' + courseInfo.name;
+
+    //一般直接写在一个js文件中
+    layui.use(['layer', 'form', 'element', 'laytpl', 'laydate', 'util'], function(){
+        var layer = layui.layer
+        ,form = layui.form
+        ,element = layui.element
+        ,laytpl = layui.laytpl
+        ,laydate = layui.laydate
+        ,$ = layui.$
+        ,util = layui.util;
+
+        var toDateString = function(format){
+            var dateString = util.toDateString(new Date(), format); //执行转换日期格式的方法
+            $('#date').html(dateString);
+        };
+        toDateString('今天是 yyyy年MM月dd日 HH:mm UTC+8');
+        
+        var courseHeaderTpl = lay('#courseHeader')[0].innerHTML;
+        lay('#courseHeader').html(layui.laytpl(courseHeaderTpl).render({}))
+        .removeClass('layui-hide');
+
+        var courseNameTpl = lay('#courseName')[0].innerHTML;
+        lay('#courseName').html(layui.laytpl(courseNameTpl).render({}))
+        .removeClass('layui-hide');
+
+        var courseBenchTpl = lay('#courseBench')[0].innerHTML;
+        lay('#courseBench').html(layui.laytpl(courseBenchTpl).render({
+            "url": "https://www.coursebench.net/course/"+courseInfo.code+"/"
+        }))
+        .removeClass('layui-hide');
+    });
+</script> 
+</body>
+</html>

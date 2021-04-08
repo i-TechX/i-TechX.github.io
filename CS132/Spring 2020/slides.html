@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.geekzu.org/css?family=Quicksand' >
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "../../layui/hm.js";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Lecture Slides 教学课件
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col></colgroup><thead><tr><th>Lecture PDF</th></tr></thead><tbody><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewrbd929d9fa812448881bb5ef7cd4d4867">CS132_Lecture1_Introduction.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr3212c361d4364496b5841dbacb5ac0db">CS132_Lecture2_SoftwareLifeCycle.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewrd4c1fc191b7548f7bd227a5c26850e6e">CS132_Lecture3_UML_Part1.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr1a5bad2e077c402fbc03c5574c30f335">CS132_Lecture4_UML_Part2.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr8bb6841242f146bbb80ffd80a0ab6b1d">CS132_Lecture5_ApplicationsOfUML.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr6e09a4f6b148444ea7308f55263b4443">CS132_Lecture6_RiskManagement.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewre4d69d197ae94f8bb87df99c78bc7cbe">CS132_Lecture7_RiskManagementTools.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr418a4b2cc82d49c4802b475e9166b846">CS132_Lecture8_IntroToModelChecking.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr75286121385a475599123a4524a29278">CS132_Lecture9_UppaalTutorial.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewrc7e3a0895efa493fafbc5d9ae0d5883d">CS132_Lecture10_UPPAALExamples.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr6b452462fa4e4e01a3f14c3c35b86bc3">CS132_Lecture11_QuantitativeModelChecking.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr430573525fe84273bec161274991e150">CS132_Lecture12_ObjectOrientedProgrammingMatlab.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr428e22d7f32443f7b0a573abc816d546">CS132_Lecture13_MatlabGUI.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewraee2d76ca11a480492836749c6be9c7b">CS132_Lecture14_Simulink&amp;Stateflow.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr6923e573b33042ccb561c57e9123920f">CS132_Lecture16_ModelingPrinciples.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewrbd5baff8eaf848f2b7885ab2a411bfab">CS132_Lecture17_Testingm.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewrf84683ae7abe4815ac5cbeb9ca144e8c">CS132_Lecture17_TestingPart2.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewrc44ee1168b4f4449a78a6367aed2ef09">CS132_Lecture19_StandardRegulation.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewrd52392f9c57349efb2c3e6aaca24e3b2">CS132_Lecture20_TipsAndSummary.pdf</a></td></tr></tbody></table></div></div>
+</div>
+<div class="layui-hide" id="page-2" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col></colgroup><thead><tr><th>Books and Materials</th></tr></thead><tbody><tr><td><a href="http://libgen.rs/book/index.php?md5=DA5E1FFD3035B93CB83152C7025D1C3E">2013_Software_Engineering_A_Hands-On_Approach</a></td></tr><tr><td><a href="http://libgen.rs/book/index.php?md5=337F08B79662DF6B48B6857C2D4A587C">2014_Agile_Risk_Management</a></td></tr><tr><td><a href="http://libgen.rs/book/index.php?md5=4D106342DB07134BC28729D75F799ECF">2015_UML_Classroom</a></td></tr><tr><td><a href="https://www.doc88.com/p-1458607435155.html">BS_ISO-IEC_16085-2006_Systems_and_software_engineering-Life_cycle_process-Risk_management</a></td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"CS132",
+"name":"Software Engineering",
+"semester":"Spring 2020",
+"category":"Lecture Slides 教学课件",
+"title":"Lecture Slides 教学课件",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js?v=2"></script>
+</body>
+</html>

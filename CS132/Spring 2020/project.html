@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.geekzu.org/css?family=Quicksand' >
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "../../layui/hm.js";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Project 课程设计
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col><col></colgroup><thead><tr><th>Materials</th><th>Description</th></tr></thead><tbody><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewrbc1642d1c32c4acb96ab0af5bea17945">CS132_ProjectAnnouncement.pdf</a></td><td>First announcement of the project.</td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewrfff177ef30034a82b9feb5d8a5dd3e3b">GradingCriteria.pdf</a></td><td>The grading criteria of the projects.</td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr7843efd6e1604923b0d10dc5c4bd8528">Team0_Project1_Week6.docx</a></td><td>Template document for group weekly report.</td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewraea72f57435d4c348615a1ef8cac39c2">Requirements_Group0_Restaurant.docx</a></td><td>Template document for requirements.</td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewrc4b2d992434d4564bac20a600abe2904">UserManual_Group0_Restaurant.docx</a></td><td>Template document for user manual.</td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewrdfa0273a69344557ae954816c690eeb0">Specifications_Group0_Restaurant.docx</a></td><td>Template document for specifications.</td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr942ba60d5a72484abb43f92e7b20457a">Validation_Group0_Restaurant.docx</a></td><td>Template document for validation.</td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr71499dd4b50e4dfd9f215325d15deae9">Traceability_Group0_Restaurant.docx</a></td><td>Template document for traceability.</td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewra8b7b052f49049f28f109c15c24aba6d">RestaurantDemo.zip</a></td><td>In-class demo for restaurant system.</td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr30eebcd1a81140789deabdda91f7c44f">RestaurantDemo_test.zip</a></td><td>In-class demo for restaurant system (test part).</td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr868d1ad1af4648e8b1ad4f941afc6a6a">testLight_new.zip</a></td><td>In-class demo for traffic light system.</td></tr></tbody></table></div></div>
+<div class="reading-content"><div class="layui-form" style="margin: 0 2%;"> <table class="layui-table"><colgroup><col><col><col><col></colgroup><thead><tr><th>Example Project Documents</th><th>Project 1</th><th>Project 2</th><th>Project 3</th></tr></thead><tbody><tr><td>Requirement</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr0fbd71e203ac4bebbf92af8f7672353b">Requirements_Group16_Elevator.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr022eb7c515c04398b047cd15a40460e0">Requirements_Group16_HuarongPath.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr4a465dddafd34ae7824005a2d980263c">Requirement_Group16_Painkiller.pdf</a></td></tr><tr><td>User Manual</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr11f1c1b9713941e894e580107efc3a91">UserManual_Group16_Elevator.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewrbcacc4a558c64cf3af6d4facc26f3441">UserManual_Group16_HuarongPath.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr2c3b8ef03f504a22ba3f167c31121ad6">UserManual_Group16_Painkiller.pdf</a></td></tr><tr><td>Specifications</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr888d45221bd0422f899dce526d15ea7a">Specifications_Group16_Elevator.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr17d8f90ac1f74110842bc46f2faa1e9a">Specifications_Group16_HuarongPath.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr2139532dd4dd4ed085dfd978f4383eeb">Specifications_Group16_Painkiller.pdf</a></td></tr><tr><td>Validation</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewrf222638751b94584a0f52d9115846f51">Validation_Group16_Elevator.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr1125463b732f4991bad83f5882cff6ef">Validation_Group16_HuarongPath.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr6261e0a1cffc444294f5e38bbd49911b">Validation_Group16_Painkiller.pdf</a></td></tr><tr><td>Traceablility</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewrdcbe5ea31ea2408d8ea403e04a51f339">Traceability_Group16_Elevator.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr8b2b11d8b31f4c0b907358a9ef7679e2">Traceability_Group16_HuarongPath.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewrf0189bccb58748b9a5774d9321475d1d">Traceability_Group16_Painkiller.pdf</a></td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"CS132",
+"name":"Software Engineering",
+"semester":"Spring 2020",
+"category":"Project 课程设计",
+"title":"Project 课程设计",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js?v=2"></script>
+</body>
+</html>
