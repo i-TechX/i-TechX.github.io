@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.geekzu.org/css?family=Quicksand' >
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "../../layui/hm.js";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Lecture Slides 教学课件
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col><col><col></colgroup><thead><tr><th>Author (email)</th><th>Chapter</th><th>Lecture Note</th></tr></thead><tbody><tr><td>louxin</td><td>Chapter 1</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewrdfb2d030a4914838af6ecf17bba1dcee">Lecture_1.pdf</a></td></tr><tr><td>(zhouyong)</td><td>Chapter 1 (optional)</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewrbe8aaaebf59e40a9a36801f1bc8a94cc">01 overview.pdf</a></td></tr><tr><td>louxin</td><td>Chapter 2</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewrf93d105d504243d994d85f783e322bec">Chapter_2.pdf</a></td></tr><tr><td>(zhouyong)</td><td>Chapter 2 (optional)</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr176c8f0ae3944f369209250080ad6ee9">02 LTI.pdf</a></td></tr><tr><td>zhouyong</td><td>Chapter 3</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr3207591fb36345099202d653e28fdb23">Chapter 3.pdf</a></td></tr><tr><td></td><td></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr14bc75b811b84591bada024656b14cb4">Chapter 3 with Notes.pdf</a></td></tr><tr><td></td><td>Chapter 4</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewre4b75554e4e14fb7a8d8e61d486d166b">04 CTFT.pdf</a></td></tr><tr><td></td><td></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewra424414d78f04a4cad58fe900fb867d3">04 CTFT with Notes.pdf</a></td></tr><tr><td></td><td>Chapter 5</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr8361f49edfde47bf8e2b72db943f26d1">DTFT_2.pdf</a></td></tr><tr><td></td><td></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr0b7b8508c6b6496b8f8d854d7cc7a38b">DTFT_withnote.pdf</a></td></tr><tr><td>xulin1</td><td>Chapter 6-1</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr189e38a123b94e9a8c26f08b0c0b40b7">Chapter 6 (Lecture 17) with modification(1).pdf</a></td></tr><tr><td></td><td></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewrae2124a006b848348150fadea2c5d28c">lecture 17 - online.pdf</a></td></tr><tr><td></td><td></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr74b1ff4530f74f72b78c5cefa72a8e6d">Lecture 17.pptx</a></td></tr><tr><td></td><td>Chapter 6-2</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr751448e430ed4cc3922a77747daced0a">Chapter 6 (Lecture 18).pdf</a></td></tr><tr><td></td><td></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr63c5dae6d3df403d9dba5c6ea7fe322d">Lecture 18online.pdf</a></td></tr><tr><td></td><td></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr4cfd6b7ce03d4f5da00644e1748a83b8">Lecture 18.pptx</a></td></tr><tr><td></td><td>Chapter 6-3</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewrb1359baf35d74433b0d5481875647b18">Lecture 19.pptx</a></td></tr><tr><td></td><td></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr31e261b2ccbe4dc6ae51267f0f1245d0">Lecture 19online.pdf</a></td></tr><tr><td></td><td>Chapter 6-4</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr14fe2e1ff9424ec6bf8dd768e20af8b4">Lecture 20.pptx</a></td></tr><tr><td></td><td></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewrb679cc029a194f698d0dd7b9ab189e48">Lecture 20online.pdf</a></td></tr><tr><td></td><td>Chapter 7-1</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr13766180d5674e02adecdfd66e24a09e">Lecture 21 - .pptx</a></td></tr><tr><td></td><td></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr1374f013802445859f5e4b9ddb3cb9ae">Lecture 21online(1).pdf</a></td></tr><tr><td></td><td>Chapter 7-2</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr6fcc331416014338bfb0fbff33fef836">Lecture 22.pptx</a></td></tr><tr><td></td><td></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr930962bfc04a44d1a8c3282abc98b54e">Lecture 22online.pdf</a></td></tr><tr><td></td><td>Chapter 7-3</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewra037a030d26e4575ae81889680e9db4a">lecture 23.pptx</a></td></tr><tr><td></td><td></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr17796a3c94be460a931f5b923564d0a2">lecture 23 online.pdf</a></td></tr><tr><td></td><td>Chapter 7 Review</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr1afaed8b3c2c498ea18c0f4c195c8541">Final Revision.pdf</a></td></tr><tr><td>zhaoziping</td><td>Chapter 9</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr42c7653ec8e84428bac616162d633a32">Chapter 9 LT(6).pdf</a></td></tr><tr><td></td><td>Chapter 10</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr96e86fd038124988b3ec6cd9c72c4cb5">Chapter 10 ZT(1).pdf</a></td></tr><tr><td>--</td><td>Additional</td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr78dd99ebfeea4682a76e31f517736961">FourierTransformTable.pdf</a></td></tr><tr><td>--</td><td></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr8278b955b99040079c8c535d95c404dd">笔记.pdf</a></td></tr></tbody></table></div></div>
+</div>
+<div class="layui-hide" id="page-2" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col></colgroup><thead><tr><th>Books and Materials</th></tr></thead><tbody><tr><td><a href="http://libgen.rs/book/index.php?md5=7F7AD99407402BBCE00103AFC50DBC22">Signals and Systems by Alan V. Oppenheim, Alan S. Willsky</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr028cbce6ae534f94a89c3b6debf206e2">Signals and Systems - solution</a></td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"EE150",
+"name":"Signals and Systems",
+"semester":"Spring 2020",
+"category":"Lecture Slides 教学课件",
+"title":"Lecture Slides 教学课件",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js?v=2"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css">
+    <link rel='stylesheet' type='text/css' href='https://fonts.geekzu.org/css?family=Quicksand' >
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "../../layui/hm.js";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Homework 作业
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col><col></colgroup><thead><tr><th>Homework PDF</th><th>Solution</th></tr></thead><tbody><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr9bd86d0b3adb48aaacfc181945aac596">hw1.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr66fb08a1613a487c92c17b3063606f33">hw1_solution.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr76ad879f3f724390b3741f3d8f840940">hw2.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewre90d6efaaa08438fa2e6bd090005df4d">hw2_solutions.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewrf6c6faf9c6994bbfb5c9351b142890fc">HW3.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr4c95e68091dd41b3b8421a23f3960f71">HW3solution.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr0b94747b87f14126a8d1ecc168039a49">Homework4(1).pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr15726dfb850b42579ad9b109dc6d0d48">HW4_solution.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewrf13d457a7bab43bdbeaf29b5dbbfd552">Homework5.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr320e105766344609973068a7c6808951">solution for hw5.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr8722fcbe564942ad85c9ff6ecf505ec7">HW6(1).pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr1cb884711e864c0aae3d6ee1ae1d6e76">hw6 solution.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewrea852b57969448e1a4575bf77d5caaf4">Homework7.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr0dd7dcc2926a4a52aa5ab6db224f1890">homework7_answers.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr69918981b94f4598b88f25654fc31bc9">hw8(2).pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewraf4b2b4692b644f2a572398dcab926e1">homework8 solution.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/n8ewr932acb4f50a349be958321aa6f6ac2d1">hw9_2.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/n8ewr660d6881f1dc446bb39fd1a44babe6a2">hw9 solution.pdf</a></td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"EE150",
+"name":"Signals and Systems",
+"semester":"Spring 2020",
+"category":"Homework 作业",
+"title":"Homework 作业",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js?v=2"></script>
+</body>
+</html>
