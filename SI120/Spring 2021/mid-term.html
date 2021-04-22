@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css?v=1">
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "../../layui/hm.js";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../Spring 2021\schedule.html"><li>时间表</li></a><a href="../index.html"><li class="layui-this">课程</li></a><!-- activated -->
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Mid-term Exam 期中考试
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="question">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;">
+<h3 style="font-family: Quicksand; font-size: 20pt; margin: 0.5em 0;"><b>1 Multiple Choice (60 pts)</b></h3>
+<p style="font-family: Quicksand; font-size: medium; margin: 1em 0;">Every question has one correct answer.</p>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 1</div>
+<div class="problem-grade" id="Question1">?/? point (graded)</div>
+<div class="problem-content">Which of the following is not a proposition?</div>
+<form class="layui-form" action="" lay-filter="Question1">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="There are no integers between $x$ and $x+1$.">
+<input type="radio" name="q1" value="B" title="The moon is made of green cheese.">
+<input type="radio" name="q1" value="C" title="$7 \cdot 11 \cdot 13 = 1001$.">
+<input type="radio" name="q1" value="D" title="$e^{i\pi} + 1 = 0$."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 2</div>
+<div class="problem-grade" id="Question2">?/? point (graded)</div>
+<div class="problem-content">Let $|$ be the binary logical connective defined by $p|q=\neg(p \land q)$. Which of the following is not true?</div>
+<form class="layui-form" action="" lay-filter="Question2">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="$(p|q)|r \equiv p|(q|r)$">
+<input type="radio" name="q1" value="B" title="$p | (q \lor r) \equiv (p|q) \land (p|r)$">
+<input type="radio" name="q1" value="C" title="$\neg (p | q) \equiv p \land q$">
+<input type="radio" name="q1" value="D" title="$p|q \equiv q|p$"><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 3</div>
+<div class="problem-grade" id="Question3">?/? point (graded)</div>
+<div class="problem-content">Which of the following is not a tautology?</div>
+<form class="layui-form" action="" lay-filter="Question3">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="$(\neg p \lor q) \land (q \rightarrow \neg r \land \neg p) \land (p \lor r)$">
+<input type="radio" name="q1" value="B" title="$(p \leftrightarrow q) \leftrightarrow (\neg p \lor q) \land (p \lor \neg q)$">
+<input type="radio" name="q1" value="C" title="$(q \rightarrow r) \land (p \rightarrow q) \rightarrow (p \rightarrow r)$">
+<input type="radio" name="q1" value="D" title="$(p \lor q) \land (\neg p \lor r) \rightarrow (q \lor r) $"><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 4</div>
+<div class="problem-grade" id="Question4">?/? point (graded)</div>
+<div class="problem-content">Let $a=$"A comes to the party.", $b=$"B comes to the party.", $c=$"C comes to the party.", $d=$"D comes to the party.". Which of the following is the correct translation of "A sufficient condition for A coming to the party is that,if B does not come, then at least one of C and D must come."?</div>
+<form class="layui-form" action="" lay-filter="Question4">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="$(\neg b \rightarrow (c \lor d)) \rightarrow a$">
+<input type="radio" name="q1" value="B" title="$(\neg b \rightarrow \neg (c \land d)) \rightarrow a$.">
+<input type="radio" name="q1" value="C" title="$a \rightarrow (\neg b \rightarrow (c \lor d))$">
+<input type="radio" name="q1" value="D" title="$a \leftrightarrow (\neg b \rightarrow \neg (c \land d))$."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 5</div>
+<div class="problem-grade" id="Question5">?/? point (graded)</div>
+<div class="problem-content">Let $C(x)$ be the statement "$x$ has a cat," let $D(x)  $ be the statement "$x$ has a dog," and let $T(x)$ be the statement "$x$ is a student." Which of the following best describes $\exists x \left(T(x) \land \neg C(x) \land \neg D(x) \right)$? </div>
+<form class="layui-form" action="" lay-filter="Question5">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="Not every student has either a cat or a dog.">
+<input type="radio" name="q1" value="B" title="There exists a student that he has a cat and a dog.">
+<input type="radio" name="q1" value="C" title="Not every student has both a cat and a dog.">
+<input type="radio" name="q1" value="D" title="There exists a student that he has either a cat or a dog."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 6</div>
+<div class="problem-grade" id="Question6">?/? point (graded)</div>
+<div class="problem-content">The predicate formula $\exists x P(x) \rightarrow P(0)$ is</div>
+<form class="layui-form" action="" lay-filter="Question6">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="satisfiable">
+<input type="radio" name="q1" value="B" title="unsatisfiable">
+<input type="radio" name="q1" value="C" title="logically valid">
+<input type="radio" name="q1" value="D" title="none of the above"><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 7</div>
+<div class="problem-grade" id="Question7">?/? point (graded)</div>
+<div class="problem-content">Which of the following is logically valid?</div>
+<form class="layui-form" action="" lay-filter="Question7">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="$\forall x(P(x) \land Q(x)) \leftrightarrow \forall xP(x) \land \forall xQ(x)$">
+<input type="radio" name="q1" value="B" title="$\forall x(P(x)\lor Q(x)) \leftrightarrow (\forall xP(x) \lor \forall xQ(x))$">
+<input type="radio" name="q1" value="C" title="$\forall x(P(x)\to Q(x)) \leftrightarrow (\exists xP(x) \to \exists xQ(x))$">
+<input type="radio" name="q1" value="D" title="$\forall x(P(x)\to Q(x)) \leftrightarrow (\forall xP(x) \to \forall xQ(x))$"><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 8</div>
+<div class="problem-grade" id="Question8">?/? point (graded)</div>
+<div class="problem-content">Which of the following is not true?</div>
+<form class="layui-form" action="" lay-filter="Question8">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The sets $A, B$ have the same cardinality if and only if there is a bijection $f: A \rightarrow B$.">
+<input type="radio" name="q1" value="B" title="A set is uncountable if its power set is uncountable.">
+<input type="radio" name="q1" value="C" title="If $A, B$ are countably infinite, then so is $A \cup B$.">
+<input type="radio" name="q1" value="D" title="If $A, B$ are countably infinite, then so is $A \times B$."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 9</div>
+<div class="problem-grade" id="Question9">?/? point (graded)</div>
+<div class="problem-content">Which of the following is not true?</div>
+<form class="layui-form" action="" lay-filter="Question9">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="Let $A$ be any set of sets. Then $\cup \mathcal{P} (A) = A$.">
+<input type="radio" name="q1" value="B" title="Let $A$ be any set of sets. Then $\mathcal{P} (\cup A) = A$.">
+<input type="radio" name="q1" value="C" title="Let $A=\{1\cdot a, 2 \cdot b, 3\cdot c, 100\cdot z\}, T=\{1\cdot b, 98\cdot z\}$. Then $T$ is a 99-subset of $A$.">
+<input type="radio" name="q1" value="D" title="Let $A=\{1\cdot a, 2\cdot b, 3\cdot c\}$. Then the 3-permutations of $A$ is 19."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 10</div>
+<div class="problem-grade" id="Question10">?/? point (graded)</div>
+<div class="problem-content">Which of the following sets has different cardinality comparing to others?</div>
+<form class="layui-form" action="" lay-filter="Question10">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The set $\mathbb{R}^+$ of positive real numbers.">
+<input type="radio" name="q1" value="B" title="The set $\{(x, y): x,y\in\mathbb{R}, x^2+y^2=1 \}$.">
+<input type="radio" name="q1" value="C" title="The set $\{(x, y): x,y\in\mathbb{R}, x^2+y^2<1 \}$.">
+<input type="radio" name="q1" value="D" title="The set $\{S: S\subseteq \mathbb{Z}^+, |S|<\infty \}$."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 11</div>
+<div class="problem-grade" id="Question11">?/? point (graded)</div>
+<div class="problem-content">According to the basic rules of counting, which of the following statement is not correct?</div>
+<form class="layui-form" action="" lay-filter="Question11">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="The number of four-digit decimal odd number that each digit is different from each other is 2240.">
+<input type="radio" name="q1" value="B" title="The number of the composite divisors of $N=3^{4}\times5^{6}\times7^8$ is 188.">
+<input type="radio" name="q1" value="C" title="There are 12 0's at the end of decimal representation of $50!$.">
+<input type="radio" name="q1" value="D" title="If there is an injection from set $A$ to set $B$, then we can say that $|A| \leqslant |B|$"><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 12</div>
+<div class="problem-grade" id="Question12">?/? point (graded)</div>
+<div class="problem-content">Which of the following choices allows a T path from $A$ to $B$?</div>
+<form class="layui-form" action="" lay-filter="Question12">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="$A = (2,1), B=(49,51)$ ">
+<input type="radio" name="q1" value="B" title="$A = (2,1), B=(49,52)$">
+<input type="radio" name="q1" value="C" title="$A = (1,2), B=(48,48)$">
+<input type="radio" name="q1" value="D" title="$A = (1,2), B=(51,48)$"><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 13</div>
+<div class="problem-grade" id="Question13">?/? point (graded)</div>
+<div class="problem-content">Let $\{a_n\}_{n=3}^{\infty}$ be a sequence such that $n(n-1)=\sum_{k=3}^{n}\left(\begin{array}{l}n \\ k\end{array}\right) a_{k}$. Then $a_6=$ __________.</div>
+<form class="layui-form" action="" lay-filter="Question13">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="-10">
+<input type="radio" name="q1" value="B" title="-20">
+<input type="radio" name="q1" value="C" title="-30">
+<input type="radio" name="q1" value="D" title="-40"><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 14</div>
+<div class="problem-grade" id="Question14">?/? point (graded)</div>
+<div class="problem-content">The number of surjections from $\{1,2,3,4,5,6\}$ to $\{A,B,C\}$ is __________.</div>
+<form class="layui-form" action="" lay-filter="Question14">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="510">
+<input type="radio" name="q1" value="B" title="520">
+<input type="radio" name="q1" value="C" title="530">
+<input type="radio" name="q1" value="D" title="540"><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 15</div>
+<div class="problem-grade" id="Question15">?/? point (graded)</div>
+<div class="problem-content">The number of ways of distributing 6 different books into 4 identical boxes such that at most one box is empty is __________.</div>
+<form class="layui-form" action="" lay-filter="Question15">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="122">
+<input type="radio" name="q1" value="B" title="133">
+<input type="radio" name="q1" value="C" title="144 ">
+<input type="radio" name="q1" value="D" title="155"><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 16</div>
+<div class="problem-grade" id="Question16">?/? point (graded)</div>
+<div class="problem-content">There are 21 identical seats in an meeting room. The number of ways of arranging them in three (different) rows, such that any two rows are majority of them (i.e. greater or equal than 11) is __________.</div>
+<form class="layui-form" action="" lay-filter="Question16">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="36 ">
+<input type="radio" name="q1" value="B" title="45">
+<input type="radio" name="q1" value="C" title="55">
+<input type="radio" name="q1" value="D" title="66"><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 17</div>
+<div class="problem-grade" id="Question17">?/? point (graded)</div>
+<div class="problem-content">Let $A = \{a: 1 \leqslant a \leqslant 1000, a\text{ is divisible by 3 and 5, but not divisible by 7}\}$. Then $|A|=$ __________.</div>
+<form class="layui-form" action="" lay-filter="Question17">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="56">
+<input type="radio" name="q1" value="B" title="57">
+<input type="radio" name="q1" value="C" title="58">
+<input type="radio" name="q1" value="D" title="59"><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 18</div>
+<div class="problem-grade" id="Question18">?/? point (graded)</div>
+<div class="problem-content">Which of the following statement is not correct?</div>
+<form class="layui-form" action="" lay-filter="Question18">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="Given 367 persons, at least two of them have same birthday.">
+<input type="radio" name="q1" value="B" title="Given a sequence of distinct real numbers $\{a_1, a_2, \cdots, a_{50}\}$, the length of the longest strictly monotonous (strictly increasing or decreasing) subsequence is at least 9. (Example: $\{1,3\}$ is a strictly increasing subsequence of $\{1,4,3,2\}$)">
+<input type="radio" name="q1" value="C" title="During a month with 30 days, a baseball team plays at least one game a day, but no more than 45 games. Then there must be a period of some number of consecutive days during which the team must play exactly 14 games.">
+<input type="radio" name="q1" value="D" title="In order to connect 50 computers to 15 printers, such that any 15 computers are able to connect to all 15 printers, at least 540 cables are needed."><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 19</div>
+<div class="problem-grade" id="Question19">?/? point (graded)</div>
+<div class="problem-content">Which of the following could be a solution to the linear recurrence relation $a_n = 7a_{n-1}-15a_{n-2}+9a_{n-3} \quad (n \geq 3)$?</div>
+<form class="layui-form" action="" lay-filter="Question19">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="$a_n = 2\cdot3^n+5$">
+<input type="radio" name="q1" value="B" title="$a_n = (n^2+3)\cdot3^n$">
+<input type="radio" name="q1" value="C" title="$a_n = 2\cdot3^n-n+1$">
+<input type="radio" name="q1" value="D" title="$a_n = 5^n$"><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 20</div>
+<div class="problem-grade" id="Question20">?/? point (graded)</div>
+<div class="problem-content">Let $a_n = 2n+2$ for every integer $n \geq 0$. The generating function of $\{a_n\}_{n=0}^{\infty}$ is __________.</div>
+<form class="layui-form" action="" lay-filter="Question20">
+    <div class="layui-form-item">
+        <div class="question q1 q-radio"><input type="radio" name="q1" value="A" title="$\frac{1}{1-x}$">
+<input type="radio" name="q1" value="B" title="$\frac{1}{(1-x)^2}$">
+<input type="radio" name="q1" value="C" title="$\frac{2}{(1-x)^2}$">
+<input type="radio" name="q1" value="D" title="$\frac{1}{2(1-x)^2}$"><p class="tick-label"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+</div>
+<div class="layui-hide" id="page-2" page-type="question">
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;">
+</div>
+<div class="reading-content" style="margin: 1em; line-height: 1.4em;">
+<h3 style="font-family: sans-serif; font-size: 16pt; margin: 0.5em 0;">Question 21 Logic (16 pt)</h3>
+<p style="font-family: sans-serif; font-size: small; color: rgb(172, 172, 172); margin: 1.3em 0;">0/16 point (ungraded)</p>
+<p style="font-family: sans-serif; font-size: medium; margin: 1em 0;">
+Let $P(x)=$"$x$ is a person", $H(x, y)=$"$x$ hates $y$" and $E(x, y)=$"$x=y$". Translate the following statements into formulas: <i>Only the final formula for each statements is needed.</i>
+</p>
+<p style="font-family: sans-serif; font-size: medium; margin: 1em 0;">
+(a) Every person hates some person.
+</p>
+<p style="font-family: sans-serif; font-size: medium; margin: 1em 0;">
+(b) Every person hates some other person.
+</p>
+<p style="font-family: sans-serif; font-size: medium; margin: 1em 0;">
+(c) There is a person who is hated by every person.
+</p>
+<p style="font-family: sans-serif; font-size: medium; margin: 1em 0;">
+(d) There is a person who is not hated by any other person.
+</p>
+<hr>
+<h3 style="font-family: sans-serif; font-size: 16pt; margin: 0.5em 0;">Question 22 All Disordered Permutation (10 pt)</h3>
+<p style="font-family: sans-serif; font-size: small; color: rgb(172, 172, 172); margin: 1.3em 0;">0/10 point (ungraded)</p>
+<p style="font-family: sans-serif; font-size: medium; margin: 1em 0;">
+Let $A_n = \{x_1x_2\cdots x_n: x_1x_2\cdots x_n$ is a permutation of $[n]$ and $x_i \ne i, \forall i \in [n]\}$. Determine $|A_n|$.
+</p>
+</div>
+<div class="problem">
+<hr>
+<div class="problem-title">Question 23 Generating Function Application (14 pt)</div>
+<div class="problem-grade" id="Question21">?/? point (graded)</div>
+<div class="problem-content">For every integer $r \geq 1$, let $a_r$ be the number of elements in $A_r = \{s:s \in \{0,1,2\}^r, $ s has even number (including 0) of 1s, odd number of 2s and no more than two 0s.$\}$. Calculate $a_{14}$ with the generating function of $\{a_n\}_{n=0}^{\infty}$.</div>
+<form class="layui-form" action="" lay-filter="Question21">
+    <div class="layui-form-item">
+        <div class="question q1 q-text"><input type="text" name="q1" placeholder="" class="layui-input" style="display: inline;"><p class="tick-label" style="display: inline;"></p>
+        </div>
+        <button class="layui-btn layui-btn-lg layui-btn-violet" lay-submit>提交</button>
+    </div>
+</form>
+</div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"SI120",
+"name":"Discrete Mathematics",
+"semester":"Spring 2021",
+"category":"Exam 考试",
+"title":"Mid-term Exam 期中考试",
+    };
+
+    var answers = {
+'Question1': [3,{'q1': [3,{'A':3}]}],
+'Question2': [3,{'q1': [3,{'A':3}]}],
+'Question3': [3,{'q1': [3,{'A':3}]}],
+'Question4': [3,{'q1': [3,{'A':3}]}],
+'Question5': [3,{'q1': [3,{'A':3}]}],
+'Question6': [3,{'q1': [3,{'A':3}]}],
+'Question7': [3,{'q1': [3,{'A':3}]}],
+'Question8': [3,{'q1': [3,{'B':3}]}],
+'Question9': [3,{'q1': [3,{'B':3}]}],
+'Question10': [3,{'q1': [3,{'D':3}]}],
+'Question11': [3,{'q1': [3,{'B':3}]}],
+'Question12': [3,{'q1': [3,{'D':3}]}],
+'Question13': [3,{'q1': [3,{'C':3}]}],
+'Question14': [3,{'q1': [3,{'D':3}]}],
+'Question15': [3,{'q1': [3,{'D':3}]}],
+'Question16': [3,{'q1': [3,{'C':3}]}],
+'Question17': [3,{'q1': [3,{'B':3}]}],
+'Question18': [3,{'q1': [3,{'B':3}]}],
+'Question19': [3,{'q1': [3,{'A':3}]}],
+'Question20': [3,{'q1': [3,{'C':3}]}],
+'Question21': [14,{'q1': [14,{'57344':14}]}],
+};
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js?v=2"></script>
+</body>
+</html>
