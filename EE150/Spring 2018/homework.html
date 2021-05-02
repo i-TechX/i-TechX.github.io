@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css?v=1">
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "../../layui/hm.js";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Homework 作业
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col><col><col><col></colgroup><thead><tr><th>Homework PDF</th><th>Split PDF</th><th>Solution</th><th>Materials</th></tr></thead><tbody><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswae286b4513bc14e32b116ae3574efe060">HW1.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswaf131d6aaf16f4a95b7433b5b768c72b4">HW1（分页版）.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswa2a9e56bff16b4ce09694628e5db98023">HW1_Solutions.pdf</a></td><td></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa606e178c06c546a29baa0164f49f698b">HW2.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswad0fb4bdf89064b9e8679965577220c9e">HW2-分页.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswa48944dd1a1334f9d8f52032732eeaee4">HW2_solution.pdf</a></td><td></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswaf5b3711d745d46a2aa5cb3e5fe58b047">HW3(1).pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswa4b1b169e7769489e8102388fb7358327">HW3_split.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswafa28e3b37e7a41748fe3cc246a465ea3">HW3_solution.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswa225856282cd84306abe9862916c731ec">信号与系统第三次习题课(1).pptx</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa4f3d87d6d6884fc68c6ee109ca78e8ea">HW4.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswaffea62bf3752430592f5068d79f42a06">HW4分页.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswad1ac4fd51b6c48939d542ff7dd6ba5cd">HW4_Solution.pdf</a></td><td></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswac83a0474153e473d902b7dfba2965b36">HW5.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswae7a185b069654a1586a6e8616b4ac560">HW5分页.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswaffa6b1af8b0d4bfe81135801a9a3e2f0">HW5 solution.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswab0a4d1b8162f4b9d92e27dc2b05e0e43">第五次讲义.rar</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa173b4567a2844833a0c2b73a45954c76">HW6.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswa6979bb105eb04967a107c34f0935e4dd">HW6-Pagebreak.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswa39dc507a46bf4cd28830d8bb8e9f89a6">hw6-solutions.pdf</a></td><td></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa901979e17d704248a07234fd82d6b1bb">HW7.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswafb7ce9d99c6843d08d8e07879f3a6b16">HW7_分页.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswabdb3c8128e8345059cd191f70289465d">Solution 7(2).pdf</a></td><td></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa1b78de4194e042d6aa38191fd999aded">HW8.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswa9687bc01d9784c16b73b4a749d1e7408">HW8_分页.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswa8e1120592d9945e28028d141e2c1d991">HW8_Solution(1).pdf</a></td><td></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa90806a304989418694033157f23c3aca">HW9.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswa23273ffee3f14cf088823a8d248ee1c1">HW9_分页.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswace24f8e3af3c4e61a7ba7785fad453c2">HW9_solution(1).pdf</a></td><td></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa151869c9750e434abeacd2d26d92d5ab">HW10.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswa6410432415c8473fb86c6b2f819f1c2e">HW10-分页.pdf</a></td><td><a href="https://docs.zohopublic.com.cn/file/tdswad3fae528a49343b5993caca0448d9928">HW10-solution.pdf</a></td><td></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswae0847feba77d4ab4ac234679b319b226">HW11.zip</a></td><td></td><td><a href="https://docs.zohopublic.com.cn/file/tdswae39f6c6831624170b1aa8cf42153e496">solution11(1).pdf</a></td><td></td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"EE150",
+"name":"Signals and Systems",
+"semester":"Spring 2018",
+"category":"Homework 作业",
+"title":"Homework 作业",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js?v=2"></script>
+</body>
+</html>
