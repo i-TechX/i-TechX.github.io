@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css?v=1">
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "../../layui/hm.js";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Project 课程设计
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col></colgroup><thead><tr><th>General Resource</th></tr></thead><tbody><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa03439ba58e4548ccab8b0567262c2867">CS120_Project_Tutorial.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa7e9bd96a6fcd415d9870ba5f6319b43a">Network Simulator (IMUNES) tutorial.pdf</a></td></tr></tbody></table></div></div>
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col></colgroup><thead><tr><th>Project 1</th></tr></thead><tbody><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa5e92b9477a8a4b71997bc16980b2e88f">CS120_Project1.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswadbc15e6509de47459c0a8ba57fa65b72">INPUT.txt</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswac8dc82da3f964afd94412eb5f12495e1">OUTPUT.txt</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa3abb53e0d3a544b8a586d9ce1a82d398">project1_sample.zip</a></td></tr></tbody></table></div></div>
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col></colgroup><thead><tr><th>Project 2</th></tr></thead><tbody><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa4cd0fba471354657b24596aa2a3123bc">CS120_Project2(1).pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa64bdfc292bdc408bad698151f209740b">INPUT.bin</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa7592bd4c69ed4886b5064e9786c4627f">Jamming(1).wav</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa6af9f9d6eaec443d8a74737710a553f4">JammingWav(1).m</a></td></tr></tbody></table></div></div>
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col></colgroup><thead><tr><th>Project 3</th></tr></thead><tbody><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswaf194079d0e1841008d05a29a3010a3db">CS120_Project3.pdf</a></td></tr></tbody></table></div></div>
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col></colgroup><thead><tr><th>Project 4</th></tr></thead><tbody><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswab05e87df2b9b4b6dacbe8b9e5fe46632">CS120_Project4(1).pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswafb754a6f5db4422fb4ada06c2eeccf1c">serverlist.txt</a></td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"CS120",
+"name":"Computer Networks",
+"semester":"Fall 2019",
+"category":"Project 课程设计",
+"title":"Project 课程设计",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js?v=2"></script>
+</body>
+</html>

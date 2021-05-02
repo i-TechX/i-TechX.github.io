@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css?v=1">
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "../../layui/hm.js";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Lecture Slides 教学课件
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col><col><col><col></colgroup><thead><tr><th>Week</th><th>Time</th><th>Topic</th><th>Lecture Note</th></tr></thead><tbody><tr><td>1</td><td>Sep. 8</td><td>Course Introduction 1</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa2e7336d84d6c4d87981a6ae52d483b94">CS120 Lec 1(2).pdf</a></td></tr><tr><td></td><td>Sep. 10</td><td>Course Introduction 2</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa4739c6944bff4c15a3c0b5bc94c0f9f2">CS120 Lec 2.pdf</a></td></tr><tr><td>2</td><td>Sep. 15</td><td>Project Discussion 1</td><td></td></tr><tr><td></td><td>Sep. 17</td><td>Physical Layer</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa9951a9d9f58b4dccbd8255ae244feb40">CS120 Lec 3(1).pdf</a></td></tr><tr><td>3</td><td>Sep. 22</td><td>Framing & Error Detection</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa1ee0830fdd074375a6c935fead5eb10d">CS120 Lec 4.pdf</a></td></tr><tr><td></td><td>Sep. 24</td><td>Reliable Transmission</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa2aa147ad904b4d7a814933f3f8dbcf41">CS120 Lec 5.pdf</a></td></tr><tr><td>4</td><td>Sep. 29</td><td>Multiple Access 1</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa0295d4820f9c430ea325e04e4a55285d">CS120 Lec 6(1).pdf</a></td></tr><tr><td></td><td>Oct. 1</td><td></td><td></td></tr><tr><td>5</td><td>Oct. 6</td><td></td><td></td></tr><tr><td></td><td>Oct. 10</td><td>Multiple Access2</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa2ab349f58f2c43c49f84deb8c9bb65f6">CS120 Lec 7.pdf</a></td></tr><tr><td>6</td><td>Oct. 13</td><td>Switching</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa1a893a205abe4e9db5cef95d161b4e96">CS120 Lec 8.pdf</a></td></tr><tr><td></td><td>Oct. 15</td><td>Internet Protocol</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa42a0a8c0271c4ef4b6c17b18086c7162">CS120 Lec 9(1).pdf</a></td></tr><tr><td>7</td><td>Oct. 20</td><td>Routing 1</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa1c4ec721e85f42bd93b86a3826450c46">CS120 Lec 10(1).pdf</a></td></tr><tr><td></td><td>Oct. 22</td><td>Routing 2</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa8464701fd084417a96b8bf129e6091f3">CS120 Lec 11(1).pdf</a></td></tr><tr><td>8</td><td>Oct. 27</td><td>Other Topics in IP 1 (NAT, Router)</td><td><a href="https://docs.zohopublic.com.cn/file/tdswad33c3ca2e0f840de89d5e5c509104f72">CS120 Lec 12(1).pdf</a></td></tr><tr><td></td><td>Oct. 29</td><td>Other Topics in IP 2 (SDN)</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa879dc29ca36b43549d9ce7bb46e1bf9b">CS120 Lec 13.pdf</a></td></tr><tr><td>9</td><td>Nov. 3</td><td>Project Discussion 2</td><td>- <a href="https://docs.zohopublic.com.cn/file/tdswa830460fed5d7494cb83ae5a426e9caf4">discussion2.pdf</a> <br> - <a href="https://docs.zohopublic.com.cn/file/tdswadacd7674ac4b48e989cccc1fb9f8c441">ospf.imn</a> <br> - <a href="https://docs.zohopublic.com.cn/file/tdswacc9971551578436b8e07ca65e04095cf">README.pdf</a> <br> - <a href="https://docs.zohopublic.com.cn/file/tdswae7e0b05d1e044ef0b6a7bfb912941ebc">rip.imn</a></td></tr><tr><td></td><td>Nov.5</td><td>Mobile Routing</td><td><a href="https://docs.zohopublic.com.cn/file/tdswae0cf75fab43d456fb0405ff707fc7d62">CS120 Lec 14.pdf</a></td></tr><tr><td>10</td><td>Nov.10</td><td>TCP 1</td><td><a href="https://docs.zohopublic.com.cn/file/tdswae6dd934831ad47319dc5fba0e67c929e">CS120 Lec 15.pdf</a></td></tr><tr><td></td><td>Nov.12</td><td>TCP 2</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa0d225f76c9d54f9cb60997cee3f882e3">CS120 Lec 16.pdf</a></td></tr><tr><td>11</td><td>Nov.17</td><td>Congestion Control 1</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa3ac2cbd3a0314c338dbfca47a8736ee4">CS120 Lec 17(1).pdf</a></td></tr><tr><td></td><td>Nov.19</td><td>Congestion Control 2</td><td><a href="https://docs.zohopublic.com.cn/file/tdswad2535f6136fa4c4889fe3f9544e60306">CS120 Lec 18(3).pdf</a></td></tr><tr><td>12</td><td>Nov.24</td><td>Other Topics in Transportation Layer</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa09e63fa4fa3c4328a0d36ec809e578d3">CS120 Lec 19.pdf</a></td></tr><tr><td></td><td>Nov.26</td><td>QoS</td><td></td></tr><tr><td>13</td><td>Dec. 1</td><td>RPC & RTP</td><td><a href="https://docs.zohopublic.com.cn/file/tdswaa71978674d4e4f5eb9cb675168d5796b">CS120 Lec 21.pdf</a></td></tr><tr><td></td><td>Dec. 3</td><td>Data Presentation & Compression 1</td><td></td></tr><tr><td>14</td><td>Dec. 8</td><td>Data Presentation & Compression 2</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa417d48c8bb8a4c70a6e431b1fe97fab6">CS120 Lec 23.pdf</a></td></tr><tr><td></td><td>Dec. 10</td><td>DNS</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa0fa71ff8b3274ca5b527d3022abf23a6">CS120 Lec 24.pdf</a></td></tr><tr><td>15</td><td>Dec. 15</td><td>HTTP & SMTP</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa644f2698897d4dadb7e779f0c09d5f59">CS120 Lec 25.pdf</a></td></tr><tr><td></td><td>Dec. 17</td><td>FTP& P2P</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa4c7a2c13233b416c9aa607151c054a05">CS120 Lec 26.pdf</a></td></tr><tr><td>16</td><td>Dec. 22</td><td>NetworkSecurity 1</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa5b5082be7f524cdb9cd81255494dbd54">CS120 Lec 27(1).pdf</a></td></tr><tr><td></td><td>Dec. 24</td><td>NetworkSecurity 2</td><td><a href="https://docs.zohopublic.com.cn/file/tdswa3ec2f2f456954e0a8844927bce8ec008">CS120 Lec 28(1).pdf</a></td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"CS120",
+"name":"Computer Networks",
+"semester":"Fall 2020",
+"category":"Lecture Slides 教学课件",
+"title":"Lecture Slides 教学课件",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js?v=2"></script>
+</body>
+</html>

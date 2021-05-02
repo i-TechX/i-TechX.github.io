@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>iTechX</title>
+
+    <link rel="stylesheet" href="../../layui/css/layui.css">
+    <link rel="stylesheet" href="../../layui/css/style.css?v=1">
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "../../layui/hm.js";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <ul class="layui-nav" lay-filter="">
+            <a class="logo" href="../../dashboard.html">
+                <img src="../../image/iTechX.png" height="30px" style="position: relative; bottom: -15px; float: left; margin-right: 2%;" alt="iTechX">
+            </a>
+            <li style="font-family:sans-serif; position:relative;display:inline-block;*display:inline;*zoom:1;vertical-align:middle;line-height:60px">
+                <div class="layui-hide" id="courseHeader">
+                    <span style="color:#fff;">{{courseInfo.code}}</span>
+                    <span style="color:rgba(255,255,255,.7);">{{courseInfo.name}}</span>
+                </div>
+            </li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 8em;"><a href="../../dashboard.html">课程面板</a></li>
+            <li class="layui-nav-item layui-layout-right" style="position: relative; margin-right: 2em;"><a href="../../help.html">帮助</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="layui-fluid" style="margin: 2em 20px;">
+    <div class="layui-tab layui-tab-brief" lay-filter="docDemoTabBrief">
+        <ul class="layui-tab-title layui-hide" id="courseBench">
+            <a href="../index.html"><li class="layui-this">课程</li></a>
+            <a href="../syllabus.html"><li>教学大纲</li></a>
+            <a href="../progress.html"><li>进度</li></a>
+            <a href={{d.url}}><li>课程评价</li></a>
+        </ul>
+        <div class="layui-tab-content" style="height: auto;">
+            <div class="layui-tab-item layui-show">
+                <span class="layui-breadcrumb" lay-separator='<span class="icon fa fa-angle-right" aria-hidden="true"></span>'>
+                    <div class="layui-hide" id="breadcrumb">
+                        <a href="../index.html">课程</a>
+                        <a href="../index.html">{{courseInfo.semester}}</a>
+                        <a href="../index.html">{{courseInfo.category}}</a>
+                        <a><cite>{{courseInfo.title}}</cite></a>
+                    </div>
+                </span>
+                <hr>
+
+                <div id="content" style="text-align: center;"></div>
+
+                <div class="main-content" style="margin: 1em 5%;">
+                    <h1 style="font-family: Quicksand; font-weight: bold; text-align: left;">
+Project 课程设计
+</h1><hr>
+<div class="layui-hide" id="page-1" page-type="book">
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col></colgroup><thead><tr><th>General Resource</th></tr></thead><tbody><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswaac441564c1f544969514fc1da2cf279e">CS120_Project_Tutorial.pptx</a></td></tr></tbody></table></div></div>
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col></colgroup><thead><tr><th>Project 1</th></tr></thead><tbody><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa9304bb8c78f1409f91671b32e7137f47">CS120_Project1.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa2f2a0f0fc55f4cb6881a68586148389b">project1_sample.zip</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa9eaa43dca4334814982b356f161c63e5">INPUT.txt</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa300d0f75ec1a4ceb82c904d02c6fc57b">OUTPUT.txt</a></td></tr></tbody></table></div></div>
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col></colgroup><thead><tr><th>Project 2</th></tr></thead><tbody><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa86a1937533e74433a89f8523698be9b4">CS120_Project2(1).pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswae1abfb7b6e784831bdd4e26482b0a86e">Jamming.wav</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswabb5d5dd6bc164533a65ca85389d86206">INPUT.bin</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswaddd65cd51ac64a60ab80e7505f436b16">JammingWav.m</a></td></tr></tbody></table></div></div>
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col></colgroup><thead><tr><th>Project 3</th></tr></thead><tbody><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswafaa10a05a9684587bc957081c7fa98d8">CS120_Project3.pdf</a></td></tr></tbody></table></div></div>
+<div class="reading-content"><div class="layui-form" style="margin: 0 10%;"> <table class="layui-table"><colgroup><col></colgroup><thead><tr><th>Project 4</th></tr></thead><tbody><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa32280d5844a84ea8a5f4eeeee7d69ce9">CS120_Project4.pdf</a></td></tr><tr><td><a href="https://docs.zohopublic.com.cn/file/tdswa40550c35eff544b2beb78c74cb3123f1">serverlist.txt</a></td></tr></tbody></table></div></div>
+</div>
+                </div>
+
+                <div id="successor" style="text-align: center;"></div>
+
+            </div>
+        </div>
+
+        <div class="layui-footer">
+            <!-- 底部固定区域 -->
+            <p style="display:flex; justify-content: center;">© 2020-2021 iTechX - MIT license.</p>
+        </div>
+    </div>
+
+</div>
+
+<script src="../../layui/layui.js"></script>
+<script>
+    var courseInfo = {
+        "code":"CS120",
+"name":"Computer Networks",
+"semester":"Fall 2020",
+"category":"Project 课程设计",
+"title":"Project 课程设计",
+    };
+
+    
+
+    document.title = 'iTechX | ' + courseInfo.title + ' ' + courseInfo.code + ' ' + courseInfo.name;
+</script>
+<script src="../../layui/gradeffect.js?v=2"></script>
+</body>
+</html>
